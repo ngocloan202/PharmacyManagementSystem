@@ -35,8 +35,10 @@
   <ItemGroup>
     <Reference Include="DevExpress.Data.Desktop.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Drawing.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
@@ -77,6 +79,9 @@
     <Compile Include="View\SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -116,6 +121,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SignIn_Frame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile_icon_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medicine_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medical-equipment-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new-invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\all-invoices.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-user_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
