@@ -100,7 +100,7 @@
             this.txtConfirmPass.PasswordChar = '•';
             this.txtConfirmPass.PlaceholderText = "Confirm Password";
             this.txtConfirmPass.SelectedText = "";
-            this.txtConfirmPass.Size = new System.Drawing.Size(275, 48);
+            this.txtConfirmPass.Size = new System.Drawing.Size(275, 42);
             this.txtConfirmPass.TabIndex = 14;
             // 
             // labelControl3
