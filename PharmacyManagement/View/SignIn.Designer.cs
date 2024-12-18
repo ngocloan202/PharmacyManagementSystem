@@ -47,7 +47,7 @@
             this.lblSignUp.Appearance.Options.UseForeColor = true;
             this.lblSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSignUp.Location = new System.Drawing.Point(760, 470);
-            this.lblSignUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblSignUp.Margin = new System.Windows.Forms.Padding(4);
             this.lblSignUp.Name = "lblSignUp";
             this.lblSignUp.Size = new System.Drawing.Size(70, 28);
             this.lblSignUp.TabIndex = 26;
@@ -58,7 +58,7 @@
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Location = new System.Drawing.Point(565, 470);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(204, 28);
             this.labelControl4.TabIndex = 25;
@@ -76,7 +76,7 @@
             this.btnSignIn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignIn.ForeColor = System.Drawing.Color.White;
             this.btnSignIn.Location = new System.Drawing.Point(544, 398);
-            this.btnSignIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSignIn.Margin = new System.Windows.Forms.Padding(4);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(77)))), ((int)(((byte)(80)))));
             this.btnSignIn.Size = new System.Drawing.Size(321, 53);
@@ -111,7 +111,7 @@
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(544, 258);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(86, 28);
             this.labelControl2.TabIndex = 20;
@@ -145,7 +145,7 @@
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(544, 154);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(92, 28);
             this.labelControl1.TabIndex = 18;
@@ -154,7 +154,7 @@
             // checkEdit1
             // 
             this.checkEdit1.Location = new System.Drawing.Point(623, 364);
-            this.checkEdit1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkEdit1.Margin = new System.Windows.Forms.Padding(4);
             this.checkEdit1.Name = "checkEdit1";
             this.checkEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(179)))), ((int)(((byte)(179)))));
@@ -182,11 +182,12 @@
             this.DoubleBuffered = true;
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.IconOptions.Image = global::PharmacyManagement.Properties.Resources.Pharmacy_logo_500;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "SignIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SignIn";
+            this.Text = "Sign In";
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
