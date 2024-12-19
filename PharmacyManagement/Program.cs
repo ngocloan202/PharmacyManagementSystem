@@ -17,7 +17,7 @@ namespace PharmacyManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Profile());
+            Application.Run(new Main());
         }
     }
 }
