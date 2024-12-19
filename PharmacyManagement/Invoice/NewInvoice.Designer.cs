@@ -408,6 +408,7 @@
             this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(121)))), ((int)(((byte)(24)))));
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnAdd.Location = new System.Drawing.Point(738, 355);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
@@ -480,6 +481,7 @@
             this.btnCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnCancel.Location = new System.Drawing.Point(114, 205);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(19)))), ((int)(((byte)(10)))));
@@ -499,6 +501,7 @@
             this.btnAddToCard.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
             this.btnAddToCard.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddToCard.ForeColor = System.Drawing.Color.White;
+            this.btnAddToCard.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnAddToCard.Location = new System.Drawing.Point(10, 205);
             this.btnAddToCard.Name = "btnAddToCard";
             this.btnAddToCard.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
@@ -515,7 +518,7 @@
             this.btnPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.btnPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.btnPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.btnPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
+            this.btnPrice.FocusedState.BorderColor = System.Drawing.Color.Green;
             this.btnPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
             this.btnPrice.Location = new System.Drawing.Point(62, 160);
@@ -546,7 +549,7 @@
             this.btnBaseUnit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.btnBaseUnit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.btnBaseUnit.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.btnBaseUnit.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
+            this.btnBaseUnit.FocusedState.BorderColor = System.Drawing.Color.Green;
             this.btnBaseUnit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnBaseUnit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
             this.btnBaseUnit.Location = new System.Drawing.Point(62, 118);
@@ -575,8 +578,8 @@
             this.cboCommodityType.BorderColor = System.Drawing.Color.Transparent;
             this.cboCommodityType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cboCommodityType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCommodityType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(251)))), ((int)(((byte)(219)))));
-            this.cboCommodityType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(251)))), ((int)(((byte)(219)))));
+            this.cboCommodityType.FocusedColor = System.Drawing.Color.Black;
+            this.cboCommodityType.FocusedState.BorderColor = System.Drawing.Color.Black;
             this.cboCommodityType.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cboCommodityType.ForeColor = System.Drawing.Color.Black;
             this.cboCommodityType.HoverState.BorderColor = System.Drawing.Color.Black;
@@ -595,7 +598,7 @@
             this.btnQuantities.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.btnQuantities.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.btnQuantities.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.btnQuantities.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(251)))), ((int)(((byte)(219)))));
+            this.btnQuantities.FocusedState.BorderColor = System.Drawing.Color.DarkGreen;
             this.btnQuantities.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnQuantities.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
             this.btnQuantities.Location = new System.Drawing.Point(148, 73);
