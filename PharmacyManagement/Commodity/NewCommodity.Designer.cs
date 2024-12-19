@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.dtpMfgDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpExpDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txtCommodityName = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -51,8 +53,6 @@
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
-            this.dtpExpDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.dtpMfgDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -81,6 +81,44 @@
             this.guna2Panel1.Size = new System.Drawing.Size(499, 322);
             this.guna2Panel1.TabIndex = 2;
             // 
+            // dtpMfgDate
+            // 
+            this.dtpMfgDate.BorderRadius = 14;
+            this.dtpMfgDate.BorderThickness = 1;
+            this.dtpMfgDate.Checked = true;
+            this.dtpMfgDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
+            this.dtpMfgDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpMfgDate.ForeColor = System.Drawing.Color.Black;
+            this.dtpMfgDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpMfgDate.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.dtpMfgDate.HoverState.FillColor = System.Drawing.Color.White;
+            this.dtpMfgDate.Location = new System.Drawing.Point(163, 217);
+            this.dtpMfgDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpMfgDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpMfgDate.Name = "dtpMfgDate";
+            this.dtpMfgDate.Size = new System.Drawing.Size(308, 31);
+            this.dtpMfgDate.TabIndex = 7;
+            this.dtpMfgDate.Value = new System.DateTime(2024, 12, 19, 11, 30, 22, 858);
+            // 
+            // dtpExpDate
+            // 
+            this.dtpExpDate.BorderRadius = 14;
+            this.dtpExpDate.BorderThickness = 1;
+            this.dtpExpDate.Checked = true;
+            this.dtpExpDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
+            this.dtpExpDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpExpDate.ForeColor = System.Drawing.Color.Black;
+            this.dtpExpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpExpDate.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.dtpExpDate.HoverState.FillColor = System.Drawing.Color.White;
+            this.dtpExpDate.Location = new System.Drawing.Point(163, 271);
+            this.dtpExpDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpExpDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpExpDate.Name = "dtpExpDate";
+            this.dtpExpDate.Size = new System.Drawing.Size(308, 31);
+            this.dtpExpDate.TabIndex = 6;
+            this.dtpExpDate.Value = new System.DateTime(2024, 12, 19, 11, 37, 13, 684);
+            // 
             // txtCommodityName
             // 
             this.txtCommodityName.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -95,7 +133,7 @@
             this.txtCommodityName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtCommodityName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCommodityName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.txtCommodityName.Location = new System.Drawing.Point(163, 57);
+            this.txtCommodityName.Location = new System.Drawing.Point(163, 55);
             this.txtCommodityName.Name = "txtCommodityName";
             this.txtCommodityName.PasswordChar = '\0';
             this.txtCommodityName.PlaceholderText = "";
@@ -172,7 +210,7 @@
             this.txtManufacturer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtManufacturer.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtManufacturer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.txtManufacturer.Location = new System.Drawing.Point(163, 110);
+            this.txtManufacturer.Location = new System.Drawing.Point(163, 109);
             this.txtManufacturer.Name = "txtManufacturer";
             this.txtManufacturer.PasswordChar = '\0';
             this.txtManufacturer.PlaceholderText = "";
@@ -406,44 +444,6 @@
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.Size = new System.Drawing.Size(762, 395);
             this.guna2Panel6.TabIndex = 0;
-            // 
-            // dtpExpDate
-            // 
-            this.dtpExpDate.BorderRadius = 14;
-            this.dtpExpDate.BorderThickness = 1;
-            this.dtpExpDate.Checked = true;
-            this.dtpExpDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
-            this.dtpExpDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpExpDate.ForeColor = System.Drawing.Color.Black;
-            this.dtpExpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpExpDate.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.dtpExpDate.HoverState.FillColor = System.Drawing.Color.White;
-            this.dtpExpDate.Location = new System.Drawing.Point(163, 266);
-            this.dtpExpDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpExpDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpExpDate.Name = "dtpExpDate";
-            this.dtpExpDate.Size = new System.Drawing.Size(308, 31);
-            this.dtpExpDate.TabIndex = 6;
-            this.dtpExpDate.Value = new System.DateTime(2024, 12, 19, 11, 37, 13, 684);
-            // 
-            // dtpMfgDate
-            // 
-            this.dtpMfgDate.BorderRadius = 14;
-            this.dtpMfgDate.BorderThickness = 1;
-            this.dtpMfgDate.Checked = true;
-            this.dtpMfgDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
-            this.dtpMfgDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpMfgDate.ForeColor = System.Drawing.Color.Black;
-            this.dtpMfgDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpMfgDate.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.dtpMfgDate.HoverState.FillColor = System.Drawing.Color.White;
-            this.dtpMfgDate.Location = new System.Drawing.Point(163, 214);
-            this.dtpMfgDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpMfgDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpMfgDate.Name = "dtpMfgDate";
-            this.dtpMfgDate.Size = new System.Drawing.Size(308, 31);
-            this.dtpMfgDate.TabIndex = 7;
-            this.dtpMfgDate.Value = new System.DateTime(2024, 12, 19, 11, 30, 22, 858);
             // 
             // NewCommodity
             // 
