@@ -1,8 +1,4 @@
-using PharmacyManagement.Commodity;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PharmacyManagement
@@ -17,7 +13,7 @@ namespace PharmacyManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NewCommodity());
+            Application.Run(new Main());
         }
     }
 }

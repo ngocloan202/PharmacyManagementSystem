@@ -30,9 +30,7 @@
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtCommodityName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnExpDate = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.btnMfgDate = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.txtBaseUnit = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -53,6 +51,8 @@
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.dtpExpDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpMfgDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -64,10 +64,10 @@
             // 
             this.guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.guna2Panel1.BorderColor = System.Drawing.Color.Black;
+            this.guna2Panel1.Controls.Add(this.dtpMfgDate);
+            this.guna2Panel1.Controls.Add(this.dtpExpDate);
             this.guna2Panel1.Controls.Add(this.txtCommodityName);
-            this.guna2Panel1.Controls.Add(this.btnExpDate);
             this.guna2Panel1.Controls.Add(this.labelControl7);
-            this.guna2Panel1.Controls.Add(this.btnMfgDate);
             this.guna2Panel1.Controls.Add(this.labelControl6);
             this.guna2Panel1.Controls.Add(this.txtBaseUnit);
             this.guna2Panel1.Controls.Add(this.labelControl5);
@@ -103,28 +103,6 @@
             this.txtCommodityName.Size = new System.Drawing.Size(308, 31);
             this.txtCommodityName.TabIndex = 1;
             // 
-            // btnExpDate
-            // 
-            this.btnExpDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnExpDate.BorderColor = System.Drawing.Color.Black;
-            this.btnExpDate.BorderRadius = 14;
-            this.btnExpDate.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.btnExpDate.DefaultText = "";
-            this.btnExpDate.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.btnExpDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.btnExpDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.btnExpDate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.btnExpDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnExpDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExpDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnExpDate.Location = new System.Drawing.Point(163, 269);
-            this.btnExpDate.Name = "btnExpDate";
-            this.btnExpDate.PasswordChar = '\0';
-            this.btnExpDate.PlaceholderText = "";
-            this.btnExpDate.SelectedText = "";
-            this.btnExpDate.Size = new System.Drawing.Size(308, 31);
-            this.btnExpDate.TabIndex = 5;
-            // 
             // labelControl7
             // 
             this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -135,28 +113,6 @@
             this.labelControl7.Size = new System.Drawing.Size(69, 21);
             this.labelControl7.TabIndex = 0;
             this.labelControl7.Text = "EXP. Date";
-            // 
-            // btnMfgDate
-            // 
-            this.btnMfgDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnMfgDate.BorderColor = System.Drawing.Color.Black;
-            this.btnMfgDate.BorderRadius = 14;
-            this.btnMfgDate.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.btnMfgDate.DefaultText = "";
-            this.btnMfgDate.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.btnMfgDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.btnMfgDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.btnMfgDate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.btnMfgDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnMfgDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnMfgDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnMfgDate.Location = new System.Drawing.Point(163, 216);
-            this.btnMfgDate.Name = "btnMfgDate";
-            this.btnMfgDate.PasswordChar = '\0';
-            this.btnMfgDate.PlaceholderText = "";
-            this.btnMfgDate.SelectedText = "";
-            this.btnMfgDate.Size = new System.Drawing.Size(308, 31);
-            this.btnMfgDate.TabIndex = 4;
             // 
             // labelControl6
             // 
@@ -288,11 +244,11 @@
             this.cboCommodityType.BorderColor = System.Drawing.Color.Transparent;
             this.cboCommodityType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cboCommodityType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCommodityType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(238)))), ((int)(((byte)(85)))));
-            this.cboCommodityType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(238)))), ((int)(((byte)(85)))));
+            this.cboCommodityType.FocusedColor = System.Drawing.Color.Black;
+            this.cboCommodityType.FocusedState.BorderColor = System.Drawing.Color.Black;
             this.cboCommodityType.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cboCommodityType.ForeColor = System.Drawing.Color.Black;
-            this.cboCommodityType.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(238)))), ((int)(((byte)(85)))));
+            this.cboCommodityType.HoverState.BorderColor = System.Drawing.Color.Black;
             this.cboCommodityType.ItemHeight = 30;
             this.cboCommodityType.Location = new System.Drawing.Point(15, 52);
             this.cboCommodityType.Name = "cboCommodityType";
@@ -451,6 +407,44 @@
             this.guna2Panel6.Size = new System.Drawing.Size(762, 395);
             this.guna2Panel6.TabIndex = 0;
             // 
+            // dtpExpDate
+            // 
+            this.dtpExpDate.BorderRadius = 14;
+            this.dtpExpDate.BorderThickness = 1;
+            this.dtpExpDate.Checked = true;
+            this.dtpExpDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
+            this.dtpExpDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpExpDate.ForeColor = System.Drawing.Color.Black;
+            this.dtpExpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpExpDate.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.dtpExpDate.HoverState.FillColor = System.Drawing.Color.White;
+            this.dtpExpDate.Location = new System.Drawing.Point(163, 266);
+            this.dtpExpDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpExpDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpExpDate.Name = "dtpExpDate";
+            this.dtpExpDate.Size = new System.Drawing.Size(308, 31);
+            this.dtpExpDate.TabIndex = 6;
+            this.dtpExpDate.Value = new System.DateTime(2024, 12, 19, 11, 37, 13, 684);
+            // 
+            // dtpMfgDate
+            // 
+            this.dtpMfgDate.BorderRadius = 14;
+            this.dtpMfgDate.BorderThickness = 1;
+            this.dtpMfgDate.Checked = true;
+            this.dtpMfgDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
+            this.dtpMfgDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpMfgDate.ForeColor = System.Drawing.Color.Black;
+            this.dtpMfgDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpMfgDate.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.dtpMfgDate.HoverState.FillColor = System.Drawing.Color.White;
+            this.dtpMfgDate.Location = new System.Drawing.Point(163, 214);
+            this.dtpMfgDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpMfgDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpMfgDate.Name = "dtpMfgDate";
+            this.dtpMfgDate.Size = new System.Drawing.Size(308, 31);
+            this.dtpMfgDate.TabIndex = 7;
+            this.dtpMfgDate.Value = new System.DateTime(2024, 12, 19, 11, 30, 22, 858);
+            // 
             // NewCommodity
             // 
             this.Appearance.BackColor = System.Drawing.SystemColors.Window;
@@ -497,9 +491,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private Guna.UI2.WinForms.Guna2TextBox txtManufacturer;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private Guna.UI2.WinForms.Guna2TextBox btnExpDate;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private Guna.UI2.WinForms.Guna2TextBox btnMfgDate;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private Guna.UI2.WinForms.Guna2TextBox txtBaseUnit;
         private DevExpress.XtraEditors.LabelControl labelControl5;
@@ -512,5 +504,7 @@
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Button btnCancel;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpExpDate;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpMfgDate;
     }
 }
