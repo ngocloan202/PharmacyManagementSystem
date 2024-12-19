@@ -147,6 +147,7 @@
             // radFemale
             // 
             this.radFemale.AutoSize = true;
+            this.radFemale.Checked = true;
             this.radFemale.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(85)))), ((int)(((byte)(143)))));
             this.radFemale.CheckedState.BorderThickness = 0;
             this.radFemale.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(85)))), ((int)(((byte)(143)))));
@@ -157,6 +158,7 @@
             this.radFemale.Name = "radFemale";
             this.radFemale.Size = new System.Drawing.Size(77, 24);
             this.radFemale.TabIndex = 4;
+            this.radFemale.TabStop = true;
             this.radFemale.Text = "Female";
             this.radFemale.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.radFemale.UncheckedState.BorderThickness = 2;
