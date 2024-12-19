@@ -92,9 +92,9 @@
             this.txtCommodityName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtCommodityName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtCommodityName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCommodityName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCommodityName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtCommodityName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCommodityName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCommodityName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtCommodityName.Location = new System.Drawing.Point(163, 57);
             this.txtCommodityName.Name = "txtCommodityName";
             this.txtCommodityName.PasswordChar = '\0';
@@ -180,9 +180,9 @@
             this.txtBaseUnit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtBaseUnit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtBaseUnit.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBaseUnit.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBaseUnit.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtBaseUnit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtBaseUnit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBaseUnit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtBaseUnit.Location = new System.Drawing.Point(163, 163);
             this.txtBaseUnit.Name = "txtBaseUnit";
             this.txtBaseUnit.PasswordChar = '\0';
@@ -213,9 +213,9 @@
             this.txtManufacturer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtManufacturer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtManufacturer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtManufacturer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtManufacturer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtManufacturer.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtManufacturer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtManufacturer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtManufacturer.Location = new System.Drawing.Point(163, 110);
             this.txtManufacturer.Name = "txtManufacturer";
             this.txtManufacturer.PasswordChar = '\0';
@@ -288,10 +288,11 @@
             this.cboCommodityType.BorderColor = System.Drawing.Color.Transparent;
             this.cboCommodityType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cboCommodityType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCommodityType.FocusedColor = System.Drawing.Color.Black;
-            this.cboCommodityType.FocusedState.BorderColor = System.Drawing.Color.Black;
+            this.cboCommodityType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(238)))), ((int)(((byte)(85)))));
+            this.cboCommodityType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(238)))), ((int)(((byte)(85)))));
             this.cboCommodityType.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cboCommodityType.ForeColor = System.Drawing.Color.Black;
+            this.cboCommodityType.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(238)))), ((int)(((byte)(85)))));
             this.cboCommodityType.ItemHeight = 30;
             this.cboCommodityType.Location = new System.Drawing.Point(15, 52);
             this.cboCommodityType.Name = "cboCommodityType";
@@ -326,9 +327,9 @@
             this.txtSellingPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtSellingPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSellingPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSellingPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSellingPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
             this.txtSellingPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSellingPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSellingPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
             this.txtSellingPrice.Location = new System.Drawing.Point(15, 124);
             this.txtSellingPrice.Name = "txtSellingPrice";
             this.txtSellingPrice.PasswordChar = '\0';
@@ -360,9 +361,10 @@
             this.txtPurchasePrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtPurchasePrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPurchasePrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPurchasePrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPurchasePrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
             this.txtPurchasePrice.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPurchasePrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPurchasePrice.ForeColor = System.Drawing.Color.Black;
+            this.txtPurchasePrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
             this.txtPurchasePrice.Location = new System.Drawing.Point(15, 49);
             this.txtPurchasePrice.Name = "txtPurchasePrice";
             this.txtPurchasePrice.PasswordChar = '\0';
@@ -378,9 +380,9 @@
             this.labelControl8.Appearance.Options.UseFont = true;
             this.labelControl8.Location = new System.Drawing.Point(15, 21);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(114, 21);
+            this.labelControl8.Size = new System.Drawing.Size(110, 21);
             this.labelControl8.TabIndex = 0;
-            this.labelControl8.Text = "Purchase Price:";
+            this.labelControl8.Text = "Purchase Price";
             // 
             // guna2Panel5
             // 
