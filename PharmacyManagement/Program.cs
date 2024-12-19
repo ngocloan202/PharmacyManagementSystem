@@ -1,4 +1,4 @@
-﻿using PharmacyManagement.Commodity;
+using PharmacyManagement.Commodity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
