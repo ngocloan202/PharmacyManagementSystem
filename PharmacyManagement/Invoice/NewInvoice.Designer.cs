@@ -379,11 +379,11 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
-            this.lblTotal.Location = new System.Drawing.Point(635, 355);
+            this.lblTotal.Location = new System.Drawing.Point(572, 357);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(31, 21);
+            this.lblTotal.Size = new System.Drawing.Size(55, 21);
             this.lblTotal.TabIndex = 1;
-            this.lblTotal.Text = "0Đ";
+            this.lblTotal.Text = "0VND";
             // 
             // labeltotal
             // 
@@ -640,6 +640,7 @@
             this.Controls.Add(this.guna2Panel5);
             this.IconOptions.Image = global::PharmacyManagement.Properties.Resources.Pharmacy_logo_500;
             this.Name = "NewInvoice";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Invoice";
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
