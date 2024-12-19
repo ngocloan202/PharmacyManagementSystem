@@ -39,6 +39,7 @@
             this.btnAbout = new DevExpress.XtraBars.BarButtonItem();
             this.btnNewUser = new DevExpress.XtraBars.BarButtonItem();
             this.btnAllUsers = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.pgHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -48,7 +49,6 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pgInvoice = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,7 +77,7 @@
             this.pgCommodity,
             this.pgHumanManage,
             this.pgInvoice});
-            this.ribbonControl1.Size = new System.Drawing.Size(800, 150);
+            this.ribbonControl1.Size = new System.Drawing.Size(1278, 150);
             // 
             // btnDashboard
             // 
@@ -159,6 +159,12 @@
             this.btnAllUsers.Name = "btnAllUsers";
             this.btnAllUsers.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 12;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
             // pgHome
             // 
             this.pgHome.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -217,17 +223,11 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.btnAllInvoices, true);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 12;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1278, 688);
             this.Controls.Add(this.ribbonControl1);
             this.IconOptions.Image = global::PharmacyManagement.Properties.Resources.Pharmacy_logo_500;
             this.Name = "Main";
