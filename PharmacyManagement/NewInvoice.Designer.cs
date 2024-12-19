@@ -51,6 +51,7 @@
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.labeltotal = new DevExpress.XtraEditors.LabelControl();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
@@ -67,7 +68,6 @@
             this.btnQuantities = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.lblTotal = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -137,7 +137,7 @@
             this.dtpDateCreated.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpDateCreated.Name = "dtpDateCreated";
             this.dtpDateCreated.Size = new System.Drawing.Size(204, 31);
-            this.dtpDateCreated.TabIndex = 10;
+            this.dtpDateCreated.TabIndex = 3;
             this.dtpDateCreated.Value = new System.DateTime(2024, 12, 19, 11, 30, 22, 858);
             // 
             // txtNote
@@ -160,7 +160,7 @@
             this.txtNote.PlaceholderText = "";
             this.txtNote.SelectedText = "";
             this.txtNote.Size = new System.Drawing.Size(189, 72);
-            this.txtNote.TabIndex = 9;
+            this.txtNote.TabIndex = 5;
             // 
             // labelControl6
             // 
@@ -191,7 +191,7 @@
             this.btnCustomerContact.PlaceholderText = "";
             this.btnCustomerContact.SelectedText = "";
             this.btnCustomerContact.Size = new System.Drawing.Size(204, 31);
-            this.btnCustomerContact.TabIndex = 7;
+            this.btnCustomerContact.TabIndex = 4;
             // 
             // labelControl5
             // 
@@ -200,7 +200,7 @@
             this.labelControl5.Location = new System.Drawing.Point(365, 99);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(108, 17);
-            this.labelControl5.TabIndex = 6;
+            this.labelControl5.TabIndex = 0;
             this.labelControl5.Text = "Customer contact";
             // 
             // labelControl4
@@ -210,7 +210,7 @@
             this.labelControl4.Location = new System.Drawing.Point(396, 58);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(77, 17);
-            this.labelControl4.TabIndex = 4;
+            this.labelControl4.TabIndex = 0;
             this.labelControl4.Text = "Date created";
             // 
             // txtCustomerName
@@ -232,7 +232,7 @@
             this.txtCustomerName.PlaceholderText = "";
             this.txtCustomerName.SelectedText = "";
             this.txtCustomerName.Size = new System.Drawing.Size(204, 31);
-            this.txtCustomerName.TabIndex = 3;
+            this.txtCustomerName.TabIndex = 2;
             // 
             // labelControl3
             // 
@@ -241,7 +241,7 @@
             this.labelControl3.Location = new System.Drawing.Point(26, 99);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(59, 17);
-            this.labelControl3.TabIndex = 2;
+            this.labelControl3.TabIndex = 0;
             this.labelControl3.Text = "Customer";
             // 
             // txtEmployeeName
@@ -304,7 +304,7 @@
             this.dgvCart.Name = "dgvCart";
             this.dgvCart.ReadOnly = true;
             this.dgvCart.Size = new System.Drawing.Size(787, 150);
-            this.dgvCart.TabIndex = 1;
+            this.dgvCart.TabIndex = 0;
             // 
             // CommodityName
             // 
@@ -372,16 +372,29 @@
             this.guna2Panel5.Location = new System.Drawing.Point(1, 12);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(1078, 397);
-            this.guna2Panel5.TabIndex = 0;
+            this.guna2Panel5.TabIndex = 1;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
+            this.lblTotal.Location = new System.Drawing.Point(635, 355);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(31, 21);
+            this.lblTotal.TabIndex = 1;
+            this.lblTotal.Text = "0Đ";
             // 
             // labeltotal
             // 
             this.labeltotal.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labeltotal.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
             this.labeltotal.Appearance.Options.UseFont = true;
+            this.labeltotal.Appearance.Options.UseForeColor = true;
             this.labeltotal.Location = new System.Drawing.Point(516, 355);
             this.labeltotal.Name = "labeltotal";
             this.labeltotal.Size = new System.Drawing.Size(50, 25);
-            this.labeltotal.TabIndex = 20;
+            this.labeltotal.TabIndex = 3;
             this.labeltotal.Text = "Total:";
             // 
             // btnAdd
@@ -392,14 +405,14 @@
             this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
+            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(121)))), ((int)(((byte)(24)))));
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Location = new System.Drawing.Point(738, 355);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnAdd.Size = new System.Drawing.Size(66, 24);
-            this.btnAdd.TabIndex = 19;
+            this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
             // 
             // guna2Panel7
@@ -412,7 +425,7 @@
             this.guna2Panel7.Location = new System.Drawing.Point(829, 147);
             this.guna2Panel7.Name = "guna2Panel7";
             this.guna2Panel7.Size = new System.Drawing.Size(223, 25);
-            this.guna2Panel7.TabIndex = 4;
+            this.guna2Panel7.TabIndex = 0;
             // 
             // labelControl9
             // 
@@ -422,7 +435,7 @@
             this.labelControl9.Location = new System.Drawing.Point(62, 4);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(98, 21);
-            this.labelControl9.TabIndex = 4;
+            this.labelControl9.TabIndex = 0;
             this.labelControl9.Text = "Commodities";
             // 
             // labelControl8
@@ -471,7 +484,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(19)))), ((int)(((byte)(10)))));
             this.btnCancel.Size = new System.Drawing.Size(98, 27);
-            this.btnCancel.TabIndex = 18;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             // 
             // btnAddToCard
@@ -490,7 +503,7 @@
             this.btnAddToCard.Name = "btnAddToCard";
             this.btnAddToCard.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnAddToCard.Size = new System.Drawing.Size(98, 27);
-            this.btnAddToCard.TabIndex = 17;
+            this.btnAddToCard.TabIndex = 5;
             this.btnAddToCard.Text = "Add to card";
             // 
             // btnPrice
@@ -511,7 +524,7 @@
             this.btnPrice.PlaceholderText = "";
             this.btnPrice.SelectedText = "";
             this.btnPrice.Size = new System.Drawing.Size(120, 30);
-            this.btnPrice.TabIndex = 16;
+            this.btnPrice.TabIndex = 4;
             // 
             // labelControl13
             // 
@@ -542,7 +555,7 @@
             this.btnBaseUnit.PlaceholderText = "";
             this.btnBaseUnit.SelectedText = "";
             this.btnBaseUnit.Size = new System.Drawing.Size(120, 30);
-            this.btnBaseUnit.TabIndex = 14;
+            this.btnBaseUnit.TabIndex = 3;
             // 
             // labelControl12
             // 
@@ -571,7 +584,7 @@
             this.cboCommodityType.Location = new System.Drawing.Point(14, 73);
             this.cboCommodityType.Name = "cboCommodityType";
             this.cboCommodityType.Size = new System.Drawing.Size(109, 36);
-            this.cboCommodityType.TabIndex = 11;
+            this.cboCommodityType.TabIndex = 1;
             // 
             // btnQuantities
             // 
@@ -591,7 +604,7 @@
             this.btnQuantities.PlaceholderText = "";
             this.btnQuantities.SelectedText = "";
             this.btnQuantities.Size = new System.Drawing.Size(53, 36);
-            this.btnQuantities.TabIndex = 12;
+            this.btnQuantities.TabIndex = 2;
             // 
             // labelControl11
             // 
@@ -601,7 +614,7 @@
             this.labelControl11.Location = new System.Drawing.Point(139, 41);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(62, 17);
-            this.labelControl11.TabIndex = 6;
+            this.labelControl11.TabIndex = 0;
             this.labelControl11.Text = "Quantities";
             // 
             // labelControl10
@@ -612,18 +625,8 @@
             this.labelControl10.Location = new System.Drawing.Point(24, 41);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(80, 17);
-            this.labelControl10.TabIndex = 5;
+            this.labelControl10.TabIndex = 0;
             this.labelControl10.Text = "Commodities";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(635, 355);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(31, 21);
-            this.lblTotal.TabIndex = 22;
-            this.lblTotal.Text = "0Đ";
             // 
             // NewInvoice
             // 
