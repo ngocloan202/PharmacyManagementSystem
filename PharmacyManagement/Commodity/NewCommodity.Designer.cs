@@ -89,7 +89,7 @@
             this.dtpMfgDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
             this.dtpMfgDate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpMfgDate.ForeColor = System.Drawing.Color.Black;
-            this.dtpMfgDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpMfgDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dtpMfgDate.HoverState.BorderColor = System.Drawing.Color.Black;
             this.dtpMfgDate.HoverState.FillColor = System.Drawing.Color.White;
             this.dtpMfgDate.Location = new System.Drawing.Point(163, 217);
@@ -108,7 +108,7 @@
             this.dtpExpDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
             this.dtpExpDate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpExpDate.ForeColor = System.Drawing.Color.Black;
-            this.dtpExpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpExpDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dtpExpDate.HoverState.BorderColor = System.Drawing.Color.Black;
             this.dtpExpDate.HoverState.FillColor = System.Drawing.Color.White;
             this.dtpExpDate.Location = new System.Drawing.Point(163, 271);
