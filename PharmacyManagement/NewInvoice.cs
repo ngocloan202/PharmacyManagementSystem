@@ -17,5 +17,10 @@ namespace PharmacyManagement
         {
             InitializeComponent();
         }
+
+        private void guna2TextBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
