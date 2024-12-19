@@ -50,6 +50,7 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
             this.guna2Panel1.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel1.BorderThickness = 1;
+            this.guna2Panel1.Controls.Add(this.guna2Panel2);
             this.guna2Panel1.Controls.Add(this.dtpMfgDate);
             this.guna2Panel1.Controls.Add(this.guna2TextBox5);
             this.guna2Panel1.Controls.Add(this.labelControl6);
@@ -60,7 +61,7 @@
             this.guna2Panel1.Controls.Add(this.labelControl3);
             this.guna2Panel1.Controls.Add(this.guna2TextBox1);
             this.guna2Panel1.Controls.Add(this.labelControl2);
-            this.guna2Panel1.Location = new System.Drawing.Point(24, 12);
+            this.guna2Panel1.Location = new System.Drawing.Point(21, 12);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1027, 141);
             this.guna2Panel1.TabIndex = 0;
@@ -71,7 +72,7 @@
             this.guna2Panel2.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel2.BorderThickness = 1;
             this.guna2Panel2.Controls.Add(this.labelControl1);
-            this.guna2Panel2.Location = new System.Drawing.Point(24, 12);
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(1027, 36);
             this.guna2Panel2.TabIndex = 1;
@@ -91,7 +92,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(20, 51);
+            this.labelControl2.Location = new System.Drawing.Point(20, 58);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(65, 17);
             this.labelControl2.TabIndex = 0;
@@ -110,7 +111,7 @@
             this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(105, 44);
+            this.guna2TextBox1.Location = new System.Drawing.Point(105, 51);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
             this.guna2TextBox1.PlaceholderText = "";
@@ -153,7 +154,7 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(396, 51);
+            this.labelControl4.Location = new System.Drawing.Point(396, 58);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(77, 17);
             this.labelControl4.TabIndex = 4;
@@ -172,7 +173,7 @@
             this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox4.Location = new System.Drawing.Point(489, 92);
+            this.guna2TextBox4.Location = new System.Drawing.Point(495, 92);
             this.guna2TextBox4.Name = "guna2TextBox4";
             this.guna2TextBox4.PasswordChar = '\0';
             this.guna2TextBox4.PlaceholderText = "";
@@ -233,7 +234,7 @@
             this.dtpMfgDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpMfgDate.HoverState.BorderColor = System.Drawing.Color.Black;
             this.dtpMfgDate.HoverState.FillColor = System.Drawing.Color.White;
-            this.dtpMfgDate.Location = new System.Drawing.Point(489, 44);
+            this.dtpMfgDate.Location = new System.Drawing.Point(495, 51);
             this.dtpMfgDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpMfgDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpMfgDate.Name = "dtpMfgDate";
@@ -246,7 +247,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1078, 408);
-            this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.IconOptions.Image = global::PharmacyManagement.Properties.Resources.Pharmacy_logo_500;
             this.Name = "NewInvoice";
