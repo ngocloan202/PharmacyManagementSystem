@@ -74,10 +74,10 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewInvoice.cs">
+    <Compile Include="Invoice\NewInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewInvoice.Designer.cs">
+    <Compile Include="Invoice\NewInvoice.Designer.cs">
       <DependentUpon>NewInvoice.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -106,7 +106,7 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewInvoice.resx">
+    <EmbeddedResource Include="Invoice\NewInvoice.resx">
       <DependentUpon>NewInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
