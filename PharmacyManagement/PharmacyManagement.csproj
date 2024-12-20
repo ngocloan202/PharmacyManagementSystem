@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commodity\AllCommodities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Commodity\AllCommodities.Designer.cs">
+      <DependentUpon>AllCommodities.cs</DependentUpon>
+    </Compile>
     <Compile Include="Commodity\NewCommodity.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     <Compile Include="View\SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Commodity\AllCommodities.resx">
+      <DependentUpon>AllCommodities.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Commodity\NewCommodity.resx">
       <DependentUpon>NewCommodity.cs</DependentUpon>
     </EmbeddedResource>
