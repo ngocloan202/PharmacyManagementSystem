@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using PharmacyManagement.View;
 
 namespace PharmacyManagement
 {
@@ -15,6 +16,9 @@ namespace PharmacyManagement
     {
         public Main()
         {
+            Flash flash = new Flash();
+            flash.ShowDialog();
+
             InitializeComponent();
         }
     }

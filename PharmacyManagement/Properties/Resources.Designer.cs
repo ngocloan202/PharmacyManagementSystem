@@ -133,6 +133,16 @@ namespace PharmacyManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo_background_flash {
+            get {
+                object obj = ResourceManager.GetObject("logo-background-flash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logout_32 {
             get {
                 object obj = ResourceManager.GetObject("logout-32", resourceCulture);
