@@ -1,6 +1,6 @@
-﻿namespace PharmacyManagement.HumanManage
+﻿namespace PharmacyManagement.Commodity
 {
-    partial class AllUsers
+    partial class AllCommodities
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllUsers));
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.bindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllCommodities));
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -41,45 +41,45 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnFind = new System.Windows.Forms.ToolStripButton();
-            this.txtFind = new System.Windows.Forms.ToolStripTextBox();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.dgvAllCommodities = new System.Windows.Forms.DataGridView();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.btnReload = new Guna.UI2.WinForms.Guna2Button();
-            this.dgvAllUsers = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Birthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
-            this.bindingNavigator.SuspendLayout();
+            this.CommodityID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CommodityName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Manufacturer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BaseUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PurchasePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SellingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExpDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
+            this.bindingNavigator1.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllCommodities)).BeginInit();
             this.guna2Panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAllUsers)).BeginInit();
             this.SuspendLayout();
             // 
-            // guna2Panel2
+            // guna2Panel1
             // 
-            this.guna2Panel2.Controls.Add(this.bindingNavigator);
-            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(763, 28);
-            this.guna2Panel2.TabIndex = 1;
+            this.guna2Panel1.Controls.Add(this.bindingNavigator1);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(763, 32);
+            this.guna2Panel1.TabIndex = 0;
             // 
-            // bindingNavigator
+            // bindingNavigator1
             // 
-            this.bindingNavigator.AddNewItem = null;
-            this.bindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.bindingNavigator.DeleteItem = null;
-            this.bindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigator1.AddNewItem = null;
+            this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
+            this.bindingNavigator1.DeleteItem = null;
+            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -89,18 +89,18 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.btnFind,
-            this.txtFind});
-            this.bindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.bindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.bindingNavigator.Name = "bindingNavigator";
-            this.bindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator.Size = new System.Drawing.Size(763, 25);
-            this.bindingNavigator.TabIndex = 0;
-            this.bindingNavigator.Text = "bindingNavigator";
+            this.toolStripButton1,
+            this.toolStripTextBox1});
+            this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
+            this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bindingNavigator1.Name = "bindingNavigator1";
+            this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
+            this.bindingNavigator1.Size = new System.Drawing.Size(763, 25);
+            this.bindingNavigator1.TabIndex = 0;
+            this.bindingNavigator1.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
@@ -169,31 +169,56 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // btnFind
+            // toolStripButton1
             // 
-            this.btnFind.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnFind.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnFind.Image = global::PharmacyManagement.Properties.Resources.find_24px;
-            this.btnFind.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(23, 22);
-            this.btnFind.Text = "toolStripButton1";
+            this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::PharmacyManagement.Properties.Resources.find_24px;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
             // 
-            // txtFind
+            // toolStripTextBox1
             // 
-            this.txtFind.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.txtFind.Name = "txtFind";
-            this.txtFind.Size = new System.Drawing.Size(120, 25);
+            this.toolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(120, 25);
             // 
-            // guna2Panel1
+            // guna2Panel2
             // 
-            this.guna2Panel1.Controls.Add(this.guna2Panel3);
-            this.guna2Panel1.Controls.Add(this.dgvAllUsers);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 28);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(763, 370);
-            this.guna2Panel1.TabIndex = 2;
+            this.guna2Panel2.Controls.Add(this.dgvAllCommodities);
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 32);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(763, 366);
+            this.guna2Panel2.TabIndex = 1;
+            // 
+            // dgvAllCommodities
+            // 
+            this.dgvAllCommodities.AllowUserToAddRows = false;
+            this.dgvAllCommodities.AllowUserToDeleteRows = false;
+            this.dgvAllCommodities.AllowUserToOrderColumns = true;
+            this.dgvAllCommodities.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAllCommodities.BackgroundColor = System.Drawing.Color.White;
+            this.dgvAllCommodities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAllCommodities.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CommodityID,
+            this.CommodityName,
+            this.Manufacturer,
+            this.Quantity,
+            this.BaseUnit,
+            this.PurchasePrice,
+            this.SellingPrice,
+            this.ExpDate});
+            this.dgvAllCommodities.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAllCommodities.Location = new System.Drawing.Point(0, 0);
+            this.dgvAllCommodities.MultiSelect = false;
+            this.dgvAllCommodities.Name = "dgvAllCommodities";
+            this.dgvAllCommodities.ReadOnly = true;
+            this.dgvAllCommodities.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAllCommodities.Size = new System.Drawing.Size(763, 366);
+            this.dgvAllCommodities.TabIndex = 0;
             // 
             // guna2Panel3
             // 
@@ -201,10 +226,10 @@
             this.guna2Panel3.Controls.Add(this.btnEdit);
             this.guna2Panel3.Controls.Add(this.btnReload);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel3.Location = new System.Drawing.Point(0, 311);
+            this.guna2Panel3.Location = new System.Drawing.Point(0, 342);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(763, 59);
-            this.guna2Panel3.TabIndex = 1;
+            this.guna2Panel3.Size = new System.Drawing.Size(763, 56);
+            this.guna2Panel3.TabIndex = 2;
             // 
             // btnDelete
             // 
@@ -217,11 +242,11 @@
             this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(660, 14);
+            this.btnDelete.Location = new System.Drawing.Point(661, 13);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(19)))), ((int)(((byte)(10)))));
             this.btnDelete.Size = new System.Drawing.Size(85, 30);
-            this.btnDelete.TabIndex = 14;
+            this.btnDelete.TabIndex = 17;
             this.btnDelete.Text = "Delete";
             // 
             // btnEdit
@@ -235,11 +260,11 @@
             this.btnEdit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(22)))), ((int)(((byte)(80)))));
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(569, 14);
+            this.btnEdit.Location = new System.Drawing.Point(570, 13);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnEdit.Size = new System.Drawing.Size(85, 30);
-            this.btnEdit.TabIndex = 13;
+            this.btnEdit.TabIndex = 15;
             this.btnEdit.Text = "Edit";
             // 
             // btnReload
@@ -253,133 +278,103 @@
             this.btnReload.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
             this.btnReload.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReload.ForeColor = System.Drawing.Color.White;
-            this.btnReload.Location = new System.Drawing.Point(478, 14);
+            this.btnReload.Location = new System.Drawing.Point(479, 13);
             this.btnReload.Name = "btnReload";
             this.btnReload.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnReload.Size = new System.Drawing.Size(85, 30);
-            this.btnReload.TabIndex = 13;
+            this.btnReload.TabIndex = 16;
             this.btnReload.Text = "Reload";
             // 
-            // dgvAllUsers
+            // CommodityID
             // 
-            this.dgvAllUsers.AllowUserToAddRows = false;
-            this.dgvAllUsers.AllowUserToDeleteRows = false;
-            this.dgvAllUsers.AllowUserToOrderColumns = true;
-            this.dgvAllUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAllUsers.BackgroundColor = System.Drawing.Color.White;
-            this.dgvAllUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAllUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Username,
-            this.FullName,
-            this.Role,
-            this.Sex,
-            this.Contact,
-            this.Birthday,
-            this.Address});
-            this.dgvAllUsers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvAllUsers.Location = new System.Drawing.Point(0, 0);
-            this.dgvAllUsers.MultiSelect = false;
-            this.dgvAllUsers.Name = "dgvAllUsers";
-            this.dgvAllUsers.ReadOnly = true;
-            this.dgvAllUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAllUsers.Size = new System.Drawing.Size(763, 370);
-            this.dgvAllUsers.TabIndex = 0;
+            this.CommodityID.DataPropertyName = "CommodityID";
+            this.CommodityID.HeaderText = "ID";
+            this.CommodityID.Name = "CommodityID";
+            this.CommodityID.ReadOnly = true;
             // 
-            // ID
+            // CommodityName
             // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
+            this.CommodityName.DataPropertyName = "CommodityName";
+            this.CommodityName.HeaderText = "Name";
+            this.CommodityName.Name = "CommodityName";
+            this.CommodityName.ReadOnly = true;
             // 
-            // Username
+            // Manufacturer
             // 
-            this.Username.DataPropertyName = "Username";
-            this.Username.HeaderText = "Username";
-            this.Username.Name = "Username";
-            this.Username.ReadOnly = true;
+            this.Manufacturer.DataPropertyName = "Manufacturer";
+            this.Manufacturer.HeaderText = "Manufacturer";
+            this.Manufacturer.Name = "Manufacturer";
+            this.Manufacturer.ReadOnly = true;
             // 
-            // FullName
+            // Quantity
             // 
-            this.FullName.DataPropertyName = "FullName";
-            this.FullName.HeaderText = "Full Name";
-            this.FullName.Name = "FullName";
-            this.FullName.ReadOnly = true;
+            this.Quantity.DataPropertyName = "Quantity";
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
             // 
-            // Role
+            // BaseUnit
             // 
-            this.Role.DataPropertyName = "Role";
-            this.Role.HeaderText = "Role";
-            this.Role.Name = "Role";
-            this.Role.ReadOnly = true;
+            this.BaseUnit.DataPropertyName = "BaseUnit";
+            this.BaseUnit.HeaderText = "Base Unit";
+            this.BaseUnit.Name = "BaseUnit";
+            this.BaseUnit.ReadOnly = true;
             // 
-            // Sex
+            // PurchasePrice
             // 
-            this.Sex.DataPropertyName = "Sex";
-            this.Sex.HeaderText = "Sex";
-            this.Sex.Name = "Sex";
-            this.Sex.ReadOnly = true;
+            this.PurchasePrice.DataPropertyName = "PurchasePrice";
+            this.PurchasePrice.HeaderText = "Purchase Price";
+            this.PurchasePrice.Name = "PurchasePrice";
+            this.PurchasePrice.ReadOnly = true;
             // 
-            // Contact
+            // SellingPrice
             // 
-            this.Contact.DataPropertyName = "Contact";
-            this.Contact.HeaderText = "Contact";
-            this.Contact.Name = "Contact";
-            this.Contact.ReadOnly = true;
+            this.SellingPrice.DataPropertyName = "SellingPrice";
+            this.SellingPrice.HeaderText = "Selling Price";
+            this.SellingPrice.Name = "SellingPrice";
+            this.SellingPrice.ReadOnly = true;
             // 
-            // Birthday
+            // ExpDate
             // 
-            this.Birthday.DataPropertyName = "Birthday";
-            this.Birthday.HeaderText = "Birthday";
-            this.Birthday.Name = "Birthday";
-            this.Birthday.ReadOnly = true;
+            this.ExpDate.DataPropertyName = "ExpDate";
+            this.ExpDate.HeaderText = "Exp Date";
+            this.ExpDate.Name = "ExpDate";
+            this.ExpDate.ReadOnly = true;
             // 
-            // Address
-            // 
-            this.Address.DataPropertyName = "Address";
-            this.Address.HeaderText = "Address";
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            // 
-            // AllUsers
+            // AllCommodities
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(763, 398);
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
+            this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.Image = global::PharmacyManagement.Properties.Resources.Pharmacy_logo_500;
-            this.Name = "AllUsers";
+            this.Name = "AllCommodities";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "All Users";
-            this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).EndInit();
-            this.bindingNavigator.ResumeLayout(false);
-            this.bindingNavigator.PerformLayout();
+            this.Text = "All Commodities";
             this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
+            this.bindingNavigator1.ResumeLayout(false);
+            this.bindingNavigator1.PerformLayout();
+            this.guna2Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllCommodities)).EndInit();
             this.guna2Panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAllUsers)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.DataGridView dgvAllUsers;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Role;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sex;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Contact;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Birthday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private System.Windows.Forms.BindingNavigator bindingNavigator;
+        private Guna.UI2.WinForms.Guna2Button btnDelete;
+        private Guna.UI2.WinForms.Guna2Button btnEdit;
+        private Guna.UI2.WinForms.Guna2Button btnReload;
+        private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
@@ -389,10 +384,16 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private Guna.UI2.WinForms.Guna2Button btnEdit;
-        private Guna.UI2.WinForms.Guna2Button btnReload;
-        private Guna.UI2.WinForms.Guna2Button btnDelete;
-        private System.Windows.Forms.ToolStripButton btnFind;
-        private System.Windows.Forms.ToolStripTextBox txtFind;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.DataGridView dgvAllCommodities;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CommodityID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CommodityName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Manufacturer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BaseUnit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PurchasePrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SellingPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ExpDate;
     }
 }
