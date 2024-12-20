@@ -80,6 +80,12 @@
     <Compile Include="HumanManage\NewUser.Designer.cs">
       <DependentUpon>NewUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Invoice\AllInvoices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoice\AllInvoices.Designer.cs">
+      <DependentUpon>AllInvoices.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HumanManage\NewUser.resx">
       <DependentUpon>NewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoice\AllInvoices.resx">
+      <DependentUpon>AllInvoices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
