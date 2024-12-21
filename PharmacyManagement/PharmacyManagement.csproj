@@ -233,5 +233,8 @@
   <ItemGroup>
     <None Include="Resources\logo-background-flash.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="DB-query\PharmacyMgtSys.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
