@@ -49,14 +49,14 @@
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.btnReload = new Guna.UI2.WinForms.Guna2Button();
             this.dgvAllUsers = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AccountID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Birthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
             this.bindingNavigator.SuspendLayout();
@@ -269,14 +269,14 @@
             this.dgvAllUsers.BackgroundColor = System.Drawing.Color.White;
             this.dgvAllUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAllUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
+            this.AccountID,
             this.Username,
-            this.FullName,
-            this.Role,
+            this.EmployeeName,
+            this.UserRole,
             this.Sex,
             this.Contact,
             this.Birthday,
-            this.Address});
+            this.EmployeeAddress});
             this.dgvAllUsers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAllUsers.Location = new System.Drawing.Point(0, 0);
             this.dgvAllUsers.MultiSelect = false;
@@ -286,12 +286,12 @@
             this.dgvAllUsers.Size = new System.Drawing.Size(763, 370);
             this.dgvAllUsers.TabIndex = 0;
             // 
-            // ID
+            // AccountID
             // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
+            this.AccountID.DataPropertyName = "AccountID";
+            this.AccountID.HeaderText = "ID";
+            this.AccountID.Name = "AccountID";
+            this.AccountID.ReadOnly = true;
             // 
             // Username
             // 
@@ -300,19 +300,19 @@
             this.Username.Name = "Username";
             this.Username.ReadOnly = true;
             // 
-            // FullName
+            // EmployeeName
             // 
-            this.FullName.DataPropertyName = "FullName";
-            this.FullName.HeaderText = "Full Name";
-            this.FullName.Name = "FullName";
-            this.FullName.ReadOnly = true;
+            this.EmployeeName.DataPropertyName = "EmployeeName";
+            this.EmployeeName.HeaderText = "Full Name";
+            this.EmployeeName.Name = "EmployeeName";
+            this.EmployeeName.ReadOnly = true;
             // 
-            // Role
+            // UserRole
             // 
-            this.Role.DataPropertyName = "Role";
-            this.Role.HeaderText = "Role";
-            this.Role.Name = "Role";
-            this.Role.ReadOnly = true;
+            this.UserRole.DataPropertyName = "UserRole";
+            this.UserRole.HeaderText = "Role";
+            this.UserRole.Name = "UserRole";
+            this.UserRole.ReadOnly = true;
             // 
             // Sex
             // 
@@ -335,12 +335,12 @@
             this.Birthday.Name = "Birthday";
             this.Birthday.ReadOnly = true;
             // 
-            // Address
+            // EmployeeAddress
             // 
-            this.Address.DataPropertyName = "Address";
-            this.Address.HeaderText = "Address";
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
+            this.EmployeeAddress.DataPropertyName = "EmployeeAddress";
+            this.EmployeeAddress.HeaderText = "Address";
+            this.EmployeeAddress.Name = "EmployeeAddress";
+            this.EmployeeAddress.ReadOnly = true;
             // 
             // AllUsers
             // 
@@ -354,6 +354,7 @@
             this.Name = "AllUsers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "All Users";
+            this.Load += new System.EventHandler(this.AllUsers_Load);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).EndInit();
@@ -370,14 +371,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.DataGridView dgvAllUsers;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Role;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sex;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Contact;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Birthday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private System.Windows.Forms.BindingNavigator bindingNavigator;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -394,5 +387,13 @@
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private System.Windows.Forms.ToolStripButton btnFind;
         private System.Windows.Forms.ToolStripTextBox txtFind;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AccountID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserRole;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sex;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contact;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Birthday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeAddress;
     }
 }
