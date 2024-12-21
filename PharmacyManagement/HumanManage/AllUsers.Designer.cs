@@ -76,7 +76,7 @@
             this.txtRole = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.txtAddress = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtBirthday = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dtpBirthday = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
             this.bindingNavigator.SuspendLayout();
@@ -368,12 +368,12 @@
             // 
             // guna2Panel4
             // 
+            this.guna2Panel4.Controls.Add(this.dtpBirthday);
             this.guna2Panel4.Controls.Add(this.radMale);
             this.guna2Panel4.Controls.Add(this.radFemale);
             this.guna2Panel4.Controls.Add(this.txtContact);
             this.guna2Panel4.Controls.Add(this.txtFullName);
             this.guna2Panel4.Controls.Add(this.txtUsername);
-            this.guna2Panel4.Controls.Add(this.txtBirthday);
             this.guna2Panel4.Controls.Add(this.txtAddress);
             this.guna2Panel4.Controls.Add(this.txtRole);
             this.guna2Panel4.Controls.Add(this.txtIdUser);
@@ -387,6 +387,7 @@
             this.guna2Panel4.Controls.Add(this.labelControl4);
             this.guna2Panel4.Controls.Add(this.guna2Panel5);
             this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.guna2Panel4.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(848, 225);
@@ -416,6 +417,7 @@
             // radMale
             // 
             this.radMale.AutoSize = true;
+            this.radMale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.radMale.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(85)))), ((int)(((byte)(143)))));
             this.radMale.CheckedState.BorderThickness = 0;
             this.radMale.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(85)))), ((int)(((byte)(143)))));
@@ -431,10 +433,13 @@
             this.radMale.UncheckedState.BorderThickness = 2;
             this.radMale.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.radMale.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.radMale.UseVisualStyleBackColor = false;
             // 
             // radFemale
             // 
             this.radFemale.AutoSize = true;
+            this.radFemale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.radFemale.Checked = true;
             this.radFemale.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(85)))), ((int)(((byte)(143)))));
             this.radFemale.CheckedState.BorderThickness = 0;
             this.radFemale.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(85)))), ((int)(((byte)(143)))));
@@ -445,14 +450,17 @@
             this.radFemale.Name = "radFemale";
             this.radFemale.Size = new System.Drawing.Size(77, 24);
             this.radFemale.TabIndex = 17;
+            this.radFemale.TabStop = true;
             this.radFemale.Text = "Female";
             this.radFemale.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.radFemale.UncheckedState.BorderThickness = 2;
             this.radFemale.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.radFemale.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.radFemale.UseVisualStyleBackColor = false;
             // 
             // txtContact
             // 
+            this.txtContact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.txtContact.BorderColor = System.Drawing.Color.Black;
             this.txtContact.BorderRadius = 12;
             this.txtContact.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -474,6 +482,7 @@
             // 
             // txtFullName
             // 
+            this.txtFullName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.txtFullName.BorderColor = System.Drawing.Color.Black;
             this.txtFullName.BorderRadius = 12;
             this.txtFullName.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -495,6 +504,7 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.txtUsername.BorderColor = System.Drawing.Color.Black;
             this.txtUsername.BorderRadius = 12;
             this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -516,6 +526,7 @@
             // 
             // txtIdUser
             // 
+            this.txtIdUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.txtIdUser.BorderColor = System.Drawing.Color.Black;
             this.txtIdUser.BorderRadius = 12;
             this.txtIdUser.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -531,6 +542,7 @@
             this.txtIdUser.Name = "txtIdUser";
             this.txtIdUser.PasswordChar = '\0';
             this.txtIdUser.PlaceholderText = "";
+            this.txtIdUser.ReadOnly = true;
             this.txtIdUser.SelectedText = "";
             this.txtIdUser.Size = new System.Drawing.Size(178, 28);
             this.txtIdUser.TabIndex = 14;
@@ -607,6 +619,7 @@
             // 
             // txtRole
             // 
+            this.txtRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.txtRole.BorderColor = System.Drawing.Color.Black;
             this.txtRole.BorderRadius = 12;
             this.txtRole.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -638,6 +651,7 @@
             // 
             // txtAddress
             // 
+            this.txtAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.txtAddress.BorderColor = System.Drawing.Color.Black;
             this.txtAddress.BorderRadius = 12;
             this.txtAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -657,26 +671,24 @@
             this.txtAddress.Size = new System.Drawing.Size(212, 28);
             this.txtAddress.TabIndex = 14;
             // 
-            // txtBirthday
+            // dtpBirthday
             // 
-            this.txtBirthday.BorderColor = System.Drawing.Color.Black;
-            this.txtBirthday.BorderRadius = 12;
-            this.txtBirthday.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBirthday.DefaultText = "";
-            this.txtBirthday.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtBirthday.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtBirthday.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBirthday.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBirthday.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(85)))), ((int)(((byte)(143)))));
-            this.txtBirthday.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtBirthday.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(85)))), ((int)(((byte)(143)))));
-            this.txtBirthday.Location = new System.Drawing.Point(541, 135);
-            this.txtBirthday.Name = "txtBirthday";
-            this.txtBirthday.PasswordChar = '\0';
-            this.txtBirthday.PlaceholderText = "";
-            this.txtBirthday.SelectedText = "";
-            this.txtBirthday.Size = new System.Drawing.Size(212, 28);
-            this.txtBirthday.TabIndex = 14;
+            this.dtpBirthday.BackColor = System.Drawing.Color.Transparent;
+            this.dtpBirthday.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(85)))), ((int)(((byte)(143)))));
+            this.dtpBirthday.BorderRadius = 13;
+            this.dtpBirthday.BorderThickness = 1;
+            this.dtpBirthday.Checked = true;
+            this.dtpBirthday.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
+            this.dtpBirthday.FocusedColor = System.Drawing.Color.Transparent;
+            this.dtpBirthday.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpBirthday.Location = new System.Drawing.Point(541, 131);
+            this.dtpBirthday.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpBirthday.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpBirthday.Name = "dtpBirthday";
+            this.dtpBirthday.Size = new System.Drawing.Size(212, 36);
+            this.dtpBirthday.TabIndex = 20;
+            this.dtpBirthday.Value = new System.DateTime(2024, 12, 19, 10, 4, 31, 434);
             // 
             // AllUsers
             // 
@@ -750,10 +762,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private Guna.UI2.WinForms.Guna2TextBox txtBirthday;
         private Guna.UI2.WinForms.Guna2TextBox txtAddress;
         private Guna.UI2.WinForms.Guna2TextBox txtRole;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl8;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpBirthday;
     }
 }
