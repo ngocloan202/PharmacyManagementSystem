@@ -46,21 +46,20 @@
             this.lblSignUp.Appearance.Options.UseFont = true;
             this.lblSignUp.Appearance.Options.UseForeColor = true;
             this.lblSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSignUp.Location = new System.Drawing.Point(760, 470);
-            this.lblSignUp.Margin = new System.Windows.Forms.Padding(4);
+            this.lblSignUp.Location = new System.Drawing.Point(651, 382);
             this.lblSignUp.Name = "lblSignUp";
-            this.lblSignUp.Size = new System.Drawing.Size(70, 28);
+            this.lblSignUp.Size = new System.Drawing.Size(55, 21);
             this.lblSignUp.TabIndex = 26;
             this.lblSignUp.Text = "Sign Up";
+            this.lblSignUp.Click += new System.EventHandler(this.lblSignUp_Click);
             // 
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(565, 470);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl4.Location = new System.Drawing.Point(484, 382);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(204, 28);
+            this.labelControl4.Size = new System.Drawing.Size(161, 21);
             this.labelControl4.TabIndex = 25;
             this.labelControl4.Text = "Don’t have an account?";
             // 
@@ -75,13 +74,13 @@
             this.btnSignIn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(77)))), ((int)(((byte)(43)))));
             this.btnSignIn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignIn.ForeColor = System.Drawing.Color.White;
-            this.btnSignIn.Location = new System.Drawing.Point(544, 398);
-            this.btnSignIn.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSignIn.Location = new System.Drawing.Point(466, 323);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(77)))), ((int)(((byte)(80)))));
-            this.btnSignIn.Size = new System.Drawing.Size(321, 53);
+            this.btnSignIn.Size = new System.Drawing.Size(275, 43);
             this.btnSignIn.TabIndex = 24;
             this.btnSignIn.Text = "Sign In";
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // txtPassword
             // 
@@ -97,23 +96,22 @@
             this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(107)))), ((int)(((byte)(167)))));
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(107)))), ((int)(((byte)(167)))));
-            this.txtPassword.Location = new System.Drawing.Point(544, 293);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPassword.Location = new System.Drawing.Point(466, 238);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '•';
             this.txtPassword.PlaceholderText = "Password";
             this.txtPassword.SelectedText = "";
-            this.txtPassword.Size = new System.Drawing.Size(321, 52);
+            this.txtPassword.Size = new System.Drawing.Size(275, 42);
             this.txtPassword.TabIndex = 21;
             // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(544, 258);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl2.Location = new System.Drawing.Point(466, 210);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(86, 28);
+            this.labelControl2.Size = new System.Drawing.Size(69, 21);
             this.labelControl2.TabIndex = 20;
             this.labelControl2.Text = "Password";
             // 
@@ -131,46 +129,44 @@
             this.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(107)))), ((int)(((byte)(167)))));
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(107)))), ((int)(((byte)(167)))));
-            this.txtUsername.Location = new System.Drawing.Point(544, 190);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtUsername.Location = new System.Drawing.Point(466, 154);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderText = "Username";
             this.txtUsername.SelectedText = "";
-            this.txtUsername.Size = new System.Drawing.Size(321, 52);
+            this.txtUsername.Size = new System.Drawing.Size(275, 42);
             this.txtUsername.TabIndex = 19;
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(544, 154);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl1.Location = new System.Drawing.Point(466, 125);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(92, 28);
+            this.labelControl1.Size = new System.Drawing.Size(73, 21);
             this.labelControl1.TabIndex = 18;
             this.labelControl1.Text = "Username";
             // 
             // checkEdit1
             // 
-            this.checkEdit1.Location = new System.Drawing.Point(623, 364);
-            this.checkEdit1.Margin = new System.Windows.Forms.Padding(4);
+            this.checkEdit1.Location = new System.Drawing.Point(534, 296);
             this.checkEdit1.Name = "checkEdit1";
             this.checkEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(179)))), ((int)(((byte)(179)))));
             this.checkEdit1.Properties.Appearance.Options.UseFont = true;
             this.checkEdit1.Properties.Appearance.Options.UseForeColor = true;
             this.checkEdit1.Properties.Caption = "Show password";
-            this.checkEdit1.Size = new System.Drawing.Size(152, 25);
+            this.checkEdit1.Size = new System.Drawing.Size(130, 21);
             this.checkEdit1.TabIndex = 27;
             // 
             // SignIn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Zoom;
             this.BackgroundImageStore = global::PharmacyManagement.Properties.Resources.SignIn_Frame;
-            this.ClientSize = new System.Drawing.Size(954, 619);
+            this.ClientSize = new System.Drawing.Size(818, 503);
             this.Controls.Add(this.checkEdit1);
             this.Controls.Add(this.lblSignUp);
             this.Controls.Add(this.labelControl4);
