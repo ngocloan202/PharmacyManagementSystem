@@ -19,8 +19,8 @@ namespace PharmacyManagement
         #endregion
         public Main()
         {
-            //Flash flash = new Flash();
-            //flash.ShowDialog();
+            Flash flash = new Flash();
+            flash.ShowDialog();
 
             SignIn();
             InitializeComponent(); 

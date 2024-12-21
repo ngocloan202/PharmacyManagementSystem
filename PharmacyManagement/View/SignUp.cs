@@ -48,7 +48,7 @@ namespace PharmacyManagement
             }
             else if (txtConfirmPass.Text.Trim() == "")
             {
-                toolTip.Show("Please fill your password", txtConfirmPass,
+                toolTip.Show("Please fill your confirm password", txtConfirmPass,
                     txtConfirmPass.Width - 15, txtConfirmPass.Height - 80, 2000);
                 txtConfirmPass.Focus();
             }
