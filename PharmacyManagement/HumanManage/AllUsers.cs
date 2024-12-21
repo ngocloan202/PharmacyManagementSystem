@@ -104,7 +104,7 @@ namespace PharmacyManagement.HumanManage
                 string deleteAccountQuery = @"DELETE FROM ACCOUNT WHERE AccountID = @AccountID";
                 SqlCommand deleteAccountCmd = new SqlCommand(deleteAccountQuery, con);
                 deleteAccountCmd.Parameters.Add("@AccountID", SqlDbType.VarChar, 50).Value = txtIdUser.Text;
-                deleteAccountCmd.ExecuteNonQuery();
+                dataTable.Update(deleteAccountCmd);
 
                 AllUsers_Load(sender, e);
             }
