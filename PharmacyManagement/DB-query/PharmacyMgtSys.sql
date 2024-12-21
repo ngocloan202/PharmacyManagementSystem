@@ -175,7 +175,6 @@ VALUES
 (N'Thiết bị y tế')
 
 -- Insert data to commodity
-
 INSERT INTO COMMODITY values
 ('MD001', N'Augclamox 250', N'Công ty cổ phần dược phẩm Hà Tây', 50, N'Hộp 10 gói x 1,5g', 45000, 48000, '2023-07-15', '2025-07-15', 1),
 ('MD002', N'Casoran', N'Công ty cổ phần công nghệ cao Traphaco', 30, N'Hộp 10 gói x 1,5g', 50000, 55000, '2023-06-10', '2025-06-10', 1),
