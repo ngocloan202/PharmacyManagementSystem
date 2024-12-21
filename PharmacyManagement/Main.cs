@@ -14,12 +14,22 @@ namespace PharmacyManagement
 {
     public partial class Main : XtraForm
     {
+        #region Global variable
+        SignIn signIn = new SignIn();
+        #endregion
         public Main()
         {
             Flash flash = new Flash();
             flash.ShowDialog();
 
-            InitializeComponent();
+            SignIn();
+            InitializeComponent(); 
+        }
+
+        public void SignIn()
+        {
+            if (!signIn.IsDisposed) 
+                signIn.ShowDialog();
         }
     }
 }
