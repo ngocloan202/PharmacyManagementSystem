@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraLayout.Customization;
@@ -10,6 +12,7 @@ namespace PharmacyManagement.HumanManage
     public partial class AllUsers : XtraForm
     {
         PharmacyMgtDatabase dataTable = new PharmacyMgtDatabase();
+        SqlConnection con = new SqlConnection();
         public AllUsers()
         {
             dataTable.OpenConnection();
@@ -17,7 +20,7 @@ namespace PharmacyManagement.HumanManage
             txtIdUser.Enabled = false;
         }
 
-        public void getData()
+        public void GetData()
         {
             string userSql = @"SELECT ac.AccountID, ac.Username, em.EmployeeName, ac.UserRole,
                                em.Sex, em.Contact, em.Birthday, em.EmployeeAddress
@@ -38,6 +41,8 @@ namespace PharmacyManagement.HumanManage
             txtRole.DataBindings.Clear();
             dtpBirthday.DataBindings.Clear();
             txtAddress.DataBindings.Clear();
+            radMale.DataBindings.Clear();
+            radFemale.DataBindings.Clear();
 
             txtIdUser.DataBindings.Add("Text", binding, "AccountID");
             txtUsername.DataBindings.Add("Text", binding, "Username");
@@ -63,7 +68,7 @@ namespace PharmacyManagement.HumanManage
             radFemale.DataBindings.Add(female);
         }
 
-        private void toggleControls(bool value)
+        private void ToggleControls(bool value)
         {
             txtIdUser.Enabled = value;
             txtUsername.Enabled = value;
@@ -80,8 +85,29 @@ namespace PharmacyManagement.HumanManage
         {
             dgvAllUsers.AutoGenerateColumns = false;
 
-            getData();
-            toggleControls(false);
+            GetData();
+            ToggleControls(false);
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            AllUsers_Load(sender, e);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult kq;
+            kq = MessageBox.Show("Are you sure you want to delete this account? ", "Delete", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (kq == DialogResult.Yes)
+            {
+                string deleteAccountQuery = @"DELETE FROM ACCOUNT WHERE AccountID = @AccountID";
+                SqlCommand deleteAccountCmd = new SqlCommand(deleteAccountQuery, con);
+                deleteAccountCmd.Parameters.Add("@AccountID", SqlDbType.VarChar, 50).Value = txtIdUser.Text;
+                deleteAccountCmd.ExecuteNonQuery();
+
+                AllUsers_Load(sender, e);
+            }
         }
     }
 }
