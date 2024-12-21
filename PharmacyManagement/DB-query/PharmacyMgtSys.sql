@@ -39,9 +39,6 @@ Create table COMMODITY
 	foreign key (CategoryID) references CATEGORIES(CategoryID)
 )
 Go
-/*insert into Commodity values()
-
-go*/
 
 
 Create table ACCOUNT
