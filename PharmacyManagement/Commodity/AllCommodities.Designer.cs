@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllCommodities));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -390,7 +390,7 @@
             // 
             // txtCommodityID
             // 
-            this.txtCommodityID.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtCommodityID.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtCommodityID.BorderColor = System.Drawing.Color.Black;
             this.txtCommodityID.BorderRadius = 14;
             this.txtCommodityID.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -412,7 +412,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(103, 48);
@@ -423,7 +423,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(39, 128);
@@ -434,7 +434,7 @@
             // 
             // cboCommodityType
             // 
-            this.cboCommodityType.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cboCommodityType.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboCommodityType.BackColor = System.Drawing.Color.Transparent;
             this.cboCommodityType.BorderColor = System.Drawing.Color.Transparent;
             this.cboCommodityType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -452,7 +452,7 @@
             // 
             // txtSellingPrice
             // 
-            this.txtSellingPrice.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtSellingPrice.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtSellingPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.txtSellingPrice.BorderColor = System.Drawing.Color.Black;
             this.txtSellingPrice.BorderRadius = 14;
@@ -475,7 +475,7 @@
             // 
             // labelControl9
             // 
-            this.labelControl9.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelControl9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
             this.labelControl9.Location = new System.Drawing.Point(637, 170);
@@ -486,7 +486,7 @@
             // 
             // txtPurchasePrice
             // 
-            this.txtPurchasePrice.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtPurchasePrice.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtPurchasePrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.txtPurchasePrice.BorderColor = System.Drawing.Color.Black;
             this.txtPurchasePrice.BorderRadius = 14;
@@ -510,7 +510,7 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelControl8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
             this.labelControl8.Location = new System.Drawing.Point(229, 175);
@@ -521,7 +521,7 @@
             // 
             // dtpMfgDate
             // 
-            this.dtpMfgDate.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.dtpMfgDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpMfgDate.BorderRadius = 14;
             this.dtpMfgDate.BorderThickness = 1;
             this.dtpMfgDate.Checked = true;
@@ -541,7 +541,7 @@
             // 
             // dtpExpDate
             // 
-            this.dtpExpDate.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.dtpExpDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpExpDate.BorderRadius = 14;
             this.dtpExpDate.BorderThickness = 1;
             this.dtpExpDate.Checked = true;
@@ -561,7 +561,7 @@
             // 
             // txtCommodityName
             // 
-            this.txtCommodityName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtCommodityName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtCommodityName.BorderColor = System.Drawing.Color.Black;
             this.txtCommodityName.BorderRadius = 14;
             this.txtCommodityName.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -583,7 +583,7 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.Location = new System.Drawing.Point(659, 128);
@@ -594,7 +594,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Location = new System.Drawing.Point(652, 85);
@@ -605,7 +605,7 @@
             // 
             // txtBaseUnit
             // 
-            this.txtBaseUnit.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtBaseUnit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBaseUnit.BorderColor = System.Drawing.Color.Black;
             this.txtBaseUnit.BorderRadius = 14;
             this.txtBaseUnit.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -627,7 +627,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelControl5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.Location = new System.Drawing.Point(271, 133);
@@ -638,7 +638,7 @@
             // 
             // txtManufacturer
             // 
-            this.txtManufacturer.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtManufacturer.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtManufacturer.BorderColor = System.Drawing.Color.Black;
             this.txtManufacturer.BorderRadius = 14;
             this.txtManufacturer.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -660,7 +660,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelControl4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Location = new System.Drawing.Point(240, 90);
@@ -671,7 +671,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Location = new System.Drawing.Point(296, 48);
@@ -682,7 +682,7 @@
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtQuantity.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.txtQuantity.BorderColor = System.Drawing.Color.Black;
             this.txtQuantity.BorderRadius = 14;
@@ -706,7 +706,7 @@
             // 
             // labelControl11
             // 
-            this.labelControl11.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelControl11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Appearance.Options.UseFont = true;
             this.labelControl11.Location = new System.Drawing.Point(662, 48);
@@ -760,8 +760,8 @@
             // ExpDate
             // 
             this.ExpDate.DataPropertyName = "ExpDate";
-            dataGridViewCellStyle9.NullValue = null;
-            this.ExpDate.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.NullValue = null;
+            this.ExpDate.DefaultCellStyle = dataGridViewCellStyle1;
             this.ExpDate.HeaderText = "EXP.  Date";
             this.ExpDate.Name = "ExpDate";
             this.ExpDate.ReadOnly = true;
@@ -769,8 +769,8 @@
             // MfgDate
             // 
             this.MfgDate.DataPropertyName = "MfgDate";
-            dataGridViewCellStyle10.NullValue = null;
-            this.MfgDate.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.NullValue = null;
+            this.MfgDate.DefaultCellStyle = dataGridViewCellStyle2;
             this.MfgDate.HeaderText = "MFG. Date";
             this.MfgDate.Name = "MfgDate";
             this.MfgDate.ReadOnly = true;
