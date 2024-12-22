@@ -125,6 +125,7 @@
             this.txtRole.Location = new System.Drawing.Point(542, 57);
             this.txtRole.Name = "txtRole";
             this.txtRole.PasswordChar = '\0';
+            this.txtRole.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtRole.PlaceholderText = "";
             this.txtRole.SelectedText = "";
             this.txtRole.Size = new System.Drawing.Size(186, 31);
@@ -148,6 +149,7 @@
             this.txtIdUser.Location = new System.Drawing.Point(167, 57);
             this.txtIdUser.Name = "txtIdUser";
             this.txtIdUser.PasswordChar = '\0';
+            this.txtIdUser.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtIdUser.PlaceholderText = "";
             this.txtIdUser.SelectedText = "";
             this.txtIdUser.Size = new System.Drawing.Size(186, 31);
@@ -171,6 +173,7 @@
             this.txtFullName.Location = new System.Drawing.Point(167, 137);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.PasswordChar = '\0';
+            this.txtFullName.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtFullName.PlaceholderText = "";
             this.txtFullName.SelectedText = "";
             this.txtFullName.Size = new System.Drawing.Size(186, 31);
@@ -205,6 +208,7 @@
             this.txtPass.Location = new System.Drawing.Point(542, 97);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '\0';
+            this.txtPass.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtPass.PlaceholderText = "";
             this.txtPass.SelectedText = "";
             this.txtPass.Size = new System.Drawing.Size(186, 31);
@@ -239,6 +243,7 @@
             this.txtUsername.Location = new System.Drawing.Point(167, 97);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
+            this.txtUsername.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtUsername.PlaceholderText = "";
             this.txtUsername.SelectedText = "";
             this.txtUsername.Size = new System.Drawing.Size(186, 31);
@@ -426,7 +431,6 @@
             this.guna2Panel3.Controls.Add(this.btnEdit);
             this.guna2Panel3.Controls.Add(this.btnSave);
             this.guna2Panel3.Controls.Add(this.btnReload);
-            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel3.Location = new System.Drawing.Point(0, 177);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(798, 59);
