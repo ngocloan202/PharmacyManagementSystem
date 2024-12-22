@@ -68,7 +68,7 @@
             this.txtCustomerContact = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtIdUser = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtIdInvoice = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -134,7 +134,6 @@
             this.dgvAllInvoices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAllInvoices.Size = new System.Drawing.Size(813, 240);
             this.dgvAllInvoices.TabIndex = 0;
-            this.dgvAllInvoices.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvAllInvoices_CellFormatting);
             // 
             // InvoiceID
             // 
@@ -342,7 +341,7 @@
             this.guna2Panel4.Controls.Add(this.txtCustomerContact);
             this.guna2Panel4.Controls.Add(this.labelControl6);
             this.guna2Panel4.Controls.Add(this.labelControl2);
-            this.guna2Panel4.Controls.Add(this.txtIdUser);
+            this.guna2Panel4.Controls.Add(this.txtIdInvoice);
             this.guna2Panel4.Controls.Add(this.labelControl3);
             this.guna2Panel4.Controls.Add(this.guna2Panel5);
             this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -563,30 +562,30 @@
             this.labelControl2.TabIndex = 8;
             this.labelControl2.Text = "Customer Contact:";
             // 
-            // txtIdUser
+            // txtIdInvoice
             // 
-            this.txtIdUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtIdUser.BorderColor = System.Drawing.Color.Black;
-            this.txtIdUser.BorderRadius = 14;
-            this.txtIdUser.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtIdUser.DefaultText = "";
-            this.txtIdUser.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtIdUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtIdUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtIdUser.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtIdUser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.txtIdUser.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtIdUser.ForeColor = System.Drawing.Color.Black;
-            this.txtIdUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.txtIdUser.Location = new System.Drawing.Point(200, 58);
-            this.txtIdUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtIdUser.Name = "txtIdUser";
-            this.txtIdUser.PasswordChar = '\0';
-            this.txtIdUser.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtIdUser.PlaceholderText = "";
-            this.txtIdUser.SelectedText = "";
-            this.txtIdUser.Size = new System.Drawing.Size(77, 31);
-            this.txtIdUser.TabIndex = 9;
+            this.txtIdInvoice.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtIdInvoice.BorderColor = System.Drawing.Color.Black;
+            this.txtIdInvoice.BorderRadius = 14;
+            this.txtIdInvoice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtIdInvoice.DefaultText = "";
+            this.txtIdInvoice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtIdInvoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtIdInvoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtIdInvoice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtIdInvoice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
+            this.txtIdInvoice.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtIdInvoice.ForeColor = System.Drawing.Color.Black;
+            this.txtIdInvoice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
+            this.txtIdInvoice.Location = new System.Drawing.Point(200, 58);
+            this.txtIdInvoice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtIdInvoice.Name = "txtIdInvoice";
+            this.txtIdInvoice.PasswordChar = '\0';
+            this.txtIdInvoice.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txtIdInvoice.PlaceholderText = "";
+            this.txtIdInvoice.SelectedText = "";
+            this.txtIdInvoice.Size = new System.Drawing.Size(77, 31);
+            this.txtIdInvoice.TabIndex = 9;
             // 
             // labelControl3
             // 
@@ -682,7 +681,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtCustomerContact;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private Guna.UI2.WinForms.Guna2TextBox txtIdUser;
+        private Guna.UI2.WinForms.Guna2TextBox txtIdInvoice;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpDateCreated;
         private System.Windows.Forms.DataGridViewTextBoxColumn InvoiceID;

@@ -31,10 +31,13 @@ namespace PharmacyManagement.Invoice
         private void GetData()
         {
             string selectAllInvoicesQuery = @"SELECT ivd.InvoiceID, cus.CustomerName, cus.Contact,
-                                                     iv.CreatedDate, iv.Note, em.EmployeeName, ivd.Amount
+                                                     iv.CreatedDate, iv.Note, em.EmployeeName, 
+                                                     FORMAT(ivd.Amount, 'N0') + ' VND' AS Amount
                                               FROM INVOICE as iv, INVOICEDETAILS as ivd, EMPLOYEE as em, CUSTOMER as cus
-                                              WHERE iv.InvoiceID = ivd.InvoiceID and iv.EmployeeID = em.EmployeeID
-		                                      and iv.CustomerID = cus.CustomerID";
+                                              WHERE iv.InvoiceID = ivd.InvoiceID 
+                                                    AND iv.EmployeeID = em.EmployeeID
+                                                    AND iv.CustomerID = cus.CustomerID
+                                             ";
             SqlCommand userCmd = new SqlCommand(selectAllInvoicesQuery);
             dataTable.Fill(userCmd);
             BindingSource binding = new BindingSource();
@@ -42,18 +45,22 @@ namespace PharmacyManagement.Invoice
 
             dgvAllInvoices.DataSource = binding;
             bindingNavigator.BindingSource = binding;
-        }
 
-        private void dgvAllInvoices_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (dgvAllInvoices.Columns[e.ColumnIndex].Name == "Amount" && e.Value != null)
-            {
-                if (decimal.TryParse(e.Value.ToString(), out decimal amount))
-                {
-                    e.Value = $"{amount.ToString("N0")} VND";
-                    e.FormattingApplied = true;
-                }
-            }
+            txtIdInvoice.DataBindings.Clear();
+            txtCustomerName.DataBindings.Clear();
+            txtCustomerContact.DataBindings.Clear();
+            txtCreateBy.DataBindings.Clear();
+            txtNote.DataBindings.Clear();
+            dtpDateCreated.DataBindings.Clear();
+            txtTotal.DataBindings.Clear();
+
+            txtIdInvoice.DataBindings.Add("Text", binding, "InvoiceID");
+            txtCustomerName.DataBindings.Add("Text", binding, "CustomerName");
+            txtCustomerContact.DataBindings.Add("Text", binding, "Contact");
+            txtCreateBy.DataBindings.Add("Text", binding, "EmployeeName");
+            txtNote.DataBindings.Add("Text", binding, "Note");
+            dtpDateCreated.DataBindings.Add("Value", binding, "CreatedDate");
+            txtTotal.DataBindings.Add("Text", binding, "Amount");
         }
     }
 }
