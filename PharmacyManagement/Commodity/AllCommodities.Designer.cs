@@ -46,16 +46,6 @@
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.dgvAllCommodities = new System.Windows.Forms.DataGridView();
-            this.CommodityID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CommodityName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Manufacturer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BaseUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PurchasePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SellingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExpDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MfgDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
@@ -85,6 +75,15 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtQuantity = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.CommodityID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Manufacturer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BaseUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PurchasePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SellingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExpDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MfgDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
             this.bindingNavigator.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -212,7 +211,7 @@
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 250);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(978, 182);
+            this.guna2Panel2.Size = new System.Drawing.Size(978, 188);
             this.guna2Panel2.TabIndex = 1;
             // 
             // dgvAllCommodities
@@ -221,11 +220,11 @@
             this.dgvAllCommodities.AllowUserToDeleteRows = false;
             this.dgvAllCommodities.AllowUserToOrderColumns = true;
             this.dgvAllCommodities.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAllCommodities.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dgvAllCommodities.BackgroundColor = System.Drawing.Color.White;
             this.dgvAllCommodities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAllCommodities.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CommodityID,
-            this.CommodityName,
             this.Manufacturer,
             this.Quantity,
             this.BaseUnit,
@@ -240,84 +239,8 @@
             this.dgvAllCommodities.Name = "dgvAllCommodities";
             this.dgvAllCommodities.ReadOnly = true;
             this.dgvAllCommodities.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAllCommodities.Size = new System.Drawing.Size(978, 182);
+            this.dgvAllCommodities.Size = new System.Drawing.Size(978, 188);
             this.dgvAllCommodities.TabIndex = 0;
-            // 
-            // CommodityID
-            // 
-            this.CommodityID.DataPropertyName = "CommodityID";
-            this.CommodityID.HeaderText = "ID";
-            this.CommodityID.Name = "CommodityID";
-            this.CommodityID.ReadOnly = true;
-            // 
-            // CommodityName
-            // 
-            this.CommodityName.DataPropertyName = "CommodityName";
-            this.CommodityName.HeaderText = "Name";
-            this.CommodityName.Name = "CommodityName";
-            this.CommodityName.ReadOnly = true;
-            // 
-            // Manufacturer
-            // 
-            this.Manufacturer.DataPropertyName = "Manufacturer";
-            this.Manufacturer.HeaderText = "Manufacturer";
-            this.Manufacturer.Name = "Manufacturer";
-            this.Manufacturer.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            this.Quantity.DataPropertyName = "Quantity";
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            // 
-            // BaseUnit
-            // 
-            this.BaseUnit.DataPropertyName = "BaseUnit";
-            this.BaseUnit.HeaderText = "Base Unit";
-            this.BaseUnit.Name = "BaseUnit";
-            this.BaseUnit.ReadOnly = true;
-            // 
-            // PurchasePrice
-            // 
-            this.PurchasePrice.DataPropertyName = "PurchasePrice";
-            this.PurchasePrice.HeaderText = "Purchase Price";
-            this.PurchasePrice.Name = "PurchasePrice";
-            this.PurchasePrice.ReadOnly = true;
-            // 
-            // SellingPrice
-            // 
-            this.SellingPrice.DataPropertyName = "SellingPrice";
-            this.SellingPrice.HeaderText = "Selling Price";
-            this.SellingPrice.Name = "SellingPrice";
-            this.SellingPrice.ReadOnly = true;
-            // 
-            // ExpDate
-            // 
-            this.ExpDate.DataPropertyName = "ExpDate";
-            dataGridViewCellStyle1.Format = "mm/dd/yyyyy";
-            dataGridViewCellStyle1.NullValue = null;
-            this.ExpDate.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ExpDate.HeaderText = "Exp Date";
-            this.ExpDate.Name = "ExpDate";
-            this.ExpDate.ReadOnly = true;
-            // 
-            // MfgDate
-            // 
-            this.MfgDate.DataPropertyName = "MfgDate";
-            dataGridViewCellStyle2.Format = "mm/dd/yyyy";
-            dataGridViewCellStyle2.NullValue = null;
-            this.MfgDate.DefaultCellStyle = dataGridViewCellStyle2;
-            this.MfgDate.HeaderText = "Mfg Date";
-            this.MfgDate.Name = "MfgDate";
-            this.MfgDate.ReadOnly = true;
-            // 
-            // CategoryName
-            // 
-            this.CategoryName.DataPropertyName = "CategoryName";
-            this.CategoryName.HeaderText = "Type";
-            this.CategoryName.Name = "CategoryName";
-            this.CategoryName.ReadOnly = true;
             // 
             // guna2Panel3
             // 
@@ -326,9 +249,9 @@
             this.guna2Panel3.Controls.Add(this.btnEdit);
             this.guna2Panel3.Controls.Add(this.btnReload);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel3.Location = new System.Drawing.Point(0, 432);
+            this.guna2Panel3.Location = new System.Drawing.Point(0, 438);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(978, 56);
+            this.guna2Panel3.Size = new System.Drawing.Size(978, 50);
             this.guna2Panel3.TabIndex = 2;
             // 
             // btnSave
@@ -342,7 +265,7 @@
             this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(145)))), ((int)(((byte)(19)))));
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(603, 13);
+            this.btnSave.Location = new System.Drawing.Point(603, 10);
             this.btnSave.Name = "btnSave";
             this.btnSave.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnSave.Size = new System.Drawing.Size(85, 30);
@@ -361,7 +284,7 @@
             this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(876, 13);
+            this.btnDelete.Location = new System.Drawing.Point(876, 10);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(19)))), ((int)(((byte)(10)))));
             this.btnDelete.Size = new System.Drawing.Size(85, 30);
@@ -380,7 +303,7 @@
             this.btnEdit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(22)))), ((int)(((byte)(80)))));
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(785, 13);
+            this.btnEdit.Location = new System.Drawing.Point(785, 10);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnEdit.Size = new System.Drawing.Size(85, 30);
@@ -399,7 +322,7 @@
             this.btnReload.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
             this.btnReload.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReload.ForeColor = System.Drawing.Color.White;
-            this.btnReload.Location = new System.Drawing.Point(694, 13);
+            this.btnReload.Location = new System.Drawing.Point(694, 10);
             this.btnReload.Name = "btnReload";
             this.btnReload.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnReload.Size = new System.Drawing.Size(85, 30);
@@ -793,6 +716,73 @@
             this.labelControl11.TabIndex = 23;
             this.labelControl11.Text = "Quantity";
             // 
+            // CommodityID
+            // 
+            this.CommodityID.DataPropertyName = "CommodityID";
+            this.CommodityID.HeaderText = "ID";
+            this.CommodityID.Name = "CommodityID";
+            this.CommodityID.ReadOnly = true;
+            // 
+            // Manufacturer
+            // 
+            this.Manufacturer.DataPropertyName = "Manufacturer";
+            this.Manufacturer.HeaderText = "Manufacturer";
+            this.Manufacturer.Name = "Manufacturer";
+            this.Manufacturer.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.DataPropertyName = "Quantity";
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // BaseUnit
+            // 
+            this.BaseUnit.DataPropertyName = "BaseUnit";
+            this.BaseUnit.HeaderText = "Base Unit";
+            this.BaseUnit.Name = "BaseUnit";
+            this.BaseUnit.ReadOnly = true;
+            // 
+            // PurchasePrice
+            // 
+            this.PurchasePrice.DataPropertyName = "PurchasePrice";
+            this.PurchasePrice.HeaderText = "Purchase Price";
+            this.PurchasePrice.Name = "PurchasePrice";
+            this.PurchasePrice.ReadOnly = true;
+            // 
+            // SellingPrice
+            // 
+            this.SellingPrice.DataPropertyName = "SellingPrice";
+            this.SellingPrice.HeaderText = "Selling Price";
+            this.SellingPrice.Name = "SellingPrice";
+            this.SellingPrice.ReadOnly = true;
+            // 
+            // ExpDate
+            // 
+            this.ExpDate.DataPropertyName = "ExpDate";
+            dataGridViewCellStyle1.NullValue = null;
+            this.ExpDate.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ExpDate.HeaderText = "EXP.  Date";
+            this.ExpDate.Name = "ExpDate";
+            this.ExpDate.ReadOnly = true;
+            // 
+            // MfgDate
+            // 
+            this.MfgDate.DataPropertyName = "MfgDate";
+            dataGridViewCellStyle2.NullValue = null;
+            this.MfgDate.DefaultCellStyle = dataGridViewCellStyle2;
+            this.MfgDate.HeaderText = "MFG. Date";
+            this.MfgDate.Name = "MfgDate";
+            this.MfgDate.ReadOnly = true;
+            // 
+            // CategoryName
+            // 
+            this.CategoryName.DataPropertyName = "CategoryName";
+            this.CategoryName.HeaderText = "Type";
+            this.CategoryName.Name = "CategoryName";
+            this.CategoryName.ReadOnly = true;
+            // 
             // AllCommodities
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -863,8 +853,12 @@
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private Guna.UI2.WinForms.Guna2TextBox txtPurchasePrice;
         private DevExpress.XtraEditors.LabelControl labelControl8;
+        private Guna.UI2.WinForms.Guna2Button btnSave;
+        private Guna.UI2.WinForms.Guna2TextBox txtCommodityID;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private Guna.UI2.WinForms.Guna2TextBox txtQuantity;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
         private System.Windows.Forms.DataGridViewTextBoxColumn CommodityID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CommodityName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Manufacturer;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn BaseUnit;
@@ -873,10 +867,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ExpDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn MfgDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
-        private Guna.UI2.WinForms.Guna2Button btnSave;
-        private Guna.UI2.WinForms.Guna2TextBox txtCommodityID;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private Guna.UI2.WinForms.Guna2TextBox txtQuantity;
-        private DevExpress.XtraEditors.LabelControl labelControl11;
     }
 }
