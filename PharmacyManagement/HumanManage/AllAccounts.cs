@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -72,6 +73,7 @@ namespace PharmacyManagement.HumanManage
         private void btnReload_Click(object sender, EventArgs e)
         {
             AllUsers_Load(sender, e);
+            dgvAllAccounts.Sort(dgvAllAccounts.Columns["AccountID"], ListSortDirection.Ascending);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
