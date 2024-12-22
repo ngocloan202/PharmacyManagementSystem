@@ -10,7 +10,6 @@ namespace PharmacyManagement.HumanManage
     public partial class AllUsers : XtraForm
     {
         PharmacyMgtDatabase dataTable = new PharmacyMgtDatabase();
-        SqlConnection con = new SqlConnection();
         public AllUsers()
         {
             dataTable.OpenConnection();
@@ -100,7 +99,7 @@ namespace PharmacyManagement.HumanManage
             if (kq == DialogResult.Yes)
             {
                 string deleteAccountQuery = @"DELETE FROM ACCOUNT WHERE AccountID = @AccountID";
-                SqlCommand deleteAccountCmd = new SqlCommand(deleteAccountQuery, con);
+                SqlCommand deleteAccountCmd = new SqlCommand(deleteAccountQuery);
                 deleteAccountCmd.Parameters.Add("@AccountID", SqlDbType.VarChar, 50).Value = txtIdUser.Text;
                 deleteAccountCmd.ExecuteNonQuery();
 
