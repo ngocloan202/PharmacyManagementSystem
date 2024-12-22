@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllInvoices));
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnReload = new Guna.UI2.WinForms.Guna2Button();
@@ -108,6 +108,7 @@
             this.btnReload.Size = new System.Drawing.Size(85, 30);
             this.btnReload.TabIndex = 13;
             this.btnReload.Text = "Reload";
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // dgvAllInvoices
             // 
@@ -186,9 +187,9 @@
             // Amount
             // 
             this.Amount.DataPropertyName = "Amount";
-            dataGridViewCellStyle1.Format = "N0";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Amount.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Amount.DefaultCellStyle = dataGridViewCellStyle2;
             this.Amount.HeaderText = "Total";
             this.Amount.MinimumWidth = 6;
             this.Amount.Name = "Amount";
@@ -613,11 +614,11 @@
             this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(11, 7);
+            this.labelControl1.Location = new System.Drawing.Point(363, 8);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(127, 21);
+            this.labelControl1.Size = new System.Drawing.Size(87, 21);
             this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Basic information";
+            this.labelControl1.Text = "Information";
             // 
             // AllInvoices
             // 

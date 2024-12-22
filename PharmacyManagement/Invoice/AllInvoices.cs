@@ -26,6 +26,7 @@ namespace PharmacyManagement.Invoice
         {
             dgvAllInvoices.AutoGenerateColumns = false;
             GetData();
+            ToggleControls(false);
         }
 
         private void GetData()
@@ -61,6 +62,23 @@ namespace PharmacyManagement.Invoice
             txtNote.DataBindings.Add("Text", binding, "Note");
             dtpDateCreated.DataBindings.Add("Value", binding, "CreatedDate");
             txtTotal.DataBindings.Add("Text", binding, "Amount");
+        }
+
+        private void ToggleControls(bool value)
+        {
+            txtIdInvoice.Enabled = value;
+            txtCustomerName.Enabled = value;
+            txtCustomerContact.Enabled = value;
+            txtCreateBy.Enabled = value;
+            txtNote.Enabled = value;
+            dtpDateCreated.Enabled = value;
+            txtTotal.Enabled = value;
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            AllInvoices_Load(sender, e);
+            dgvAllInvoices.Sort(dgvAllInvoices.Columns["InvoiceID"], ListSortDirection.Ascending);
         }
     }
 }
