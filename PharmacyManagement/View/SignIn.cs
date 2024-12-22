@@ -10,7 +10,7 @@ namespace PharmacyManagement
     public partial class SignIn : XtraForm
     {
         PharmacyMgtDatabase dataTable = new PharmacyMgtDatabase();
-        public string currentRoleUser { get; private set; };
+        public string currentRoleUser { get; private set; }
 
         public SignIn()
         {
@@ -42,11 +42,13 @@ namespace PharmacyManagement
                 if (dataTable.Rows.Count > 0)
                 {
                     currentRoleUser = dataTable.Rows[0]["UserRole"].ToString();
+                    DialogResult = DialogResult.OK;
+                    this.Close();
 
                 }
                 else
                 {
-                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Username or password is incorrect!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtUsername.Focus();
                 }
             }
