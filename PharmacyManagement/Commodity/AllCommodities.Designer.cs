@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllCommodities));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -220,7 +220,6 @@
             this.dgvAllCommodities.AllowUserToDeleteRows = false;
             this.dgvAllCommodities.AllowUserToOrderColumns = true;
             this.dgvAllCommodities.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAllCommodities.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dgvAllCommodities.BackgroundColor = System.Drawing.Color.White;
             this.dgvAllCommodities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAllCommodities.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -424,7 +423,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(39, 128);
@@ -435,7 +434,7 @@
             // 
             // cboCommodityType
             // 
-            this.cboCommodityType.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.cboCommodityType.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cboCommodityType.BackColor = System.Drawing.Color.Transparent;
             this.cboCommodityType.BorderColor = System.Drawing.Color.Transparent;
             this.cboCommodityType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -683,7 +682,7 @@
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtQuantity.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.txtQuantity.BorderColor = System.Drawing.Color.Black;
             this.txtQuantity.BorderRadius = 14;
@@ -707,7 +706,7 @@
             // 
             // labelControl11
             // 
-            this.labelControl11.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelControl11.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Appearance.Options.UseFont = true;
             this.labelControl11.Location = new System.Drawing.Point(662, 48);
@@ -761,8 +760,8 @@
             // ExpDate
             // 
             this.ExpDate.DataPropertyName = "ExpDate";
-            dataGridViewCellStyle1.NullValue = null;
-            this.ExpDate.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.NullValue = null;
+            this.ExpDate.DefaultCellStyle = dataGridViewCellStyle9;
             this.ExpDate.HeaderText = "EXP.  Date";
             this.ExpDate.Name = "ExpDate";
             this.ExpDate.ReadOnly = true;
@@ -770,8 +769,8 @@
             // MfgDate
             // 
             this.MfgDate.DataPropertyName = "MfgDate";
-            dataGridViewCellStyle2.NullValue = null;
-            this.MfgDate.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.NullValue = null;
+            this.MfgDate.DefaultCellStyle = dataGridViewCellStyle10;
             this.MfgDate.HeaderText = "MFG. Date";
             this.MfgDate.Name = "MfgDate";
             this.MfgDate.ReadOnly = true;
