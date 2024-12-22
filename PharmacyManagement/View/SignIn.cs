@@ -76,6 +76,22 @@ namespace PharmacyManagement
             }
             return true;
         }
+
+        #region Show Password
+        private void chkShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkShowPassword.Checked)
+            {
+                txtPassword.UseSystemPasswordChar = false;
+                txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.UseSystemPasswordChar = true;
+                txtPassword.PasswordChar = '•';
+            }
+        }
+        #endregion
     }
 
 }

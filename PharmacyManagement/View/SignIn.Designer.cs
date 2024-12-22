@@ -159,6 +159,7 @@
             this.chkShowPassword.Properties.Caption = "Show password";
             this.chkShowPassword.Size = new System.Drawing.Size(130, 21);
             this.chkShowPassword.TabIndex = 27;
+            this.chkShowPassword.CheckedChanged += new System.EventHandler(this.chkShowPassword_CheckedChanged);
             // 
             // SignIn
             // 
