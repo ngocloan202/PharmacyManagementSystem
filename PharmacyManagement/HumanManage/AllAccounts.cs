@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using DevExpress.XtraLayout.Customization;
 using PharmacyManagement.DB_query;
 
 namespace PharmacyManagement.HumanManage
