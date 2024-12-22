@@ -9,21 +9,20 @@ using PharmacyManagement.DB_query;
 
 namespace PharmacyManagement.HumanManage
 {
-    public partial class AllUsers : XtraForm
+    public partial class AllAccounts : XtraForm
     {
         PharmacyMgtDatabase dataTable = new PharmacyMgtDatabase();
-        SqlConnection con = new SqlConnection();
-        public AllUsers()
+        string newUsername = "";
+        public AllAccounts()
         {
             dataTable.OpenConnection();
             InitializeComponent();
-            txtIdUser.Enabled = false;
         }
 
         public void GetData()
         {
-            string userSql = @"SELECT ac.AccountID, ac.Username, em.EmployeeName, ac.UserRole,
-                               em.Sex, em.Contact, em.Birthday, em.EmployeeAddress
+            string userSql = @"SELECT ac.AccountID, ac.Username, ac.UserPassword,
+                                      ac.UserRole, em.EmployeeName
                                FROM ACCOUNT as ac, EMPLOYEE as em
                                WHERE ac.EmployeeID = em.EmployeeID";
             SqlCommand userCmd = new SqlCommand(userSql);
@@ -31,59 +30,36 @@ namespace PharmacyManagement.HumanManage
             BindingSource binding = new BindingSource();
             binding.DataSource = dataTable;
 
-            dgvAllUsers.DataSource = binding;
+            dgvAllAccounts.DataSource = binding;
             bindingNavigator.BindingSource = binding;
 
             txtIdUser.DataBindings.Clear();
             txtUsername.DataBindings.Clear();
+            txtPass.DataBindings.Clear();
             txtFullName.DataBindings.Clear();
-            txtContact.DataBindings.Clear();
             txtRole.DataBindings.Clear();
-            dtpBirthday.DataBindings.Clear();
-            txtAddress.DataBindings.Clear();
-            radMale.DataBindings.Clear();
-            radFemale.DataBindings.Clear();
 
             txtIdUser.DataBindings.Add("Text", binding, "AccountID");
             txtUsername.DataBindings.Add("Text", binding, "Username");
-            txtFullName.DataBindings.Add("Text", binding, "EmployeeName");
-            txtContact.DataBindings.Add("Text", binding, "Contact");
+            txtPass.DataBindings.Add("Text", binding, "UserPassword");
             txtRole.DataBindings.Add("Text", binding, "UserRole");
-            dtpBirthday.DataBindings.Add("Value", binding, "Birthday");
-            txtAddress.DataBindings.Add("Text", binding, "EmployeeAddress");
-
-            // Handle rad button gender
-            Binding male = new Binding("Checked", dgvAllUsers.DataSource, "Sex");
-            male.Format += (s, evt) =>
-            {
-                evt.Value = Convert.ToString(evt.Value) == "M";
-            };
-            radMale.DataBindings.Add(male);
-
-            Binding female = new Binding("Checked", dgvAllUsers.DataSource, "Sex");
-            female.Format += (s, evt) =>
-            {
-                evt.Value = Convert.ToString(evt.Value) == "F";
-            };
-            radFemale.DataBindings.Add(female);
+            txtFullName.DataBindings.Add("Text", binding, "EmployeeName");
         }
 
         private void ToggleControls(bool value)
         {
-            txtIdUser.Enabled = value;
+            txtIdUser.Enabled = false;
+            txtFullName.Enabled = false;
+
             txtUsername.Enabled = value;
-            txtFullName.Enabled = value;
-            txtContact.Enabled = value;
+            txtPass.Enabled = value;
             txtRole.Enabled = value;
-            dtpBirthday.Enabled = value;
-            txtAddress.Enabled = value;
-            radFemale.Enabled = value;
-            radMale .Enabled = value;
+            btnSave.Enabled = value;
         }
 
         private void AllUsers_Load(object sender, EventArgs e)
         {
-            dgvAllUsers.AutoGenerateColumns = false;
+            dgvAllAccounts.AutoGenerateColumns = false;
 
             GetData();
             ToggleControls(false);
@@ -102,12 +78,39 @@ namespace PharmacyManagement.HumanManage
             if (kq == DialogResult.Yes)
             {
                 string deleteAccountQuery = @"DELETE FROM ACCOUNT WHERE AccountID = @AccountID";
-                SqlCommand deleteAccountCmd = new SqlCommand(deleteAccountQuery, con);
-                deleteAccountCmd.Parameters.Add("@AccountID", SqlDbType.VarChar, 50).Value = txtIdUser.Text;
+                SqlCommand deleteAccountCmd = new SqlCommand(deleteAccountQuery);
+                deleteAccountCmd.Parameters.Add("@AccountID", SqlDbType.TinyInt).Value = txtIdUser.Text;
                 dataTable.Update(deleteAccountCmd);
 
                 AllUsers_Load(sender, e);
             }
+        }
+
+        private void updateAccount()
+        {
+            string updateAccountQuery = @"UPDATE ACCOUNT
+                                     SET Username = @newUsername,
+                                     UserPassword = @UserPassword,
+                                     Userrole = @Userrole
+                                     WHERE Username = @oldUsername";
+            SqlCommand updateAccountCmd = new SqlCommand(updateAccountQuery);
+            updateAccountCmd.Parameters.Add("@newUsername", SqlDbType.VarChar, 50).Value = newUsername;
+            updateAccountCmd.Parameters.Add("@oldUsername", SqlDbType.VarChar, 50).Value = txtUsername.Text;
+            updateAccountCmd.Parameters.Add("@UserPassword", SqlDbType.VarChar, 50).Value = txtPass.Text;
+            updateAccountCmd.Parameters.Add("@Userrole", SqlDbType.VarChar, 5).Value = txtRole.Text;
+            dataTable.Update(updateAccountCmd);
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            ToggleControls(true);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            updateAccount();
+            MessageBox.Show("Updated information successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            AllUsers_Load(sender,e);
         }
     }
 }
