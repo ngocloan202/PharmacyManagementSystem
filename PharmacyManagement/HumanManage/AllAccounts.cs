@@ -12,7 +12,7 @@ namespace PharmacyManagement.HumanManage
     public partial class AllAccounts : XtraForm
     {
         PharmacyMgtDatabase dataTable = new PharmacyMgtDatabase();
-        string newUsername = "";
+        string username = "";
         public AllAccounts()
         {
             dataTable.OpenConnection();
@@ -89,13 +89,13 @@ namespace PharmacyManagement.HumanManage
         private void updateAccount()
         {
             string updateAccountQuery = @"UPDATE ACCOUNT
-                                     SET Username = @newUsername,
-                                     UserPassword = @UserPassword,
-                                     Userrole = @Userrole
-                                     WHERE Username = @oldUsername";
+                                          SET Username = @newUsername,
+                                              UserPassword = @UserPassword,
+                                              Userrole = @Userrole
+                                          WHERE Username = @oldUsername";
             SqlCommand updateAccountCmd = new SqlCommand(updateAccountQuery);
-            updateAccountCmd.Parameters.Add("@newUsername", SqlDbType.VarChar, 50).Value = newUsername;
-            updateAccountCmd.Parameters.Add("@oldUsername", SqlDbType.VarChar, 50).Value = txtUsername.Text;
+            updateAccountCmd.Parameters.Add("@newUsername", SqlDbType.VarChar, 50).Value = txtUsername.Text;
+            updateAccountCmd.Parameters.Add("@oldUsername", SqlDbType.VarChar, 50).Value = username;
             updateAccountCmd.Parameters.Add("@UserPassword", SqlDbType.VarChar, 50).Value = txtPass.Text;
             updateAccountCmd.Parameters.Add("@Userrole", SqlDbType.VarChar, 5).Value = txtRole.Text;
             dataTable.Update(updateAccountCmd);
