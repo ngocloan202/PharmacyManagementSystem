@@ -93,8 +93,8 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.guna2Panel3);
             this.guna2Panel1.Controls.Add(this.dgvAllUsers);
+            this.guna2Panel1.Controls.Add(this.guna2Panel3);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 245);
             this.guna2Panel1.Name = "guna2Panel1";
@@ -172,7 +172,7 @@
             this.dgvAllUsers.Name = "dgvAllUsers";
             this.dgvAllUsers.ReadOnly = true;
             this.dgvAllUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAllUsers.Size = new System.Drawing.Size(818, 243);
+            this.dgvAllUsers.Size = new System.Drawing.Size(818, 184);
             this.dgvAllUsers.TabIndex = 0;
             // 
             // AccountID
@@ -281,8 +281,8 @@
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.Controls.Add(this.guna2Panel4);
             this.guna2Panel2.Controls.Add(this.bindingNavigator);
+            this.guna2Panel2.Controls.Add(this.guna2Panel4);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel2.Name = "guna2Panel2";
@@ -309,7 +309,7 @@
             this.guna2Panel4.Controls.Add(this.labelControl4);
             this.guna2Panel4.Controls.Add(this.labelControl3);
             this.guna2Panel4.Controls.Add(this.guna2Panel5);
-            this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel4.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(818, 220);
@@ -611,8 +611,8 @@
             // 
             // guna2Panel5
             // 
-            this.guna2Panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.guna2Panel5.Controls.Add(this.labelControl1);
+            this.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
             this.guna2Panel5.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel5.Name = "guna2Panel5";
@@ -633,9 +633,10 @@
             // bindingNavigator
             // 
             this.bindingNavigator.AddNewItem = null;
+            this.bindingNavigator.AutoSize = false;
             this.bindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator.DeleteItem = null;
-            this.bindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bindingNavigator.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -705,7 +706,6 @@
             this.guna2Panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllUsers)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel2.PerformLayout();
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
             this.guna2Panel5.ResumeLayout(false);
