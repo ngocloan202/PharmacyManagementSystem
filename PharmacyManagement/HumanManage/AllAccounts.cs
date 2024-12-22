@@ -28,6 +28,18 @@ namespace PharmacyManagement.HumanManage
 
             dgvAllAccounts.DataSource = binding;
             bindingNavigator.BindingSource = binding;
+
+            txtIdUser.DataBindings.Clear();
+            txtUsername.DataBindings.Clear();
+            txtPass.DataBindings.Clear();
+            txtFullName.DataBindings.Clear();
+            txtRole.DataBindings.Clear();
+
+            txtIdUser.DataBindings.Add("Text", binding, "AccountID");
+            txtUsername.DataBindings.Add("Text", binding, "Username");
+            txtPass.DataBindings.Add("Text", binding, "UserPassword");
+            txtRole.DataBindings.Add("Text", binding, "UserRole");
+            txtFullName.DataBindings.Add("Text", binding, "EmployeeName");
         }
 
         private void AllUsers_Load(object sender, EventArgs e)
