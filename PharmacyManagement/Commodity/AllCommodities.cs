@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using PharmacyManagement.DB_query;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PharmacyManagement.Commodity
 {
-    public partial class AllCommodities : DevExpress.XtraEditors.XtraForm
+    public partial class AllCommodities : XtraForm
     {
         PharmacyMgtDatabase dataTable = new PharmacyMgtDatabase();
         string commodityName = "";
@@ -22,7 +18,14 @@ namespace PharmacyManagement.Commodity
             dataTable.OpenConnection();
             InitializeComponent();
         }
-        public void getData()
+        private void AllCommodities_Load(object sender, EventArgs e)
+        {
+            dgvAllCommodities.AutoGenerateColumns = false;
+            FetchData();
+            ToggleControls(false);
+        }
+
+        public void FetchData()
         {
             string typeSql = "SELECT * FROM CATEGORIES";
             SqlCommand typeCmd = new SqlCommand(typeSql);
@@ -46,16 +49,107 @@ namespace PharmacyManagement.Commodity
             cboCommodityType.DataBindings.Clear();
             txtCommodityName.DataBindings.Clear();
             txtManufacturer.DataBindings.Clear();
+            txtQuantity.DataBindings.Clear();
+            txtBaseUnit.DataBindings.Clear();
             txtPurchasePrice.DataBindings.Clear();
             txtSellingPrice.DataBindings.Clear();
             dtpMfgDate.DataBindings.Clear();
             dtpExpDate.DataBindings.Clear();
 
-            txtCommodityID.DataBindings.Add("Text", binding, "AccountID");
-            txtCommodityName.DataBindings.Add("Text", binding, "Username");
-            txtManufacturer.DataBindings.Add("Text", binding, "UserPassword");
-            txtPurchasePrice.DataBindings.Add("Text", binding, "UserRole");
-            txtFullName.DataBindings.Add("Text", binding, "EmployeeName");
+            txtCommodityID.DataBindings.Add("Text", binding, "CommodityID");
+            cboCommodityType.DataBindings.Add("SelectedValue", binding, "CategoryID");
+            txtCommodityName.DataBindings.Add("Text", binding, "CommodityName");
+            txtManufacturer.DataBindings.Add("Text", binding, "Manufacturer");
+            txtQuantity.DataBindings.Add("Text", binding, "Quantity");
+            txtBaseUnit.DataBindings.Add("Text", binding, "BaseUnit");
+            txtPurchasePrice.DataBindings.Add("Text", binding, "PurchasePrice");
+            txtSellingPrice.DataBindings.Add("Text", binding, "SellingPrice");
+            dtpMfgDate.DataBindings.Add("Value", binding, "MfgDate");
+            dtpExpDate.DataBindings.Add("Value", binding, "ExpDate");
+        }
+
+        private void ToggleControls(bool value)
+        {
+            
+            txtCommodityID.Enabled = false;
+            btnReload.Enabled = true;
+
+            cboCommodityType.Enabled = value;
+            txtCommodityName.Enabled = value;
+            txtManufacturer.Enabled = value;
+            txtQuantity.Enabled = value;
+            txtBaseUnit.Enabled = value;
+            txtPurchasePrice.Enabled = value;
+            txtSellingPrice.Enabled = value;
+            dtpMfgDate.Enabled = value;
+            dtpExpDate.Enabled = value;
+
+            btnSave.Enabled = value;
+
+            btnEdit.Enabled = !value;
+            btnDelete.Enabled = !value;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            updateCommodity();
+            MessageBox.Show("Updated information successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            AllCommodities_Load(sender, e);
+        }
+
+        private void updateCommodity()
+        {
+            string updateCommodityQuery = @"UPDATE COMMODITY
+                                   SET CommodityName = @newCommodityName,
+                                       Manufacturer = @Manufacturer,
+                                       Quantity = @Quantity,
+                                       BaseUnit = @BaseUnit,
+                                       PurchasePrice = @PurchasePrice,
+                                       SellingPrice = @SellingPrice,
+                                       MfgDate = @MfgDate,
+                                       ExpDate = @ExpDate,
+                                       CategoryID = @CategoryID
+                                   WHERE CommodityName = @oldCommodityName";
+            SqlCommand updateCommodityCmd = new SqlCommand(updateCommodityQuery);
+            updateCommodityCmd.Parameters.Add("@newCommodityName", SqlDbType.VarChar, 200).Value = txtCommodityName.Text.Trim();
+            updateCommodityCmd.Parameters.Add("@oldUsername", SqlDbType.VarChar, 200).Value = commodityName;
+            updateCommodityCmd.Parameters.Add("Manufacturer", SqlDbType.NVarChar, 200).Value = txtManufacturer.Text.Trim();
+            updateCommodityCmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = txtQuantity.Text.Trim();
+            updateCommodityCmd.Parameters.Add("BaseUnit", SqlDbType.NVarChar, 30).Value = txtBaseUnit.Text.Trim();
+            updateCommodityCmd.Parameters.Add("@PurchasePrice", SqlDbType.Money).Value = txtPurchasePrice.Text.Trim();
+            updateCommodityCmd.Parameters.Add("@SellingPrice", SqlDbType.Money).Value = txtSellingPrice.Text.Trim();
+            updateCommodityCmd.Parameters.Add("@MfgDate", SqlDbType.Date).Value = dtpMfgDate.Value.ToString();
+            updateCommodityCmd.Parameters.Add("@ExpDate", SqlDbType.Date).Value = dtpExpDate.Value.ToString();
+            updateCommodityCmd.Parameters.Add("@CategoryID", SqlDbType.TinyInt).Value = cboCommodityType.SelectedValue.ToString();
+            dataTable.Update(updateCommodityCmd);
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            AllCommodities_Load(sender, e);
+            dgvAllCommodities.Sort(dgvAllCommodities.Columns["CommodityID"], ListSortDirection.Ascending);
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            commodityName = txtCommodityName.Text;
+            ToggleControls(true);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult kq;
+            kq = MessageBox.Show("Are you sure you want to delete this commodity? ", "Delete",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (kq == DialogResult.Yes)
+            {
+                string deleteCommodityQuery = @"DELETE FROM COMMODITY WHERE CommodityID = @CommodityID";
+                SqlCommand deleteCommodityCmd = new SqlCommand(deleteCommodityQuery);
+                deleteCommodityCmd.Parameters.Add("@CommodityID", SqlDbType.NVarChar, 5).Value = txtCommodityID.Text;
+                dataTable.Update(deleteCommodityCmd);
+
+                AllCommodities_Load(sender, e);
+            }
         }
     }
 }

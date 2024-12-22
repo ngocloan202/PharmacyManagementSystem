@@ -83,6 +83,8 @@
             this.txtManufacturer = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.txtQuantity = new Guna.UI2.WinForms.Guna2TextBox();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
             this.bindingNavigator.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -346,6 +348,7 @@
             this.btnSave.Size = new System.Drawing.Size(85, 30);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
@@ -364,6 +367,7 @@
             this.btnDelete.Size = new System.Drawing.Size(85, 30);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -382,6 +386,7 @@
             this.btnEdit.Size = new System.Drawing.Size(85, 30);
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Edit";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnReload
             // 
@@ -400,6 +405,7 @@
             this.btnReload.Size = new System.Drawing.Size(85, 30);
             this.btnReload.TabIndex = 1;
             this.btnReload.Text = "Reload";
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // guna2Panel1
             // 
@@ -433,6 +439,8 @@
             // 
             // guna2Panel5
             // 
+            this.guna2Panel5.Controls.Add(this.txtQuantity);
+            this.guna2Panel5.Controls.Add(this.labelControl11);
             this.guna2Panel5.Controls.Add(this.txtCommodityID);
             this.guna2Panel5.Controls.Add(this.labelControl1);
             this.guna2Panel5.Controls.Add(this.labelControl2);
@@ -750,6 +758,41 @@
             this.labelControl3.TabIndex = 12;
             this.labelControl3.Text = "Name";
             // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.txtQuantity.BorderColor = System.Drawing.Color.Black;
+            this.txtQuantity.BorderRadius = 14;
+            this.txtQuantity.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtQuantity.DefaultText = "";
+            this.txtQuantity.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtQuantity.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtQuantity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtQuantity.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtQuantity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.txtQuantity.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtQuantity.ForeColor = System.Drawing.Color.Black;
+            this.txtQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.txtQuantity.Location = new System.Drawing.Point(744, 43);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.PasswordChar = '\0';
+            this.txtQuantity.PlaceholderText = "";
+            this.txtQuantity.SelectedText = "";
+            this.txtQuantity.Size = new System.Drawing.Size(222, 30);
+            this.txtQuantity.TabIndex = 22;
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Location = new System.Drawing.Point(662, 48);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(66, 21);
+            this.labelControl11.TabIndex = 23;
+            this.labelControl11.Text = "Quantity";
+            // 
             // AllCommodities
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -764,6 +807,7 @@
             this.Name = "AllCommodities";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "All Commodities";
+            this.Load += new System.EventHandler(this.AllCommodities_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).EndInit();
             this.bindingNavigator.ResumeLayout(false);
             this.bindingNavigator.PerformLayout();
@@ -832,5 +876,7 @@
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2TextBox txtCommodityID;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private Guna.UI2.WinForms.Guna2TextBox txtQuantity;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
     }
 }
