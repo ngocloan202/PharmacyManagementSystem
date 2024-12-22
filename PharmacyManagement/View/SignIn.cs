@@ -20,6 +20,7 @@ namespace PharmacyManagement
 
         private void lblSignUp_Click(object sender, EventArgs e)
         {
+            this.Hide();
             SignUp signUp = new SignUp();
             DialogResult result = signUp.ShowDialog();
             if (result == DialogResult.Retry)
@@ -28,10 +29,10 @@ namespace PharmacyManagement
                     txtPassword.Clear();
                     this.Show();
                 }
-             else
-                {
-                 this.Close();
-                }
+            else
+            {
+                this.Close(); 
+            }
         }
 
         private void btnSignIn_Click(object sender, EventArgs e)

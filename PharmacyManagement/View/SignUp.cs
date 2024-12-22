@@ -25,7 +25,7 @@ namespace PharmacyManagement
         private void lblSignIn_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Retry;
-            this.Close();
+            Close();
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
