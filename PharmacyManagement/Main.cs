@@ -22,12 +22,17 @@ namespace PharmacyManagement
         {
             Flash flash = new Flash();
             flash.ShowDialog();
-            if (!IsSignInSuccessful())
+            while (true)
             {
-                Application.Exit();
-                return;
+                if (!IsSignInSuccessful())
+                {
+                    Application.Exit();
+                    return;
+                }
+                break;
             }
             InitializeComponent();
+            this.Show();
             ConfigureBasedOnRole();
         }
 
@@ -41,8 +46,12 @@ namespace PharmacyManagement
                     currentRole = signIn.currentRoleUser;
                     return true;
                 }
-            return false;
-         }
+            else if (result == DialogResult.Cancel)
+            {
+                return false;
+            }
+            return IsSignInSuccessful();
+        }
 
         private void ConfigureBasedOnRole()
         {

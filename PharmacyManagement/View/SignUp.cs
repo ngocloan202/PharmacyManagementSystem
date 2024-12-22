@@ -24,13 +24,8 @@ namespace PharmacyManagement
 
         private void lblSignIn_Click(object sender, EventArgs e)
         {
-            SignUp signUp = new SignUp();
-            if (!signUp.IsDisposed)
-            {
-                this.Hide();
-                SignIn signIn = new SignIn();
-                signIn.ShowDialog();
-            }
+            DialogResult = DialogResult.Retry;
+            this.Close();
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
@@ -43,13 +38,8 @@ namespace PharmacyManagement
             {
                 MessageBox.Show("Account created successfully!", "Success",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-                SignUp signUp = new SignUp();
-                if (!signUp.IsDisposed)
-                {
-                    this.Hide();
-                    SignIn signIn = new SignIn();
-                    signIn.ShowDialog();
-                }
+                DialogResult = DialogResult.Retry;
+                this.Close();
             }
         }
 

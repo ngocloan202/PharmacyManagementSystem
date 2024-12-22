@@ -20,9 +20,18 @@ namespace PharmacyManagement
 
         private void lblSignUp_Click(object sender, EventArgs e)
         {
-            this.Hide();
             SignUp signUp = new SignUp();
-            signUp.ShowDialog();
+            DialogResult result = signUp.ShowDialog();
+            if (result == DialogResult.Retry)
+                {
+                    txtUsername.Clear();
+                    txtPassword.Clear();
+                    this.Show();
+                }
+             else
+                {
+                 this.Close();
+                }
         }
 
         private void btnSignIn_Click(object sender, EventArgs e)
