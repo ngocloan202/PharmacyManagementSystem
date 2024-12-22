@@ -104,7 +104,7 @@
             this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel4.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(798, 187);
+            this.guna2Panel4.Size = new System.Drawing.Size(798, 185);
             this.guna2Panel4.TabIndex = 1;
             // 
             // txtRole
@@ -123,6 +123,7 @@
             this.txtRole.ForeColor = System.Drawing.Color.Black;
             this.txtRole.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtRole.Location = new System.Drawing.Point(542, 57);
+            this.txtRole.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRole.Name = "txtRole";
             this.txtRole.PasswordChar = '\0';
             this.txtRole.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -147,6 +148,7 @@
             this.txtIdUser.ForeColor = System.Drawing.Color.Black;
             this.txtIdUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtIdUser.Location = new System.Drawing.Point(167, 57);
+            this.txtIdUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtIdUser.Name = "txtIdUser";
             this.txtIdUser.PasswordChar = '\0';
             this.txtIdUser.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -171,6 +173,7 @@
             this.txtFullName.ForeColor = System.Drawing.Color.Black;
             this.txtFullName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtFullName.Location = new System.Drawing.Point(167, 137);
+            this.txtFullName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.PasswordChar = '\0';
             this.txtFullName.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -206,6 +209,7 @@
             this.txtPass.ForeColor = System.Drawing.Color.Black;
             this.txtPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtPass.Location = new System.Drawing.Point(542, 97);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '\0';
             this.txtPass.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -241,6 +245,7 @@
             this.txtUsername.ForeColor = System.Drawing.Color.Black;
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtUsername.Location = new System.Drawing.Point(167, 97);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -297,11 +302,11 @@
             this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(12, 8);
+            this.labelControl1.Location = new System.Drawing.Point(356, 8);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(127, 21);
+            this.labelControl1.Size = new System.Drawing.Size(87, 21);
             this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Basic information";
+            this.labelControl1.Text = "Information";
             // 
             // bindingNavigator
             // 
@@ -309,6 +314,7 @@
             this.bindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator.DeleteItem = null;
             this.bindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.bindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -321,21 +327,21 @@
             this.bindingNavigatorSeparator2,
             this.btnFind,
             this.txtFind});
-            this.bindingNavigator.Location = new System.Drawing.Point(0, 187);
+            this.bindingNavigator.Location = new System.Drawing.Point(0, 185);
             this.bindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.bindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator.Name = "bindingNavigator";
             this.bindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator.Size = new System.Drawing.Size(798, 25);
+            this.bindingNavigator.Size = new System.Drawing.Size(798, 27);
             this.bindingNavigator.TabIndex = 0;
             this.bindingNavigator.Text = "bindingNavigator";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -345,7 +351,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -354,13 +360,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -374,7 +380,7 @@
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -382,7 +388,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -391,13 +397,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // btnFind
             // 
@@ -406,14 +412,14 @@
             this.btnFind.Image = global::PharmacyManagement.Properties.Resources.find_24px;
             this.btnFind.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(23, 22);
+            this.btnFind.Size = new System.Drawing.Size(24, 24);
             this.btnFind.Text = "toolStripButton1";
             // 
             // txtFind
             // 
             this.txtFind.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.txtFind.Name = "txtFind";
-            this.txtFind.Size = new System.Drawing.Size(120, 25);
+            this.txtFind.Size = new System.Drawing.Size(120, 27);
             // 
             // guna2Panel1
             // 
@@ -531,6 +537,7 @@
             this.dgvAllAccounts.MultiSelect = false;
             this.dgvAllAccounts.Name = "dgvAllAccounts";
             this.dgvAllAccounts.ReadOnly = true;
+            this.dgvAllAccounts.RowHeadersWidth = 51;
             this.dgvAllAccounts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAllAccounts.Size = new System.Drawing.Size(798, 236);
             this.dgvAllAccounts.TabIndex = 0;
@@ -539,6 +546,7 @@
             // 
             this.AccountID.DataPropertyName = "AccountID";
             this.AccountID.HeaderText = "ID";
+            this.AccountID.MinimumWidth = 6;
             this.AccountID.Name = "AccountID";
             this.AccountID.ReadOnly = true;
             // 
@@ -546,6 +554,7 @@
             // 
             this.Username.DataPropertyName = "Username";
             this.Username.HeaderText = "Username";
+            this.Username.MinimumWidth = 6;
             this.Username.Name = "Username";
             this.Username.ReadOnly = true;
             // 
@@ -553,6 +562,7 @@
             // 
             this.UserPassword.DataPropertyName = "UserPassword";
             this.UserPassword.HeaderText = "User Password";
+            this.UserPassword.MinimumWidth = 6;
             this.UserPassword.Name = "UserPassword";
             this.UserPassword.ReadOnly = true;
             // 
@@ -560,6 +570,7 @@
             // 
             this.UserRole.DataPropertyName = "UserRole";
             this.UserRole.HeaderText = "Role";
+            this.UserRole.MinimumWidth = 6;
             this.UserRole.Name = "UserRole";
             this.UserRole.ReadOnly = true;
             // 
@@ -567,6 +578,7 @@
             // 
             this.EmployeeName.DataPropertyName = "EmployeeName";
             this.EmployeeName.HeaderText = "Full Name";
+            this.EmployeeName.MinimumWidth = 6;
             this.EmployeeName.Name = "EmployeeName";
             this.EmployeeName.ReadOnly = true;
             // 
