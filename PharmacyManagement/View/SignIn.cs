@@ -60,14 +60,14 @@ namespace PharmacyManagement
             ToolTip toolTip = new ToolTip();
             toolTip.IsBalloon = true;
 
-            if (txtUsername.Text.Trim() == "")
+            if (string.IsNullOrWhiteSpace(txtUsername.Text))
             {
                 toolTip.Show("Please fill your username", txtUsername,
                     txtUsername.Width - 15, txtUsername.Height - 80, 2000);
                 txtUsername.Focus();
                 return false;
             }
-            else if (txtPassword.Text.Trim() == "")
+            else if (string.IsNullOrWhiteSpace(txtPassword.Text))
             {
                 toolTip.Show("Please fill your password", txtPassword,
                     txtPassword.Width - 15, txtPassword.Height - 80, 2000);
