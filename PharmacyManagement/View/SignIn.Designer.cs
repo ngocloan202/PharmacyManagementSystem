@@ -35,8 +35,8 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
+            this.chkShowPassword = new DevExpress.XtraEditors.CheckEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkShowPassword.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lblSignUp
@@ -148,17 +148,17 @@
             this.labelControl1.TabIndex = 18;
             this.labelControl1.Text = "Username";
             // 
-            // checkEdit1
+            // chkShowPassword
             // 
-            this.checkEdit1.Location = new System.Drawing.Point(534, 296);
-            this.checkEdit1.Name = "checkEdit1";
-            this.checkEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(179)))), ((int)(((byte)(179)))));
-            this.checkEdit1.Properties.Appearance.Options.UseFont = true;
-            this.checkEdit1.Properties.Appearance.Options.UseForeColor = true;
-            this.checkEdit1.Properties.Caption = "Show password";
-            this.checkEdit1.Size = new System.Drawing.Size(130, 21);
-            this.checkEdit1.TabIndex = 27;
+            this.chkShowPassword.Location = new System.Drawing.Point(534, 296);
+            this.chkShowPassword.Name = "chkShowPassword";
+            this.chkShowPassword.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkShowPassword.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(179)))), ((int)(((byte)(179)))));
+            this.chkShowPassword.Properties.Appearance.Options.UseFont = true;
+            this.chkShowPassword.Properties.Appearance.Options.UseForeColor = true;
+            this.chkShowPassword.Properties.Caption = "Show password";
+            this.chkShowPassword.Size = new System.Drawing.Size(130, 21);
+            this.chkShowPassword.TabIndex = 27;
             // 
             // SignIn
             // 
@@ -167,7 +167,7 @@
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Zoom;
             this.BackgroundImageStore = global::PharmacyManagement.Properties.Resources.SignIn_Frame;
             this.ClientSize = new System.Drawing.Size(818, 503);
-            this.Controls.Add(this.checkEdit1);
+            this.Controls.Add(this.chkShowPassword);
             this.Controls.Add(this.lblSignUp);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.btnSignIn);
@@ -184,7 +184,7 @@
             this.Name = "SignIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sign In";
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkShowPassword.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,6 +199,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private Guna.UI2.WinForms.Guna2TextBox txtUsername;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.CheckEdit checkEdit1;
+        private DevExpress.XtraEditors.CheckEdit chkShowPassword;
     }
 }
