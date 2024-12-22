@@ -92,10 +92,10 @@ namespace PharmacyManagement.HumanManage
                                               Userrole = @Userrole
                                           WHERE Username = @oldUsername";
             SqlCommand updateAccountCmd = new SqlCommand(updateAccountQuery);
-            updateAccountCmd.Parameters.Add("@newUsername", SqlDbType.VarChar, 50).Value = txtUsername.Text;
+            updateAccountCmd.Parameters.Add("@newUsername", SqlDbType.VarChar, 50).Value = txtUsername.Text.Trim();
             updateAccountCmd.Parameters.Add("@oldUsername", SqlDbType.VarChar, 50).Value = username;
-            updateAccountCmd.Parameters.Add("@UserPassword", SqlDbType.VarChar, 50).Value = txtPass.Text;
-            updateAccountCmd.Parameters.Add("@Userrole", SqlDbType.VarChar, 5).Value = txtRole.Text;
+            updateAccountCmd.Parameters.Add("@UserPassword", SqlDbType.VarChar, 50).Value = txtPass.Text.Trim();
+            updateAccountCmd.Parameters.Add("@Userrole", SqlDbType.VarChar, 5).Value = txtRole.Text.Trim();
             dataTable.Update(updateAccountCmd);
         }
 

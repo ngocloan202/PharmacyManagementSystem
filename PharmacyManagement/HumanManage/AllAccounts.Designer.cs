@@ -398,7 +398,7 @@
             this.txtPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(85)))), ((int)(((byte)(143)))));
             this.txtPass.Location = new System.Drawing.Point(484, 100);
             this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '\0';
+            this.txtPass.PasswordChar = '•';
             this.txtPass.PlaceholderText = "";
             this.txtPass.SelectedText = "";
             this.txtPass.Size = new System.Drawing.Size(212, 28);
