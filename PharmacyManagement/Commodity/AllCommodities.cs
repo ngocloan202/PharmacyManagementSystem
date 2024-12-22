@@ -24,6 +24,12 @@ namespace PharmacyManagement.Commodity
         }
         public void getData()
         {
+            string typeSql = "SELECT * FROM CATEGORIES";
+            SqlCommand typeCmd = new SqlCommand(typeSql);
+            dataTable.Fill(typeCmd);
+            cboCommodityType.DataSource = dataTable;
+            cboCommodityType.DisplayMember = "CategoryName";
+            cboCommodityType.ValueMember = "CategoryID";
 
             string commoditySql = @"SELECT C.*, A.CategoryName
                                FROM COMMODITY C, CATEGORIES A
@@ -36,16 +42,19 @@ namespace PharmacyManagement.Commodity
             dgvAllCommodities.DataSource = binding;
             bindingNavigator.BindingSource = binding;
 
-            txtIdUser.DataBindings.Clear();
-            txtUsername.DataBindings.Clear();
-            txtPass.DataBindings.Clear();
-            txtFullName.DataBindings.Clear();
-            txtRole.DataBindings.Clear();
+            txtCommodityID.DataBindings.Clear();
+            cboCommodityType.DataBindings.Clear();
+            txtCommodityName.DataBindings.Clear();
+            txtManufacturer.DataBindings.Clear();
+            txtPurchasePrice.DataBindings.Clear();
+            txtSellingPrice.DataBindings.Clear();
+            dtpMfgDate.DataBindings.Clear();
+            dtpExpDate.DataBindings.Clear();
 
-            txtIdUser.DataBindings.Add("Text", binding, "AccountID");
-            txtUsername.DataBindings.Add("Text", binding, "Username");
-            txtPass.DataBindings.Add("Text", binding, "UserPassword");
-            txtRole.DataBindings.Add("Text", binding, "UserRole");
+            txtCommodityID.DataBindings.Add("Text", binding, "AccountID");
+            txtCommodityName.DataBindings.Add("Text", binding, "Username");
+            txtManufacturer.DataBindings.Add("Text", binding, "UserPassword");
+            txtPurchasePrice.DataBindings.Add("Text", binding, "UserRole");
             txtFullName.DataBindings.Add("Text", binding, "EmployeeName");
         }
     }

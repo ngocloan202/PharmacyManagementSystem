@@ -65,7 +65,7 @@
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.txtID = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtCommodityID = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cboCommodityType = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -433,7 +433,7 @@
             // 
             // guna2Panel5
             // 
-            this.guna2Panel5.Controls.Add(this.txtID);
+            this.guna2Panel5.Controls.Add(this.txtCommodityID);
             this.guna2Panel5.Controls.Add(this.labelControl1);
             this.guna2Panel5.Controls.Add(this.labelControl2);
             this.guna2Panel5.Controls.Add(this.cboCommodityType);
@@ -458,27 +458,27 @@
             this.guna2Panel5.Size = new System.Drawing.Size(978, 220);
             this.guna2Panel5.TabIndex = 3;
             // 
-            // txtID
+            // txtCommodityID
             // 
-            this.txtID.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtID.BorderColor = System.Drawing.Color.Black;
-            this.txtID.BorderRadius = 14;
-            this.txtID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtID.DefaultText = "";
-            this.txtID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.txtID.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.txtID.Location = new System.Drawing.Point(23, 85);
-            this.txtID.Name = "txtID";
-            this.txtID.PasswordChar = '\0';
-            this.txtID.PlaceholderText = "";
-            this.txtID.SelectedText = "";
-            this.txtID.Size = new System.Drawing.Size(177, 31);
-            this.txtID.TabIndex = 1;
+            this.txtCommodityID.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtCommodityID.BorderColor = System.Drawing.Color.Black;
+            this.txtCommodityID.BorderRadius = 14;
+            this.txtCommodityID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCommodityID.DefaultText = "";
+            this.txtCommodityID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCommodityID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCommodityID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCommodityID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCommodityID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
+            this.txtCommodityID.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCommodityID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
+            this.txtCommodityID.Location = new System.Drawing.Point(23, 85);
+            this.txtCommodityID.Name = "txtCommodityID";
+            this.txtCommodityID.PasswordChar = '\0';
+            this.txtCommodityID.PlaceholderText = "";
+            this.txtCommodityID.SelectedText = "";
+            this.txtCommodityID.Size = new System.Drawing.Size(177, 31);
+            this.txtCommodityID.TabIndex = 1;
             // 
             // labelControl1
             // 
@@ -830,7 +830,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MfgDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
         private Guna.UI2.WinForms.Guna2Button btnSave;
-        private Guna.UI2.WinForms.Guna2TextBox txtID;
+        private Guna.UI2.WinForms.Guna2TextBox txtCommodityID;
         private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }
