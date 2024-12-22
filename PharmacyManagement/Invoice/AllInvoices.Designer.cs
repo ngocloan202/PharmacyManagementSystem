@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllInvoices));
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnReload = new Guna.UI2.WinForms.Guna2Button();
@@ -133,7 +133,7 @@
             this.dgvAllInvoices.ReadOnly = true;
             this.dgvAllInvoices.RowHeadersWidth = 51;
             this.dgvAllInvoices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAllInvoices.Size = new System.Drawing.Size(813, 240);
+            this.dgvAllInvoices.Size = new System.Drawing.Size(813, 195);
             this.dgvAllInvoices.TabIndex = 0;
             // 
             // InvoiceID
@@ -187,9 +187,9 @@
             // Amount
             // 
             this.Amount.DataPropertyName = "Amount";
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Amount.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Amount.DefaultCellStyle = dataGridViewCellStyle1;
             this.Amount.HeaderText = "Total";
             this.Amount.MinimumWidth = 6;
             this.Amount.Name = "Amount";
@@ -197,8 +197,8 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.guna2Panel3);
             this.guna2Panel1.Controls.Add(this.dgvAllInvoices);
+            this.guna2Panel1.Controls.Add(this.guna2Panel3);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 256);
             this.guna2Panel1.Name = "guna2Panel1";
