@@ -65,6 +65,7 @@ namespace PharmacyManagement.HumanManage
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            username = txtUsername.Text;
             toggleControls(true);
         }
 
