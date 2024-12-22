@@ -87,16 +87,16 @@ namespace PharmacyManagement.HumanManage
         private void updateAccount()
         {
             string updateAccountQuery = @"UPDATE ACCOUNT
-                                          SET Username = @newUsername,
-                                              UserPassword = @UserPassword,
-                                              Userrole = @Userrole
-                                          WHERE Username = @oldUsername";
-            SqlCommand updateAccountCmd = new SqlCommand(updateAccountQuery);
-            updateAccountCmd.Parameters.Add("@newUsername", SqlDbType.VarChar, 50).Value = txtUsername.Text.Trim();
-            updateAccountCmd.Parameters.Add("@oldUsername", SqlDbType.VarChar, 50).Value = username;
-            updateAccountCmd.Parameters.Add("@UserPassword", SqlDbType.VarChar, 50).Value = txtPass.Text.Trim();
-            updateAccountCmd.Parameters.Add("@Userrole", SqlDbType.VarChar, 5).Value = txtRole.Text.Trim();
-            dataTable.Update(updateAccountCmd);
+                                   SET Username = @newUsername,
+                                       UserPassword = @UserPassword,
+                                       Userrole = @Userrole
+                                   WHERE Username = @oldUsername";
+    SqlCommand updateAccountCmd = new SqlCommand(updateAccountQuery);
+    updateAccountCmd.Parameters.Add("@newUsername", SqlDbType.VarChar, 50).Value = txtUsername.Text.Trim();
+    updateAccountCmd.Parameters.Add("@oldUsername", SqlDbType.VarChar, 50).Value = username;
+    updateAccountCmd.Parameters.Add("@UserPassword", SqlDbType.VarChar, 50).Value = txtPass.Text.Trim();
+    updateAccountCmd.Parameters.Add("@Userrole", SqlDbType.VarChar, 5).Value = txtRole.Text.Trim();
+    dataTable.Update(updateAccountCmd);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
