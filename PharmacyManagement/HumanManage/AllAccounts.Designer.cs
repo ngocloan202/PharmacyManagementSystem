@@ -487,6 +487,7 @@
             this.btnSave.Size = new System.Drawing.Size(85, 30);
             this.btnSave.TabIndex = 13;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnReload
             // 
