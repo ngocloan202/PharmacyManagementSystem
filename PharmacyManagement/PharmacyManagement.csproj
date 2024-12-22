@@ -77,11 +77,11 @@
     <Compile Include="DB-query\PharmacyMgtDatabase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="HumanManage\AllUsers.cs">
+    <Compile Include="HumanManage\AllAccounts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HumanManage\AllUsers.Designer.cs">
-      <DependentUpon>AllUsers.cs</DependentUpon>
+    <Compile Include="HumanManage\AllAccounts.Designer.cs">
+      <DependentUpon>AllAccounts.cs</DependentUpon>
     </Compile>
     <Compile Include="HumanManage\NewUser.cs">
       <SubType>Form</SubType>
@@ -139,8 +139,8 @@
     <EmbeddedResource Include="Commodity\NewCommodity.resx">
       <DependentUpon>NewCommodity.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HumanManage\AllUsers.resx">
-      <DependentUpon>AllUsers.cs</DependentUpon>
+    <EmbeddedResource Include="HumanManage\AllAccounts.resx">
+      <DependentUpon>AllAccounts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HumanManage\NewUser.resx">
       <DependentUpon>NewUser.cs</DependentUpon>
