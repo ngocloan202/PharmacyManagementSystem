@@ -449,6 +449,7 @@
             this.btnDelete.Size = new System.Drawing.Size(85, 30);
             this.btnDelete.TabIndex = 14;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -467,6 +468,7 @@
             this.btnEdit.Size = new System.Drawing.Size(85, 30);
             this.btnEdit.TabIndex = 13;
             this.btnEdit.Text = "Edit";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnSave
             // 
@@ -503,6 +505,7 @@
             this.btnReload.Size = new System.Drawing.Size(85, 30);
             this.btnReload.TabIndex = 13;
             this.btnReload.Text = "Reload";
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // dgvAllAccounts
             // 
