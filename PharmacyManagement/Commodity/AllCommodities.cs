@@ -24,12 +24,12 @@ namespace PharmacyManagement.Commodity
         }
         public void getData()
         {
-            string userSql = @"SELECT ac.AccountID, ac.Username, ac.UserRole, 
-                                      ac.UserPassword ,em.EmployeeName
-                               FROM ACCOUNT as ac, EMPLOYEE as em
-                               WHERE ac.EmployeeID = em.EmployeeID";
-            SqlCommand userCmd = new SqlCommand(userSql);
-            dataTable.Fill(userCmd);
+
+            string commoditySql = @"SELECT C.*, A.CategoryName
+                               FROM COMMODITY C, CATEGORIES A
+                               WHERE C.CategoryID = A.CategoryID";
+            SqlCommand dgvCmd = new SqlCommand(commoditySql);
+            dataTable.Fill(dgvCmd);
             BindingSource binding = new BindingSource();
             binding.DataSource = dataTable;
 
