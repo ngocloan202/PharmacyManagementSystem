@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtCommodityID = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
@@ -58,28 +57,14 @@
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
-            this.errorProviderID = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errProviderName = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errProviderFacturer = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errProviderUnit = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errProviderQuantity = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errProviderExpDate = new System.Windows.Forms.ErrorProvider(this.components);
             this.propertyGridControl1 = new DevExpress.XtraVerticalGrid.PropertyGridControl();
-            this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errProviderName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errProviderFacturer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errProviderUnit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errProviderQuantity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errProviderExpDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.propertyGridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -552,30 +537,6 @@
             this.guna2Panel6.Size = new System.Drawing.Size(762, 488);
             this.guna2Panel6.TabIndex = 0;
             // 
-            // errorProviderID
-            // 
-            this.errorProviderID.ContainerControl = this;
-            // 
-            // errProviderName
-            // 
-            this.errProviderName.ContainerControl = this;
-            // 
-            // errProviderFacturer
-            // 
-            this.errProviderFacturer.ContainerControl = this;
-            // 
-            // errProviderUnit
-            // 
-            this.errProviderUnit.ContainerControl = this;
-            // 
-            // errProviderQuantity
-            // 
-            this.errProviderQuantity.ContainerControl = this;
-            // 
-            // errProviderExpDate
-            // 
-            this.errProviderExpDate.ContainerControl = this;
-            // 
             // propertyGridControl1
             // 
             this.propertyGridControl1.Location = new System.Drawing.Point(0, 0);
@@ -583,10 +544,6 @@
             this.propertyGridControl1.OptionsView.AllowReadOnlyRowAppearance = DevExpress.Utils.DefaultBoolean.True;
             this.propertyGridControl1.Size = new System.Drawing.Size(400, 200);
             this.propertyGridControl1.TabIndex = 0;
-            // 
-            // dxErrorProvider1
-            // 
-            this.dxErrorProvider1.ContainerControl = this.txtCommodityID;
             // 
             // NewCommodity
             // 
@@ -615,14 +572,7 @@
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
             this.guna2Panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errProviderName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errProviderFacturer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errProviderUnit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errProviderQuantity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errProviderExpDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.propertyGridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -658,13 +608,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private Guna.UI2.WinForms.Guna2TextBox txtCommodityID;
         private DevExpress.XtraEditors.LabelControl labelControl11;
-        private System.Windows.Forms.ErrorProvider errorProviderID;
-        private System.Windows.Forms.ErrorProvider errProviderName;
-        private System.Windows.Forms.ErrorProvider errProviderFacturer;
-        private System.Windows.Forms.ErrorProvider errProviderUnit;
-        private System.Windows.Forms.ErrorProvider errProviderQuantity;
-        private System.Windows.Forms.ErrorProvider errProviderExpDate;
         private DevExpress.XtraVerticalGrid.PropertyGridControl propertyGridControl1;
-        private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider dxErrorProvider1;
     }
 }
