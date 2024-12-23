@@ -127,6 +127,7 @@
             this.btnSignOut.ImageOptions.Image = global::PharmacyManagement.Properties.Resources.logout_32;
             this.btnSignOut.Name = "btnSignOut";
             this.btnSignOut.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnSignOut.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSignOut_ItemClick);
             // 
             // btnAllInvoices
             // 
