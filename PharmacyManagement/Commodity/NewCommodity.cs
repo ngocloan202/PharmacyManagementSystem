@@ -15,11 +15,16 @@ namespace PharmacyManagement.Commodity
         {
             dataTable.OpenConnection();
             InitializeComponent();
+
+            txtCommodityID.CausesValidation = true;
+            txtCommodityName.CausesValidation = true;
+            this.AutoValidate = AutoValidate.EnableAllowFocusChange;
         }
 
         private void NewCommodity_Load(object sender, EventArgs e)
         {
             FetchData();
+            txtCommodityID.Select();
         }
 
         public void FetchData()
@@ -44,22 +49,39 @@ namespace PharmacyManagement.Commodity
 
         private void CreateNewCommodity()
         {
-            string sql = @"INSERT INTO COMMODITY 
-                               VALUES(@CommodityID, @CommodityName, @Manufacturer, @Quantity,
-                                @BaseUnit, @PurchasePrice, @SellingPrice, @MfgDate, @ExpDate,
-                                @CategoryID)";
-            SqlCommand cmd = new SqlCommand(sql);
-            cmd.Parameters.Add("@CommodityID", SqlDbType.NVarChar, 5).Value = txtCommodityID.Text;
-            cmd.Parameters.Add("@CommodityName", SqlDbType.NVarChar, 200).Value = txtCommodityName.Text;
-            cmd.Parameters.Add("@Manufacturer", SqlDbType.NVarChar, 200).Value = txtManufacturer.Text;
-            cmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = txtQuantity.Text;
-            cmd.Parameters.Add("@BaseUnit", SqlDbType.NVarChar, 30).Value = txtBaseUnit.Text;
-            cmd.Parameters.Add("@PurchasePrice", SqlDbType.Money).Value = txtPurchasePrice.Text;
-            cmd.Parameters.Add("@SellingPrice", SqlDbType.Money).Value = txtSellingPrice.Text;
-            cmd.Parameters.Add("@MfgDate", SqlDbType.Date).Value = dtpMfgDate.Value;
-            cmd.Parameters.Add("@ExpDate", SqlDbType.Date).Value = dtpExpDate.Value;
-            cmd.Parameters.Add("@CategoryID", SqlDbType.TinyInt).Value = cboCommodityType.SelectedValue.ToString();
-            dataTable.Update(cmd);
+            try
+            {
+                string sql = @"INSERT INTO COMMODITY VALUES(@CommodityID, @CommodityName, @Manufacturer, 
+                      @Quantity, @BaseUnit, @PurchasePrice, @SellingPrice, @MfgDate, @ExpDate, @CategoryID)";
+                SqlCommand cmd = new SqlCommand(sql);
+
+                if (!int.TryParse(txtQuantity.Text, out int quantity) ||
+                    !decimal.TryParse(txtPurchasePrice.Text, out decimal purchasePrice) ||
+                    !decimal.TryParse(txtSellingPrice.Text, out decimal sellingPrice))
+                {
+                    MessageBox.Show("Invalid numeric values", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                cmd.Parameters.Add("@CommodityID", SqlDbType.NVarChar, 5).Value = txtCommodityID.Text;
+                cmd.Parameters.Add("@CommodityName", SqlDbType.NVarChar, 200).Value = txtCommodityName.Text;
+                cmd.Parameters.Add("@Manufacturer", SqlDbType.NVarChar, 200).Value = txtManufacturer.Text;
+                cmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = quantity;
+                cmd.Parameters.Add("@BaseUnit", SqlDbType.NVarChar, 30).Value = txtBaseUnit.Text;
+                cmd.Parameters.Add("@PurchasePrice", SqlDbType.Money).Value = purchasePrice;
+                cmd.Parameters.Add("@SellingPrice", SqlDbType.Money).Value = sellingPrice;
+                cmd.Parameters.Add("@MfgDate", SqlDbType.Date).Value = dtpMfgDate.Value;
+                cmd.Parameters.Add("@ExpDate", SqlDbType.Date).Value = dtpExpDate.Value;
+                cmd.Parameters.Add("@CategoryID", SqlDbType.TinyInt).Value = Convert.ToByte(cboCommodityType.SelectedValue);
+
+                dataTable.Update(cmd);
+                MessageBox.Show("Commodity added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -69,13 +91,13 @@ namespace PharmacyManagement.Commodity
         {
             if (string.IsNullOrWhiteSpace(txtCommodityID.Text))
             {
-                errProviderID.SetError(txtCommodityID, "Please enter the Commodity ID!");
+                errorProvider1.SetError(txtCommodityID, "Please enter the Commodity ID!");
                 txtCommodityID.Focus();
                 e.Cancel = true;
             }
             else
             {
-                errProviderID.SetError(txtCommodityID, null);
+                errorProvider1.SetError(txtCommodityID, null);
                 e.Cancel = false;
             }
         }
@@ -84,7 +106,7 @@ namespace PharmacyManagement.Commodity
         {
             if (string.IsNullOrWhiteSpace(txtCommodityName.Text))
             {
-                errProviderName.SetError(txtCommodityName, "Please enter the Commodity ID!");
+                errProviderName.SetError(txtCommodityName, "Please enter the Commodity Name!");
                 txtCommodityName.Focus();
                 e.Cancel = true;
             }
@@ -126,7 +148,6 @@ namespace PharmacyManagement.Commodity
             }
         }
 
-        #endregion
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -137,5 +158,34 @@ namespace PharmacyManagement.Commodity
                 NewCommodity_Load(sender, e);
             }
         }
+
+        private void txtQuantity_Validating(object sender, CancelEventArgs e)
+        {
+            if (!int.TryParse(txtQuantity.Text, out _))
+            {
+                errProviderQuantity.SetError(txtQuantity, "Please enter a valid number!");
+                e.Cancel = true;
+            }
+            else
+            {
+                errProviderQuantity.SetError(txtQuantity, null);
+                e.Cancel = false;
+            }
+        }
+
+        private void dtpExpDate_Validating(object sender, CancelEventArgs e)
+        {
+            if (dtpExpDate.Value <= dtpMfgDate.Value)
+            {
+                errProviderExpDate.SetError(dtpExpDate, "Expiry date must be after manufacturing date!");
+                e.Cancel = true;
+            }
+            else
+            {
+                errProviderExpDate.SetError(dtpExpDate, null);
+                e.Cancel = false;
+            }
+        }
+        #endregion
     }
 }

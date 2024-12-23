@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtCommodityID = new Guna.UI2.WinForms.Guna2TextBox();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.dtpMfgDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpExpDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txtCommodityName = new Guna.UI2.WinForms.Guna2TextBox();
@@ -45,6 +47,8 @@
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.cboCommodityType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtQuantity = new Guna.UI2.WinForms.Guna2TextBox();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.txtSellingPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.txtPurchasePrice = new Guna.UI2.WinForms.Guna2TextBox();
@@ -54,14 +58,13 @@
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.txtQuantity = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtCommodityID = new Guna.UI2.WinForms.Guna2TextBox();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.errProviderID = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             this.errProviderName = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             this.errProviderFacturer = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             this.errProviderUnit = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
+            this.errProviderQuantity = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
+            this.errProviderExpDate = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -72,6 +75,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.errProviderName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errProviderFacturer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errProviderUnit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderQuantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderExpDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -96,6 +102,40 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(512, 377);
             this.guna2Panel1.TabIndex = 2;
+            // 
+            // txtCommodityID
+            // 
+            this.txtCommodityID.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtCommodityID.BorderColor = System.Drawing.Color.Black;
+            this.txtCommodityID.BorderRadius = 14;
+            this.txtCommodityID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCommodityID.DefaultText = "";
+            this.txtCommodityID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCommodityID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCommodityID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCommodityID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCommodityID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
+            this.txtCommodityID.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCommodityID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
+            this.txtCommodityID.Location = new System.Drawing.Point(165, 48);
+            this.txtCommodityID.Name = "txtCommodityID";
+            this.txtCommodityID.PasswordChar = '\0';
+            this.txtCommodityID.PlaceholderText = "";
+            this.txtCommodityID.SelectedText = "";
+            this.txtCommodityID.Size = new System.Drawing.Size(308, 31);
+            this.txtCommodityID.TabIndex = 9;
+            this.txtCommodityID.Validating += new System.ComponentModel.CancelEventHandler(this.txtCommodityID_Validating);
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Location = new System.Drawing.Point(117, 53);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(16, 21);
+            this.labelControl11.TabIndex = 8;
+            this.labelControl11.Text = "ID";
             // 
             // dtpMfgDate
             // 
@@ -134,6 +174,7 @@
             this.dtpExpDate.Size = new System.Drawing.Size(308, 31);
             this.dtpExpDate.TabIndex = 6;
             this.dtpExpDate.Value = new System.DateTime(2024, 12, 19, 11, 37, 13, 684);
+            this.dtpExpDate.Validating += new System.ComponentModel.CancelEventHandler(this.dtpExpDate_Validating);
             // 
             // txtCommodityName
             // 
@@ -330,6 +371,42 @@
             this.guna2Panel4.Size = new System.Drawing.Size(203, 242);
             this.guna2Panel4.TabIndex = 3;
             // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.txtQuantity.BorderColor = System.Drawing.Color.Black;
+            this.txtQuantity.BorderRadius = 14;
+            this.txtQuantity.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtQuantity.DefaultText = "";
+            this.txtQuantity.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtQuantity.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtQuantity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtQuantity.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtQuantity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.txtQuantity.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtQuantity.ForeColor = System.Drawing.Color.Black;
+            this.txtQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.txtQuantity.Location = new System.Drawing.Point(95, 13);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.PasswordChar = '\0';
+            this.txtQuantity.PlaceholderText = "";
+            this.txtQuantity.SelectedText = "";
+            this.txtQuantity.Size = new System.Drawing.Size(93, 30);
+            this.txtQuantity.TabIndex = 4;
+            this.txtQuantity.Validating += new System.ComponentModel.CancelEventHandler(this.txtQuantity_Validating);
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Location = new System.Drawing.Point(14, 18);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(66, 21);
+            this.labelControl10.TabIndex = 3;
+            this.labelControl10.Text = "Quantity";
+            // 
             // txtSellingPrice
             // 
             this.txtSellingPrice.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -473,75 +550,6 @@
             this.guna2Panel6.Size = new System.Drawing.Size(762, 488);
             this.guna2Panel6.TabIndex = 0;
             // 
-            // labelControl10
-            // 
-            this.labelControl10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(14, 18);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(66, 21);
-            this.labelControl10.TabIndex = 3;
-            this.labelControl10.Text = "Quantity";
-            // 
-            // txtQuantity
-            // 
-            this.txtQuantity.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.txtQuantity.BorderColor = System.Drawing.Color.Black;
-            this.txtQuantity.BorderRadius = 14;
-            this.txtQuantity.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtQuantity.DefaultText = "";
-            this.txtQuantity.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtQuantity.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtQuantity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtQuantity.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtQuantity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
-            this.txtQuantity.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtQuantity.ForeColor = System.Drawing.Color.Black;
-            this.txtQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
-            this.txtQuantity.Location = new System.Drawing.Point(95, 13);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.PasswordChar = '\0';
-            this.txtQuantity.PlaceholderText = "";
-            this.txtQuantity.SelectedText = "";
-            this.txtQuantity.Size = new System.Drawing.Size(93, 30);
-            this.txtQuantity.TabIndex = 4;
-            // 
-            // txtCommodityID
-            // 
-            this.txtCommodityID.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtCommodityID.BorderColor = System.Drawing.Color.Black;
-            this.txtCommodityID.BorderRadius = 14;
-            this.txtCommodityID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCommodityID.DefaultText = "";
-            this.txtCommodityID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCommodityID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCommodityID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCommodityID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCommodityID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.txtCommodityID.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCommodityID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.txtCommodityID.Location = new System.Drawing.Point(165, 48);
-            this.txtCommodityID.Name = "txtCommodityID";
-            this.txtCommodityID.PasswordChar = '\0';
-            this.txtCommodityID.PlaceholderText = "";
-            this.txtCommodityID.SelectedText = "";
-            this.txtCommodityID.Size = new System.Drawing.Size(308, 31);
-            this.txtCommodityID.TabIndex = 9;
-            this.txtCommodityID.Validating += new System.ComponentModel.CancelEventHandler(this.txtCommodityID_Validating);
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(117, 53);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(16, 21);
-            this.labelControl11.TabIndex = 8;
-            this.labelControl11.Text = "ID";
-            // 
             // errProviderID
             // 
             this.errProviderID.ContainerControl = this;
@@ -557,6 +565,18 @@
             // errProviderUnit
             // 
             this.errProviderUnit.ContainerControl = this;
+            // 
+            // errProviderQuantity
+            // 
+            this.errProviderQuantity.ContainerControl = this;
+            // 
+            // errProviderExpDate
+            // 
+            this.errProviderExpDate.ContainerControl = this;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // NewCommodity
             // 
@@ -589,6 +609,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.errProviderName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errProviderFacturer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errProviderUnit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderQuantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderExpDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -628,5 +651,8 @@
         private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider errProviderName;
         private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider errProviderFacturer;
         private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider errProviderUnit;
+        private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider errProviderQuantity;
+        private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider errProviderExpDate;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
