@@ -1,4 +1,3 @@
-using PharmacyManagement.Commodity;
 using System;
 using System.Windows.Forms;
 
@@ -14,7 +13,7 @@ namespace PharmacyManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AllCommodities());
+            Application.Run(new Main());
         }
     }
 }

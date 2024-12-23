@@ -35,9 +35,10 @@ namespace PharmacyManagement.Commodity
             cboCommodityType.DisplayMember = "CategoryName";
             cboCommodityType.ValueMember = "CategoryID";
 
-            string commoditySql = @"SELECT C.*, A.CategoryName,
-                                FORMAT(C.PurchasePrice, 'N0') + ' VND' AS PurchasePrice,
-                                FORMAT(C.SellingPrice, 'N0') + ' VND' AS SellingPrice
+            string commoditySql = @"SELECT C.CommodityID, C.CommodityName, C.Manufacturer, C.Quantity, 
+                                    C.BaseUnit, FORMAT(C.PurchasePrice, 'N0') + ' VND' AS PurchasePrice, 
+                                    FORMAT(C.SellingPrice, 'N0') + ' VND' AS SellingPrice, A.CategoryName,
+                                    C.MfgDate, C.ExpDate, C.CategoryID
                                FROM COMMODITY C, CATEGORIES A
                                WHERE C.CategoryID = A.CategoryID";
             SqlCommand dgvCmd = new SqlCommand(commoditySql);
