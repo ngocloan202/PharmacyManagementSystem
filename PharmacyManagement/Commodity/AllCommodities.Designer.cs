@@ -46,6 +46,15 @@
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.dgvAllCommodities = new System.Windows.Forms.DataGridView();
+            this.CommodityID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Manufacturer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BaseUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PurchasePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SellingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExpDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MfgDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
@@ -55,6 +64,8 @@
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtQuantity = new Guna.UI2.WinForms.Guna2TextBox();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.txtCommodityID = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -73,17 +84,6 @@
             this.txtManufacturer = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.txtQuantity = new Guna.UI2.WinForms.Guna2TextBox();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.CommodityID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Manufacturer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BaseUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PurchasePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SellingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExpDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MfgDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
             this.bindingNavigator.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -241,6 +241,73 @@
             this.dgvAllCommodities.Size = new System.Drawing.Size(978, 188);
             this.dgvAllCommodities.TabIndex = 0;
             // 
+            // CommodityID
+            // 
+            this.CommodityID.DataPropertyName = "CommodityID";
+            this.CommodityID.HeaderText = "ID";
+            this.CommodityID.Name = "CommodityID";
+            this.CommodityID.ReadOnly = true;
+            // 
+            // Manufacturer
+            // 
+            this.Manufacturer.DataPropertyName = "Manufacturer";
+            this.Manufacturer.HeaderText = "Manufacturer";
+            this.Manufacturer.Name = "Manufacturer";
+            this.Manufacturer.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.DataPropertyName = "Quantity";
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // BaseUnit
+            // 
+            this.BaseUnit.DataPropertyName = "BaseUnit";
+            this.BaseUnit.HeaderText = "Base Unit";
+            this.BaseUnit.Name = "BaseUnit";
+            this.BaseUnit.ReadOnly = true;
+            // 
+            // PurchasePrice
+            // 
+            this.PurchasePrice.DataPropertyName = "PurchasePrice";
+            this.PurchasePrice.HeaderText = "Purchase Price";
+            this.PurchasePrice.Name = "PurchasePrice";
+            this.PurchasePrice.ReadOnly = true;
+            // 
+            // SellingPrice
+            // 
+            this.SellingPrice.DataPropertyName = "SellingPrice";
+            this.SellingPrice.HeaderText = "Selling Price";
+            this.SellingPrice.Name = "SellingPrice";
+            this.SellingPrice.ReadOnly = true;
+            // 
+            // ExpDate
+            // 
+            this.ExpDate.DataPropertyName = "ExpDate";
+            dataGridViewCellStyle1.NullValue = null;
+            this.ExpDate.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ExpDate.HeaderText = "EXP.  Date";
+            this.ExpDate.Name = "ExpDate";
+            this.ExpDate.ReadOnly = true;
+            // 
+            // MfgDate
+            // 
+            this.MfgDate.DataPropertyName = "MfgDate";
+            dataGridViewCellStyle2.NullValue = null;
+            this.MfgDate.DefaultCellStyle = dataGridViewCellStyle2;
+            this.MfgDate.HeaderText = "MFG. Date";
+            this.MfgDate.Name = "MfgDate";
+            this.MfgDate.ReadOnly = true;
+            // 
+            // CategoryName
+            // 
+            this.CategoryName.DataPropertyName = "CategoryName";
+            this.CategoryName.HeaderText = "Type";
+            this.CategoryName.Name = "CategoryName";
+            this.CategoryName.ReadOnly = true;
+            // 
             // guna2Panel3
             // 
             this.guna2Panel3.Controls.Add(this.btnSave);
@@ -388,6 +455,41 @@
             this.guna2Panel5.Size = new System.Drawing.Size(978, 220);
             this.guna2Panel5.TabIndex = 3;
             // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.txtQuantity.BorderColor = System.Drawing.Color.Black;
+            this.txtQuantity.BorderRadius = 14;
+            this.txtQuantity.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtQuantity.DefaultText = "";
+            this.txtQuantity.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtQuantity.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtQuantity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtQuantity.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtQuantity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.txtQuantity.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtQuantity.ForeColor = System.Drawing.Color.Black;
+            this.txtQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.txtQuantity.Location = new System.Drawing.Point(744, 43);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.PasswordChar = '\0';
+            this.txtQuantity.PlaceholderText = "";
+            this.txtQuantity.SelectedText = "";
+            this.txtQuantity.Size = new System.Drawing.Size(222, 30);
+            this.txtQuantity.TabIndex = 22;
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Location = new System.Drawing.Point(662, 48);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(66, 21);
+            this.labelControl11.TabIndex = 23;
+            this.labelControl11.Text = "Quantity";
+            // 
             // txtCommodityID
             // 
             this.txtCommodityID.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -478,7 +580,7 @@
             this.labelControl9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(637, 170);
+            this.labelControl9.Location = new System.Drawing.Point(637, 175);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(91, 21);
             this.labelControl9.TabIndex = 20;
@@ -586,7 +688,7 @@
             this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(659, 128);
+            this.labelControl7.Location = new System.Drawing.Point(659, 133);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(69, 21);
             this.labelControl7.TabIndex = 8;
@@ -597,7 +699,7 @@
             this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(652, 85);
+            this.labelControl6.Location = new System.Drawing.Point(652, 90);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(76, 21);
             this.labelControl6.TabIndex = 9;
@@ -679,108 +781,6 @@
             this.labelControl3.Size = new System.Drawing.Size(43, 21);
             this.labelControl3.TabIndex = 12;
             this.labelControl3.Text = "Name";
-            // 
-            // txtQuantity
-            // 
-            this.txtQuantity.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.txtQuantity.BorderColor = System.Drawing.Color.Black;
-            this.txtQuantity.BorderRadius = 14;
-            this.txtQuantity.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtQuantity.DefaultText = "";
-            this.txtQuantity.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtQuantity.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtQuantity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtQuantity.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtQuantity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
-            this.txtQuantity.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtQuantity.ForeColor = System.Drawing.Color.Black;
-            this.txtQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
-            this.txtQuantity.Location = new System.Drawing.Point(744, 43);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.PasswordChar = '\0';
-            this.txtQuantity.PlaceholderText = "";
-            this.txtQuantity.SelectedText = "";
-            this.txtQuantity.Size = new System.Drawing.Size(222, 30);
-            this.txtQuantity.TabIndex = 22;
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(662, 48);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(66, 21);
-            this.labelControl11.TabIndex = 23;
-            this.labelControl11.Text = "Quantity";
-            // 
-            // CommodityID
-            // 
-            this.CommodityID.DataPropertyName = "CommodityID";
-            this.CommodityID.HeaderText = "ID";
-            this.CommodityID.Name = "CommodityID";
-            this.CommodityID.ReadOnly = true;
-            // 
-            // Manufacturer
-            // 
-            this.Manufacturer.DataPropertyName = "Manufacturer";
-            this.Manufacturer.HeaderText = "Manufacturer";
-            this.Manufacturer.Name = "Manufacturer";
-            this.Manufacturer.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            this.Quantity.DataPropertyName = "Quantity";
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            // 
-            // BaseUnit
-            // 
-            this.BaseUnit.DataPropertyName = "BaseUnit";
-            this.BaseUnit.HeaderText = "Base Unit";
-            this.BaseUnit.Name = "BaseUnit";
-            this.BaseUnit.ReadOnly = true;
-            // 
-            // PurchasePrice
-            // 
-            this.PurchasePrice.DataPropertyName = "PurchasePrice";
-            this.PurchasePrice.HeaderText = "Purchase Price";
-            this.PurchasePrice.Name = "PurchasePrice";
-            this.PurchasePrice.ReadOnly = true;
-            // 
-            // SellingPrice
-            // 
-            this.SellingPrice.DataPropertyName = "SellingPrice";
-            this.SellingPrice.HeaderText = "Selling Price";
-            this.SellingPrice.Name = "SellingPrice";
-            this.SellingPrice.ReadOnly = true;
-            // 
-            // ExpDate
-            // 
-            this.ExpDate.DataPropertyName = "ExpDate";
-            dataGridViewCellStyle1.NullValue = null;
-            this.ExpDate.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ExpDate.HeaderText = "EXP.  Date";
-            this.ExpDate.Name = "ExpDate";
-            this.ExpDate.ReadOnly = true;
-            // 
-            // MfgDate
-            // 
-            this.MfgDate.DataPropertyName = "MfgDate";
-            dataGridViewCellStyle2.NullValue = null;
-            this.MfgDate.DefaultCellStyle = dataGridViewCellStyle2;
-            this.MfgDate.HeaderText = "MFG. Date";
-            this.MfgDate.Name = "MfgDate";
-            this.MfgDate.ReadOnly = true;
-            // 
-            // CategoryName
-            // 
-            this.CategoryName.DataPropertyName = "CategoryName";
-            this.CategoryName.HeaderText = "Type";
-            this.CategoryName.Name = "CategoryName";
-            this.CategoryName.ReadOnly = true;
             // 
             // AllCommodities
             // 
