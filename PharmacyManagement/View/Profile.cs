@@ -132,5 +132,19 @@ namespace PharmacyManagement.View
             MessageBox.Show("Updated information successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Profile_Load(sender, e);
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to cancel the changes?", 
+                "Cancel Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                if (!string.IsNullOrEmpty(Username))
+                {
+                    FetchData(Username);
+                }
+                ToggleControls(false);
+            }
+        }
     }
 }
