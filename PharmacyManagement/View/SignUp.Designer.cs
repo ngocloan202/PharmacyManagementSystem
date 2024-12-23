@@ -105,6 +105,7 @@
             this.txtConfirmPass.SelectedText = "";
             this.txtConfirmPass.Size = new System.Drawing.Size(275, 42);
             this.txtConfirmPass.TabIndex = 14;
+            this.txtConfirmPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtConfirmPass_KeyDown);
             // 
             // labelControl3
             // 
@@ -139,6 +140,7 @@
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(275, 42);
             this.txtPassword.TabIndex = 12;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // labelControl2
             // 
@@ -173,6 +175,7 @@
             this.txtUsername.SelectedText = "";
             this.txtUsername.Size = new System.Drawing.Size(275, 42);
             this.txtUsername.TabIndex = 10;
+            this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown);
             // 
             // labelControl1
             // 

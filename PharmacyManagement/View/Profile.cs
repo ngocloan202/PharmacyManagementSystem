@@ -30,6 +30,7 @@ namespace PharmacyManagement.View
             {
                 FetchData(Username);
             }
+            ToggleControls(false);
         }
 
         public void FetchData(string username)
@@ -71,6 +72,21 @@ namespace PharmacyManagement.View
                     MessageBox.Show($"Error in FetchData: {ex.Message}");
                 }
             }
+        }
+        private void ToggleControls(bool value)
+        {
+            txtIdProfile.Enabled = false;
+
+            txtFullName.Enabled = value;
+            txtUsername.Enabled = value;
+            txtContact.Enabled = value;
+            txtAddress.Enabled = value;
+            radFemale.Enabled = value;
+            radMale.Enabled = value;
+            dtpBirthday.Enabled = value;
+            btnSave.Enabled = value;
+
+            btnEdit.Enabled = !value;
         }
     }
 }

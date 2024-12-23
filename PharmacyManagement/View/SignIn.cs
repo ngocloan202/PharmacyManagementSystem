@@ -102,6 +102,25 @@ namespace PharmacyManagement
             }
         }
         #endregion
+        #region Handle Key Down
+        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSignIn_Click(sender, e);
+                e.Handled = true;
+            }
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSignIn_Click(sender, e);
+                e.Handled = true;
+            }
+        }
+        #endregion
     }
 
 }

@@ -113,7 +113,7 @@ namespace PharmacyManagement
         }
         #endregion
 
-        #region
+        #region Handle Profile
         private void btnProfile_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (profile == null || profile.IsDisposed)
