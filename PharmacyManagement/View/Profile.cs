@@ -10,6 +10,7 @@ namespace PharmacyManagement.View
     public partial class Profile : XtraForm
     {
         private string username;
+        private string oldUsername = "";
         PharmacyMgtDatabase dataTable = new PharmacyMgtDatabase();
 
         public string Username
@@ -33,9 +34,9 @@ namespace PharmacyManagement.View
             ToggleControls(false);
         }
 
-        public void FetchData(string username)
+        private void FetchData(string username)
         {
-            string profileSql = @"SELECT Ac.AccountID, Ac.Username, Em.EmployeeName, Em.Sex, 
+            string profileSql = @"SELECT Ac.EmployeeID, Ac.Username, Em.EmployeeName, Em.Sex, 
                                         Em.Contact, Em.Birthday, Em.EmployeeAddress
                                  FROM ACCOUNT as Ac
                                  INNER JOIN EMPLOYEE as Em ON Ac.EmployeeID = Em.EmployeeID 
@@ -51,7 +52,7 @@ namespace PharmacyManagement.View
                     if (dataTable.Rows.Count > 0)
                     {
                         DataRow row = dataTable.Rows[0];
-                        txtIdProfile.Text = row["AccountID"].ToString();
+                        txtIdProfile.Text = row["EmployeeID"].ToString();
                         txtUsername.Text = row["Username"].ToString();
                         txtFullName.Text = row["EmployeeName"].ToString();
                         txtContact.Text = row["Contact"].ToString();
@@ -87,6 +88,49 @@ namespace PharmacyManagement.View
             btnSave.Enabled = value;
 
             btnEdit.Enabled = !value;
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            oldUsername = txtUsername.Text;
+            ToggleControls(true);
+        }
+
+        private void UpdateUsername()
+        {
+            string updateAccountQuery = @"UPDATE ACCOUNT
+                                   SET Username = @newUsername
+                                   WHERE Username = @oldUsername";
+            SqlCommand updateAccountCmd = new SqlCommand(updateAccountQuery);
+            updateAccountCmd.Parameters.Add("@newUsername", SqlDbType.VarChar, 50).Value = txtUsername.Text.Trim();
+            updateAccountCmd.Parameters.Add("@oldUsername", SqlDbType.VarChar, 50).Value = username;
+            dataTable.Update(updateAccountCmd);
+        }
+        private void UpdateInfor()
+        {
+            string updateInforQuery = @"UPDATE EMPLOYEE
+                                        SET EmployeeName = @EmployeeName,
+                                            Sex = @Sex,
+                                            Contact = @Contact,
+                                            Birthday = @Birthday,
+                                            EmployeeAddress = @EmployeeAddress
+                                        WHERE EmployeeID = @EmployeeID";
+            SqlCommand updateInforCmd = new SqlCommand(updateInforQuery);
+            updateInforCmd.Parameters.Add("@EmployeeID", SqlDbType.VarChar, 50).Value = txtIdProfile.Text.Trim();
+            updateInforCmd.Parameters.Add("@EmployeeName", SqlDbType.NVarChar, 200).Value = txtFullName.Text.Trim();
+            updateInforCmd.Parameters.Add("@Sex", SqlDbType.VarChar, 1).Value = radFemale.Checked ? "F" : "M";
+            updateInforCmd.Parameters.Add("@Contact", SqlDbType.NVarChar, 200).Value = txtContact.Text.Trim();
+            updateInforCmd.Parameters.Add("@Birthday", SqlDbType.Date).Value = dtpBirthday.Value;
+            updateInforCmd.Parameters.Add("@EmployeeAddress", SqlDbType.NVarChar, 200).Value = txtAddress.Text.Trim();
+            dataTable.Update(updateInforCmd);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            UpdateUsername();
+            UpdateInfor();
+            MessageBox.Show("Updated information successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Profile_Load(sender, e);
         }
     }
 }

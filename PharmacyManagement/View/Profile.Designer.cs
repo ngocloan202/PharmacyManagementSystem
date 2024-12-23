@@ -108,6 +108,7 @@
             this.btnEdit.Size = new System.Drawing.Size(80, 40);
             this.btnEdit.TabIndex = 10;
             this.btnEdit.Text = "Edit";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnSave
             // 
@@ -124,6 +125,7 @@
             this.btnSave.Size = new System.Drawing.Size(80, 40);
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // radMale
             // 

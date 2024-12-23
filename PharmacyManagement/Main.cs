@@ -45,11 +45,11 @@ namespace PharmacyManagement
             SignIn signIn = new SignIn();
             DialogResult result = signIn.ShowDialog();
             if (result == DialogResult.OK)
-                {
-                    currentRole = signIn.currentRoleUser;
-                    currentUsername = signIn.Username;
+            {
+                currentRole = signIn.currentRoleUser;
+                currentUsername = signIn.Username;
                 return true;
-                }
+            }
             else if (result == DialogResult.Cancel)
             {
                 return false;
@@ -132,7 +132,7 @@ namespace PharmacyManagement
                 }
             }
             else
-                profile.Activate();
+                profile.Show();
         }
         #endregion
     }
