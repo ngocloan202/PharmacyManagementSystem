@@ -10,7 +10,7 @@ namespace PharmacyManagement.View
     public partial class Profile : XtraForm
     {
         private string username;
-        private string oldUsername = "";
+        string oldUsername = "";
         PharmacyMgtDatabase dataTable = new PharmacyMgtDatabase();
 
         public string Username
@@ -103,7 +103,7 @@ namespace PharmacyManagement.View
                                    WHERE Username = @oldUsername";
             SqlCommand updateAccountCmd = new SqlCommand(updateAccountQuery);
             updateAccountCmd.Parameters.Add("@newUsername", SqlDbType.VarChar, 50).Value = txtUsername.Text.Trim();
-            updateAccountCmd.Parameters.Add("@oldUsername", SqlDbType.VarChar, 50).Value = username;
+            updateAccountCmd.Parameters.Add("@oldUsername", SqlDbType.VarChar, 50).Value = oldUsername;
             dataTable.Update(updateAccountCmd);
         }
         private void UpdateInfor()
