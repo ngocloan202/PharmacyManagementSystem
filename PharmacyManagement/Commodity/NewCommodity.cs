@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace PharmacyManagement.Commodity
 {
-    public partial class NewCommodity : DevExpress.XtraEditors.XtraForm
+    public partial class NewCommodity : XtraForm
     {
         public NewCommodity()
         {

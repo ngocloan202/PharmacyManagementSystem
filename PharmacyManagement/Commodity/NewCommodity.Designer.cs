@@ -53,6 +53,8 @@
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.txtQuantity = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -297,6 +299,8 @@
             // 
             this.guna2Panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.guna2Panel4.BorderColor = System.Drawing.Color.Black;
+            this.guna2Panel4.Controls.Add(this.txtQuantity);
+            this.guna2Panel4.Controls.Add(this.labelControl10);
             this.guna2Panel4.Controls.Add(this.txtSellingPrice);
             this.guna2Panel4.Controls.Add(this.labelControl9);
             this.guna2Panel4.Controls.Add(this.txtPurchasePrice);
@@ -324,7 +328,7 @@
             this.txtSellingPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
             this.txtSellingPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSellingPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
-            this.txtSellingPrice.Location = new System.Drawing.Point(15, 124);
+            this.txtSellingPrice.Location = new System.Drawing.Point(15, 148);
             this.txtSellingPrice.Name = "txtSellingPrice";
             this.txtSellingPrice.PasswordChar = '\0';
             this.txtSellingPrice.PlaceholderText = "";
@@ -337,7 +341,7 @@
             this.labelControl9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(15, 96);
+            this.labelControl9.Location = new System.Drawing.Point(15, 120);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(91, 21);
             this.labelControl9.TabIndex = 0;
@@ -359,7 +363,7 @@
             this.txtPurchasePrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPurchasePrice.ForeColor = System.Drawing.Color.Black;
             this.txtPurchasePrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
-            this.txtPurchasePrice.Location = new System.Drawing.Point(15, 49);
+            this.txtPurchasePrice.Location = new System.Drawing.Point(15, 84);
             this.txtPurchasePrice.Name = "txtPurchasePrice";
             this.txtPurchasePrice.PasswordChar = '\0';
             this.txtPurchasePrice.PlaceholderText = "";
@@ -372,7 +376,7 @@
             this.labelControl8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(15, 21);
+            this.labelControl8.Location = new System.Drawing.Point(15, 56);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(110, 21);
             this.labelControl8.TabIndex = 0;
@@ -445,6 +449,41 @@
             this.guna2Panel6.Size = new System.Drawing.Size(762, 395);
             this.guna2Panel6.TabIndex = 0;
             // 
+            // labelControl10
+            // 
+            this.labelControl10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Location = new System.Drawing.Point(13, 18);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(66, 21);
+            this.labelControl10.TabIndex = 3;
+            this.labelControl10.Text = "Quantity";
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.txtQuantity.BorderColor = System.Drawing.Color.Black;
+            this.txtQuantity.BorderRadius = 14;
+            this.txtQuantity.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtQuantity.DefaultText = "";
+            this.txtQuantity.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtQuantity.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtQuantity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtQuantity.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtQuantity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.txtQuantity.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtQuantity.ForeColor = System.Drawing.Color.Black;
+            this.txtQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.txtQuantity.Location = new System.Drawing.Point(94, 13);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.PasswordChar = '\0';
+            this.txtQuantity.PlaceholderText = "";
+            this.txtQuantity.SelectedText = "";
+            this.txtQuantity.Size = new System.Drawing.Size(93, 30);
+            this.txtQuantity.TabIndex = 4;
+            // 
             // NewCommodity
             // 
             this.Appearance.BackColor = System.Drawing.SystemColors.Window;
@@ -506,5 +545,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpExpDate;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpMfgDate;
+        private Guna.UI2.WinForms.Guna2TextBox txtQuantity;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
     }
 }
