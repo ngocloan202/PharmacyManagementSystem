@@ -12,12 +12,11 @@ namespace PharmacyManagement.Commodity
     public partial class NewCommodity : XtraForm
     {
         PharmacyMgtDatabase dataTable = new PharmacyMgtDatabase();
+        ToolTip toolTip = new ToolTip();
         public NewCommodity()
         {
             dataTable.OpenConnection();
             InitializeComponent();
-
-            this.AutoValidate = AutoValidate.EnableAllowFocusChange;
         }
 
         private void NewCommodity_Load(object sender, EventArgs e)
@@ -79,86 +78,79 @@ namespace PharmacyManagement.Commodity
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (ValidateChildren(ValidationConstraints.Enabled))
+            if (ValidateInput())
             {
                 CreateNewCommodity();
             }
         }
 
-        #region validating input
 
-        DXErrorProvider errorProviderID = new DXErrorProvider();
-        private void txtCommodityID_Validating(object sender, CancelEventArgs e)
+
+        #region validating input
+        private bool ValidateInput()
         {
-            var edit = sender as TextEdit;
+            // Clear any previous tooltips
+            toolTip.Hide(txtCommodityID);
+            toolTip.Hide(txtCommodityName);
+            toolTip.Hide(txtManufacturer);
+            toolTip.Hide(txtBaseUnit);
+            toolTip.Hide(txtQuantity);
+
+            // Validate Commodity ID
             if (string.IsNullOrWhiteSpace(txtCommodityID.Text))
             {
-                errorProviderID.SetError(edit, "Please enter the Commodity ID!", ErrorType.Critical);
+                toolTip.Show("Please enter the Commodity ID!", txtCommodityID,
+                    txtCommodityID.Width - 15, txtCommodityID.Height, 2000);
                 txtCommodityID.Focus();
-                e.Cancel = true;
+                return false;
             }
-        }
 
-        DXErrorProvider errorProviderName = new DXErrorProvider();
-        private void txtCommodityName_Validating(object sender, CancelEventArgs e)
-        {
-            var edit = sender as TextEdit;
+            // Validate Commodity Name
             if (string.IsNullOrWhiteSpace(txtCommodityName.Text))
             {
-                errorProviderName.SetError(edit, "Please enter the Commodity Name!", ErrorType.Critical);
+                toolTip.Show("Please enter the Commodity Name!", txtCommodityName,
+                    txtCommodityName.Width - 15, txtCommodityName.Height - 80, 2000);
                 txtCommodityName.Focus();
-                e.Cancel = true;
+                return false;
             }
-        }
 
-
-        DXErrorProvider errorProviderMGF = new DXErrorProvider();
-        private void txtManufacturer_Validating(object sender, CancelEventArgs e)
-        {
-            var edit = sender as TextEdit;
+            // Validate Manufacturer
             if (string.IsNullOrWhiteSpace(txtManufacturer.Text))
             {
-                errorProviderMGF.SetError(edit, "Please enter the Manufacturer!", ErrorType.Critical);
+                toolTip.Show("Please enter the Manufacturer!", txtManufacturer,
+                    txtManufacturer.Width - 15, txtManufacturer.Height - 80, 2000);
                 txtManufacturer.Focus();
-                e.Cancel = true;
+                return false;
             }
-        }
 
-        DXErrorProvider errorProviderUnit = new DXErrorProvider();
-        private void txtBaseUnit_Validating(object sender, CancelEventArgs e)
-        {
-            var edit = sender as TextEdit;
+            // Validate Base Unit
             if (string.IsNullOrWhiteSpace(txtBaseUnit.Text))
             {
-                errorProviderUnit.SetError(edit, "Please enter the Base Unit!", ErrorType.Critical);
+                toolTip.Show("Please enter the Base Unit!", txtBaseUnit,
+                    txtBaseUnit.Width - 15, txtBaseUnit.Height - 80, 2000);
                 txtBaseUnit.Focus();
-                e.Cancel = true;
+                return false;
             }
-        }
 
-        DXErrorProvider errorProviderQuantity = new DXErrorProvider();
-        private void txtQuantity_Validating(object sender, CancelEventArgs e)
-        {
-            var edit = sender as TextEdit;
+            // Validate Quantity
             if (!int.TryParse(txtQuantity.Text, out _))
             {
-                errorProviderQuantity.SetError(edit, "Please enter a valid number!", ErrorType.Critical);
-                e.Cancel = true;
+                toolTip.Show("Please enter a valid number for Quantity!", txtQuantity,
+                    txtQuantity.Width - 15, txtQuantity.Height - 80, 2000);
+                txtQuantity.Focus();
+                return false;
             }
-        }
 
-        DXErrorProvider errorProviderExpDate = new DXErrorProvider();
-        private void dtpExpDate_Validating(object sender, CancelEventArgs e)
-        {
+            // Validate Expiry Date
             if (dtpExpDate.Value <= dtpMfgDate.Value)
             {
-                errorProviderExpDate.SetError(dtpExpDate, "Expiry date must be after manufacturing date!", ErrorType.Critical);
-                e.Cancel = true;
+                toolTip.Show("Expiry date must be after manufacturing date!", dtpExpDate,
+                    dtpExpDate.Width - 15, dtpExpDate.Height - 80, 2000);
+                dtpExpDate.Focus();
+                return false;
             }
-            else
-            {
-                errorProviderExpDate.SetError(dtpExpDate, "");
-            }
+
+            return true;
         }
         #endregion
 

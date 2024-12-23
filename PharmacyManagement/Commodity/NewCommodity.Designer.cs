@@ -111,8 +111,7 @@
             this.txtCommodityID.SelectedText = "";
             this.txtCommodityID.Size = new System.Drawing.Size(308, 31);
             this.txtCommodityID.TabIndex = 9;
-            this.txtCommodityID.Validating += new System.ComponentModel.CancelEventHandler(this.txtCommodityID_Validating);
-            // 
+           
             // labelControl11
             // 
             this.labelControl11.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -161,7 +160,7 @@
             this.dtpExpDate.Size = new System.Drawing.Size(308, 31);
             this.dtpExpDate.TabIndex = 6;
             this.dtpExpDate.Value = new System.DateTime(2024, 12, 19, 11, 37, 13, 684);
-            this.dtpExpDate.Validating += new System.ComponentModel.CancelEventHandler(this.dtpExpDate_Validating);
+            
             // 
             // txtCommodityName
             // 
@@ -184,7 +183,7 @@
             this.txtCommodityName.SelectedText = "";
             this.txtCommodityName.Size = new System.Drawing.Size(308, 31);
             this.txtCommodityName.TabIndex = 1;
-            this.txtCommodityName.Validating += new System.ComponentModel.CancelEventHandler(this.txtCommodityName_Validating);
+            
             // 
             // labelControl7
             // 
@@ -229,7 +228,7 @@
             this.txtBaseUnit.SelectedText = "";
             this.txtBaseUnit.Size = new System.Drawing.Size(308, 31);
             this.txtBaseUnit.TabIndex = 3;
-            this.txtBaseUnit.Validating += new System.ComponentModel.CancelEventHandler(this.txtBaseUnit_Validating);
+            
             // 
             // labelControl5
             // 
@@ -263,9 +262,7 @@
             this.txtManufacturer.SelectedText = "";
             this.txtManufacturer.Size = new System.Drawing.Size(308, 31);
             this.txtManufacturer.TabIndex = 2;
-            this.txtManufacturer.Validating += new System.ComponentModel.CancelEventHandler(this.txtManufacturer_Validating);
-            // 
-            // labelControl4
+            
             // 
             this.labelControl4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -381,8 +378,7 @@
             this.txtQuantity.SelectedText = "";
             this.txtQuantity.Size = new System.Drawing.Size(93, 30);
             this.txtQuantity.TabIndex = 4;
-            this.txtQuantity.Validating += new System.ComponentModel.CancelEventHandler(this.txtQuantity_Validating);
-            // 
+            
             // labelControl10
             // 
             this.labelControl10.Anchor = System.Windows.Forms.AnchorStyles.Top;
