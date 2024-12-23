@@ -47,7 +47,7 @@ namespace PharmacyManagement
             if (result == DialogResult.OK)
             {
                 currentRole = signIn.currentRoleUser;
-                currentUsername = signIn.Username;
+                currentUsername = signIn.currentUsername;
                 return true;
             }
             else if (result == DialogResult.Cancel)

@@ -79,6 +79,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCancel.BorderRadius = 20;
             this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -96,6 +97,7 @@
             // 
             // btnEdit
             // 
+            this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnEdit.BorderRadius = 20;
             this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -113,6 +115,7 @@
             // 
             // btnSave
             // 
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSave.BorderRadius = 20;
             this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -130,6 +133,7 @@
             // 
             // radMale
             // 
+            this.radMale.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.radMale.AutoSize = true;
             this.radMale.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(85)))), ((int)(((byte)(143)))));
             this.radMale.CheckedState.BorderThickness = 0;
@@ -149,6 +153,7 @@
             // 
             // radFemale
             // 
+            this.radFemale.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.radFemale.AutoSize = true;
             this.radFemale.Checked = true;
             this.radFemale.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(85)))), ((int)(((byte)(143)))));
@@ -170,6 +175,7 @@
             // 
             // dtpBirthday
             // 
+            this.dtpBirthday.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpBirthday.BackColor = System.Drawing.Color.Transparent;
             this.dtpBirthday.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(85)))), ((int)(((byte)(143)))));
             this.dtpBirthday.BorderRadius = 13;
@@ -189,6 +195,7 @@
             // 
             // txtAddress
             // 
+            this.txtAddress.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtAddress.BorderColor = System.Drawing.Color.Black;
             this.txtAddress.BorderRadius = 12;
             this.txtAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -210,6 +217,7 @@
             // 
             // txtContact
             // 
+            this.txtContact.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtContact.BorderColor = System.Drawing.Color.Black;
             this.txtContact.BorderRadius = 12;
             this.txtContact.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -231,6 +239,7 @@
             // 
             // txtFullName
             // 
+            this.txtFullName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtFullName.BorderColor = System.Drawing.Color.Black;
             this.txtFullName.BorderRadius = 12;
             this.txtFullName.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -252,6 +261,7 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtUsername.BorderColor = System.Drawing.Color.Black;
             this.txtUsername.BorderRadius = 12;
             this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -273,6 +283,7 @@
             // 
             // txtIdProfile
             // 
+            this.txtIdProfile.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtIdProfile.BorderColor = System.Drawing.Color.Black;
             this.txtIdProfile.BorderRadius = 12;
             this.txtIdProfile.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -294,6 +305,7 @@
             // 
             // labelControl4
             // 
+            this.labelControl4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Location = new System.Drawing.Point(54, 220);
@@ -304,6 +316,7 @@
             // 
             // labelControl7
             // 
+            this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.Location = new System.Drawing.Point(353, 164);
@@ -314,6 +327,7 @@
             // 
             // labelControl3
             // 
+            this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Location = new System.Drawing.Point(57, 164);
@@ -324,6 +338,7 @@
             // 
             // labelControl6
             // 
+            this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Location = new System.Drawing.Point(353, 108);
@@ -334,6 +349,7 @@
             // 
             // labelControl2
             // 
+            this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(42, 108);
@@ -344,6 +360,7 @@
             // 
             // labelControl5
             // 
+            this.labelControl5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.Location = new System.Drawing.Point(353, 52);
@@ -354,6 +371,7 @@
             // 
             // labelControl1
             // 
+            this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(97, 52);
@@ -370,7 +388,6 @@
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.Image = global::PharmacyManagement.Properties.Resources.Pharmacy_logo_500;
-            this.MaximizeBox = false;
             this.Name = "Profile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Profile Setting";

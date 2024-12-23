@@ -87,6 +87,7 @@ namespace PharmacyManagement.View
             radMale.Enabled = value;
             dtpBirthday.Enabled = value;
             btnSave.Enabled = value;
+            btnCancel.Enabled = value;
 
             btnEdit.Enabled = !value;
         }
