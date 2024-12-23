@@ -135,6 +135,7 @@ namespace PharmacyManagement
                 profile.Show();
         }
         #endregion
+
         #region Handle Sign Out
         private void btnSignOut_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
