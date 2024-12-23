@@ -5,7 +5,6 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using PharmacyManagement.DB_query;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PharmacyManagement.Commodity
 {
@@ -27,14 +26,18 @@ namespace PharmacyManagement.Commodity
 
         public void FetchData()
         {
+            PharmacyMgtDatabase categogyTable = new PharmacyMgtDatabase();
+            categogyTable.OpenConnection();
             string typeSql = "SELECT * FROM CATEGORIES";
             SqlCommand typeCmd = new SqlCommand(typeSql);
-            dataTable.Fill(typeCmd);
-            cboCommodityType.DataSource = dataTable;
+            categogyTable.Fill(typeCmd);
+            cboCommodityType.DataSource = categogyTable;
             cboCommodityType.DisplayMember = "CategoryName";
             cboCommodityType.ValueMember = "CategoryID";
 
-            string commoditySql = @"SELECT C.*, A.CategoryName
+            string commoditySql = @"SELECT C.*, A.CategoryName,
+                                FORMAT(C.PurchasePrice, 'N0') + ' VND' AS PurchasePrice,
+                                FORMAT(C.SellingPrice, 'N0') + ' VND' AS SellingPrice
                                FROM COMMODITY C, CATEGORIES A
                                WHERE C.CategoryID = A.CategoryID";
             SqlCommand dgvCmd = new SqlCommand(commoditySql);
