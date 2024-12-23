@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.dtpMfgDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpExpDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -57,12 +58,20 @@
             this.txtQuantity = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCommodityID = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.errProviderID = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
+            this.errProviderName = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
+            this.errProviderFacturer = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
+            this.errProviderUnit = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderFacturer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderUnit)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -83,7 +92,7 @@
             this.guna2Panel1.Controls.Add(this.labelControl3);
             this.guna2Panel1.CustomBorderColor = System.Drawing.Color.Black;
             this.guna2Panel1.CustomBorderThickness = new System.Windows.Forms.Padding(1);
-            this.guna2Panel1.Location = new System.Drawing.Point(20, 2);
+            this.guna2Panel1.Location = new System.Drawing.Point(22, 2);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(512, 377);
             this.guna2Panel1.TabIndex = 2;
@@ -147,6 +156,7 @@
             this.txtCommodityName.SelectedText = "";
             this.txtCommodityName.Size = new System.Drawing.Size(308, 31);
             this.txtCommodityName.TabIndex = 1;
+            this.txtCommodityName.Validating += new System.ComponentModel.CancelEventHandler(this.txtCommodityName_Validating);
             // 
             // labelControl7
             // 
@@ -191,6 +201,7 @@
             this.txtBaseUnit.SelectedText = "";
             this.txtBaseUnit.Size = new System.Drawing.Size(308, 31);
             this.txtBaseUnit.TabIndex = 3;
+            this.txtBaseUnit.Validating += new System.ComponentModel.CancelEventHandler(this.txtBaseUnit_Validating);
             // 
             // labelControl5
             // 
@@ -224,6 +235,7 @@
             this.txtManufacturer.SelectedText = "";
             this.txtManufacturer.Size = new System.Drawing.Size(308, 31);
             this.txtManufacturer.TabIndex = 2;
+            this.txtManufacturer.Validating += new System.ComponentModel.CancelEventHandler(this.txtManufacturer_Validating);
             // 
             // labelControl4
             // 
@@ -254,7 +266,7 @@
             this.guna2Panel2.CustomBorderColor = System.Drawing.Color.Black;
             this.guna2Panel2.CustomBorderThickness = new System.Windows.Forms.Padding(1);
             this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
-            this.guna2Panel2.Location = new System.Drawing.Point(20, 2);
+            this.guna2Panel2.Location = new System.Drawing.Point(22, 2);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(512, 36);
             this.guna2Panel2.TabIndex = 0;
@@ -279,7 +291,7 @@
             this.guna2Panel3.CustomBorderThickness = new System.Windows.Forms.Padding(1);
             this.guna2Panel3.Location = new System.Drawing.Point(538, 2);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(200, 130);
+            this.guna2Panel3.Size = new System.Drawing.Size(203, 130);
             this.guna2Panel3.TabIndex = 2;
             // 
             // cboCommodityType
@@ -295,7 +307,7 @@
             this.cboCommodityType.ForeColor = System.Drawing.Color.Black;
             this.cboCommodityType.HoverState.BorderColor = System.Drawing.Color.Black;
             this.cboCommodityType.ItemHeight = 30;
-            this.cboCommodityType.Location = new System.Drawing.Point(15, 63);
+            this.cboCommodityType.Location = new System.Drawing.Point(16, 63);
             this.cboCommodityType.Name = "cboCommodityType";
             this.cboCommodityType.Size = new System.Drawing.Size(170, 36);
             this.cboCommodityType.TabIndex = 0;
@@ -313,9 +325,9 @@
             this.guna2Panel4.CustomBorderColor = System.Drawing.Color.Black;
             this.guna2Panel4.CustomBorderThickness = new System.Windows.Forms.Padding(1);
             this.guna2Panel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.guna2Panel4.Location = new System.Drawing.Point(538, 138);
+            this.guna2Panel4.Location = new System.Drawing.Point(537, 138);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(200, 242);
+            this.guna2Panel4.Size = new System.Drawing.Size(203, 242);
             this.guna2Panel4.TabIndex = 3;
             // 
             // txtSellingPrice
@@ -333,7 +345,7 @@
             this.txtSellingPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
             this.txtSellingPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSellingPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
-            this.txtSellingPrice.Location = new System.Drawing.Point(13, 173);
+            this.txtSellingPrice.Location = new System.Drawing.Point(14, 173);
             this.txtSellingPrice.Name = "txtSellingPrice";
             this.txtSellingPrice.PasswordChar = '\0';
             this.txtSellingPrice.PlaceholderText = "";
@@ -346,7 +358,7 @@
             this.labelControl9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(13, 145);
+            this.labelControl9.Location = new System.Drawing.Point(14, 145);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(91, 21);
             this.labelControl9.TabIndex = 0;
@@ -368,7 +380,7 @@
             this.txtPurchasePrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPurchasePrice.ForeColor = System.Drawing.Color.Black;
             this.txtPurchasePrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
-            this.txtPurchasePrice.Location = new System.Drawing.Point(13, 98);
+            this.txtPurchasePrice.Location = new System.Drawing.Point(14, 98);
             this.txtPurchasePrice.Name = "txtPurchasePrice";
             this.txtPurchasePrice.PasswordChar = '\0';
             this.txtPurchasePrice.PlaceholderText = "";
@@ -381,7 +393,7 @@
             this.labelControl8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(13, 70);
+            this.labelControl8.Location = new System.Drawing.Point(14, 70);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(110, 21);
             this.labelControl8.TabIndex = 0;
@@ -396,7 +408,7 @@
             this.guna2Panel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(251)))), ((int)(((byte)(219)))));
             this.guna2Panel5.Location = new System.Drawing.Point(538, 2);
             this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(200, 36);
+            this.guna2Panel5.Size = new System.Drawing.Size(203, 36);
             this.guna2Panel5.TabIndex = 1;
             // 
             // labelControl2
@@ -404,7 +416,7 @@
             this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(28, 7);
+            this.labelControl2.Location = new System.Drawing.Point(29, 7);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(144, 21);
             this.labelControl2.TabIndex = 0;
@@ -427,6 +439,7 @@
             this.btnAdd.Size = new System.Drawing.Size(85, 30);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnCancel
             // 
@@ -445,6 +458,7 @@
             this.btnCancel.Size = new System.Drawing.Size(85, 30);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // guna2Panel6
             // 
@@ -464,7 +478,7 @@
             this.labelControl10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(13, 18);
+            this.labelControl10.Location = new System.Drawing.Point(14, 18);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(66, 21);
             this.labelControl10.TabIndex = 3;
@@ -486,7 +500,7 @@
             this.txtQuantity.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtQuantity.ForeColor = System.Drawing.Color.Black;
             this.txtQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
-            this.txtQuantity.Location = new System.Drawing.Point(94, 13);
+            this.txtQuantity.Location = new System.Drawing.Point(95, 13);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.PasswordChar = '\0';
             this.txtQuantity.PlaceholderText = "";
@@ -515,6 +529,7 @@
             this.txtCommodityID.SelectedText = "";
             this.txtCommodityID.Size = new System.Drawing.Size(308, 31);
             this.txtCommodityID.TabIndex = 9;
+            this.txtCommodityID.Validating += new System.ComponentModel.CancelEventHandler(this.txtCommodityID_Validating);
             // 
             // labelControl11
             // 
@@ -526,6 +541,22 @@
             this.labelControl11.Size = new System.Drawing.Size(16, 21);
             this.labelControl11.TabIndex = 8;
             this.labelControl11.Text = "ID";
+            // 
+            // errProviderID
+            // 
+            this.errProviderID.ContainerControl = this;
+            // 
+            // errProviderName
+            // 
+            this.errProviderName.ContainerControl = this;
+            // 
+            // errProviderFacturer
+            // 
+            this.errProviderFacturer.ContainerControl = this;
+            // 
+            // errProviderUnit
+            // 
+            this.errProviderUnit.ContainerControl = this;
             // 
             // NewCommodity
             // 
@@ -554,6 +585,10 @@
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
             this.guna2Panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderFacturer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProviderUnit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -589,5 +624,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private Guna.UI2.WinForms.Guna2TextBox txtCommodityID;
         private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider errProviderID;
+        private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider errProviderName;
+        private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider errProviderFacturer;
+        private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider errProviderUnit;
     }
 }

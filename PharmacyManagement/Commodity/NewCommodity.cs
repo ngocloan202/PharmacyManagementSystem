@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PharmacyManagement.Commodity
 {
@@ -25,7 +26,7 @@ namespace PharmacyManagement.Commodity
 
         private void NewCommodity_Load(object sender, EventArgs e)
         {
-
+            FetchData();
         }
 
         public void FetchData()
@@ -38,42 +39,88 @@ namespace PharmacyManagement.Commodity
             cboCommodityType.DataSource = categogyTable;
             cboCommodityType.DisplayMember = "CategoryName";
             cboCommodityType.ValueMember = "CategoryID";
+        }
 
-            string commoditySql = @"SELECT C.CommodityID, C.CommodityName, C.Manufacturer, C.Quantity, 
-                                    C.BaseUnit, FORMAT(C.PurchasePrice, 'N0') + ' VND' AS PurchasePrice, 
-                                    FORMAT(C.SellingPrice, 'N0') + ' VND' AS SellingPrice, A.CategoryName,
-                                    C.MfgDate, C.ExpDate, C.CategoryID
-                               FROM COMMODITY C, CATEGORIES A
-                               WHERE C.CategoryID = A.CategoryID";
-            SqlCommand dgvCmd = new SqlCommand(commoditySql);
-            dataTable.Fill(dgvCmd);
-            BindingSource binding = new BindingSource();
-            binding.DataSource = dataTable;
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
 
-            dgvAllCommodities.DataSource = binding;
-            bindingNavigator.BindingSource = binding;
+            }
+        }
 
-            txtCommodityID.DataBindings.Clear();
-            cboCommodityType.DataBindings.Clear();
-            txtCommodityName.DataBindings.Clear();
-            txtManufacturer.DataBindings.Clear();
-            txtQuantity.DataBindings.Clear();
-            txtBaseUnit.DataBindings.Clear();
-            txtPurchasePrice.DataBindings.Clear();
-            txtSellingPrice.DataBindings.Clear();
-            dtpMfgDate.DataBindings.Clear();
-            dtpExpDate.DataBindings.Clear();
+        #region validating input
+        private void txtCommodityID_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCommodityID.Text))
+            {
+                errProviderID.SetError(txtCommodityID, "Please enter the Commodity ID!");
+                txtCommodityID.Focus();
+                e.Cancel = true;
+            }
+            else
+            {
+                errProviderID.SetError(txtCommodityID, null);
+                e.Cancel = false;
+            }
+        }
 
-            txtCommodityID.DataBindings.Add("Text", binding, "CommodityID");
-            cboCommodityType.DataBindings.Add("SelectedValue", binding, "CategoryID");
-            txtCommodityName.DataBindings.Add("Text", binding, "CommodityName");
-            txtManufacturer.DataBindings.Add("Text", binding, "Manufacturer");
-            txtQuantity.DataBindings.Add("Text", binding, "Quantity");
-            txtBaseUnit.DataBindings.Add("Text", binding, "BaseUnit");
-            txtPurchasePrice.DataBindings.Add("Text", binding, "PurchasePrice");
-            txtSellingPrice.DataBindings.Add("Text", binding, "SellingPrice");
-            dtpMfgDate.DataBindings.Add("Value", binding, "MfgDate");
-            dtpExpDate.DataBindings.Add("Value", binding, "ExpDate");
+        private void txtCommodityName_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCommodityName.Text))
+            {
+                errProviderName.SetError(txtCommodityName, "Please enter the Commodity ID!");
+                txtCommodityName.Focus();
+                e.Cancel = true;
+            }
+            else
+            {
+                errProviderName.SetError(txtCommodityName, null);
+                e.Cancel = false;
+            }
+        }
+
+
+        private void txtManufacturer_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtManufacturer.Text))
+            {
+                errProviderFacturer.SetError(txtManufacturer, "Please enter the Commodity ID!");
+                txtManufacturer.Focus();
+                e.Cancel = true;
+            }
+            else
+            {
+                errProviderFacturer.SetError(txtManufacturer, null);
+                e.Cancel = false;
+            }
+        }
+
+        private void txtBaseUnit_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtBaseUnit.Text))
+            {
+                errProviderUnit.SetError(txtBaseUnit, "Please enter the Commodity ID!");
+                txtBaseUnit.Focus();
+                e.Cancel = true;
+            }
+            else
+            {
+                errProviderUnit.SetError(txtBaseUnit, null);
+                e.Cancel = false;
+            }
+        }
+
+        #endregion
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to cancel the changes?",
+                "Cancel Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                NewCommodity_Load(sender, e);
+            }
         }
     }
 }
