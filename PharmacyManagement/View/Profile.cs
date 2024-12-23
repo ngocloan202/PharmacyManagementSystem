@@ -57,6 +57,7 @@ namespace PharmacyManagement.View
                         txtFullName.Text = row["EmployeeName"].ToString();
                         txtContact.Text = row["Contact"].ToString();
                         txtAddress.Text = row["EmployeeAddress"].ToString();
+                        dtpBirthday.Value = Convert.ToDateTime(row["Birthday"]);
 
                         if (row["Sex"].ToString() == "M")
                         {
