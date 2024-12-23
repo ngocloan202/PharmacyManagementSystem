@@ -16,8 +16,6 @@ namespace PharmacyManagement.Commodity
             dataTable.OpenConnection();
             InitializeComponent();
 
-            txtCommodityID.CausesValidation = true;
-            txtCommodityName.CausesValidation = true;
             this.AutoValidate = AutoValidate.EnableAllowFocusChange;
         }
 
@@ -91,13 +89,13 @@ namespace PharmacyManagement.Commodity
         {
             if (string.IsNullOrWhiteSpace(txtCommodityID.Text))
             {
-                errorProvider1.SetError(txtCommodityID, "Please enter the Commodity ID!");
+                dxErrorProvider1.SetError(txtCommodityID, "Please enter the Commodity ID!");
                 txtCommodityID.Focus();
                 e.Cancel = true;
             }
             else
             {
-                errorProvider1.SetError(txtCommodityID, null);
+                dxErrorProvider1.SetError(txtCommodityID, "");
                 e.Cancel = false;
             }
         }
