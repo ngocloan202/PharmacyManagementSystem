@@ -1,23 +1,16 @@
 ﻿using DevExpress.XtraEditors;
 using PharmacyManagement.DB_query;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PharmacyManagement.Commodity
 {
     public partial class NewCommodity : XtraForm
     {
         PharmacyMgtDatabase dataTable = new PharmacyMgtDatabase();
-        string commodityName = "";
         public NewCommodity()
         {
             dataTable.OpenConnection();
@@ -45,9 +38,31 @@ namespace PharmacyManagement.Commodity
         {
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
-
+                CreateNewCommodity();
             }
         }
+
+        private void CreateNewCommodity()
+        {
+            string sql = @"INSERT INTO COMMODITY 
+                               VALUES(@CommodityID, @CommodityName, @Manufacturer, @Quantity,
+                                @BaseUnit, @PurchasePrice, @SellingPrice, @MfgDate, @ExpDate,
+                                @CategoryID)";
+            SqlCommand cmd = new SqlCommand(sql);
+            cmd.Parameters.Add("@CommodityID", SqlDbType.NVarChar, 5).Value = txtCommodityID.Text;
+            cmd.Parameters.Add("@CommodityName", SqlDbType.NVarChar, 200).Value = txtCommodityName.Text;
+            cmd.Parameters.Add("@Manufacturer", SqlDbType.NVarChar, 200).Value = txtManufacturer.Text;
+            cmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = txtQuantity.Text;
+            cmd.Parameters.Add("@BaseUnit", SqlDbType.NVarChar, 30).Value = txtBaseUnit.Text;
+            cmd.Parameters.Add("@PurchasePrice", SqlDbType.Money).Value = txtPurchasePrice.Text;
+            cmd.Parameters.Add("@SellingPrice", SqlDbType.Money).Value = txtSellingPrice.Text;
+            cmd.Parameters.Add("@MfgDate", SqlDbType.Date).Value = dtpMfgDate.Value;
+            cmd.Parameters.Add("@ExpDate", SqlDbType.Date).Value = dtpExpDate.Value;
+            cmd.Parameters.Add("@CategoryID", SqlDbType.TinyInt).Value = cboCommodityType.SelectedValue.ToString();
+            dataTable.Update(cmd);
+        }
+
+
 
         #region validating input
         private void txtCommodityID_Validating(object sender, CancelEventArgs e)
