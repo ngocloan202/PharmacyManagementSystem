@@ -92,12 +92,12 @@ namespace PharmacyManagement.Commodity
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            updateCommodity();
+            UpdateCommodity();
             MessageBox.Show("Updated information successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
             AllCommodities_Load(sender, e);
         }
 
-        private void updateCommodity()
+        private void UpdateCommodity()
         {
             string updateCommodityQuery = @"UPDATE COMMODITY
                                    SET CommodityName = @newCommodityName,

@@ -19,7 +19,7 @@ namespace PharmacyManagement.HumanManage
             InitializeComponent();
         }
 
-        public void getData()
+        public void FetchData()
         {
             string userSql = @"SELECT ac.AccountID, ac.Username, ac.UserRole, 
                                       ac.UserPassword ,em.EmployeeName
@@ -46,7 +46,7 @@ namespace PharmacyManagement.HumanManage
             txtFullName.DataBindings.Add("Text", binding, "EmployeeName");
         }
 
-        private void toggleControls(bool value)
+        private void ToggleControls(bool value)
         {
             txtIdUser.Enabled = false;
             txtFullName.Enabled = false;
@@ -63,14 +63,14 @@ namespace PharmacyManagement.HumanManage
         private void AllUsers_Load(object sender, EventArgs e)
         {
             dgvAllAccounts.AutoGenerateColumns = false;
-            getData();
-            toggleControls(false);
+            FetchData();
+            ToggleControls(false);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             username = txtUsername.Text;
-            toggleControls(true);
+            ToggleControls(true);
         }
 
         private void btnReload_Click(object sender, EventArgs e)
@@ -95,7 +95,7 @@ namespace PharmacyManagement.HumanManage
             }
         }
 
-        private void updateAccount()
+        private void UpdateAccount()
         {
             string updateAccountQuery = @"UPDATE ACCOUNT
                                    SET Username = @newUsername,
@@ -112,7 +112,7 @@ namespace PharmacyManagement.HumanManage
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            updateAccount();
+            UpdateAccount();
             MessageBox.Show("Updated information successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
             AllUsers_Load(sender, e);
         }
