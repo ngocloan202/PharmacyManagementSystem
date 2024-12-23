@@ -1,14 +1,8 @@
 ﻿using DevExpress.XtraEditors;
 using PharmacyManagement.DB_query;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PharmacyManagement
@@ -113,5 +107,33 @@ namespace PharmacyManagement
             }
             return true;
         }
+        #region Handle Key Down
+        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSignUp_Click(sender, e);
+                e.Handled = true;
+            }
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSignUp_Click(sender, e);
+                e.Handled = true;
+            }
+        }
+
+        private void txtConfirmPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSignUp_Click(sender, e);
+                e.Handled = true;
+            }
+        }
+        #endregion
     }
 }

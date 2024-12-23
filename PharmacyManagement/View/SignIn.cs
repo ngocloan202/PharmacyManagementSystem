@@ -11,6 +11,7 @@ namespace PharmacyManagement
     {
         PharmacyMgtDatabase dataTable = new PharmacyMgtDatabase();
         public string currentRoleUser { get; private set; }
+        public string Username { get; private set; }
 
         public SignIn()
         {
@@ -48,21 +49,20 @@ namespace PharmacyManagement
                 cmd.Parameters.Add("@Username", SqlDbType.NVarChar, 50).Value = txtUsername.Text;
                 cmd.Parameters.Add("@UserPassword", SqlDbType.NVarChar, 50).Value = txtPassword.Text;
                 dataTable.Fill(cmd);
-
                 if (dataTable.Rows.Count > 0)
                 {
                     currentRoleUser = dataTable.Rows[0]["UserRole"].ToString();
+                    Username = dataTable.Rows[0]["Username"].ToString();
                     DialogResult = DialogResult.OK;
                     this.Close();
-
                 }
                 else
                 {
-                    MessageBox.Show("Username or password is incorrect!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Username or password is incorrect!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtUsername.Focus();
                 }
             }
-
         }
 
         public Boolean validateInput()
@@ -99,6 +99,25 @@ namespace PharmacyManagement
             {
                 txtPassword.UseSystemPasswordChar = true;
                 txtPassword.PasswordChar = '•';
+            }
+        }
+        #endregion
+        #region Handle Key Down
+        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSignIn_Click(sender, e);
+                e.Handled = true;
+            }
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSignIn_Click(sender, e);
+                e.Handled = true;
             }
         }
         #endregion
