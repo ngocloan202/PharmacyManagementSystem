@@ -16,9 +16,7 @@ namespace PharmacyManagement
     {
         #region Global variable
         SignIn signIn = new SignIn();
-        Profile profile = null;
         private string currentRole;
-        private string currentUsername;
         #endregion
         public Main()
         {
@@ -35,7 +33,6 @@ namespace PharmacyManagement
             }
             InitializeComponent();
             this.Show();
-            this.IsMdiContainer = true;
             ConfigureBasedOnRole();
         }
 
@@ -45,11 +42,10 @@ namespace PharmacyManagement
             SignIn signIn = new SignIn();
             DialogResult result = signIn.ShowDialog();
             if (result == DialogResult.OK)
-            {
-                currentRole = signIn.currentRoleUser;
-                currentUsername = signIn.Username;
-                return true;
-            }
+                {
+                    currentRole = signIn.currentRoleUser;
+                    return true;
+                }
             else if (result == DialogResult.Cancel)
             {
                 return false;
@@ -110,29 +106,6 @@ namespace PharmacyManagement
             btnNewUser.Enabled = false;
             btnAllUsers.Enabled = false;
 
-        }
-        #endregion
-
-        #region Handle Profile
-        private void btnProfile_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            if (profile == null || profile.IsDisposed)
-            {
-                if (!string.IsNullOrEmpty(currentUsername))
-                {
-                    profile = new Profile();
-                    profile.Username = currentUsername;
-                    profile.MdiParent = this;
-                    profile.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Error: Username not found!", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-                profile.Show();
         }
         #endregion
     }

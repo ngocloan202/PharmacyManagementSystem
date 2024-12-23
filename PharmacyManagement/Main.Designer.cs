@@ -94,7 +94,6 @@
             this.btnProfile.ImageOptions.Image = global::PharmacyManagement.Properties.Resources.profile_icon_32px;
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnProfile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProfile_ItemClick);
             // 
             // btnNewCommodity
             // 
