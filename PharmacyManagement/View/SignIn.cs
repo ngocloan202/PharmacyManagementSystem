@@ -52,7 +52,7 @@ namespace PharmacyManagement
                 if (dataTable.Rows.Count > 0)
                 {
                     currentRoleUser = dataTable.Rows[0]["UserRole"].ToString();
-                    Username = dataTable.Rows[0]["Username"].ToString(); // Store username
+                    Username = dataTable.Rows[0]["Username"].ToString();
                     DialogResult = DialogResult.OK;
                     this.Close();
                 }
