@@ -135,5 +135,28 @@ namespace PharmacyManagement
                 profile.Show();
         }
         #endregion
+        #region Handle Sign Out
+        private void btnSignOut_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to sign out?", "Confirm Sign Out",
+                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                SignIn signInForm = new SignIn();
+                if (signInForm.ShowDialog() == DialogResult.OK)
+                {
+                    currentRole = signInForm.currentRoleUser;
+                    currentUsername = signInForm.currentUsername;
+                    ConfigureBasedOnRole();
+                    this.Show(); 
+                }
+                else
+                {
+                    Application.Exit(); 
+                }
+            }
+        }
+        #endregion
     }
 }
