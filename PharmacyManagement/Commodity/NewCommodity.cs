@@ -12,7 +12,6 @@ namespace PharmacyManagement.Commodity
     public partial class NewCommodity : XtraForm
     {
         PharmacyMgtDatabase dataTable = new PharmacyMgtDatabase();
-        ToolTip toolTip = new ToolTip();
         public NewCommodity()
         {
             dataTable.OpenConnection();
@@ -89,7 +88,9 @@ namespace PharmacyManagement.Commodity
         #region validating input
         private bool ValidateInput()
         {
-            // Clear any previous tooltips
+            ToolTip toolTip = new ToolTip();
+            toolTip.IsBalloon = true;
+
             toolTip.Hide(txtCommodityID);
             toolTip.Hide(txtCommodityName);
             toolTip.Hide(txtManufacturer);
@@ -100,7 +101,7 @@ namespace PharmacyManagement.Commodity
             if (string.IsNullOrWhiteSpace(txtCommodityID.Text))
             {
                 toolTip.Show("Please enter the Commodity ID!", txtCommodityID,
-                    txtCommodityID.Width - 15, txtCommodityID.Height, 2000);
+                    txtCommodityID.Width - 15, txtCommodityID.Height - 80, 2000);
                 txtCommodityID.Focus();
                 return false;
             }
