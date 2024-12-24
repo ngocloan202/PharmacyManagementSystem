@@ -207,11 +207,11 @@ namespace PharmacyManagement.HumanManage
                         SqlCommand cmd = new SqlCommand(sql);
                         cmd.Parameters.Add("@newCustomerID", SqlDbType.VarChar, 5).Value = txtCustomerID.Text.Trim();
                         cmd.Parameters.Add("@oldCustomerID", SqlDbType.VarChar, 5).Value = customerID;
-                        cmd.Parameters.Add("@CustomerName", SqlDbType.VarChar, 200).Value = txtCustomerName.Text;
+                        cmd.Parameters.Add("@CustomerName", SqlDbType.NVarChar, 200).Value = txtCustomerName.Text;
                         cmd.Parameters.Add("@Sex", SqlDbType.Char, 1).Value = radFemale.Checked ? "F" : "M";
                         cmd.Parameters.Add("@Contact", SqlDbType.VarChar, 10).Value = txtContact.Text;
                         cmd.Parameters.Add("@Birthday", SqlDbType.Date).Value = dtpBirthday.Value;
-                        cmd.Parameters.Add("@CustomerAddress", SqlDbType.VarChar, 200).Value = txtAddress.Text;
+                        cmd.Parameters.Add("@CustomerAddress", SqlDbType.NVarChar, 200).Value = txtAddress.Text;
                         dataTable.Update(cmd);
                         MessageBox.Show("Customer edited successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }

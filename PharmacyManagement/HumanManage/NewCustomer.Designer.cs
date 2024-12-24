@@ -175,10 +175,10 @@
             this.radMale.CheckedState.InnerColor = System.Drawing.Color.White;
             this.radMale.CheckedState.InnerOffset = -4;
             this.radMale.Font = new System.Drawing.Font("Segoe UI Variable Small", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radMale.Location = new System.Drawing.Point(669, 62);
+            this.radMale.Location = new System.Drawing.Point(654, 58);
             this.radMale.Name = "radMale";
             this.radMale.Size = new System.Drawing.Size(61, 24);
-            this.radMale.TabIndex = 14;
+            this.radMale.TabIndex = 3;
             this.radMale.Text = "Male";
             this.radMale.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.radMale.UncheckedState.BorderThickness = 2;
@@ -196,10 +196,10 @@
             this.radFemale.CheckedState.InnerColor = System.Drawing.Color.White;
             this.radFemale.CheckedState.InnerOffset = -4;
             this.radFemale.Font = new System.Drawing.Font("Segoe UI Variable Small", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radFemale.Location = new System.Drawing.Point(555, 62);
+            this.radFemale.Location = new System.Drawing.Point(534, 58);
             this.radFemale.Name = "radFemale";
             this.radFemale.Size = new System.Drawing.Size(77, 24);
-            this.radFemale.TabIndex = 13;
+            this.radFemale.TabIndex = 2;
             this.radFemale.TabStop = true;
             this.radFemale.Text = "Female";
             this.radFemale.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -224,7 +224,7 @@
             this.dtpBirthday.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpBirthday.Name = "dtpBirthday";
             this.dtpBirthday.Size = new System.Drawing.Size(214, 31);
-            this.dtpBirthday.TabIndex = 15;
+            this.dtpBirthday.TabIndex = 5;
             this.dtpBirthday.Value = new System.DateTime(2024, 12, 19, 10, 4, 31, 434);
             // 
             // labelControl6
@@ -235,7 +235,7 @@
             this.labelControl6.Location = new System.Drawing.Point(451, 183);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(63, 20);
-            this.labelControl6.TabIndex = 10;
+            this.labelControl6.TabIndex = 0;
             this.labelControl6.Text = "Address:";
             // 
             // labelControl8
@@ -243,10 +243,10 @@
             this.labelControl8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(449, 125);
+            this.labelControl8.Location = new System.Drawing.Point(449, 122);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(65, 20);
-            this.labelControl8.TabIndex = 11;
+            this.labelControl8.TabIndex = 0;
             this.labelControl8.Text = "Birthday:";
             // 
             // labelControl9
@@ -254,10 +254,10 @@
             this.labelControl9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(491, 64);
+            this.labelControl9.Location = new System.Drawing.Point(485, 60);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(29, 20);
-            this.labelControl9.TabIndex = 12;
+            this.labelControl9.TabIndex = 0;
             this.labelControl9.Text = "Sex:";
             // 
             // txtCustomerID
@@ -282,7 +282,7 @@
             this.txtCustomerID.PlaceholderText = "";
             this.txtCustomerID.SelectedText = "";
             this.txtCustomerID.Size = new System.Drawing.Size(214, 31);
-            this.txtCustomerID.TabIndex = 7;
+            this.txtCustomerID.TabIndex = 1;
             // 
             // txtAddress
             // 
@@ -306,7 +306,7 @@
             this.txtAddress.PlaceholderText = "";
             this.txtAddress.SelectedText = "";
             this.txtAddress.Size = new System.Drawing.Size(214, 31);
-            this.txtAddress.TabIndex = 9;
+            this.txtAddress.TabIndex = 7;
             // 
             // txtContact
             // 
@@ -330,7 +330,7 @@
             this.txtContact.PlaceholderText = "";
             this.txtContact.SelectedText = "";
             this.txtContact.Size = new System.Drawing.Size(214, 31);
-            this.txtContact.TabIndex = 9;
+            this.txtContact.TabIndex = 6;
             // 
             // txtCustomerName
             // 
@@ -354,7 +354,7 @@
             this.txtCustomerName.PlaceholderText = "";
             this.txtCustomerName.SelectedText = "";
             this.txtCustomerName.Size = new System.Drawing.Size(214, 31);
-            this.txtCustomerName.TabIndex = 9;
+            this.txtCustomerName.TabIndex = 4;
             // 
             // labelControl7
             // 
@@ -364,7 +364,7 @@
             this.labelControl7.Location = new System.Drawing.Point(78, 183);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(61, 21);
-            this.labelControl7.TabIndex = 4;
+            this.labelControl7.TabIndex = 0;
             this.labelControl7.Text = "Contact:";
             // 
             // labelControl5
@@ -375,7 +375,7 @@
             this.labelControl5.Location = new System.Drawing.Point(63, 122);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(76, 21);
-            this.labelControl5.TabIndex = 4;
+            this.labelControl5.TabIndex = 0;
             this.labelControl5.Text = "Full Name:";
             // 
             // labelControl3
@@ -386,7 +386,7 @@
             this.labelControl3.Location = new System.Drawing.Point(119, 60);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(20, 21);
-            this.labelControl3.TabIndex = 6;
+            this.labelControl3.TabIndex = 0;
             this.labelControl3.Text = "ID:";
             // 
             // guna2Panel5
@@ -598,7 +598,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnAdd.Size = new System.Drawing.Size(85, 30);
-            this.btnAdd.TabIndex = 19;
+            this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -617,7 +617,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(19)))), ((int)(((byte)(10)))));
             this.btnDelete.Size = new System.Drawing.Size(85, 30);
-            this.btnDelete.TabIndex = 18;
+            this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -636,7 +636,7 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnEdit.Size = new System.Drawing.Size(85, 30);
-            this.btnEdit.TabIndex = 15;
+            this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "Edit";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -655,7 +655,7 @@
             this.btnReload.Name = "btnReload";
             this.btnReload.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnReload.Size = new System.Drawing.Size(85, 30);
-            this.btnReload.TabIndex = 17;
+            this.btnReload.TabIndex = 3;
             this.btnReload.Text = "Reload";
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
@@ -674,7 +674,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnSave.Size = new System.Drawing.Size(85, 30);
-            this.btnSave.TabIndex = 16;
+            this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
