@@ -317,7 +317,7 @@
             this.guna2Panel3.Location = new System.Drawing.Point(538, 2);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(203, 130);
-            this.guna2Panel3.TabIndex = 0;
+            this.guna2Panel3.TabIndex = 4;
             // 
             // cboCommodityType
             // 
@@ -335,7 +335,7 @@
             this.cboCommodityType.Location = new System.Drawing.Point(16, 63);
             this.cboCommodityType.Name = "cboCommodityType";
             this.cboCommodityType.Size = new System.Drawing.Size(170, 36);
-            this.cboCommodityType.TabIndex = 7;
+            this.cboCommodityType.TabIndex = 1;
             // 
             // guna2Panel4
             // 
@@ -353,7 +353,7 @@
             this.guna2Panel4.Location = new System.Drawing.Point(537, 138);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(203, 242);
-            this.guna2Panel4.TabIndex = 0;
+            this.guna2Panel4.TabIndex = 3;
             // 
             // txtQuantity
             // 
@@ -470,7 +470,7 @@
             this.guna2Panel5.Location = new System.Drawing.Point(538, 2);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(203, 36);
-            this.guna2Panel5.TabIndex = 0;
+            this.guna2Panel5.TabIndex = 2;
             // 
             // labelControl2
             // 
