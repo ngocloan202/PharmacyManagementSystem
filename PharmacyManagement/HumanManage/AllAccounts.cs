@@ -116,5 +116,13 @@ namespace PharmacyManagement.HumanManage
             MessageBox.Show("Updated information successfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
             AllUsers_Load(sender, e);
         }
+
+        private void dgvAllAccounts_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvAllAccounts.Columns[e.ColumnIndex].Name == "UserPassword")
+            {
+                e.Value = "••••••••••";
+            }
+        }
     }
 }

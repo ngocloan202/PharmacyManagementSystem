@@ -541,6 +541,7 @@
             this.dgvAllAccounts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAllAccounts.Size = new System.Drawing.Size(798, 236);
             this.dgvAllAccounts.TabIndex = 0;
+            this.dgvAllAccounts.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvAllAccounts_CellFormatting);
             // 
             // AccountID
             // 
