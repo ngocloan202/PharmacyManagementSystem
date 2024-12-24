@@ -11,6 +11,7 @@ namespace PharmacyManagement
     {
         private string employeeID;
         PharmacyMgtDatabase dataTable = new PharmacyMgtDatabase();
+        private bool isUpdating = false;
         public string EmployeeID { get => employeeID; set => employeeID = value; }
         public NewInvoice()
         {
@@ -107,6 +108,7 @@ namespace PharmacyManagement
 
             MessageBox.Show("Commodity added to cart successfully!", "Success", 
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+            lblTotal_TextChanged(sender, e);
             ClearAllFieldOfCommodities();
         }
         private void ClearAllFieldOfCommodities()
@@ -115,6 +117,32 @@ namespace PharmacyManagement
             txtQuantities.Text = "1";
             txtBaseUnit.Text = string.Empty;
             txtPrice.Text = string.Empty;
+        }
+        #endregion
+        #region Total Amount
+        private void lblTotal_TextChanged(object sender, EventArgs e)
+        {
+            if (isUpdating) return;
+
+            isUpdating = true;
+            decimal total = 0;
+            for (int i = 0; i < dgvCart.Rows.Count; i++)
+            {
+                if (dgvCart.Rows[i].Cells[4].Value != null)
+                {
+                    string amountStr = dgvCart.Rows[i].Cells[4].Value.ToString()
+                                        .Replace(" VND", "")
+                                        .Replace(",", "");
+
+                    decimal amount;
+                    if (decimal.TryParse(amountStr, out amount))
+                    {
+                        total += amount;
+                    }
+                }
+            }
+            lblTotal.Text = total.ToString("N0") + " VND";
+            isUpdating = false;
         }
         #endregion
     }

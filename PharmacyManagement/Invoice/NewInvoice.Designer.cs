@@ -436,6 +436,7 @@
             this.lblTotal.Size = new System.Drawing.Size(55, 21);
             this.lblTotal.TabIndex = 4;
             this.lblTotal.Text = "0VND";
+            this.lblTotal.TextChanged += new System.EventHandler(this.lblTotal_TextChanged);
             // 
             // labeltotal
             // 
@@ -634,7 +635,7 @@
             this.cboCommodityName.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cboCommodityName.DropDownHeight = 150;
             this.cboCommodityName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCommodityName.DropDownWidth = 200;
+            this.cboCommodityName.DropDownWidth = 230;
             this.cboCommodityName.FocusedColor = System.Drawing.Color.Black;
             this.cboCommodityName.FocusedState.BorderColor = System.Drawing.Color.Black;
             this.cboCommodityName.Font = new System.Drawing.Font("Segoe UI", 10F);
