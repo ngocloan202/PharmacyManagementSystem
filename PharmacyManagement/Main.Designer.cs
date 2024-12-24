@@ -119,6 +119,7 @@
             this.btnNewInvoice.ImageOptions.Image = global::PharmacyManagement.Properties.Resources.new_invoice;
             this.btnNewInvoice.Name = "btnNewInvoice";
             this.btnNewInvoice.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnNewInvoice.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewInvoice_ItemClick);
             // 
             // btnSignOut
             // 
