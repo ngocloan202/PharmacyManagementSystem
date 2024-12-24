@@ -121,17 +121,45 @@ namespace PharmacyManagement.HumanManage
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult kq;
-            kq = MessageBox.Show("Are you sure you want to delete this customer? ", "Delete",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult kq = MessageBox.Show(
+                    "Are you sure you want to delete this customer? This will also delete related invoices.",
+                    "Delete Customer and Related Data",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
             if (kq == DialogResult.Yes)
             {
-                string deleteCustomerQuery = @"DELETE FROM CUSTOMER WHERE CustomerID = @CustomerID";
-                SqlCommand deleteCustomerCmd = new SqlCommand(deleteCustomerQuery);
-                deleteCustomerCmd.Parameters.Add("@CustomerID", SqlDbType.NVarChar, 5).Value = txtCustomerID.Text;
-                dataTable.Update(deleteCustomerCmd);
+                try
+                {
+                    string deleteInvoiceDetailsSql = @" DELETE FROM INVOICEDETAILS 
+                                                            WHERE InvoiceID IN (
+                                                            SELECT InvoiceID 
+                                                            FROM INVOICE 
+                                                            WHERE CustomerID = @CustomerID)";
+                    SqlCommand deleteInvoiceDetailsCmd = new SqlCommand(deleteInvoiceDetailsSql);
+                    deleteInvoiceDetailsCmd.Parameters.Add("@CustomerID", SqlDbType.NVarChar, 5).Value = txtCustomerID.Text;
+                    dataTable.Update(deleteInvoiceDetailsCmd);
 
-                NewCustomer_Load(sender, e);
+                    string deleteInvoicesSql = @"DELETE FROM INVOICE WHERE CustomerID = @CustomerID";
+                    SqlCommand deleteInvoicesCmd = new SqlCommand(deleteInvoicesSql);
+                    deleteInvoicesCmd.Parameters.Add("@CustomerID", SqlDbType.NVarChar, 5).Value = txtCustomerID.Text;
+                    dataTable.Update(deleteInvoicesCmd);
+
+                    string deleteCustomerSql = @"DELETE FROM CUSTOMER WHERE CustomerID = @CustomerID";
+                    SqlCommand deleteCustomerCmd = new SqlCommand(deleteCustomerSql);
+                    deleteCustomerCmd.Parameters.Add("@CustomerID", SqlDbType.NVarChar, 5).Value = txtCustomerID.Text;
+                    dataTable.Update(deleteCustomerCmd);
+
+                    MessageBox.Show("Customer and related data deleted successfully!", "Success",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    NewCustomer_Load(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error deleting customer: {ex.Message}", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
