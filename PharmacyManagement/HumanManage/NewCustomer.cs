@@ -157,7 +157,7 @@ namespace PharmacyManagement.HumanManage
                       @Contact, @Birthday, @CustomerAddress)";
                         SqlCommand cmd = new SqlCommand(sql);
 
-                        cmd.Parameters.Add("@CustomerID", SqlDbType.NVarChar, 5).Value = txtCustomerID.Text;
+                        cmd.Parameters.Add("@CustomerID", SqlDbType.VarChar, 5).Value = txtCustomerID.Text;
                         cmd.Parameters.Add("@CustomerName", SqlDbType.NVarChar, 200).Value = txtCustomerName.Text;
                         cmd.Parameters.Add("@Sex", SqlDbType.Char, 1).Value = radFemale.Checked ? "F" : "M";
                         cmd.Parameters.Add("@Contact", SqlDbType.VarChar, 10).Value = txtContact.Text;
