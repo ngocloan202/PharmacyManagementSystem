@@ -15,10 +15,11 @@ namespace PharmacyManagement
     public partial class Main : XtraForm
     {
         #region Global variable
-        SignIn signIn = new SignIn();
         Profile profile = null;
+        NewInvoice newInvoice = null;
         private string currentRole;
         private string currentUsername;
+        private string currentEmployeeID;
         #endregion
         public Main()
         {
@@ -48,6 +49,7 @@ namespace PharmacyManagement
             {
                 currentRole = signIn.currentRoleUser;
                 currentUsername = signIn.currentUsername;
+                currentEmployeeID = signIn.currentEmployeeID;
                 return true;
             }
             else if (result == DialogResult.Cancel)
@@ -157,6 +159,29 @@ namespace PharmacyManagement
                     Application.Exit(); 
                 }
             }
+        }
+        #endregion
+
+        #region New Invoice
+        private void btnNewInvoice_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (newInvoice == null || newInvoice.IsDisposed)
+            {
+                if (!string.IsNullOrEmpty(currentEmployeeID))
+                {
+                    newInvoice = new NewInvoice();
+                    newInvoice.EmployeeID = currentEmployeeID;
+                    newInvoice.MdiParent = this;
+                    newInvoice.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Error: EmployeeID not found!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+                newInvoice.Show();
         }
         #endregion
     }

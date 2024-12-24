@@ -1,22 +1,17 @@
 ﻿using DevExpress.XtraEditors;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using PharmacyManagement.DB_query;
 
 namespace PharmacyManagement
 {
-    public partial class NewInvoice : DevExpress.XtraEditors.XtraForm
+    public partial class NewInvoice : XtraForm
     {
+        private string employeeID;
+        PharmacyMgtDatabase dataTable = new PharmacyMgtDatabase();
         public NewInvoice()
         {
             InitializeComponent();
         }
 
+        public string EmployeeID { get => employeeID; set => employeeID = value; }
     }
 }

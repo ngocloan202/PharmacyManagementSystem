@@ -31,7 +31,6 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtInvoiceID = new Guna.UI2.WinForms.Guna2TextBox();
             this.cboCustomerName = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cboEmployeeName = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.dtpDateCreated = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -45,6 +44,13 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.dgvCart = new System.Windows.Forms.DataGridView();
+            this.CommodityName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BaseUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblTotal = new System.Windows.Forms.Label();
             this.labeltotal = new DevExpress.XtraEditors.LabelControl();
@@ -63,21 +69,15 @@
             this.btnQuantities = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.CommodityName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BaseUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtEmployeeName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
+            this.guna2Panel4.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
-            this.guna2Panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -86,9 +86,9 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
             this.guna2Panel1.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel1.BorderThickness = 1;
+            this.guna2Panel1.Controls.Add(this.txtEmployeeName);
             this.guna2Panel1.Controls.Add(this.txtInvoiceID);
             this.guna2Panel1.Controls.Add(this.cboCustomerName);
-            this.guna2Panel1.Controls.Add(this.cboEmployeeName);
             this.guna2Panel1.Controls.Add(this.guna2Panel2);
             this.guna2Panel1.Controls.Add(this.dtpDateCreated);
             this.guna2Panel1.Controls.Add(this.labelControl14);
@@ -143,24 +143,6 @@
             this.cboCustomerName.Name = "cboCustomerName";
             this.cboCustomerName.Size = new System.Drawing.Size(173, 36);
             this.cboCustomerName.TabIndex = 2;
-            // 
-            // cboEmployeeName
-            // 
-            this.cboEmployeeName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cboEmployeeName.BackColor = System.Drawing.Color.Transparent;
-            this.cboEmployeeName.BorderColor = System.Drawing.Color.Transparent;
-            this.cboEmployeeName.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboEmployeeName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboEmployeeName.FocusedColor = System.Drawing.Color.Black;
-            this.cboEmployeeName.FocusedState.BorderColor = System.Drawing.Color.Black;
-            this.cboEmployeeName.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboEmployeeName.ForeColor = System.Drawing.Color.Black;
-            this.cboEmployeeName.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.cboEmployeeName.ItemHeight = 30;
-            this.cboEmployeeName.Location = new System.Drawing.Point(103, 92);
-            this.cboEmployeeName.Name = "cboEmployeeName";
-            this.cboEmployeeName.Size = new System.Drawing.Size(173, 36);
-            this.cboEmployeeName.TabIndex = 4;
             // 
             // guna2Panel2
             // 
@@ -346,6 +328,64 @@
             this.dgvCart.ReadOnly = true;
             this.dgvCart.Size = new System.Drawing.Size(787, 166);
             this.dgvCart.TabIndex = 0;
+            // 
+            // CommodityName
+            // 
+            this.CommodityName.DataPropertyName = "CommodityName";
+            this.CommodityName.HeaderText = "Commodity Name";
+            this.CommodityName.Name = "CommodityName";
+            this.CommodityName.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.DataPropertyName = "Quantity";
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // BaseUnit
+            // 
+            this.BaseUnit.DataPropertyName = "BaseUnit";
+            this.BaseUnit.HeaderText = "Base Unit";
+            this.BaseUnit.Name = "BaseUnit";
+            this.BaseUnit.ReadOnly = true;
+            // 
+            // UnitPrice
+            // 
+            this.UnitPrice.DataPropertyName = "UnitPrice";
+            this.UnitPrice.HeaderText = "Unit Price";
+            this.UnitPrice.Name = "UnitPrice";
+            this.UnitPrice.ReadOnly = true;
+            // 
+            // Amount
+            // 
+            this.Amount.DataPropertyName = "Amount";
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            this.Amount.ReadOnly = true;
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.guna2Panel4.BorderColor = System.Drawing.Color.Black;
+            this.guna2Panel4.BorderThickness = 1;
+            this.guna2Panel4.Controls.Add(this.labelControl7);
+            this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel4.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(787, 25);
+            this.guna2Panel4.TabIndex = 1;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Location = new System.Drawing.Point(20, 2);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(30, 21);
+            this.labelControl7.TabIndex = 0;
+            this.labelControl7.Text = "Cart";
             // 
             // guna2Panel5
             // 
@@ -619,63 +659,27 @@
             this.labelControl10.TabIndex = 0;
             this.labelControl10.Text = "Commodities";
             // 
-            // guna2Panel4
+            // txtEmployeeName
             // 
-            this.guna2Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.guna2Panel4.BorderColor = System.Drawing.Color.Black;
-            this.guna2Panel4.BorderThickness = 1;
-            this.guna2Panel4.Controls.Add(this.labelControl7);
-            this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel4.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(787, 25);
-            this.guna2Panel4.TabIndex = 1;
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(20, 2);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(30, 21);
-            this.labelControl7.TabIndex = 0;
-            this.labelControl7.Text = "Cart";
-            // 
-            // CommodityName
-            // 
-            this.CommodityName.DataPropertyName = "CommodityName";
-            this.CommodityName.HeaderText = "Commodity Name";
-            this.CommodityName.Name = "CommodityName";
-            this.CommodityName.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            this.Quantity.DataPropertyName = "Quantity";
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            // 
-            // BaseUnit
-            // 
-            this.BaseUnit.DataPropertyName = "BaseUnit";
-            this.BaseUnit.HeaderText = "Base Unit";
-            this.BaseUnit.Name = "BaseUnit";
-            this.BaseUnit.ReadOnly = true;
-            // 
-            // UnitPrice
-            // 
-            this.UnitPrice.DataPropertyName = "UnitPrice";
-            this.UnitPrice.HeaderText = "Unit Price";
-            this.UnitPrice.Name = "UnitPrice";
-            this.UnitPrice.ReadOnly = true;
-            // 
-            // Amount
-            // 
-            this.Amount.DataPropertyName = "Amount";
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            this.Amount.ReadOnly = true;
+            this.txtEmployeeName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtEmployeeName.BorderColor = System.Drawing.Color.Black;
+            this.txtEmployeeName.BorderRadius = 14;
+            this.txtEmployeeName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmployeeName.DefaultText = "";
+            this.txtEmployeeName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtEmployeeName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtEmployeeName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmployeeName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmployeeName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmployeeName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtEmployeeName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmployeeName.Location = new System.Drawing.Point(103, 95);
+            this.txtEmployeeName.Name = "txtEmployeeName";
+            this.txtEmployeeName.PasswordChar = '\0';
+            this.txtEmployeeName.PlaceholderText = "";
+            this.txtEmployeeName.SelectedText = "";
+            this.txtEmployeeName.Size = new System.Drawing.Size(173, 31);
+            this.txtEmployeeName.TabIndex = 4;
             // 
             // NewInvoice
             // 
@@ -694,14 +698,14 @@
             this.guna2Panel2.PerformLayout();
             this.guna2Panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).EndInit();
+            this.guna2Panel4.ResumeLayout(false);
+            this.guna2Panel4.PerformLayout();
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
             this.guna2Panel7.ResumeLayout(false);
             this.guna2Panel7.PerformLayout();
             this.guna2Panel6.ResumeLayout(false);
             this.guna2Panel6.PerformLayout();
-            this.guna2Panel4.ResumeLayout(false);
-            this.guna2Panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -738,7 +742,6 @@
         private Guna.UI2.WinForms.Guna2Button btnAddToCard;
         private DevExpress.XtraEditors.LabelControl labeltotal;
         private System.Windows.Forms.Label lblTotal;
-        private Guna.UI2.WinForms.Guna2ComboBox cboEmployeeName;
         private Guna.UI2.WinForms.Guna2ComboBox cboCustomerName;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private Guna.UI2.WinForms.Guna2TextBox txtInvoiceID;
@@ -750,5 +753,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn BaseUnit;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private Guna.UI2.WinForms.Guna2TextBox txtEmployeeName;
     }
 }
