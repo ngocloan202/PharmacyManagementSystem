@@ -151,7 +151,7 @@ namespace PharmacyManagement.HumanManage
                         cmd.Parameters.Add("@CustomerID", SqlDbType.NVarChar, 5).Value = txtCustomerID.Text;
                         cmd.Parameters.Add("@CustomerName", SqlDbType.NVarChar, 200).Value = txtCustomerName.Text;
                         cmd.Parameters.Add("@Sex", SqlDbType.Char, 1).Value = radFemale.Checked ? "F" : "M";
-                        cmd.Parameters.Add("@Contact", SqlDbType.NVarChar, 10).Value = txtContact.Text;
+                        cmd.Parameters.Add("@Contact", SqlDbType.VarChar, 10).Value = txtContact.Text;
                         cmd.Parameters.Add("@Birthday", SqlDbType.Date).Value = dtpBirthday.Value;
                         cmd.Parameters.Add("@CustomerAddress", SqlDbType.NVarChar, 200).Value = txtAddress.Text;
                         dataTable.Update(cmd);
@@ -164,8 +164,8 @@ namespace PharmacyManagement.HumanManage
                                        CustomerName = @CustomerName,
                                        Sex = @Sex,
                                        Contact = @Contact,
-                                       Birthday = @Birthday
-                                       CustomerAddress = CustomerAddress
+                                       Birthday = @Birthday,
+                                       CustomerAddress = @CustomerAddress
                                    WHERE CustomerID = @oldCustomerID";
                         SqlCommand cmd = new SqlCommand(sql);
                         cmd.Parameters.Add("@newCustomerID", SqlDbType.VarChar, 5).Value = txtCustomerID.Text.Trim();
@@ -228,12 +228,10 @@ namespace PharmacyManagement.HumanManage
 
         private void dgvCustomers_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (dgvCustomers.Columns[e.ColumnIndex].Name == "Sex")
+            if (dgvCustomers.Columns[e.ColumnIndex].Name == "Sex" && e.Value != null)
             {
-                if (e.Value != null)
-                {
-                    e.Value = e.Value.ToString() == "F" ? "Nữ" : "Nam";
-                };
+                e.Value = e.Value.ToString().Trim() == "F" ? "Nữ" : "Nam";
+                e.FormattingApplied = true;
             }
         }
     }
