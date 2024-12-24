@@ -52,19 +52,28 @@ namespace PharmacyManagement.HumanManage
             txtAddress.DataBindings.Add("Text", binding, "CustomerAddress");
 
             // Handle rad button gender
-            Binding male = new Binding("Checked", binding, "Sex");
+            Binding male = new Binding("Checked", binding, "Sex", true, DataSourceUpdateMode.OnPropertyChanged);
             male.Format += (s, evt) =>
             {
-                evt.Value = Convert.ToString(evt.Value) == "M";
+                evt.Value = evt.Value?.ToString() == "M";
+            };
+            male.Parse += (s, evt) =>
+            {
+                evt.Value = radMale.Checked ? "M" : "F";
             };
             radMale.DataBindings.Add(male);
 
-            Binding female = new Binding("Checked", binding, "Sex");
+            Binding female = new Binding("Checked", binding, "Sex", true, DataSourceUpdateMode.OnPropertyChanged);
             female.Format += (s, evt) =>
             {
-                evt.Value = Convert.ToString(evt.Value) == "F";
+                evt.Value = evt.Value?.ToString() == "F";
+            };
+            female.Parse += (s, evt) =>
+            {
+                evt.Value = radFemale.Checked ? "F" : "M";
             };
             radFemale.DataBindings.Add(female);
+
         }
 
         private void ToggleControls(bool value)
