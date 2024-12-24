@@ -91,6 +91,12 @@
     <Compile Include="HumanManage\AllUsers.Designer.cs">
       <DependentUpon>AllUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="HumanManage\NewAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HumanManage\NewAccount.Designer.cs">
+      <DependentUpon>NewAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="HumanManage\NewCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HumanManage\AllUsers.resx">
       <DependentUpon>AllUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HumanManage\NewAccount.resx">
+      <DependentUpon>NewAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HumanManage\NewCustomer.resx">
       <DependentUpon>NewCustomer.cs</DependentUpon>
