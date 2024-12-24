@@ -11,20 +11,19 @@ namespace PharmacyManagement
     {
         private string employeeID;
         PharmacyMgtDatabase dataTable = new PharmacyMgtDatabase();
+        public string EmployeeID { get => employeeID; set => employeeID = value; }
         public NewInvoice()
         {
             InitializeComponent();
             dataTable.OpenConnection();
         }
-
-        public string EmployeeID { get => employeeID; set => employeeID = value; }
-
         private void NewInvoice_Load(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(EmployeeID))
             {
                 FetchData(EmployeeID);
             }
+            ToggleControls();
         }
 
         #region Fetch Data
@@ -81,6 +80,12 @@ namespace PharmacyManagement
             FetchDataCustomer();
             FetchDataCommodities();
             FetchDataEmployeeName();
+        }
+        #endregion
+        #region Toggle Controls
+        private void ToggleControls()
+        {
+            txtEmployeeName.Enabled = false;
         }
         #endregion
     }
