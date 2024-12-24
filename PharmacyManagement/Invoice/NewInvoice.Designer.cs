@@ -370,7 +370,7 @@
             this.lblTotal.Location = new System.Drawing.Point(572, 357);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(55, 21);
-            this.lblTotal.TabIndex = 1;
+            this.lblTotal.TabIndex = 4;
             this.lblTotal.Text = "0VND";
             // 
             // labeltotal
@@ -401,7 +401,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnAdd.Size = new System.Drawing.Size(79, 27);
-            this.btnAdd.TabIndex = 2;
+            this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Add";
             // 
             // guna2Panel7
@@ -525,7 +525,7 @@
             this.labelControl13.Location = new System.Drawing.Point(14, 167);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(29, 17);
-            this.labelControl13.TabIndex = 15;
+            this.labelControl13.TabIndex = 0;
             this.labelControl13.Text = "Price";
             // 
             // btnBaseUnit
@@ -556,7 +556,7 @@
             this.labelControl12.Location = new System.Drawing.Point(14, 125);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(25, 17);
-            this.labelControl12.TabIndex = 13;
+            this.labelControl12.TabIndex = 0;
             this.labelControl12.Text = "Unit";
             // 
             // cboCommodityType
