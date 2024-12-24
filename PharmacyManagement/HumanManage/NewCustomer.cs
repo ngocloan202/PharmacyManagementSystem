@@ -100,7 +100,7 @@ namespace PharmacyManagement.HumanManage
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            customerID = txtCustomerName.Text;
+            customerID = txtCustomerID.Text;
             ToggleControls(true);
         }
 
@@ -230,7 +230,7 @@ namespace PharmacyManagement.HumanManage
         {
             if (dgvCustomers.Columns[e.ColumnIndex].Name == "Sex" && e.Value != null)
             {
-                e.Value = e.Value.ToString().Trim() == "F" ? "Nữ" : "Nam";
+                e.Value = e.Value.ToString().Trim() == "F" ? "F" : "M";
                 e.FormattingApplied = true;
             }
         }
