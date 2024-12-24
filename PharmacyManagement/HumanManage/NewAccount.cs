@@ -75,5 +75,15 @@ namespace PharmacyManagement.HumanManage
             cboUserRole.Items.IndexOf(0);
             txtUsername.Focus();
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to cancel the changes?",
+                "Cancel Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                NewAccount_Load(sender, e);
+            }
+        }
     }
 }

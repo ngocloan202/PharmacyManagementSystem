@@ -39,9 +39,9 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.cboUserRole = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtAccountID = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
-            this.cboUserRole = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,6 +63,7 @@
             this.btnCancel.Size = new System.Drawing.Size(85, 30);
             this.btnCancel.TabIndex = 21;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // labelControl4
             // 
@@ -215,6 +216,25 @@
             this.guna2Panel1.Size = new System.Drawing.Size(716, 335);
             this.guna2Panel1.TabIndex = 18;
             // 
+            // cboUserRole
+            // 
+            this.cboUserRole.BackColor = System.Drawing.Color.Transparent;
+            this.cboUserRole.BorderColor = System.Drawing.Color.Black;
+            this.cboUserRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboUserRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboUserRole.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboUserRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboUserRole.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboUserRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboUserRole.ItemHeight = 30;
+            this.cboUserRole.Items.AddRange(new object[] {
+            "user",
+            "admin"});
+            this.cboUserRole.Location = new System.Drawing.Point(272, 214);
+            this.cboUserRole.Name = "cboUserRole";
+            this.cboUserRole.Size = new System.Drawing.Size(308, 36);
+            this.cboUserRole.TabIndex = 22;
+            // 
             // txtAccountID
             // 
             this.txtAccountID.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -244,25 +264,6 @@
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.Size = new System.Drawing.Size(762, 395);
             this.guna2Panel6.TabIndex = 15;
-            // 
-            // cboUserRole
-            // 
-            this.cboUserRole.BackColor = System.Drawing.Color.Transparent;
-            this.cboUserRole.BorderColor = System.Drawing.Color.Black;
-            this.cboUserRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboUserRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboUserRole.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboUserRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboUserRole.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboUserRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cboUserRole.ItemHeight = 30;
-            this.cboUserRole.Items.AddRange(new object[] {
-            "user",
-            "admin"});
-            this.cboUserRole.Location = new System.Drawing.Point(272, 214);
-            this.cboUserRole.Name = "cboUserRole";
-            this.cboUserRole.Size = new System.Drawing.Size(308, 36);
-            this.cboUserRole.TabIndex = 22;
             // 
             // NewAccount
             // 
