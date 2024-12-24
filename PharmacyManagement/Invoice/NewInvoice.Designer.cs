@@ -62,7 +62,7 @@
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddToCard = new Guna.UI2.WinForms.Guna2Button();
-            this.txtPrice = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtSellingPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.txtBaseUnit = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
@@ -350,6 +350,7 @@
             this.dgvCart.Location = new System.Drawing.Point(0, 25);
             this.dgvCart.Name = "dgvCart";
             this.dgvCart.ReadOnly = true;
+            this.dgvCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCart.Size = new System.Drawing.Size(787, 166);
             this.dgvCart.TabIndex = 0;
             // 
@@ -510,7 +511,7 @@
             this.guna2Panel6.BorderThickness = 1;
             this.guna2Panel6.Controls.Add(this.btnCancel);
             this.guna2Panel6.Controls.Add(this.btnAddToCard);
-            this.guna2Panel6.Controls.Add(this.txtPrice);
+            this.guna2Panel6.Controls.Add(this.txtSellingPrice);
             this.guna2Panel6.Controls.Add(this.labelControl13);
             this.guna2Panel6.Controls.Add(this.txtBaseUnit);
             this.guna2Panel6.Controls.Add(this.labelControl12);
@@ -563,26 +564,26 @@
             this.btnAddToCard.Text = "Add to card";
             this.btnAddToCard.Click += new System.EventHandler(this.btnAddToCard_Click);
             // 
-            // txtPrice
+            // txtSellingPrice
             // 
-            this.txtPrice.BorderColor = System.Drawing.Color.Black;
-            this.txtPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPrice.DefaultText = "";
-            this.txtPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPrice.FocusedState.BorderColor = System.Drawing.Color.Green;
-            this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPrice.ForeColor = System.Drawing.Color.Black;
-            this.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
-            this.txtPrice.Location = new System.Drawing.Point(62, 160);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.PasswordChar = '\0';
-            this.txtPrice.PlaceholderText = "";
-            this.txtPrice.SelectedText = "";
-            this.txtPrice.Size = new System.Drawing.Size(120, 30);
-            this.txtPrice.TabIndex = 4;
+            this.txtSellingPrice.BorderColor = System.Drawing.Color.Black;
+            this.txtSellingPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSellingPrice.DefaultText = "";
+            this.txtSellingPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSellingPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSellingPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSellingPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSellingPrice.FocusedState.BorderColor = System.Drawing.Color.Green;
+            this.txtSellingPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSellingPrice.ForeColor = System.Drawing.Color.Black;
+            this.txtSellingPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
+            this.txtSellingPrice.Location = new System.Drawing.Point(62, 160);
+            this.txtSellingPrice.Name = "txtSellingPrice";
+            this.txtSellingPrice.PasswordChar = '\0';
+            this.txtSellingPrice.PlaceholderText = "";
+            this.txtSellingPrice.SelectedText = "";
+            this.txtSellingPrice.Size = new System.Drawing.Size(120, 30);
+            this.txtSellingPrice.TabIndex = 4;
             // 
             // labelControl13
             // 
@@ -744,7 +745,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private Guna.UI2.WinForms.Guna2ComboBox cboCommodityName;
-        private Guna.UI2.WinForms.Guna2TextBox txtPrice;
+        private Guna.UI2.WinForms.Guna2TextBox txtSellingPrice;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private Guna.UI2.WinForms.Guna2TextBox txtBaseUnit;
         private DevExpress.XtraEditors.LabelControl labelControl12;
