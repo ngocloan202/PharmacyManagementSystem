@@ -88,5 +88,34 @@ namespace PharmacyManagement
             txtEmployeeName.Enabled = false;
         }
         #endregion
+        #region Handle Event Add To Cart
+        private void btnAddToCard_Click(object sender, EventArgs e)
+        {
+            double price = double.Parse(txtPrice.Text);
+            double quantity = double.Parse(txtQuantities.Text);
+            double amount = price * quantity;
+            string formattedPrice = price.ToString("N0") + " VND";
+            string formattedAmount = amount.ToString("N0") + " VND";
+
+            dgvCart.Rows.Add(
+                cboCommodityName.Text,
+                txtQuantities.Text,
+                txtBaseUnit.Text,
+                formattedPrice,
+                formattedAmount
+            );
+
+            MessageBox.Show("Commodity added to cart successfully!", "Success", 
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ClearAllFieldOfCommodities();
+        }
+        private void ClearAllFieldOfCommodities()
+        {
+            cboCommodityName.SelectedIndex = 0;
+            txtQuantities.Text = "1";
+            txtBaseUnit.Text = string.Empty;
+            txtPrice.Text = string.Empty;
+        }
+        #endregion
     }
 }
