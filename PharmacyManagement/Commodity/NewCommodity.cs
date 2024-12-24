@@ -77,14 +77,6 @@ namespace PharmacyManagement.Commodity
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            if (ValidateInput())
-            {
-                CreateNewCommodity(sender , e);
-            }
-        }
-
         private void ClearAllFields()
         {
             txtCommodityID.Text = string.Empty;
@@ -101,6 +93,13 @@ namespace PharmacyManagement.Commodity
             txtCommodityID.Select();
         }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (ValidateInput())
+            {
+                CreateNewCommodity(sender, e);
+            }
+        }
 
         #region validating input
         private bool ValidateInput()
@@ -190,6 +189,7 @@ namespace PharmacyManagement.Commodity
                 NewCommodity_Load(sender, e);
             }
         }
+
 
     }
 }
