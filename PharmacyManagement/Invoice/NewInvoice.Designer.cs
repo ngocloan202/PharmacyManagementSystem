@@ -65,7 +65,7 @@
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.btnBaseUnit = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.cboCommodityType = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cboCommodityName = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnQuantities = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -142,6 +142,7 @@
             this.cboCustomerName.Location = new System.Drawing.Point(446, 46);
             this.cboCustomerName.Name = "cboCustomerName";
             this.cboCustomerName.Size = new System.Drawing.Size(173, 36);
+            this.cboCustomerName.DropDownHeight = 100;
             this.cboCustomerName.TabIndex = 2;
             // 
             // guna2Panel2
@@ -489,7 +490,7 @@
             this.guna2Panel6.Controls.Add(this.labelControl13);
             this.guna2Panel6.Controls.Add(this.btnBaseUnit);
             this.guna2Panel6.Controls.Add(this.labelControl12);
-            this.guna2Panel6.Controls.Add(this.cboCommodityType);
+            this.guna2Panel6.Controls.Add(this.cboCommodityName);
             this.guna2Panel6.Controls.Add(this.btnQuantities);
             this.guna2Panel6.Controls.Add(this.labelControl11);
             this.guna2Panel6.Controls.Add(this.labelControl10);
@@ -599,23 +600,25 @@
             this.labelControl12.TabIndex = 0;
             this.labelControl12.Text = "Unit";
             // 
-            // cboCommodityType
+            // cboCommodityName
             // 
-            this.cboCommodityType.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cboCommodityType.BackColor = System.Drawing.Color.Transparent;
-            this.cboCommodityType.BorderColor = System.Drawing.Color.Transparent;
-            this.cboCommodityType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboCommodityType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCommodityType.FocusedColor = System.Drawing.Color.Black;
-            this.cboCommodityType.FocusedState.BorderColor = System.Drawing.Color.Black;
-            this.cboCommodityType.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboCommodityType.ForeColor = System.Drawing.Color.Black;
-            this.cboCommodityType.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.cboCommodityType.ItemHeight = 30;
-            this.cboCommodityType.Location = new System.Drawing.Point(14, 73);
-            this.cboCommodityType.Name = "cboCommodityType";
-            this.cboCommodityType.Size = new System.Drawing.Size(109, 36);
-            this.cboCommodityType.TabIndex = 1;
+            this.cboCommodityName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboCommodityName.BackColor = System.Drawing.Color.Transparent;
+            this.cboCommodityName.BorderColor = System.Drawing.Color.Transparent;
+            this.cboCommodityName.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboCommodityName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCommodityName.FocusedColor = System.Drawing.Color.Black;
+            this.cboCommodityName.FocusedState.BorderColor = System.Drawing.Color.Black;
+            this.cboCommodityName.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboCommodityName.ForeColor = System.Drawing.Color.Black;
+            this.cboCommodityName.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.cboCommodityName.ItemHeight = 30;
+            this.cboCommodityName.Location = new System.Drawing.Point(14, 73);
+            this.cboCommodityName.Name = "cboCommodityName";
+            this.cboCommodityName.Size = new System.Drawing.Size(109, 36);
+            this.cboCommodityName.DropDownWidth = 200;
+            this.cboCommodityName.DropDownHeight = 150;
+            this.cboCommodityName.TabIndex = 1;
             // 
             // btnQuantities
             // 
@@ -692,6 +695,7 @@
             this.Name = "NewInvoice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Invoice";
+            this.Load += new System.EventHandler(this.NewInvoice_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
@@ -732,7 +736,7 @@
         private Guna.UI2.WinForms.Guna2TextBox btnQuantities;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl10;
-        private Guna.UI2.WinForms.Guna2ComboBox cboCommodityType;
+        private Guna.UI2.WinForms.Guna2ComboBox cboCommodityName;
         private Guna.UI2.WinForms.Guna2TextBox btnPrice;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private Guna.UI2.WinForms.Guna2TextBox btnBaseUnit;
