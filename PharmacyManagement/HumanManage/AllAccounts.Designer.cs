@@ -211,7 +211,7 @@
             this.txtPass.Location = new System.Drawing.Point(542, 97);
             this.txtPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '\0';
+            this.txtPass.PasswordChar = '•';
             this.txtPass.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtPass.PlaceholderText = "";
             this.txtPass.SelectedText = "";
