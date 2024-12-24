@@ -54,10 +54,11 @@
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.propertyGridControl1 = new DevExpress.XtraVerticalGrid.PropertyGridControl();
+            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -65,6 +66,7 @@
             this.guna2Panel5.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.propertyGridControl1)).BeginInit();
+            this.guna2Panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -110,7 +112,7 @@
             this.txtCommodityID.PlaceholderText = "";
             this.txtCommodityID.SelectedText = "";
             this.txtCommodityID.Size = new System.Drawing.Size(308, 31);
-            this.txtCommodityID.TabIndex = 9;
+            this.txtCommodityID.TabIndex = 1;
             // 
             // labelControl11
             // 
@@ -120,7 +122,7 @@
             this.labelControl11.Location = new System.Drawing.Point(117, 53);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(16, 21);
-            this.labelControl11.TabIndex = 8;
+            this.labelControl11.TabIndex = 0;
             this.labelControl11.Text = "ID";
             // 
             // dtpMfgDate
@@ -139,7 +141,7 @@
             this.dtpMfgDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpMfgDate.Name = "dtpMfgDate";
             this.dtpMfgDate.Size = new System.Drawing.Size(308, 31);
-            this.dtpMfgDate.TabIndex = 7;
+            this.dtpMfgDate.TabIndex = 5;
             this.dtpMfgDate.Value = new System.DateTime(2024, 12, 19, 11, 30, 22, 858);
             // 
             // dtpExpDate
@@ -181,7 +183,7 @@
             this.txtCommodityName.PlaceholderText = "";
             this.txtCommodityName.SelectedText = "";
             this.txtCommodityName.Size = new System.Drawing.Size(308, 31);
-            this.txtCommodityName.TabIndex = 1;
+            this.txtCommodityName.TabIndex = 2;
             // 
             // labelControl7
             // 
@@ -225,7 +227,7 @@
             this.txtBaseUnit.PlaceholderText = "";
             this.txtBaseUnit.SelectedText = "";
             this.txtBaseUnit.Size = new System.Drawing.Size(308, 31);
-            this.txtBaseUnit.TabIndex = 3;
+            this.txtBaseUnit.TabIndex = 4;
             // 
             // labelControl5
             // 
@@ -258,7 +260,7 @@
             this.txtManufacturer.PlaceholderText = "";
             this.txtManufacturer.SelectedText = "";
             this.txtManufacturer.Size = new System.Drawing.Size(308, 31);
-            this.txtManufacturer.TabIndex = 2;
+            this.txtManufacturer.TabIndex = 3;
             // 
             // labelControl4
             // 
@@ -315,7 +317,7 @@
             this.guna2Panel3.Location = new System.Drawing.Point(538, 2);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(203, 130);
-            this.guna2Panel3.TabIndex = 2;
+            this.guna2Panel3.TabIndex = 0;
             // 
             // cboCommodityType
             // 
@@ -333,7 +335,7 @@
             this.cboCommodityType.Location = new System.Drawing.Point(16, 63);
             this.cboCommodityType.Name = "cboCommodityType";
             this.cboCommodityType.Size = new System.Drawing.Size(170, 36);
-            this.cboCommodityType.TabIndex = 0;
+            this.cboCommodityType.TabIndex = 7;
             // 
             // guna2Panel4
             // 
@@ -351,7 +353,7 @@
             this.guna2Panel4.Location = new System.Drawing.Point(537, 138);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(203, 242);
-            this.guna2Panel4.TabIndex = 3;
+            this.guna2Panel4.TabIndex = 0;
             // 
             // txtQuantity
             // 
@@ -375,7 +377,7 @@
             this.txtQuantity.PlaceholderText = "";
             this.txtQuantity.SelectedText = "";
             this.txtQuantity.Size = new System.Drawing.Size(93, 30);
-            this.txtQuantity.TabIndex = 4;
+            this.txtQuantity.TabIndex = 1;
             this.txtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labelControl10
@@ -386,7 +388,7 @@
             this.labelControl10.Location = new System.Drawing.Point(14, 18);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(66, 21);
-            this.labelControl10.TabIndex = 3;
+            this.labelControl10.TabIndex = 0;
             this.labelControl10.Text = "Quantity";
             // 
             // txtSellingPrice
@@ -410,7 +412,7 @@
             this.txtSellingPrice.PlaceholderText = "";
             this.txtSellingPrice.SelectedText = "";
             this.txtSellingPrice.Size = new System.Drawing.Size(174, 31);
-            this.txtSellingPrice.TabIndex = 2;
+            this.txtSellingPrice.TabIndex = 3;
             // 
             // labelControl9
             // 
@@ -445,7 +447,7 @@
             this.txtPurchasePrice.PlaceholderText = "";
             this.txtPurchasePrice.SelectedText = "";
             this.txtPurchasePrice.Size = new System.Drawing.Size(174, 30);
-            this.txtPurchasePrice.TabIndex = 1;
+            this.txtPurchasePrice.TabIndex = 2;
             // 
             // labelControl8
             // 
@@ -468,7 +470,7 @@
             this.guna2Panel5.Location = new System.Drawing.Point(538, 2);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(203, 36);
-            this.guna2Panel5.TabIndex = 1;
+            this.guna2Panel5.TabIndex = 0;
             // 
             // labelControl2
             // 
@@ -481,55 +483,15 @@
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Type of commodity";
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnAdd.BorderRadius = 15;
-            this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(274, 404);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
-            this.btnAdd.Size = new System.Drawing.Size(85, 30);
-            this.btnAdd.TabIndex = 4;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnCancel.BorderRadius = 15;
-            this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(390, 404);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(19)))), ((int)(((byte)(10)))));
-            this.btnCancel.Size = new System.Drawing.Size(85, 30);
-            this.btnCancel.TabIndex = 5;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // guna2Panel6
             // 
             this.guna2Panel6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.guna2Panel6.Controls.Add(this.btnCancel);
             this.guna2Panel6.Controls.Add(this.guna2Panel4);
-            this.guna2Panel6.Controls.Add(this.btnAdd);
             this.guna2Panel6.Controls.Add(this.guna2Panel2);
             this.guna2Panel6.Controls.Add(this.guna2Panel1);
             this.guna2Panel6.Location = new System.Drawing.Point(1, 0);
             this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.Size = new System.Drawing.Size(762, 488);
+            this.guna2Panel6.Size = new System.Drawing.Size(762, 381);
             this.guna2Panel6.TabIndex = 0;
             // 
             // propertyGridControl1
@@ -539,6 +501,50 @@
             this.propertyGridControl1.OptionsView.AllowReadOnlyRowAppearance = DevExpress.Utils.DefaultBoolean.True;
             this.propertyGridControl1.Size = new System.Drawing.Size(400, 200);
             this.propertyGridControl1.TabIndex = 0;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BorderRadius = 15;
+            this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(397, 15);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(19)))), ((int)(((byte)(10)))));
+            this.btnCancel.Size = new System.Drawing.Size(85, 30);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "Cancel";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BorderRadius = 15;
+            this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(281, 15);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
+            this.btnAdd.Size = new System.Drawing.Size(85, 30);
+            this.btnAdd.TabIndex = 6;
+            this.btnAdd.Text = "Add";
+            // 
+            // guna2Panel7
+            // 
+            this.guna2Panel7.Controls.Add(this.btnCancel);
+            this.guna2Panel7.Controls.Add(this.btnAdd);
+            this.guna2Panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.guna2Panel7.Location = new System.Drawing.Point(0, 385);
+            this.guna2Panel7.Name = "guna2Panel7";
+            this.guna2Panel7.Size = new System.Drawing.Size(762, 67);
+            this.guna2Panel7.TabIndex = 8;
             // 
             // NewCommodity
             // 
@@ -550,6 +556,7 @@
             this.Controls.Add(this.guna2Panel5);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel6);
+            this.Controls.Add(this.guna2Panel7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.Image = global::PharmacyManagement.Properties.Resources.Pharmacy_logo_500;
             this.MaximizeBox = false;
@@ -568,6 +575,7 @@
             this.guna2Panel5.PerformLayout();
             this.guna2Panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.propertyGridControl1)).EndInit();
+            this.guna2Panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -594,8 +602,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtPurchasePrice;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private Guna.UI2.WinForms.Guna2TextBox txtCommodityName;
-        private Guna.UI2.WinForms.Guna2Button btnAdd;
-        private Guna.UI2.WinForms.Guna2Button btnCancel;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpExpDate;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpMfgDate;
@@ -604,5 +610,8 @@
         private Guna.UI2.WinForms.Guna2TextBox txtCommodityID;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraVerticalGrid.PropertyGridControl propertyGridControl1;
+        private Guna.UI2.WinForms.Guna2Button btnCancel;
+        private Guna.UI2.WinForms.Guna2Button btnAdd;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
     }
 }
