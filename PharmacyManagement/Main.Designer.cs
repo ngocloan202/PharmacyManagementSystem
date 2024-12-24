@@ -40,6 +40,7 @@
             this.btnNewUser = new DevExpress.XtraBars.BarButtonItem();
             this.btnAllUsers = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNewAccount = new DevExpress.XtraBars.BarButtonItem();
             this.pgHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -67,9 +68,10 @@
             this.btnAbout,
             this.btnNewUser,
             this.btnAllUsers,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.btnNewAccount});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 13;
+            this.ribbonControl1.MaxItemId = 14;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageHeaderItemLinks.Add(this.btnAbout);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -167,6 +169,14 @@
             this.barButtonItem1.Id = 12;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
+            // btnNewAccount
+            // 
+            this.btnNewAccount.Caption = "New Account";
+            this.btnNewAccount.Id = 13;
+            this.btnNewAccount.ImageOptions.Image = global::PharmacyManagement.Properties.Resources.new_account;
+            this.btnNewAccount.Name = "btnNewAccount";
+            this.btnNewAccount.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
             // pgHome
             // 
             this.pgHome.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -209,6 +219,7 @@
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btnNewUser, true);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnNewAccount);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnAllUsers, true);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
@@ -264,6 +275,7 @@
         private DevExpress.XtraBars.BarButtonItem btnNewUser;
         private DevExpress.XtraBars.BarButtonItem btnAllUsers;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnNewAccount;
     }
 }
 

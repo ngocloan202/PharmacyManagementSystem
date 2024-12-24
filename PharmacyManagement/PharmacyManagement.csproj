@@ -268,6 +268,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DB-query\PharmacyMgtSys.sql" />
+    <None Include="Resources\new-account.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
