@@ -1,8 +1,6 @@
 ﻿using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.DXErrorProvider;
 using PharmacyManagement.DB_query;
 using System;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
@@ -82,7 +80,7 @@ namespace PharmacyManagement.Commodity
             txtCommodityID.Text = string.Empty;
             txtCommodityName.Text = string.Empty;
             txtManufacturer.Text = string.Empty;
-            txtQuantity.Text = "0";
+            txtQuantity.Text = "1";
             txtBaseUnit.Text = string.Empty;
             txtPurchasePrice.Text = "0";
             txtSellingPrice.Text = "0";
