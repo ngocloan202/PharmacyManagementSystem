@@ -78,7 +78,17 @@ namespace PharmacyManagement
                     break;
             }
         }
-
+        #endregion
+        #region Close And Show New Form
+        private void CloseAllMdiForms()
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+            profile = null;
+            newInvoice = null;
+        }
         #endregion
 
         #region configureAdmin
@@ -118,6 +128,7 @@ namespace PharmacyManagement
         #region Handle Profile
         private void btnProfile_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            CloseAllMdiForms();
             if (profile == null || profile.IsDisposed)
             {
                 if (!string.IsNullOrEmpty(currentUsername))
@@ -133,8 +144,6 @@ namespace PharmacyManagement
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
-                profile.Show();
         }
         #endregion
 
@@ -165,6 +174,7 @@ namespace PharmacyManagement
         #region New Invoice
         private void btnNewInvoice_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            CloseAllMdiForms();
             if (newInvoice == null || newInvoice.IsDisposed)
             {
                 if (!string.IsNullOrEmpty(currentEmployeeID))
@@ -180,8 +190,6 @@ namespace PharmacyManagement
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
-                newInvoice.Show();
         }
         #endregion
     }
