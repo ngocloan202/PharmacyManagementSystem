@@ -82,6 +82,7 @@
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
             this.guna2Panel1.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel1.BorderThickness = 1;
@@ -105,6 +106,7 @@
             // 
             // txtInvoiceID
             // 
+            this.txtInvoiceID.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtInvoiceID.BorderColor = System.Drawing.Color.Black;
             this.txtInvoiceID.BorderRadius = 14;
             this.txtInvoiceID.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -162,6 +164,7 @@
             // 
             // guna2Panel2
             // 
+            this.guna2Panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
             this.guna2Panel2.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel2.BorderThickness = 1;
@@ -184,6 +187,7 @@
             // 
             // dtpDateCreated
             // 
+            this.dtpDateCreated.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpDateCreated.BorderRadius = 14;
             this.dtpDateCreated.BorderThickness = 1;
             this.dtpDateCreated.Checked = true;
@@ -203,6 +207,7 @@
             // 
             // labelControl14
             // 
+            this.labelControl14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl14.Appearance.Options.UseFont = true;
             this.labelControl14.Location = new System.Drawing.Point(72, 56);
@@ -213,6 +218,7 @@
             // 
             // labelControl6
             // 
+            this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Location = new System.Drawing.Point(766, 102);
@@ -223,6 +229,7 @@
             // 
             // txtNote
             // 
+            this.txtNote.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtNote.BorderColor = System.Drawing.Color.Black;
             this.txtNote.BorderRadius = 14;
             this.txtNote.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -244,6 +251,7 @@
             // 
             // txtCustomerContact
             // 
+            this.txtCustomerContact.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtCustomerContact.BorderColor = System.Drawing.Color.Black;
             this.txtCustomerContact.BorderRadius = 14;
             this.txtCustomerContact.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -265,6 +273,7 @@
             // 
             // labelControl5
             // 
+            this.labelControl5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.Location = new System.Drawing.Point(688, 56);
@@ -275,6 +284,7 @@
             // 
             // labelControl4
             // 
+            this.labelControl4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Location = new System.Drawing.Point(346, 102);
@@ -285,6 +295,7 @@
             // 
             // labelControl3
             // 
+            this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Location = new System.Drawing.Point(364, 56);
@@ -295,6 +306,7 @@
             // 
             // labelControl2
             // 
+            this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(20, 102);
@@ -372,6 +384,7 @@
             // 
             // guna2Panel5
             // 
+            this.guna2Panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.guna2Panel5.BackColor = System.Drawing.Color.White;
             this.guna2Panel5.Controls.Add(this.lblTotal);
             this.guna2Panel5.Controls.Add(this.labeltotal);
