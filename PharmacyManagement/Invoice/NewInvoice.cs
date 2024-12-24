@@ -12,6 +12,7 @@ namespace PharmacyManagement
         private string employeeID;
         PharmacyMgtDatabase dataTable = new PharmacyMgtDatabase();
         private bool isUpdating = false;
+        private PharmacyMgtDatabase customerTable;
         public string EmployeeID { get => employeeID; set => employeeID = value; }
         public NewInvoice()
         {
@@ -23,6 +24,7 @@ namespace PharmacyManagement
             if (!string.IsNullOrEmpty(EmployeeID))
             {
                 FetchData(EmployeeID);
+                SetCustomerContact();
             }
             ToggleControls();
         }
@@ -30,20 +32,46 @@ namespace PharmacyManagement
         #region Fetch Data
         private void FetchDataCustomer()
         {
-            PharmacyMgtDatabase customerTable = new PharmacyMgtDatabase();
+            customerTable = new PharmacyMgtDatabase();
             customerTable.OpenConnection();
-            string customerSql = "SELECT * FROM CUSTOMER";
+
+            string customerSql = @"SELECT * FROM CUSTOMER";
             SqlCommand customerCmd = new SqlCommand(customerSql);
             customerTable.Fill(customerCmd);
+
             cboCustomerName.DataSource = customerTable;
             cboCustomerName.DisplayMember = "CustomerName";
             cboCustomerName.ValueMember = "CustomerID";
+
+            cboCustomerName.SelectedIndexChanged += (sender, e) =>
+            {
+                SetCustomerContact();
+            };
+        }
+        private void SetCustomerContact()
+        {
+            string selectedCustomerName = cboCustomerName.Text.Trim();
+
+            if (customerTable.Rows.Count > 0)
+            {
+                DataRow[] customerRows = customerTable.Select($"CustomerName = '{selectedCustomerName}'");
+
+                if (customerRows.Length > 0)
+                {
+                    string contact = customerRows[0]["Contact"].ToString();
+                    txtCustomerContact.Text = contact;
+                }
+                else
+                {
+                    MessageBox.Show("Customer not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
         private void FetchDataCommodities()
         {
             PharmacyMgtDatabase commoditiesTable = new PharmacyMgtDatabase();
             commoditiesTable.OpenConnection();
-            string commoditiesSql = "SELECT * FROM COMMODITY";
+            string commoditiesSql = @"SELECT * FROM COMMODITY";
             SqlCommand commoditiesCmd = new SqlCommand(commoditiesSql);
             commoditiesTable.Fill(commoditiesCmd);
             cboCommodityName.DataSource = commoditiesTable;
@@ -87,6 +115,7 @@ namespace PharmacyManagement
         private void ToggleControls()
         {
             txtEmployeeName.Enabled = false;
+            txtCustomerContact.Enabled = false;
         }
         #endregion
         #region Handle Event Add To Cart
