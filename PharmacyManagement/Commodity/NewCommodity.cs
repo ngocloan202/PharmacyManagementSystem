@@ -5,6 +5,7 @@ using System;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PharmacyManagement.Commodity
@@ -37,7 +38,8 @@ namespace PharmacyManagement.Commodity
         }
 
 
-        private void CreateNewCommodity()
+
+        private void CreateNewCommodity(object sender, EventArgs e)
         {
             try
             {
@@ -66,7 +68,8 @@ namespace PharmacyManagement.Commodity
 
                 dataTable.Update(cmd);
                 MessageBox.Show("Commodity added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                ClearAllFields();
+                NewCommodity_Load(sender, e);
             }
             catch (Exception ex)
             {
@@ -74,15 +77,29 @@ namespace PharmacyManagement.Commodity
             }
         }
 
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (ValidateInput())
             {
-                CreateNewCommodity();
+                CreateNewCommodity(sender , e);
             }
         }
 
+        private void ClearAllFields()
+        {
+            txtCommodityID.Text = string.Empty;
+            txtCommodityName.Text = string.Empty;
+            txtManufacturer.Text = string.Empty;
+            txtQuantity.Text = "0";
+            txtBaseUnit.Text = string.Empty;
+            txtPurchasePrice.Text = "0";
+            txtSellingPrice.Text = "0";
+            dtpMfgDate.Value = DateTime.Now;
+            dtpExpDate.Value = DateTime.Now;
+            cboCommodityType.SelectedIndex = 0; 
+
+            txtCommodityID.Select();
+        }
 
 
         #region validating input
@@ -101,6 +118,15 @@ namespace PharmacyManagement.Commodity
             if (string.IsNullOrWhiteSpace(txtCommodityID.Text))
             {
                 toolTip.Show("Please enter the Commodity ID!", txtCommodityID,
+                    txtCommodityID.Width - 15, txtCommodityID.Height - 80, 2000);
+                txtCommodityID.Focus();
+                return false;
+            }
+
+            string commodityIdPattern = @"^(MD|IN)\d{3}$";
+            if (!Regex.IsMatch(txtCommodityID.Text, commodityIdPattern))
+            {
+                toolTip.Show("Commodity ID must start with 'MD' or 'IN' followed by 3 digits (e.g., MD123 or IN456)!", txtCommodityID,
                     txtCommodityID.Width - 15, txtCommodityID.Height - 80, 2000);
                 txtCommodityID.Focus();
                 return false;
