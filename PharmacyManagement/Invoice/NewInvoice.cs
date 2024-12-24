@@ -271,7 +271,7 @@ namespace PharmacyManagement
                     insertInvoiceCmd.Parameters.Add("@CreatedDate", SqlDbType.DateTime).Value = dtpDateCreated.Value;
                     insertInvoiceCmd.Parameters.Add("@Note", SqlDbType.NVarChar, 200).Value = txtNote.Text;
                     insertInvoiceCmd.Parameters.Add("@EmployeeID", SqlDbType.VarChar, 5).Value = employeeID;
-                    insertInvoiceCmd.Parameters.Add("@CustomerID", SqlDbType.VarChar, 5).Value = cboCustomerName.SelectedValue;
+                    insertInvoiceCmd.Parameters.Add("@CustomerID", SqlDbType.VarChar, 5).Value = cboCustomerName.SelectedValue.ToString();
 
                     dataTable.Update(insertInvoiceCmd);
 
@@ -298,6 +298,7 @@ namespace PharmacyManagement
                         }
                     }
                     MessageBox.Show("Invoice and details added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearFields();
                     NewInvoice_Load(sender, e);
                 }
                 catch (Exception ex)
@@ -345,17 +346,18 @@ namespace PharmacyManagement
                 return false;
             }
 
-            // Validate Expiry Date
-            if (dtpDateCreated.Value <= DateTime.Now)
-            {
-                toolTip.Show("Expiry date must be after manufacturing date!", dtpDateCreated,
-                    dtpDateCreated.Width - 15, dtpDateCreated.Height - 80, 2000);
-                dtpDateCreated.Focus();
-                return false;
-            }
-
             return true;
         }
         #endregion
+
+        private void ClearFields()
+        {
+            txtInvoiceID.Text = "";
+            cboCustomerName.SelectedIndex = 0;
+            txtQuantities.Text = "1";
+            dtpDateCreated.Value = DateTime.Now;
+            txtNote.Text = "";
+            txtInvoiceID.Select();
+        }
     }
 }
