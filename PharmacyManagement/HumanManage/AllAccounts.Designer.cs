@@ -211,7 +211,7 @@
             this.txtPass.Location = new System.Drawing.Point(542, 97);
             this.txtPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '\0';
+            this.txtPass.PasswordChar = '•';
             this.txtPass.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtPass.PlaceholderText = "";
             this.txtPass.SelectedText = "";
@@ -541,6 +541,7 @@
             this.dgvAllAccounts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAllAccounts.Size = new System.Drawing.Size(798, 236);
             this.dgvAllAccounts.TabIndex = 0;
+            this.dgvAllAccounts.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvAllAccounts_CellFormatting);
             // 
             // AccountID
             // 
