@@ -27,6 +27,11 @@ namespace PharmacyManagement
 
         private void NewInvoice_Load(object sender, EventArgs e)
         {
+            DataGridViewTextBoxColumn commodityIDColumn = new DataGridViewTextBoxColumn();
+            commodityIDColumn.Name = "CommodityID";
+            commodityIDColumn.Visible = false; 
+            dgvCart.Columns.Add(commodityIDColumn);
+
             if (!string.IsNullOrEmpty(EmployeeID))
             {
                 FetchData(EmployeeID);
@@ -206,7 +211,8 @@ namespace PharmacyManagement
                     txtQuantities.Text,
                     txtBaseUnit.Text,
                     price.ToString("N0") + " VND",
-                    amount.ToString("N0") + " VND"
+                    amount.ToString("N0") + " VND",
+                    cboCommodityName.SelectedValue.ToString()
                 );
 
                 MessageBox.Show("Commodity added to cart successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -254,7 +260,23 @@ namespace PharmacyManagement
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            if (dgvCart.SelectedRows.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to remove the selected item from the cart?",
+                                                      "Confirm Removal",
+                                                      MessageBoxButtons.YesNo,
+                                                      MessageBoxIcon.Question);
 
+                if (result == DialogResult.Yes)
+                {
+                    dgvCart.Rows.RemoveAt(dgvCart.SelectedRows[0].Index);
+                    lblTotal_TextChanged(sender, e);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to remove.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -280,7 +302,7 @@ namespace PharmacyManagement
                     {
                         if (row.Cells[0].Value != null)
                         {
-                            string commodityID = row.Cells[0].Value.ToString();
+                            string commodityID = row.Cells[5].Value.ToString();
                             int quantity = int.Parse(row.Cells[1].Value.ToString());
                             decimal unitPrice = decimal.Parse(row.Cells[3].Value.ToString().Replace(" VND", "").Replace(",", ""));
                             decimal amount = decimal.Parse(row.Cells[4].Value.ToString().Replace(" VND", "").Replace(",", ""));
