@@ -159,7 +159,7 @@ namespace PharmacyManagement
             {
                 try
                 {
-                    cmd.Parameters.Add("@EmployeeID", SqlDbType.NVarChar, 5).Value = employeeID;
+                    cmd.Parameters.Add("@EmployeeID", SqlDbType.VarChar, 5).Value = employeeID;
                     dataTable.Fill(cmd);
 
                     if (dataTable.Rows.Count > 0)
