@@ -321,6 +321,7 @@ namespace PharmacyManagement
                     }
                     MessageBox.Show("Invoice and details added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearFields();
+                    dgvCart.Rows.Clear();
                     NewInvoice_Load(sender, e);
                 }
                 catch (Exception ex)
