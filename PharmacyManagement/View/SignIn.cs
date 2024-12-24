@@ -12,6 +12,7 @@ namespace PharmacyManagement
         PharmacyMgtDatabase dataTable = new PharmacyMgtDatabase();
         public string currentRoleUser { get; private set; }
         public string currentUsername { get; private set; }
+        public string currentEmployeeID { get; private set; }
 
         public SignIn()
         {
@@ -53,6 +54,7 @@ namespace PharmacyManagement
                 {
                     currentRoleUser = dataTable.Rows[0]["UserRole"].ToString();
                     currentUsername = dataTable.Rows[0]["Username"].ToString();
+                    currentEmployeeID = dataTable.Rows[0]["EmployeeID"].ToString();
                     DialogResult = DialogResult.OK;
                     this.Close();
                 }
