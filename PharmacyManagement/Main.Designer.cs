@@ -226,7 +226,6 @@
             // 
             // ribbonPageGroup3
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnNewUser, true);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnNewAccount);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnAllUsers, true);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
