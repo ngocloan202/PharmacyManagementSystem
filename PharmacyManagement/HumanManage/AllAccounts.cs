@@ -22,9 +22,14 @@ namespace PharmacyManagement.HumanManage
         public void FetchData()
         {
             string userSql = @"SELECT ac.AccountID, ac.Username, ac.UserRole, 
-                                      ac.UserPassword ,em.EmployeeName
-                               FROM ACCOUNT as ac, EMPLOYEE as em
-                               WHERE ac.EmployeeID = em.EmployeeID";
+                                      ac.UserPassword, em.EmployeeName,
+                                 CASE 
+                                      WHEN ac.EmployeeID IS NULL THEN 1
+                                      ELSE 0
+                                 END AS IsEmployeeNull
+                               FROM ACCOUNT AS ac
+                               LEFT JOIN EMPLOYEE AS em
+                               ON ac.EmployeeID = em.EmployeeID";
             SqlCommand userCmd = new SqlCommand(userSql);
             dataTable.Fill(userCmd);
             BindingSource binding = new BindingSource();
