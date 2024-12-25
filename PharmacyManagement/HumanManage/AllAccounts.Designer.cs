@@ -56,26 +56,27 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnFind = new System.Windows.Forms.ToolStripButton();
             this.txtFind = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
-            this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
-            this.btnReload = new Guna.UI2.WinForms.Guna2Button();
             this.dgvAllAccounts = new System.Windows.Forms.DataGridView();
             this.AccountID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
+            this.btnReload = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
             this.bindingNavigator.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
-            this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllAccounts)).BeginInit();
+            this.guna2Panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel2
@@ -326,7 +327,8 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.btnFind,
-            this.txtFind});
+            this.txtFind,
+            this.toolStripLabel1});
             this.bindingNavigator.Location = new System.Drawing.Point(0, 185);
             this.bindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -414,12 +416,21 @@
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(24, 24);
             this.btnFind.Text = "toolStripButton1";
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // txtFind
             // 
             this.txtFind.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.txtFind.Name = "txtFind";
             this.txtFind.Size = new System.Drawing.Size(120, 27);
+            this.txtFind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyDown);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(42, 24);
+            this.toolStripLabel1.Text = "Search";
             // 
             // guna2Panel1
             // 
@@ -430,6 +441,72 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(798, 236);
             this.guna2Panel1.TabIndex = 2;
+            // 
+            // dgvAllAccounts
+            // 
+            this.dgvAllAccounts.AllowUserToAddRows = false;
+            this.dgvAllAccounts.AllowUserToDeleteRows = false;
+            this.dgvAllAccounts.AllowUserToOrderColumns = true;
+            this.dgvAllAccounts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAllAccounts.BackgroundColor = System.Drawing.Color.White;
+            this.dgvAllAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAllAccounts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.AccountID,
+            this.Username,
+            this.UserPassword,
+            this.UserRole,
+            this.EmployeeName});
+            this.dgvAllAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAllAccounts.Location = new System.Drawing.Point(0, 0);
+            this.dgvAllAccounts.MultiSelect = false;
+            this.dgvAllAccounts.Name = "dgvAllAccounts";
+            this.dgvAllAccounts.ReadOnly = true;
+            this.dgvAllAccounts.RowHeadersWidth = 51;
+            this.dgvAllAccounts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAllAccounts.Size = new System.Drawing.Size(798, 177);
+            this.dgvAllAccounts.TabIndex = 0;
+            this.dgvAllAccounts.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvAllAccounts_CellFormatting);
+            this.dgvAllAccounts.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvAllAccounts_DataError);
+            // 
+            // AccountID
+            // 
+            this.AccountID.DataPropertyName = "AccountID";
+            this.AccountID.HeaderText = "ID";
+            this.AccountID.MinimumWidth = 6;
+            this.AccountID.Name = "AccountID";
+            this.AccountID.ReadOnly = true;
+            // 
+            // Username
+            // 
+            this.Username.DataPropertyName = "Username";
+            this.Username.HeaderText = "Username";
+            this.Username.MinimumWidth = 6;
+            this.Username.Name = "Username";
+            this.Username.ReadOnly = true;
+            // 
+            // UserPassword
+            // 
+            this.UserPassword.DataPropertyName = "UserPassword";
+            this.UserPassword.HeaderText = "User Password";
+            this.UserPassword.MinimumWidth = 6;
+            this.UserPassword.Name = "UserPassword";
+            this.UserPassword.ReadOnly = true;
+            // 
+            // UserRole
+            // 
+            this.UserRole.DataPropertyName = "UserRole";
+            this.UserRole.HeaderText = "Role";
+            this.UserRole.MinimumWidth = 6;
+            this.UserRole.Name = "UserRole";
+            this.UserRole.ReadOnly = true;
+            // 
+            // EmployeeName
+            // 
+            this.EmployeeName.DataPropertyName = "EmployeeName";
+            this.EmployeeName.HeaderText = "Full Name";
+            this.EmployeeName.MinimumWidth = 6;
+            this.EmployeeName.Name = "EmployeeName";
+            this.EmployeeName.ReadOnly = true;
             // 
             // guna2Panel3
             // 
@@ -519,71 +596,6 @@
             this.btnReload.Text = "Reload";
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
-            // dgvAllAccounts
-            // 
-            this.dgvAllAccounts.AllowUserToAddRows = false;
-            this.dgvAllAccounts.AllowUserToDeleteRows = false;
-            this.dgvAllAccounts.AllowUserToOrderColumns = true;
-            this.dgvAllAccounts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAllAccounts.BackgroundColor = System.Drawing.Color.White;
-            this.dgvAllAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAllAccounts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.AccountID,
-            this.Username,
-            this.UserPassword,
-            this.UserRole,
-            this.EmployeeName});
-            this.dgvAllAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvAllAccounts.Location = new System.Drawing.Point(0, 0);
-            this.dgvAllAccounts.MultiSelect = false;
-            this.dgvAllAccounts.Name = "dgvAllAccounts";
-            this.dgvAllAccounts.ReadOnly = true;
-            this.dgvAllAccounts.RowHeadersWidth = 51;
-            this.dgvAllAccounts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAllAccounts.Size = new System.Drawing.Size(798, 177);
-            this.dgvAllAccounts.TabIndex = 0;
-            this.dgvAllAccounts.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvAllAccounts_CellFormatting);
-            // 
-            // AccountID
-            // 
-            this.AccountID.DataPropertyName = "AccountID";
-            this.AccountID.HeaderText = "ID";
-            this.AccountID.MinimumWidth = 6;
-            this.AccountID.Name = "AccountID";
-            this.AccountID.ReadOnly = true;
-            // 
-            // Username
-            // 
-            this.Username.DataPropertyName = "Username";
-            this.Username.HeaderText = "Username";
-            this.Username.MinimumWidth = 6;
-            this.Username.Name = "Username";
-            this.Username.ReadOnly = true;
-            // 
-            // UserPassword
-            // 
-            this.UserPassword.DataPropertyName = "UserPassword";
-            this.UserPassword.HeaderText = "User Password";
-            this.UserPassword.MinimumWidth = 6;
-            this.UserPassword.Name = "UserPassword";
-            this.UserPassword.ReadOnly = true;
-            // 
-            // UserRole
-            // 
-            this.UserRole.DataPropertyName = "UserRole";
-            this.UserRole.HeaderText = "Role";
-            this.UserRole.MinimumWidth = 6;
-            this.UserRole.Name = "UserRole";
-            this.UserRole.ReadOnly = true;
-            // 
-            // EmployeeName
-            // 
-            this.EmployeeName.DataPropertyName = "EmployeeName";
-            this.EmployeeName.HeaderText = "Full Name";
-            this.EmployeeName.MinimumWidth = 6;
-            this.EmployeeName.Name = "EmployeeName";
-            this.EmployeeName.ReadOnly = true;
-            // 
             // AllAccounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -607,8 +619,8 @@
             this.bindingNavigator.ResumeLayout(false);
             this.bindingNavigator.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllAccounts)).EndInit();
+            this.guna2Panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -652,5 +664,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private Guna.UI2.WinForms.Guna2Button btnSave;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }

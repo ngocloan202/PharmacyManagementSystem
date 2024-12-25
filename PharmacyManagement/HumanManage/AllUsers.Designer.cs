@@ -56,6 +56,7 @@
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.radMale = new Guna.UI2.WinForms.Guna2RadioButton();
             this.radFemale = new Guna.UI2.WinForms.Guna2RadioButton();
@@ -123,14 +124,17 @@
             this.dgvAllUsers.MultiSelect = false;
             this.dgvAllUsers.Name = "dgvAllUsers";
             this.dgvAllUsers.ReadOnly = true;
+            this.dgvAllUsers.RowHeadersWidth = 51;
             this.dgvAllUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAllUsers.Size = new System.Drawing.Size(818, 184);
             this.dgvAllUsers.TabIndex = 0;
+            this.dgvAllUsers.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvAllUsers_DataError);
             // 
             // AccountID
             // 
             this.AccountID.DataPropertyName = "AccountID";
             this.AccountID.HeaderText = "ID";
+            this.AccountID.MinimumWidth = 6;
             this.AccountID.Name = "AccountID";
             this.AccountID.ReadOnly = true;
             // 
@@ -138,6 +142,7 @@
             // 
             this.Username.DataPropertyName = "Username";
             this.Username.HeaderText = "Username";
+            this.Username.MinimumWidth = 6;
             this.Username.Name = "Username";
             this.Username.ReadOnly = true;
             // 
@@ -145,6 +150,7 @@
             // 
             this.EmployeeName.DataPropertyName = "EmployeeName";
             this.EmployeeName.HeaderText = "Full Name";
+            this.EmployeeName.MinimumWidth = 6;
             this.EmployeeName.Name = "EmployeeName";
             this.EmployeeName.ReadOnly = true;
             // 
@@ -152,6 +158,7 @@
             // 
             this.UserRole.DataPropertyName = "UserRole";
             this.UserRole.HeaderText = "Role";
+            this.UserRole.MinimumWidth = 6;
             this.UserRole.Name = "UserRole";
             this.UserRole.ReadOnly = true;
             // 
@@ -159,6 +166,7 @@
             // 
             this.Sex.DataPropertyName = "Sex";
             this.Sex.HeaderText = "Sex";
+            this.Sex.MinimumWidth = 6;
             this.Sex.Name = "Sex";
             this.Sex.ReadOnly = true;
             // 
@@ -166,6 +174,7 @@
             // 
             this.Contact.DataPropertyName = "Contact";
             this.Contact.HeaderText = "Contact";
+            this.Contact.MinimumWidth = 6;
             this.Contact.Name = "Contact";
             this.Contact.ReadOnly = true;
             // 
@@ -173,6 +182,7 @@
             // 
             this.Birthday.DataPropertyName = "Birthday";
             this.Birthday.HeaderText = "Birthday";
+            this.Birthday.MinimumWidth = 6;
             this.Birthday.Name = "Birthday";
             this.Birthday.ReadOnly = true;
             // 
@@ -180,6 +190,7 @@
             // 
             this.EmployeeAddress.DataPropertyName = "EmployeeAddress";
             this.EmployeeAddress.HeaderText = "Address";
+            this.EmployeeAddress.MinimumWidth = 6;
             this.EmployeeAddress.Name = "EmployeeAddress";
             this.EmployeeAddress.ReadOnly = true;
             // 
@@ -237,7 +248,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 22);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -246,7 +257,7 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 22);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorMoveNextItem
@@ -255,7 +266,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // txtFind
@@ -263,6 +274,7 @@
             this.txtFind.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.txtFind.Name = "txtFind";
             this.txtFind.Size = new System.Drawing.Size(120, 25);
+            this.txtFind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyDown);
             // 
             // btnFind
             // 
@@ -271,8 +283,9 @@
             this.btnFind.Image = global::PharmacyManagement.Properties.Resources.find_24px;
             this.btnFind.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(23, 22);
+            this.btnFind.Size = new System.Drawing.Size(24, 22);
             this.btnFind.Text = "toolStripButton1";
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // bindingNavigatorSeparator1
             // 
@@ -296,6 +309,7 @@
             this.bindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator.DeleteItem = null;
             this.bindingNavigator.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.bindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -307,7 +321,8 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.btnFind,
-            this.txtFind});
+            this.txtFind,
+            this.toolStripLabel1});
             this.bindingNavigator.Location = new System.Drawing.Point(0, 220);
             this.bindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -346,8 +361,15 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(42, 22);
+            this.toolStripLabel1.Text = "Search";
             // 
             // guna2Panel4
             // 
@@ -486,6 +508,7 @@
             this.txtRole.ForeColor = System.Drawing.Color.Black;
             this.txtRole.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtRole.Location = new System.Drawing.Point(534, 55);
+            this.txtRole.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRole.Name = "txtRole";
             this.txtRole.PasswordChar = '\0';
             this.txtRole.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -510,6 +533,7 @@
             this.txtIdUser.ForeColor = System.Drawing.Color.Black;
             this.txtIdUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtIdUser.Location = new System.Drawing.Point(159, 55);
+            this.txtIdUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtIdUser.Name = "txtIdUser";
             this.txtIdUser.PasswordChar = '\0';
             this.txtIdUser.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -534,6 +558,7 @@
             this.txtAddress.ForeColor = System.Drawing.Color.Black;
             this.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtAddress.Location = new System.Drawing.Point(534, 178);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PasswordChar = '\0';
             this.txtAddress.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -558,6 +583,7 @@
             this.txtContact.ForeColor = System.Drawing.Color.Black;
             this.txtContact.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtContact.Location = new System.Drawing.Point(159, 178);
+            this.txtContact.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtContact.Name = "txtContact";
             this.txtContact.PasswordChar = '\0';
             this.txtContact.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -582,6 +608,7 @@
             this.txtFullName.ForeColor = System.Drawing.Color.Black;
             this.txtFullName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtFullName.Location = new System.Drawing.Point(159, 135);
+            this.txtFullName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.PasswordChar = '\0';
             this.txtFullName.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -628,6 +655,7 @@
             this.txtUsername.ForeColor = System.Drawing.Color.Black;
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtUsername.Location = new System.Drawing.Point(159, 95);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -765,5 +793,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Birthday;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeAddress;
         private Guna.UI2.WinForms.Guna2TextBox txtAddress;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }

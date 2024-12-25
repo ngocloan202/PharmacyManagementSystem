@@ -271,5 +271,83 @@ namespace PharmacyManagement.HumanManage
                 e.FormattingApplied = true;
             }
         }
+
+        public void FetchData(string keyword)
+        {
+            string customerSql = @"SELECT * FROM Customer C
+                                    WHERE C.CustomerID LIKE @Keyword
+                                            OR C.CustomerName LIKE @Keyword";
+            SqlCommand customerCmd = new SqlCommand(customerSql);
+            customerCmd.Parameters.Add("@Keyword", SqlDbType.NVarChar).Value = "%" + keyword + "%";
+            dataTable.Fill(customerCmd);
+            if (dataTable.Rows.Count == 0)
+            {
+                MessageBox.Show("No results found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvCustomers.DataSource = null;
+                return;
+            }
+            BindingSource binding = new BindingSource();
+            binding.DataSource = dataTable;
+
+            dgvCustomers.DataSource = binding;
+            bindingNavigator.BindingSource = binding;
+
+            txtCustomerID.DataBindings.Clear();
+            txtCustomerName.DataBindings.Clear();
+            txtContact.DataBindings.Clear();
+            dtpBirthday.DataBindings.Clear();
+            txtAddress.DataBindings.Clear();
+            radMale.DataBindings.Clear();
+            radFemale.DataBindings.Clear();
+
+            txtCustomerID.DataBindings.Add("Text", binding, "CustomerID");
+            txtCustomerName.DataBindings.Add("Text", binding, "CustomerName");
+            txtContact.DataBindings.Add("Text", binding, "Contact");
+            dtpBirthday.DataBindings.Add("Value", binding, "Birthday");
+            txtAddress.DataBindings.Add("Text", binding, "CustomerAddress");
+
+            // Handle rad button gender
+            Binding male = new Binding("Checked", binding, "Sex", true, DataSourceUpdateMode.OnPropertyChanged);
+            male.Format += (s, evt) =>
+            {
+                evt.Value = evt.Value?.ToString() == "M";
+            };
+            male.Parse += (s, evt) =>
+            {
+                evt.Value = radMale.Checked ? "M" : "F";
+            };
+            radMale.DataBindings.Add(male);
+
+            Binding female = new Binding("Checked", binding, "Sex", true, DataSourceUpdateMode.OnPropertyChanged);
+            female.Format += (s, evt) =>
+            {
+                evt.Value = evt.Value?.ToString() == "F";
+            };
+            female.Parse += (s, evt) =>
+            {
+                evt.Value = radFemale.Checked ? "F" : "M";
+            };
+            radFemale.DataBindings.Add(female);
+
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            FetchData(txtFind.Text);
+        }
+
+        private void txtFind_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnFind_Click(sender, e);
+            }
+        }
+
+        private void dgvCustomers_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+            e.Cancel = true;
+        }
     }
 }

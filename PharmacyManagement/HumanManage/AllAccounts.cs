@@ -129,5 +129,65 @@ namespace PharmacyManagement.HumanManage
                 e.Value = "••••••••••";
             }
         }
+
+        public void FetchData(string keyword)
+        {
+            string userSql = @"SELECT ac.AccountID, ac.Username, ac.UserRole, 
+                                      ac.UserPassword, em.EmployeeName,
+                                 CASE 
+                                      WHEN ac.EmployeeID IS NULL THEN 1
+                                      ELSE 0
+                                 END AS IsEmployeeNull
+                               FROM ACCOUNT AS ac
+                               LEFT JOIN EMPLOYEE AS em
+                               ON ac.EmployeeID = em.EmployeeID
+                               WHERE ac.Username LIKE @Keyword 
+                                OR em.EmployeeName LIKE @Keyword";
+            SqlCommand userCmd = new SqlCommand(userSql);
+            userCmd.Parameters.Add("@Keyword", SqlDbType.NVarChar).Value = "%" + keyword + "%";
+            dataTable.Fill(userCmd);
+            if (dataTable.Rows.Count == 0)
+            {
+                MessageBox.Show("No results found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvAllAccounts.DataSource = null;
+                return;
+            }
+            BindingSource binding = new BindingSource();
+            binding.DataSource = dataTable;
+
+            dgvAllAccounts.DataSource = binding;
+            bindingNavigator.BindingSource = binding;
+
+            txtIdUser.DataBindings.Clear();
+            txtUsername.DataBindings.Clear();
+            txtPass.DataBindings.Clear();
+            txtFullName.DataBindings.Clear();
+            txtRole.DataBindings.Clear();
+
+            txtIdUser.DataBindings.Add("Text", binding, "AccountID");
+            txtUsername.DataBindings.Add("Text", binding, "Username");
+            txtPass.DataBindings.Add("Text", binding, "UserPassword");
+            txtRole.DataBindings.Add("Text", binding, "UserRole");
+            txtFullName.DataBindings.Add("Text", binding, "EmployeeName");
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            FetchData(txtFind.Text);
+        }
+
+        private void txtFind_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnFind_Click(sender, e);
+            }
+        }
+
+        private void dgvAllAccounts_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+            e.Cancel = true;
+        }
     }
 }

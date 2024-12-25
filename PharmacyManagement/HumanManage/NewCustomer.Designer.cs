@@ -75,6 +75,7 @@
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.btnReload = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
@@ -95,6 +96,7 @@
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(23, 22);
             this.btnFind.Text = "toolStripButton1";
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -437,7 +439,8 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.btnFind,
-            this.txtFind});
+            this.txtFind,
+            this.toolStripLabel1});
             this.bindingNavigator.Location = new System.Drawing.Point(0, 220);
             this.bindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -464,6 +467,7 @@
             this.txtFind.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.txtFind.Name = "txtFind";
             this.txtFind.Size = new System.Drawing.Size(120, 25);
+            this.txtFind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyDown);
             // 
             // guna2Panel2
             // 
@@ -499,6 +503,7 @@
             this.dgvCustomers.Size = new System.Drawing.Size(818, 176);
             this.dgvCustomers.TabIndex = 0;
             this.dgvCustomers.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCustomers_CellFormatting);
+            this.dgvCustomers.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvCustomers_DataError);
             // 
             // CustomerID
             // 
@@ -678,6 +683,13 @@
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(42, 22);
+            this.toolStripLabel1.Text = "Search";
+            // 
             // NewCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -754,5 +766,6 @@
         private Guna.UI2.WinForms.Guna2Button btnReload;
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }

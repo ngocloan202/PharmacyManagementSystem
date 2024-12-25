@@ -42,10 +42,21 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.btnFind = new System.Windows.Forms.ToolStripButton();
+            this.txtFind = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.dgvAllCommodities = new System.Windows.Forms.DataGridView();
+            this.CommodityID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CommodityName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Manufacturer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BaseUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PurchasePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SellingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MfgDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExpDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
@@ -75,15 +86,6 @@
             this.txtManufacturer = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.CommodityID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Manufacturer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BaseUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PurchasePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SellingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MfgDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExpDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
             this.bindingNavigator.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -99,6 +101,7 @@
             this.bindingNavigator.AddNewItem = null;
             this.bindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator.DeleteItem = null;
+            this.bindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.bindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -109,8 +112,9 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.toolStripButton1,
-            this.toolStripTextBox1});
+            this.btnFind,
+            this.txtFind,
+            this.toolStripLabel1});
             this.bindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -118,14 +122,14 @@
             this.bindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator.Name = "bindingNavigator";
             this.bindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator.Size = new System.Drawing.Size(978, 25);
+            this.bindingNavigator.Size = new System.Drawing.Size(978, 27);
             this.bindingNavigator.TabIndex = 0;
             this.bindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -135,7 +139,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -144,13 +148,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -164,7 +168,7 @@
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -172,7 +176,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -181,29 +185,38 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
-            // toolStripButton1
+            // btnFind
             // 
-            this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::PharmacyManagement.Properties.Resources.find_24px;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.btnFind.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnFind.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnFind.Image = global::PharmacyManagement.Properties.Resources.find_24px;
+            this.btnFind.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(24, 24);
+            this.btnFind.Text = "toolStripButton1";
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
-            // toolStripTextBox1
+            // txtFind
             // 
-            this.toolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(120, 25);
+            this.txtFind.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.txtFind.Name = "txtFind";
+            this.txtFind.Size = new System.Drawing.Size(120, 27);
+            this.txtFind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyDown);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(42, 24);
+            this.toolStripLabel1.Text = "Search";
             // 
             // guna2Panel2
             // 
@@ -224,6 +237,7 @@
             this.dgvAllCommodities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAllCommodities.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CommodityID,
+            this.CommodityName,
             this.Manufacturer,
             this.Quantity,
             this.BaseUnit,
@@ -237,9 +251,95 @@
             this.dgvAllCommodities.MultiSelect = false;
             this.dgvAllCommodities.Name = "dgvAllCommodities";
             this.dgvAllCommodities.ReadOnly = true;
+            this.dgvAllCommodities.RowHeadersWidth = 51;
             this.dgvAllCommodities.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAllCommodities.Size = new System.Drawing.Size(978, 188);
             this.dgvAllCommodities.TabIndex = 0;
+            this.dgvAllCommodities.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvAllCommodities_DataError);
+            // 
+            // CommodityID
+            // 
+            this.CommodityID.DataPropertyName = "CommodityID";
+            this.CommodityID.HeaderText = "ID";
+            this.CommodityID.MinimumWidth = 6;
+            this.CommodityID.Name = "CommodityID";
+            this.CommodityID.ReadOnly = true;
+            // 
+            // CommodityName
+            // 
+            this.CommodityName.DataPropertyName = "CommodityName";
+            this.CommodityName.HeaderText = "Name";
+            this.CommodityName.MinimumWidth = 6;
+            this.CommodityName.Name = "CommodityName";
+            this.CommodityName.ReadOnly = true;
+            // 
+            // Manufacturer
+            // 
+            this.Manufacturer.DataPropertyName = "Manufacturer";
+            this.Manufacturer.HeaderText = "Manufacturer";
+            this.Manufacturer.MinimumWidth = 6;
+            this.Manufacturer.Name = "Manufacturer";
+            this.Manufacturer.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.DataPropertyName = "Quantity";
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.MinimumWidth = 6;
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // BaseUnit
+            // 
+            this.BaseUnit.DataPropertyName = "BaseUnit";
+            this.BaseUnit.HeaderText = "Base Unit";
+            this.BaseUnit.MinimumWidth = 6;
+            this.BaseUnit.Name = "BaseUnit";
+            this.BaseUnit.ReadOnly = true;
+            // 
+            // PurchasePrice
+            // 
+            this.PurchasePrice.DataPropertyName = "PurchasePrice";
+            this.PurchasePrice.HeaderText = "Purchase Price";
+            this.PurchasePrice.MinimumWidth = 6;
+            this.PurchasePrice.Name = "PurchasePrice";
+            this.PurchasePrice.ReadOnly = true;
+            // 
+            // SellingPrice
+            // 
+            this.SellingPrice.DataPropertyName = "SellingPrice";
+            this.SellingPrice.HeaderText = "Selling Price";
+            this.SellingPrice.MinimumWidth = 6;
+            this.SellingPrice.Name = "SellingPrice";
+            this.SellingPrice.ReadOnly = true;
+            // 
+            // MfgDate
+            // 
+            this.MfgDate.DataPropertyName = "MfgDate";
+            dataGridViewCellStyle1.NullValue = null;
+            this.MfgDate.DefaultCellStyle = dataGridViewCellStyle1;
+            this.MfgDate.HeaderText = "MFG. Date";
+            this.MfgDate.MinimumWidth = 6;
+            this.MfgDate.Name = "MfgDate";
+            this.MfgDate.ReadOnly = true;
+            // 
+            // ExpDate
+            // 
+            this.ExpDate.DataPropertyName = "ExpDate";
+            dataGridViewCellStyle2.NullValue = null;
+            this.ExpDate.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ExpDate.HeaderText = "EXP.  Date";
+            this.ExpDate.MinimumWidth = 6;
+            this.ExpDate.Name = "ExpDate";
+            this.ExpDate.ReadOnly = true;
+            // 
+            // CategoryName
+            // 
+            this.CategoryName.DataPropertyName = "CategoryName";
+            this.CategoryName.HeaderText = "Type";
+            this.CategoryName.MinimumWidth = 6;
+            this.CategoryName.Name = "CategoryName";
+            this.CategoryName.ReadOnly = true;
             // 
             // guna2Panel3
             // 
@@ -405,6 +505,7 @@
             this.txtQuantity.ForeColor = System.Drawing.Color.Black;
             this.txtQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
             this.txtQuantity.Location = new System.Drawing.Point(744, 43);
+            this.txtQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.PasswordChar = '\0';
             this.txtQuantity.PlaceholderText = "";
@@ -438,6 +539,7 @@
             this.txtCommodityID.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCommodityID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtCommodityID.Location = new System.Drawing.Point(23, 85);
+            this.txtCommodityID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCommodityID.Name = "txtCommodityID";
             this.txtCommodityID.PasswordChar = '\0';
             this.txtCommodityID.PlaceholderText = "";
@@ -501,6 +603,7 @@
             this.txtSellingPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSellingPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
             this.txtSellingPrice.Location = new System.Drawing.Point(744, 170);
+            this.txtSellingPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSellingPrice.Name = "txtSellingPrice";
             this.txtSellingPrice.PasswordChar = '\0';
             this.txtSellingPrice.PlaceholderText = "";
@@ -536,6 +639,7 @@
             this.txtPurchasePrice.ForeColor = System.Drawing.Color.Black;
             this.txtPurchasePrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
             this.txtPurchasePrice.Location = new System.Drawing.Point(356, 170);
+            this.txtPurchasePrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPurchasePrice.Name = "txtPurchasePrice";
             this.txtPurchasePrice.PasswordChar = '\0';
             this.txtPurchasePrice.PlaceholderText = "";
@@ -609,6 +713,7 @@
             this.txtCommodityName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCommodityName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtCommodityName.Location = new System.Drawing.Point(356, 43);
+            this.txtCommodityName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCommodityName.Name = "txtCommodityName";
             this.txtCommodityName.PasswordChar = '\0';
             this.txtCommodityName.PlaceholderText = "";
@@ -653,6 +758,7 @@
             this.txtBaseUnit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtBaseUnit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtBaseUnit.Location = new System.Drawing.Point(356, 128);
+            this.txtBaseUnit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBaseUnit.Name = "txtBaseUnit";
             this.txtBaseUnit.PasswordChar = '\0';
             this.txtBaseUnit.PlaceholderText = "";
@@ -686,6 +792,7 @@
             this.txtManufacturer.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtManufacturer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtManufacturer.Location = new System.Drawing.Point(356, 85);
+            this.txtManufacturer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtManufacturer.Name = "txtManufacturer";
             this.txtManufacturer.PasswordChar = '\0';
             this.txtManufacturer.PlaceholderText = "";
@@ -714,73 +821,6 @@
             this.labelControl3.Size = new System.Drawing.Size(43, 21);
             this.labelControl3.TabIndex = 12;
             this.labelControl3.Text = "Name";
-            // 
-            // CommodityID
-            // 
-            this.CommodityID.DataPropertyName = "CommodityID";
-            this.CommodityID.HeaderText = "ID";
-            this.CommodityID.Name = "CommodityID";
-            this.CommodityID.ReadOnly = true;
-            // 
-            // Manufacturer
-            // 
-            this.Manufacturer.DataPropertyName = "Manufacturer";
-            this.Manufacturer.HeaderText = "Manufacturer";
-            this.Manufacturer.Name = "Manufacturer";
-            this.Manufacturer.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            this.Quantity.DataPropertyName = "Quantity";
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            // 
-            // BaseUnit
-            // 
-            this.BaseUnit.DataPropertyName = "BaseUnit";
-            this.BaseUnit.HeaderText = "Base Unit";
-            this.BaseUnit.Name = "BaseUnit";
-            this.BaseUnit.ReadOnly = true;
-            // 
-            // PurchasePrice
-            // 
-            this.PurchasePrice.DataPropertyName = "PurchasePrice";
-            this.PurchasePrice.HeaderText = "Purchase Price";
-            this.PurchasePrice.Name = "PurchasePrice";
-            this.PurchasePrice.ReadOnly = true;
-            // 
-            // SellingPrice
-            // 
-            this.SellingPrice.DataPropertyName = "SellingPrice";
-            this.SellingPrice.HeaderText = "Selling Price";
-            this.SellingPrice.Name = "SellingPrice";
-            this.SellingPrice.ReadOnly = true;
-            // 
-            // MfgDate
-            // 
-            this.MfgDate.DataPropertyName = "MfgDate";
-            dataGridViewCellStyle1.NullValue = null;
-            this.MfgDate.DefaultCellStyle = dataGridViewCellStyle1;
-            this.MfgDate.HeaderText = "MFG. Date";
-            this.MfgDate.Name = "MfgDate";
-            this.MfgDate.ReadOnly = true;
-            // 
-            // ExpDate
-            // 
-            this.ExpDate.DataPropertyName = "ExpDate";
-            dataGridViewCellStyle2.NullValue = null;
-            this.ExpDate.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ExpDate.HeaderText = "EXP.  Date";
-            this.ExpDate.Name = "ExpDate";
-            this.ExpDate.ReadOnly = true;
-            // 
-            // CategoryName
-            // 
-            this.CategoryName.DataPropertyName = "CategoryName";
-            this.CategoryName.HeaderText = "Type";
-            this.CategoryName.Name = "CategoryName";
-            this.CategoryName.ReadOnly = true;
             // 
             // AllCommodities
             // 
@@ -829,8 +869,8 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripButton btnFind;
+        private System.Windows.Forms.ToolStripTextBox txtFind;
         private System.Windows.Forms.DataGridView dgvAllCommodities;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
@@ -857,7 +897,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private Guna.UI2.WinForms.Guna2TextBox txtQuantity;
         private DevExpress.XtraEditors.LabelControl labelControl11;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn CommodityID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CommodityName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Manufacturer;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn BaseUnit;
