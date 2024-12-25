@@ -14,6 +14,7 @@ namespace PharmacyManagement
         private NewInvoice newInvoice = null;
         private NewAccount newAccount = null;
         private AllInvoices allInvoice = null;
+        private NewCustomer customer = null;
         private string currentRole;
         private string currentUsername;
         private string currentEmployeeID;
@@ -138,6 +139,7 @@ namespace PharmacyManagement
             btnAllInvoices.Enabled = true;
             btnDashboard.Enabled = true;
             btnNewAccount.Enabled = true;
+            btnCustomer.Enabled = true;
 
             btnNewCommodity.Enabled = false;
             btnNewInvoice.Enabled = false;
@@ -152,6 +154,7 @@ namespace PharmacyManagement
             btnNewCommodity.Enabled = true;
             btnNewInvoice.Enabled = true;
 
+            btnCustomer.Enabled = false;
             btnNewUser.Enabled = false;
             btnAllUsers.Enabled = false;
             btnNewAccount.Enabled = false;
@@ -212,7 +215,7 @@ namespace PharmacyManagement
             };
             newAccount.Show();
         }
-        #endregion
+
 
         private void btnAllInvoices_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -234,5 +237,19 @@ namespace PharmacyManagement
                 }
             }
         }
+
+        private void btnCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            CloseAllMdiForms();
+            customer = new NewCustomer
+            {
+                MdiParent = this
+            };
+            customer.Show();
+        }
+
+        #endregion
+
     }
+
 }
