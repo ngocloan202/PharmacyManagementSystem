@@ -108,5 +108,75 @@ namespace PharmacyManagement.HumanManage
                 AllUsers_Load(sender, e);
             }
         }
+
+        public void GetData(string keyword)
+        {
+            string userSql = @"SELECT ac.AccountID, ac.Username, em.EmployeeName, ac.UserRole,
+                               em.Sex, em.Contact, em.Birthday, em.EmployeeAddress
+                               FROM ACCOUNT as ac, EMPLOYEE as em
+                               WHERE ac.EmployeeID = em.EmployeeID
+                               AND (ac.AccountID LIKE @Keyword 
+                               OR ac.Username LIKE @Keyword
+                               OR em.EmployeeName LIKE @Keyword)";
+            SqlCommand userCmd = new SqlCommand(userSql);
+            userCmd.Parameters.Add("@Keyword", SqlDbType.NVarChar).Value = "%" + keyword + "%";
+            dataTable.Fill(userCmd);
+            if (dataTable.Rows.Count == 0)
+            {
+                MessageBox.Show("No results found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            BindingSource binding = new BindingSource();
+            binding.DataSource = dataTable;
+
+            dgvAllUsers.DataSource = binding;
+            bindingNavigator.BindingSource = binding;
+
+            txtIdUser.DataBindings.Clear();
+            txtUsername.DataBindings.Clear();
+            txtFullName.DataBindings.Clear();
+            txtContact.DataBindings.Clear();
+            txtRole.DataBindings.Clear();
+            dtpBirthday.DataBindings.Clear();
+            txtAddress.DataBindings.Clear();
+            radMale.DataBindings.Clear();
+            radFemale.DataBindings.Clear();
+
+            txtIdUser.DataBindings.Add("Text", binding, "AccountID");
+            txtUsername.DataBindings.Add("Text", binding, "Username");
+            txtFullName.DataBindings.Add("Text", binding, "EmployeeName");
+            txtContact.DataBindings.Add("Text", binding, "Contact");
+            txtRole.DataBindings.Add("Text", binding, "UserRole");
+            dtpBirthday.DataBindings.Add("Value", binding, "Birthday");
+            txtAddress.DataBindings.Add("Text", binding, "EmployeeAddress");
+
+            // Handle rad button gender
+            Binding male = new Binding("Checked", dgvAllUsers.DataSource, "Sex");
+            male.Format += (s, evt) =>
+            {
+                evt.Value = Convert.ToString(evt.Value) == "M";
+            };
+            radMale.DataBindings.Add(male);
+
+            Binding female = new Binding("Checked", dgvAllUsers.DataSource, "Sex");
+            female.Format += (s, evt) =>
+            {
+                evt.Value = Convert.ToString(evt.Value) == "F";
+            };
+            radFemale.DataBindings.Add(female);
+        }
+
+        private void txtFind_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnFind_Click(sender, e);
+            }
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            GetData(txtFind.Text);
+        }
     }
 }
