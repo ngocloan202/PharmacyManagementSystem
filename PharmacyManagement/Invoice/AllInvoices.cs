@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
@@ -9,7 +10,13 @@ namespace PharmacyManagement.Invoice
 {
     public partial class AllInvoices : XtraForm
     {
+        private string employeeID;
+        private string role;
         PharmacyMgtDatabase dataTable = new PharmacyMgtDatabase();
+        public string EmployeeID{get => employeeID; set => employeeID = value;}
+
+        public string Role{get => role; set => role = value;}
+
         public AllInvoices()
         {
             dataTable.OpenConnection();
@@ -25,15 +32,36 @@ namespace PharmacyManagement.Invoice
 
         private void GetData()
         {
-            string selectAllInvoicesQuery = @"SELECT ivd.InvoiceID, cus.CustomerName, cus.Contact,
-                                                     iv.CreatedDate, iv.Note, em.EmployeeName, 
-                                                     FORMAT(ivd.Amount, 'N0') + ' VND' AS Amount
-                                              FROM INVOICE as iv, INVOICEDETAILS as ivd, EMPLOYEE as em, CUSTOMER as cus
-                                              WHERE iv.InvoiceID = ivd.InvoiceID 
-                                                    AND iv.EmployeeID = em.EmployeeID
-                                                    AND iv.CustomerID = cus.CustomerID
-                                             ";
+            string selectAllInvoicesQuery;
+
+            if (role == "admin") 
+            {
+                selectAllInvoicesQuery = @"SELECT ivd.InvoiceID, cus.CustomerName, cus.Contact,
+                                         iv.CreatedDate, iv.Note, em.EmployeeName, 
+                                         FORMAT(ivd.Amount, 'N0') + ' VND' AS Amount
+                                  FROM INVOICE as iv, INVOICEDETAILS as ivd, EMPLOYEE as em, CUSTOMER as cus
+                                  WHERE iv.InvoiceID = ivd.InvoiceID 
+                                        AND iv.EmployeeID = em.EmployeeID
+                                        AND iv.CustomerID = cus.CustomerID";
+            }
+            else
+            {
+                selectAllInvoicesQuery = @"SELECT ivd.InvoiceID, cus.CustomerName, cus.Contact,
+                                         iv.CreatedDate, iv.Note, em.EmployeeName, 
+                                         FORMAT(ivd.Amount, 'N0') + ' VND' AS Amount
+                                  FROM INVOICE as iv, INVOICEDETAILS as ivd, EMPLOYEE as em, CUSTOMER as cus
+                                  WHERE iv.InvoiceID = ivd.InvoiceID 
+                                        AND iv.EmployeeID = em.EmployeeID
+                                        AND iv.CustomerID = cus.CustomerID
+                                        AND iv.EmployeeID = @EmployeeID";
+            }
+
             SqlCommand userCmd = new SqlCommand(selectAllInvoicesQuery);
+            if (role != "admin")
+            {
+                userCmd.Parameters.Add("@EmployeeID", SqlDbType.VarChar, 5).Value = employeeID;
+            }
+
             dataTable.Fill(userCmd);
             BindingSource binding = new BindingSource();
             binding.DataSource = dataTable;

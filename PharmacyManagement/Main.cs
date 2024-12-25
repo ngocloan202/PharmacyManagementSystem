@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using PharmacyManagement.Invoice;
 using PharmacyManagement.HumanManage;
 using PharmacyManagement.View;
 
@@ -12,6 +13,7 @@ namespace PharmacyManagement
         private Profile profile = null;
         private NewInvoice newInvoice = null;
         private NewAccount newAccount = null;
+        private AllInvoices allInvoice = null;
         private string currentRole;
         private string currentUsername;
         private string currentEmployeeID;
@@ -211,5 +213,26 @@ namespace PharmacyManagement
             newAccount.Show();
         }
         #endregion
+
+        private void btnAllInvoices_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            CloseAllMdiForms();
+            if (allInvoice == null || allInvoice.IsDisposed)
+            {
+                if (!string.IsNullOrEmpty(currentEmployeeID))
+                {
+                    allInvoice = new AllInvoices();
+                    allInvoice.EmployeeID = currentEmployeeID;
+                    allInvoice.Role = currentRole;
+                    allInvoice.MdiParent = this;
+                    allInvoice.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Error: EmployeeID not found!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
