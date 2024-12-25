@@ -173,11 +173,11 @@ namespace PharmacyManagement.Commodity
             if (dataTable.Rows.Count == 0)
             {
                 MessageBox.Show("No results found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvAllCommodities.DataSource = null;
                 return;
             }
             BindingSource binding = new BindingSource();
             binding.DataSource = dataTable;
-
             dgvAllCommodities.DataSource = binding;
             bindingNavigator.BindingSource = binding;
 
@@ -215,6 +215,12 @@ namespace PharmacyManagement.Commodity
         private void btnFind_Click(object sender, EventArgs e)
         {
             FetchData(txtFind.Text);
+        }
+
+        private void dgvAllCommodities_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+            e.Cancel = true;
         }
     }
 }

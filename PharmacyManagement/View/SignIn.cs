@@ -62,6 +62,7 @@ namespace PharmacyManagement
                 {
                     MessageBox.Show("Username or password is incorrect!", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPassword.Text = "";
                     txtUsername.Focus();
                 }
             }

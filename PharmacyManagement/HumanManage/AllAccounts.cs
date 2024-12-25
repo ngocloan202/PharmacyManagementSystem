@@ -149,6 +149,7 @@ namespace PharmacyManagement.HumanManage
             if (dataTable.Rows.Count == 0)
             {
                 MessageBox.Show("No results found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvAllAccounts.DataSource = null;
                 return;
             }
             BindingSource binding = new BindingSource();
@@ -181,6 +182,12 @@ namespace PharmacyManagement.HumanManage
             {
                 btnFind_Click(sender, e);
             }
+        }
+
+        private void dgvAllAccounts_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+            e.Cancel = true;
         }
     }
 }

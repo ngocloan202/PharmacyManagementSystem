@@ -87,10 +87,9 @@
             // 
             this.guna2Panel3.Controls.Add(this.btnReload);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel3.Location = new System.Drawing.Point(0, 240);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel3.Location = new System.Drawing.Point(0, 195);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(948, 55);
+            this.guna2Panel3.Size = new System.Drawing.Size(813, 45);
             this.guna2Panel3.TabIndex = 1;
             // 
             // btnReload
@@ -104,11 +103,10 @@
             this.btnReload.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
             this.btnReload.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReload.ForeColor = System.Drawing.Color.White;
-            this.btnReload.Location = new System.Drawing.Point(827, 9);
-            this.btnReload.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReload.Location = new System.Drawing.Point(709, 7);
             this.btnReload.Name = "btnReload";
             this.btnReload.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
-            this.btnReload.Size = new System.Drawing.Size(99, 37);
+            this.btnReload.Size = new System.Drawing.Size(85, 30);
             this.btnReload.TabIndex = 13;
             this.btnReload.Text = "Reload";
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
@@ -131,14 +129,14 @@
             this.Amount});
             this.dgvAllInvoices.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAllInvoices.Location = new System.Drawing.Point(0, 0);
-            this.dgvAllInvoices.Margin = new System.Windows.Forms.Padding(4);
             this.dgvAllInvoices.MultiSelect = false;
             this.dgvAllInvoices.Name = "dgvAllInvoices";
             this.dgvAllInvoices.ReadOnly = true;
             this.dgvAllInvoices.RowHeadersWidth = 51;
             this.dgvAllInvoices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAllInvoices.Size = new System.Drawing.Size(948, 240);
+            this.dgvAllInvoices.Size = new System.Drawing.Size(813, 195);
             this.dgvAllInvoices.TabIndex = 0;
+            this.dgvAllInvoices.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvAllInvoices_DataError);
             // 
             // InvoiceID
             // 
@@ -204,17 +202,16 @@
             this.guna2Panel1.Controls.Add(this.dgvAllInvoices);
             this.guna2Panel1.Controls.Add(this.guna2Panel3);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 315);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 256);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(948, 295);
+            this.guna2Panel1.Size = new System.Drawing.Size(813, 240);
             this.guna2Panel1.TabIndex = 4;
             // 
             // txtFind
             // 
             this.txtFind.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.txtFind.Name = "txtFind";
-            this.txtFind.Size = new System.Drawing.Size(139, 27);
+            this.txtFind.Size = new System.Drawing.Size(120, 27);
             this.txtFind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyDown);
             // 
             // bindingNavigatorSeparator2
@@ -232,7 +229,7 @@
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(58, 27);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
@@ -244,7 +241,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -268,14 +265,14 @@
             this.btnFind,
             this.txtFind,
             this.toolStripLabel1});
-            this.bindingNavigator.Location = new System.Drawing.Point(0, 288);
+            this.bindingNavigator.Location = new System.Drawing.Point(0, 229);
             this.bindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.bindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator.Name = "bindingNavigator";
             this.bindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator.Size = new System.Drawing.Size(948, 27);
+            this.bindingNavigator.Size = new System.Drawing.Size(813, 27);
             this.bindingNavigator.TabIndex = 0;
             this.bindingNavigator.Text = "bindingNavigator";
             // 
@@ -285,7 +282,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -294,7 +291,7 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorMoveNextItem
@@ -303,7 +300,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -312,7 +309,7 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // btnFind
@@ -322,7 +319,7 @@
             this.btnFind.Image = global::PharmacyManagement.Properties.Resources.find_24px;
             this.btnFind.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(29, 24);
+            this.btnFind.Size = new System.Drawing.Size(24, 24);
             this.btnFind.Text = "toolStripButton1";
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
@@ -330,7 +327,7 @@
             // 
             this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(53, 24);
+            this.toolStripLabel1.Size = new System.Drawing.Size(42, 24);
             this.toolStripLabel1.Text = "Search";
             // 
             // guna2Panel2
@@ -339,9 +336,8 @@
             this.guna2Panel2.Controls.Add(this.bindingNavigator);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(948, 315);
+            this.guna2Panel2.Size = new System.Drawing.Size(813, 256);
             this.guna2Panel2.TabIndex = 3;
             // 
             // guna2Panel4
@@ -363,9 +359,9 @@
             this.guna2Panel4.Controls.Add(this.guna2Panel5);
             this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel4.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(948, 288);
+            this.guna2Panel4.Size = new System.Drawing.Size(813, 229);
             this.guna2Panel4.TabIndex = 1;
             // 
             // dtpDateCreated
@@ -380,12 +376,11 @@
             this.dtpDateCreated.FocusedColor = System.Drawing.Color.Transparent;
             this.dtpDateCreated.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpDateCreated.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpDateCreated.Location = new System.Drawing.Point(649, 121);
-            this.dtpDateCreated.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpDateCreated.Location = new System.Drawing.Point(556, 98);
             this.dtpDateCreated.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpDateCreated.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpDateCreated.Name = "dtpDateCreated";
-            this.dtpDateCreated.Size = new System.Drawing.Size(250, 44);
+            this.dtpDateCreated.Size = new System.Drawing.Size(214, 36);
             this.dtpDateCreated.TabIndex = 16;
             this.dtpDateCreated.Value = new System.DateTime(2024, 12, 19, 10, 4, 31, 434);
             // 
@@ -404,14 +399,14 @@
             this.txtTotal.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTotal.ForeColor = System.Drawing.Color.Black;
             this.txtTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.txtTotal.Location = new System.Drawing.Point(233, 225);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTotal.Location = new System.Drawing.Point(200, 183);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.PasswordChar = '\0';
             this.txtTotal.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtTotal.PlaceholderText = "";
             this.txtTotal.SelectedText = "";
-            this.txtTotal.Size = new System.Drawing.Size(217, 38);
+            this.txtTotal.Size = new System.Drawing.Size(186, 31);
             this.txtTotal.TabIndex = 9;
             // 
             // labelControl8
@@ -419,10 +414,9 @@
             this.labelControl8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(166, 231);
-            this.labelControl8.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl8.Location = new System.Drawing.Point(142, 188);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(50, 27);
+            this.labelControl8.Size = new System.Drawing.Size(41, 21);
             this.labelControl8.TabIndex = 8;
             this.labelControl8.Text = "Total:";
             // 
@@ -441,14 +435,14 @@
             this.txtCustomerName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCustomerName.ForeColor = System.Drawing.Color.Black;
             this.txtCustomerName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.txtCustomerName.Location = new System.Drawing.Point(649, 71);
-            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCustomerName.Location = new System.Drawing.Point(556, 58);
+            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.PasswordChar = '\0';
             this.txtCustomerName.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtCustomerName.PlaceholderText = "";
             this.txtCustomerName.SelectedText = "";
-            this.txtCustomerName.Size = new System.Drawing.Size(250, 38);
+            this.txtCustomerName.Size = new System.Drawing.Size(214, 31);
             this.txtCustomerName.TabIndex = 9;
             // 
             // labelControl4
@@ -456,10 +450,9 @@
             this.labelControl4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(479, 78);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl4.Location = new System.Drawing.Point(411, 63);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(152, 27);
+            this.labelControl4.Size = new System.Drawing.Size(122, 21);
             this.labelControl4.TabIndex = 8;
             this.labelControl4.Text = "Customer Name:";
             // 
@@ -468,10 +461,9 @@
             this.labelControl5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(509, 129);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl5.Location = new System.Drawing.Point(436, 105);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(122, 27);
+            this.labelControl5.Size = new System.Drawing.Size(100, 21);
             this.labelControl5.TabIndex = 8;
             this.labelControl5.Text = "Date Created:";
             // 
@@ -490,14 +482,14 @@
             this.txtCreateBy.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCreateBy.ForeColor = System.Drawing.Color.Black;
             this.txtCreateBy.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.txtCreateBy.Location = new System.Drawing.Point(649, 174);
-            this.txtCreateBy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCreateBy.Location = new System.Drawing.Point(556, 141);
+            this.txtCreateBy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCreateBy.Name = "txtCreateBy";
             this.txtCreateBy.PasswordChar = '\0';
             this.txtCreateBy.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtCreateBy.PlaceholderText = "";
             this.txtCreateBy.SelectedText = "";
-            this.txtCreateBy.Size = new System.Drawing.Size(250, 38);
+            this.txtCreateBy.Size = new System.Drawing.Size(214, 31);
             this.txtCreateBy.TabIndex = 9;
             // 
             // txtNote
@@ -515,14 +507,14 @@
             this.txtNote.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNote.ForeColor = System.Drawing.Color.Black;
             this.txtNote.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.txtNote.Location = new System.Drawing.Point(233, 174);
-            this.txtNote.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNote.Location = new System.Drawing.Point(200, 141);
+            this.txtNote.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNote.Name = "txtNote";
             this.txtNote.PasswordChar = '\0';
             this.txtNote.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtNote.PlaceholderText = "";
             this.txtNote.SelectedText = "";
-            this.txtNote.Size = new System.Drawing.Size(217, 38);
+            this.txtNote.Size = new System.Drawing.Size(186, 31);
             this.txtNote.TabIndex = 9;
             // 
             // labelControl7
@@ -530,10 +522,9 @@
             this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(541, 178);
-            this.labelControl7.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl7.Location = new System.Drawing.Point(464, 145);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(90, 27);
+            this.labelControl7.Size = new System.Drawing.Size(74, 21);
             this.labelControl7.TabIndex = 8;
             this.labelControl7.Text = "Create By:";
             // 
@@ -552,14 +543,14 @@
             this.txtCustomerContact.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCustomerContact.ForeColor = System.Drawing.Color.Black;
             this.txtCustomerContact.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.txtCustomerContact.Location = new System.Drawing.Point(233, 123);
-            this.txtCustomerContact.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCustomerContact.Location = new System.Drawing.Point(200, 100);
+            this.txtCustomerContact.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCustomerContact.Name = "txtCustomerContact";
             this.txtCustomerContact.PasswordChar = '\0';
             this.txtCustomerContact.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtCustomerContact.PlaceholderText = "";
             this.txtCustomerContact.SelectedText = "";
-            this.txtCustomerContact.Size = new System.Drawing.Size(217, 38);
+            this.txtCustomerContact.Size = new System.Drawing.Size(186, 31);
             this.txtCustomerContact.TabIndex = 9;
             // 
             // labelControl6
@@ -567,10 +558,9 @@
             this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(166, 178);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl6.Location = new System.Drawing.Point(142, 145);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(50, 27);
+            this.labelControl6.Size = new System.Drawing.Size(41, 21);
             this.labelControl6.TabIndex = 8;
             this.labelControl6.Text = "Note:";
             // 
@@ -579,10 +569,9 @@
             this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(49, 129);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl2.Location = new System.Drawing.Point(42, 105);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(167, 27);
+            this.labelControl2.Size = new System.Drawing.Size(136, 21);
             this.labelControl2.TabIndex = 8;
             this.labelControl2.Text = "Customer Contact:";
             // 
@@ -601,14 +590,14 @@
             this.txtIdInvoice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtIdInvoice.ForeColor = System.Drawing.Color.Black;
             this.txtIdInvoice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.txtIdInvoice.Location = new System.Drawing.Point(233, 71);
-            this.txtIdInvoice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtIdInvoice.Location = new System.Drawing.Point(200, 58);
+            this.txtIdInvoice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtIdInvoice.Name = "txtIdInvoice";
             this.txtIdInvoice.PasswordChar = '\0';
             this.txtIdInvoice.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtIdInvoice.PlaceholderText = "";
             this.txtIdInvoice.SelectedText = "";
-            this.txtIdInvoice.Size = new System.Drawing.Size(90, 38);
+            this.txtIdInvoice.Size = new System.Drawing.Size(77, 31);
             this.txtIdInvoice.TabIndex = 9;
             // 
             // labelControl3
@@ -616,10 +605,9 @@
             this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(191, 78);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl3.Location = new System.Drawing.Point(164, 63);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(25, 27);
+            this.labelControl3.Size = new System.Drawing.Size(20, 21);
             this.labelControl3.TabIndex = 8;
             this.labelControl3.Text = "ID:";
             // 
@@ -629,9 +617,8 @@
             this.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
             this.guna2Panel5.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(948, 46);
+            this.guna2Panel5.Size = new System.Drawing.Size(813, 37);
             this.guna2Panel5.TabIndex = 1;
             // 
             // labelControl1
@@ -639,23 +626,21 @@
             this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(424, 10);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl1.Location = new System.Drawing.Point(363, 8);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(108, 28);
+            this.labelControl1.Size = new System.Drawing.Size(87, 21);
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Information";
             // 
             // AllInvoices
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(948, 610);
+            this.ClientSize = new System.Drawing.Size(813, 496);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.Image = global::PharmacyManagement.Properties.Resources.Pharmacy_logo_500;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AllInvoices";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "All Invoices";

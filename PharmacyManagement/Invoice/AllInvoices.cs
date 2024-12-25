@@ -135,7 +135,6 @@ namespace PharmacyManagement.Invoice
 
                 SqlCommand cmd = new SqlCommand(selectAllInvoicesQuery);
                 cmd.Parameters.Add("@Keyword", SqlDbType.NVarChar).Value = "%" + keyword + "%";
-
                 if (role != "admin")
                 {
                     cmd.Parameters.Add("@EmployeeID", SqlDbType.VarChar, 5).Value = employeeID;
@@ -148,6 +147,7 @@ namespace PharmacyManagement.Invoice
                     if (dataTable.Rows.Count == 0)
                     {
                         MessageBox.Show("No results found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dgvAllInvoices.DataSource = null;
                         return;
                     }
 
@@ -192,5 +192,10 @@ namespace PharmacyManagement.Invoice
             GetData(txtFind.Text);
         }
 
+        private void dgvAllInvoices_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+            e.Cancel = true;
+        }
     }
 }
