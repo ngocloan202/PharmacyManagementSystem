@@ -4,6 +4,7 @@ using DevExpress.XtraEditors;
 using PharmacyManagement.Invoice;
 using PharmacyManagement.HumanManage;
 using PharmacyManagement.View;
+using PharmacyManagement.Commodity;
 
 namespace PharmacyManagement
 {
@@ -13,8 +14,12 @@ namespace PharmacyManagement
         private Profile profile = null;
         private NewInvoice newInvoice = null;
         private NewAccount newAccount = null;
-        private AllInvoices allInvoice = null;
+        private NewCommodity newCommodity = null;
         private NewCustomer customer = null;
+        private AllInvoices allInvoice = null;
+        private AllUsers allUsers = null;
+        private AllCommodities allCommodities = null;
+        private AllAccounts allAccounts = null;
         private string currentRole;
         private string currentUsername;
         private string currentEmployeeID;
@@ -123,9 +128,16 @@ namespace PharmacyManagement
             {
                 form?.Close();
             }
+            
             profile = null;
+            customer = null;
             newInvoice = null;
             newAccount = null;
+            newCommodity = null;
+            allCommodities = null;
+            allAccounts = null;
+            allUsers = null;
+            allInvoice = null;
         }
         #endregion
 
@@ -140,6 +152,7 @@ namespace PharmacyManagement
             btnDashboard.Enabled = true;
             btnNewAccount.Enabled = true;
             btnCustomer.Enabled = true;
+            btnAllAccounts.Enabled = true;
 
             btnNewCommodity.Enabled = false;
             btnNewInvoice.Enabled = false;
@@ -158,6 +171,7 @@ namespace PharmacyManagement
             btnNewUser.Enabled = false;
             btnAllUsers.Enabled = false;
             btnNewAccount.Enabled = false;
+            btnAllAccounts.Enabled = false;
         }
         #endregion
 
@@ -216,7 +230,6 @@ namespace PharmacyManagement
             newAccount.Show();
         }
 
-
         private void btnAllInvoices_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             CloseAllMdiForms();
@@ -248,8 +261,48 @@ namespace PharmacyManagement
             customer.Show();
         }
 
-        #endregion
+        private void btnAllUsers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            CloseAllMdiForms();
+            allUsers = new AllUsers()
+            {
+                MdiParent = this
+            };
+            allUsers.Show();
+        }
 
+        private void btnNewCommodity_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            CloseAllMdiForms();
+            newCommodity = new NewCommodity()
+            {
+                MdiParent = this
+            };
+            newCommodity.Show();
+        }
+
+        private void btnAllCommodities_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            CloseAllMdiForms();
+            allCommodities = new AllCommodities()
+            {
+                MdiParent = this
+            };
+            allCommodities.Show();
+        }
+        
+
+        private void btnAllAccounts_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            CloseAllMdiForms();
+            allAccounts = new AllAccounts()
+            {
+                MdiParent = this
+            };
+            allAccounts.Show();
+        }
+
+        #endregion
     }
 
 }

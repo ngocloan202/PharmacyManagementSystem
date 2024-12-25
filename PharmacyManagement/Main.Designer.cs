@@ -42,6 +42,7 @@
             this.btnAllUsers = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnNewAccount = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCustomer = new DevExpress.XtraBars.BarButtonItem();
             this.pgHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -49,10 +50,10 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pgHumanManage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pgInvoice = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnCustomer = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAllAccounts = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,9 +74,10 @@
             this.btnAllUsers,
             this.barButtonItem1,
             this.btnNewAccount,
-            this.btnCustomer});
+            this.btnCustomer,
+            this.btnAllAccounts});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 15;
+            this.ribbonControl1.MaxItemId = 16;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageHeaderItemLinks.Add(this.btnAbout);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -109,6 +111,7 @@
             this.btnNewCommodity.ImageOptions.Image = global::PharmacyManagement.Properties.Resources.medicine_32px;
             this.btnNewCommodity.Name = "btnNewCommodity";
             this.btnNewCommodity.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnNewCommodity.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewCommodity_ItemClick);
             // 
             // btnAllCommodities
             // 
@@ -117,6 +120,7 @@
             this.btnAllCommodities.ImageOptions.Image = global::PharmacyManagement.Properties.Resources.medical_equipment_32;
             this.btnAllCommodities.Name = "btnAllCommodities";
             this.btnAllCommodities.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnAllCommodities.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAllCommodities_ItemClick);
             // 
             // btnNewInvoice
             // 
@@ -168,6 +172,7 @@
             this.btnAllUsers.ImageOptions.Image = global::PharmacyManagement.Properties.Resources.group_32px;
             this.btnAllUsers.Name = "btnAllUsers";
             this.btnAllUsers.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnAllUsers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAllUsers_ItemClick);
             // 
             // barButtonItem1
             // 
@@ -183,6 +188,15 @@
             this.btnNewAccount.Name = "btnNewAccount";
             this.btnNewAccount.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnNewAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewAccount_ItemClick);
+            // 
+            // btnCustomer
+            // 
+            this.btnCustomer.Caption = "Customer";
+            this.btnCustomer.Id = 14;
+            this.btnCustomer.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCustomer.ImageOptions.LargeImage")));
+            this.btnCustomer.Name = "btnCustomer";
+            this.btnCustomer.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCustomer_ItemClick);
             // 
             // pgHome
             // 
@@ -227,8 +241,14 @@
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btnNewAccount);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnAllUsers, true);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnAllAccounts, true);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnAllUsers);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnCustomer);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             // 
             // pgInvoice
             // 
@@ -243,19 +263,14 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.btnAllInvoices, true);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
-            // ribbonPageGroup6
+            // btnAllAccounts
             // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.btnCustomer);
-            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            // 
-            // btnCustomer
-            // 
-            this.btnCustomer.Caption = "Customer";
-            this.btnCustomer.Id = 14;
-            this.btnCustomer.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCustomer.ImageOptions.LargeImage")));
-            this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCustomer_ItemClick);
+            this.btnAllAccounts.Caption = "All Accounts";
+            this.btnAllAccounts.Id = 15;
+            this.btnAllAccounts.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAllAccounts.ImageOptions.LargeImage")));
+            this.btnAllAccounts.Name = "btnAllAccounts";
+            this.btnAllAccounts.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnAllAccounts.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAllAccounts_ItemClick);
             // 
             // Main
             // 
@@ -299,6 +314,7 @@
         private DevExpress.XtraBars.BarButtonItem btnNewAccount;
         private DevExpress.XtraBars.BarButtonItem btnCustomer;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.BarButtonItem btnAllAccounts;
     }
 }
 
