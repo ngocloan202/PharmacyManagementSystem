@@ -155,5 +155,66 @@ namespace PharmacyManagement.Commodity
                 AllCommodities_Load(sender, e);
             }
         }
+
+        public void FetchData(string keyword)
+        {
+            string commoditySql = @"SELECT C.CommodityID, C.CommodityName, C.Manufacturer, C.Quantity, 
+                                    C.BaseUnit, FORMAT(C.PurchasePrice, 'N0') + ' VND' AS PurchasePrice, 
+                                    FORMAT(C.SellingPrice, 'N0') + ' VND' AS SellingPrice, A.CategoryName,
+                                    C.MfgDate, C.ExpDate, C.CategoryID
+                               FROM COMMODITY C, CATEGORIES A
+                               WHERE C.CategoryID = A.CategoryID 
+                               AND (C.CommodityID LIKE @Keyword 
+                                OR C.CommodityName LIKE @Keyword
+                                OR C.Manufacturer LIKE @Keyword)";
+            SqlCommand dgvCmd = new SqlCommand(commoditySql);
+            dgvCmd.Parameters.Add("@Keyword", SqlDbType.NVarChar).Value = "%" + keyword + "%";
+            dataTable.Fill(dgvCmd);
+            if (dataTable.Rows.Count == 0)
+            {
+                MessageBox.Show("No results found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            BindingSource binding = new BindingSource();
+            binding.DataSource = dataTable;
+
+            dgvAllCommodities.DataSource = binding;
+            bindingNavigator.BindingSource = binding;
+
+            txtCommodityID.DataBindings.Clear();
+            cboCommodityType.DataBindings.Clear();
+            txtCommodityName.DataBindings.Clear();
+            txtManufacturer.DataBindings.Clear();
+            txtQuantity.DataBindings.Clear();
+            txtBaseUnit.DataBindings.Clear();
+            txtPurchasePrice.DataBindings.Clear();
+            txtSellingPrice.DataBindings.Clear();
+            dtpMfgDate.DataBindings.Clear();
+            dtpExpDate.DataBindings.Clear();
+
+            txtCommodityID.DataBindings.Add("Text", binding, "CommodityID");
+            cboCommodityType.DataBindings.Add("SelectedValue", binding, "CategoryID");
+            txtCommodityName.DataBindings.Add("Text", binding, "CommodityName");
+            txtManufacturer.DataBindings.Add("Text", binding, "Manufacturer");
+            txtQuantity.DataBindings.Add("Text", binding, "Quantity");
+            txtBaseUnit.DataBindings.Add("Text", binding, "BaseUnit");
+            txtPurchasePrice.DataBindings.Add("Text", binding, "PurchasePrice");
+            txtSellingPrice.DataBindings.Add("Text", binding, "SellingPrice");
+            dtpMfgDate.DataBindings.Add("Value", binding, "MfgDate");
+            dtpExpDate.DataBindings.Add("Value", binding, "ExpDate");
+        }
+
+        private void txtFind_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnFind_Click(sender, e);
+            }
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            FetchData(txtFind.Text);
+        }
     }
 }

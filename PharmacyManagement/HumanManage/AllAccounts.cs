@@ -146,6 +146,11 @@ namespace PharmacyManagement.HumanManage
             SqlCommand userCmd = new SqlCommand(userSql);
             userCmd.Parameters.Add("@Keyword", SqlDbType.NVarChar).Value = "%" + keyword + "%";
             dataTable.Fill(userCmd);
+            if (dataTable.Rows.Count == 0)
+            {
+                MessageBox.Show("No results found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             BindingSource binding = new BindingSource();
             binding.DataSource = dataTable;
 
