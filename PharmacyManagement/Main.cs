@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using PharmacyManagement.Invoice;
 using PharmacyManagement.View;
 
 namespace PharmacyManagement
@@ -17,6 +18,7 @@ namespace PharmacyManagement
         #region Global variable
         Profile profile = null;
         NewInvoice newInvoice = null;
+        AllInvoices allInvoice = null;
         private string currentRole;
         private string currentUsername;
         private string currentEmployeeID;
@@ -196,14 +198,15 @@ namespace PharmacyManagement
         private void btnAllInvoices_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             CloseAllMdiForms();
-            if (newInvoice == null || newInvoice.IsDisposed)
+            if (allInvoice == null || allInvoice.IsDisposed)
             {
                 if (!string.IsNullOrEmpty(currentEmployeeID))
                 {
-                    newInvoice = new NewInvoice();
-                    newInvoice.EmployeeID = currentEmployeeID;
-                    newInvoice.MdiParent = this;
-                    newInvoice.Show();
+                    allInvoice = new AllInvoices();
+                    allInvoice.EmployeeID = currentEmployeeID;
+                    allInvoice.Role = currentRole;
+                    allInvoice.MdiParent = this;
+                    allInvoice.Show();
                 }
                 else
                 {
