@@ -1,6 +1,5 @@
 using System;
 using System.Windows.Forms;
-using PharmacyManagement.HumanManage;
 
 namespace PharmacyManagement
 {
@@ -14,7 +13,7 @@ namespace PharmacyManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NewAccount());
+            Application.Run(new Main());
         }
     }
 }

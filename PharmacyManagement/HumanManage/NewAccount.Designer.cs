@@ -37,10 +37,8 @@
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.cboUserRole = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.txtAccountID = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -70,7 +68,7 @@
             this.labelControl4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(136, 114);
+            this.labelControl4.Location = new System.Drawing.Point(136, 102);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(73, 21);
             this.labelControl4.TabIndex = 0;
@@ -90,7 +88,7 @@
             this.txtUserPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtUserPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtUserPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.txtUserPassword.Location = new System.Drawing.Point(272, 163);
+            this.txtUserPassword.Location = new System.Drawing.Point(272, 151);
             this.txtUserPassword.Name = "txtUserPassword";
             this.txtUserPassword.PasswordChar = '•';
             this.txtUserPassword.PlaceholderText = "";
@@ -103,7 +101,7 @@
             this.labelControl5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(136, 168);
+            this.labelControl5.Location = new System.Drawing.Point(136, 156);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(106, 21);
             this.labelControl5.TabIndex = 0;
@@ -123,7 +121,7 @@
             this.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.txtUsername.Location = new System.Drawing.Point(272, 109);
+            this.txtUsername.Location = new System.Drawing.Point(272, 97);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderText = "";
@@ -155,7 +153,7 @@
             this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(136, 222);
+            this.labelControl6.Location = new System.Drawing.Point(136, 210);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(70, 21);
             this.labelControl6.TabIndex = 0;
@@ -184,31 +182,18 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Information";
             // 
-            // labelControl3
-            // 
-            this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(136, 60);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(16, 21);
-            this.labelControl3.TabIndex = 0;
-            this.labelControl3.Text = "ID";
-            // 
             // guna2Panel1
             // 
             this.guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.guna2Panel1.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel1.Controls.Add(this.cboUserRole);
             this.guna2Panel1.Controls.Add(this.btnCancel);
-            this.guna2Panel1.Controls.Add(this.txtAccountID);
             this.guna2Panel1.Controls.Add(this.btnAdd);
             this.guna2Panel1.Controls.Add(this.labelControl6);
             this.guna2Panel1.Controls.Add(this.txtUserPassword);
             this.guna2Panel1.Controls.Add(this.labelControl5);
             this.guna2Panel1.Controls.Add(this.txtUsername);
             this.guna2Panel1.Controls.Add(this.labelControl4);
-            this.guna2Panel1.Controls.Add(this.labelControl3);
             this.guna2Panel1.CustomBorderColor = System.Drawing.Color.Black;
             this.guna2Panel1.CustomBorderThickness = new System.Windows.Forms.Padding(1);
             this.guna2Panel1.Location = new System.Drawing.Point(23, 2);
@@ -230,32 +215,10 @@
             this.cboUserRole.Items.AddRange(new object[] {
             "user",
             "admin"});
-            this.cboUserRole.Location = new System.Drawing.Point(272, 214);
+            this.cboUserRole.Location = new System.Drawing.Point(272, 202);
             this.cboUserRole.Name = "cboUserRole";
             this.cboUserRole.Size = new System.Drawing.Size(308, 36);
             this.cboUserRole.TabIndex = 22;
-            // 
-            // txtAccountID
-            // 
-            this.txtAccountID.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtAccountID.BorderColor = System.Drawing.Color.Black;
-            this.txtAccountID.BorderRadius = 14;
-            this.txtAccountID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAccountID.DefaultText = "";
-            this.txtAccountID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtAccountID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtAccountID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAccountID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAccountID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.txtAccountID.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtAccountID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.txtAccountID.Location = new System.Drawing.Point(272, 55);
-            this.txtAccountID.Name = "txtAccountID";
-            this.txtAccountID.PasswordChar = '\0';
-            this.txtAccountID.PlaceholderText = "";
-            this.txtAccountID.SelectedText = "";
-            this.txtAccountID.Size = new System.Drawing.Size(308, 31);
-            this.txtAccountID.TabIndex = 1;
             // 
             // guna2Panel6
             // 
@@ -297,9 +260,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2TextBox txtAccountID;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private Guna.UI2.WinForms.Guna2ComboBox cboUserRole;
     }

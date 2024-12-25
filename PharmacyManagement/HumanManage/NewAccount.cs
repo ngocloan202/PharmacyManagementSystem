@@ -19,7 +19,6 @@ namespace PharmacyManagement.HumanManage
 
         private void NewAccount_Load(object sender, EventArgs e)
         {
-            txtAccountID.Enabled = false;
             ClearAllField();
         }
 
