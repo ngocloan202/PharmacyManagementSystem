@@ -121,6 +121,7 @@
             this.btnNewInvoice.ImageOptions.Image = global::PharmacyManagement.Properties.Resources.new_invoice;
             this.btnNewInvoice.Name = "btnNewInvoice";
             this.btnNewInvoice.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnNewInvoice.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewInvoice_ItemClick);
             // 
             // btnSignOut
             // 
@@ -176,6 +177,7 @@
             this.btnNewAccount.ImageOptions.Image = global::PharmacyManagement.Properties.Resources.new_account;
             this.btnNewAccount.Name = "btnNewAccount";
             this.btnNewAccount.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnNewAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewAccount_ItemClick);
             // 
             // pgHome
             // 

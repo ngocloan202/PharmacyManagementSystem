@@ -423,8 +423,8 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.guna2Panel3);
             this.guna2Panel1.Controls.Add(this.dgvAllAccounts);
+            this.guna2Panel1.Controls.Add(this.guna2Panel3);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 212);
             this.guna2Panel1.Name = "guna2Panel1";
@@ -437,6 +437,7 @@
             this.guna2Panel3.Controls.Add(this.btnEdit);
             this.guna2Panel3.Controls.Add(this.btnSave);
             this.guna2Panel3.Controls.Add(this.btnReload);
+            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel3.Location = new System.Drawing.Point(0, 177);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(798, 59);
@@ -539,7 +540,7 @@
             this.dgvAllAccounts.ReadOnly = true;
             this.dgvAllAccounts.RowHeadersWidth = 51;
             this.dgvAllAccounts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAllAccounts.Size = new System.Drawing.Size(798, 236);
+            this.dgvAllAccounts.Size = new System.Drawing.Size(798, 177);
             this.dgvAllAccounts.TabIndex = 0;
             this.dgvAllAccounts.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvAllAccounts_CellFormatting);
             // 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using PharmacyManagement.HumanManage;
 using PharmacyManagement.View;
 
 namespace PharmacyManagement
@@ -15,92 +16,142 @@ namespace PharmacyManagement
     public partial class Main : XtraForm
     {
         #region Global variable
-        SignIn signIn = new SignIn();
-        Profile profile = null;
+        private Profile profile = null;
+        private NewInvoice newInvoice = null;
+        private NewAccount newAccount = null;
         private string currentRole;
         private string currentUsername;
+        private string currentEmployeeID;
         #endregion
+
         public Main()
         {
-            Flash flash = new Flash();
-            flash.ShowDialog();
-            while (true)
-            {
-                if (!IsSignInSuccessful())
-                {
-                    Application.Exit();
-                    return;
-                }
-                break;
-            }
             InitializeComponent();
-            this.Show();
+            ShowFlashScreen();
+            HandleInitialSignIn();
+            ConfigureForm();
+        }
+
+        private void ShowFlashScreen()
+        {
+            using (Flash flash = new Flash())
+            {
+                flash.ShowDialog();
+            }
+        }
+
+        private void HandleInitialSignIn()
+        {
+            if (!IsSignInSuccessful())
+            {
+                Application.Exit();
+            }
+        }
+
+        private void ConfigureForm()
+        {
             this.IsMdiContainer = true;
             ConfigureBasedOnRole();
+            OpenProfile();
         }
 
         #region Handle Sign In
         private bool IsSignInSuccessful()
         {
-            SignIn signIn = new SignIn();
-            DialogResult result = signIn.ShowDialog();
-            if (result == DialogResult.OK)
+            using (SignIn signIn = new SignIn())
             {
-                currentRole = signIn.currentRoleUser;
-                currentUsername = signIn.currentUsername;
-                return true;
+                DialogResult result = signIn.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    currentRole = signIn.currentRoleUser;
+                    currentUsername = signIn.currentUsername;
+                    currentEmployeeID = signIn.currentEmployeeID;
+                    return true;
+                }
+                return result != DialogResult.Cancel && IsSignInSuccessful();
             }
-            else if (result == DialogResult.Cancel)
-            {
-                return false;
-            }
-            return IsSignInSuccessful();
         }
 
         private void ConfigureBasedOnRole()
         {
-            switch (currentRole)
+            if (string.IsNullOrEmpty(currentRole))
+            {
+                ShowErrorAndExit("User role not found");
+                return;
+            }
+
+            switch (currentRole.ToLower())
             {
                 case "admin":
-                    admin();
+                    ConfigureAdminRole();
                     break;
 
                 case "user":
-                    user();
+                    ConfigureUserRole();
                     break;
 
                 default:
-                    MessageBox.Show("Invalid user role", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Application.Exit();
+                    ShowErrorAndExit("Invalid user role");
                     break;
             }
         }
 
+        private void ShowErrorAndExit(string message)
+        {
+            MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Application.Exit();
+        }
+
+        private void OpenProfile()
+        {
+            CloseAllMdiForms();
+            if (string.IsNullOrEmpty(currentUsername))
+            {
+                MessageBox.Show("Error: Username not found!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            profile = new Profile
+            {
+                Username = currentUsername,
+                MdiParent = this
+            };
+            profile.Show();
+        }
         #endregion
 
-        #region configureAdmin
-        public void admin()
+        #region Close And Show New Form
+        private void CloseAllMdiForms()
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form?.Close();
+            }
+            profile = null;
+            newInvoice = null;
+            newAccount = null;
+        }
+        #endregion
+
+        #region Configure Roles
+        private void ConfigureAdminRole()
         {
             btnProfile.Enabled = true;
             btnAllUsers.Enabled = true;
             btnAllCommodities.Enabled = true;
             btnNewUser.Enabled = true;
-            btnAllUsers.Enabled = true;
             btnAllInvoices.Enabled = true;
             btnDashboard.Enabled = true;
+            btnNewAccount.Enabled = true;
 
             btnNewCommodity.Enabled = false;
             btnNewInvoice.Enabled = false;
-
         }
-        #endregion
 
-        #region configureUser
-        public void user()
+        private void ConfigureUserRole()
         {
             btnProfile.Enabled = true;
-            btnAllUsers.Enabled = true;
             btnAllCommodities.Enabled = true;
             btnAllInvoices.Enabled = true;
             btnDashboard.Enabled = true;
@@ -109,54 +160,69 @@ namespace PharmacyManagement
 
             btnNewUser.Enabled = false;
             btnAllUsers.Enabled = false;
-
+            btnNewAccount.Enabled = false;
         }
         #endregion
 
-        #region Handle Profile
+        #region Event Handlers
         private void btnProfile_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (profile == null || profile.IsDisposed)
-            {
-                if (!string.IsNullOrEmpty(currentUsername))
-                {
-                    profile = new Profile();
-                    profile.Username = currentUsername;
-                    profile.MdiParent = this;
-                    profile.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Error: Username not found!", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-                profile.Show();
+            OpenProfile();
         }
-        #endregion
 
-        #region Handle Sign Out
         private void btnSignOut_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to sign out?", "Confirm Sign Out",
-                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to sign out?", "Confirm Sign Out",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
             {
-                this.Hide();
-                SignIn signInForm = new SignIn();
+                return;
+            }
+
+            this.Hide();
+            using (SignIn signInForm = new SignIn())
+            {
                 if (signInForm.ShowDialog() == DialogResult.OK)
                 {
                     currentRole = signInForm.currentRoleUser;
                     currentUsername = signInForm.currentUsername;
+                    currentEmployeeID = signInForm.currentEmployeeID;
                     ConfigureBasedOnRole();
-                    this.Show(); 
+                    OpenProfile();
+                    this.Show();
                 }
                 else
                 {
-                    Application.Exit(); 
+                    Application.Exit();
                 }
             }
+        }
+
+        private void btnNewInvoice_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            CloseAllMdiForms();
+            if (string.IsNullOrEmpty(currentEmployeeID))
+            {
+                MessageBox.Show("Error: EmployeeID not found!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            newInvoice = new NewInvoice
+            {
+                EmployeeID = currentEmployeeID,
+                MdiParent = this
+            };
+            newInvoice.Show();
+        }
+
+        private void btnNewAccount_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            CloseAllMdiForms();
+            newAccount = new NewAccount
+            {
+                MdiParent = this
+            };
+            newAccount.Show();
         }
         #endregion
     }
