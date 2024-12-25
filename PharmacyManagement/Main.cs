@@ -166,8 +166,8 @@ namespace PharmacyManagement
             btnDashboard.Enabled = true;
             btnNewCommodity.Enabled = true;
             btnNewInvoice.Enabled = true;
+            btnCustomer.Enabled = true;
 
-            btnCustomer.Enabled = false;
             btnNewUser.Enabled = false;
             btnAllUsers.Enabled = false;
             btnNewAccount.Enabled = false;
