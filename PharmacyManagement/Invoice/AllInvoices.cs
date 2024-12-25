@@ -133,18 +133,17 @@ namespace PharmacyManagement.Invoice
                                     OR cus.CustomerName LIKE @Keyword)";
             }
 
-            using (SqlCommand userCmd = new SqlCommand(selectAllInvoicesQuery))
-            {
-                userCmd.Parameters.Add("@Keyword", SqlDbType.NVarChar).Value = "%" + keyword + "%";
+                SqlCommand cmd = new SqlCommand(selectAllInvoicesQuery);
+                cmd.Parameters.Add("@Keyword", SqlDbType.NVarChar).Value = "%" + keyword + "%";
 
                 if (role != "admin")
                 {
-                    userCmd.Parameters.Add("@EmployeeID", SqlDbType.VarChar, 5).Value = employeeID;
+                    cmd.Parameters.Add("@EmployeeID", SqlDbType.VarChar, 5).Value = employeeID;
                 }
 
                 try
                 {
-                    dataTable.Fill(userCmd);
+                    dataTable.Fill(cmd);
 
                     if (dataTable.Rows.Count == 0)
                     {
@@ -179,8 +178,7 @@ namespace PharmacyManagement.Invoice
                     MessageBox.Show($"Error performing search: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-        
+
         private void txtFind_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -193,5 +191,6 @@ namespace PharmacyManagement.Invoice
         {
             GetData(txtFind.Text);
         }
+
     }
 }
