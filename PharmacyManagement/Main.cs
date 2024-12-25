@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using PharmacyManagement.HumanManage;
@@ -27,24 +20,39 @@ namespace PharmacyManagement
         public Main()
         {
             InitializeComponent();
-            ShowFlashScreen();
-            HandleInitialSignIn();
-            ConfigureForm();
-        }
 
-        private void ShowFlashScreen()
-        {
             using (Flash flash = new Flash())
             {
                 flash.ShowDialog();
             }
-        }
 
-        private void HandleInitialSignIn()
-        {
-            if (!IsSignInSuccessful())
+            if (!HandleInitialSignIn())
             {
                 Application.Exit();
+                return;
+            }
+
+            ConfigureForm();
+            this.Show();
+        }
+
+        private bool HandleInitialSignIn()
+        {
+            using (SignIn signIn = new SignIn())
+            {
+                DialogResult result = signIn.ShowDialog();
+
+                if (result == DialogResult.OK &&
+                    !string.IsNullOrEmpty(signIn.currentRoleUser) &&
+                    !string.IsNullOrEmpty(signIn.currentUsername))
+                {
+                    currentRole = signIn.currentRoleUser;
+                    currentUsername = signIn.currentUsername;
+                    currentEmployeeID = signIn.currentEmployeeID;
+                    return true;
+                }
+
+                return false;
             }
         }
 
@@ -56,27 +64,13 @@ namespace PharmacyManagement
         }
 
         #region Handle Sign In
-        private bool IsSignInSuccessful()
-        {
-            using (SignIn signIn = new SignIn())
-            {
-                DialogResult result = signIn.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    currentRole = signIn.currentRoleUser;
-                    currentUsername = signIn.currentUsername;
-                    currentEmployeeID = signIn.currentEmployeeID;
-                    return true;
-                }
-                return result != DialogResult.Cancel && IsSignInSuccessful();
-            }
-        }
-
         private void ConfigureBasedOnRole()
         {
             if (string.IsNullOrEmpty(currentRole))
             {
-                ShowErrorAndExit("User role not found");
+                MessageBox.Show("User role not found", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
                 return;
             }
 
@@ -91,24 +85,22 @@ namespace PharmacyManagement
                     break;
 
                 default:
-                    ShowErrorAndExit("Invalid user role");
+                    MessageBox.Show("Invalid user role", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Application.Exit();
                     break;
             }
-        }
-
-        private void ShowErrorAndExit(string message)
-        {
-            MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            Application.Exit();
         }
 
         private void OpenProfile()
         {
             CloseAllMdiForms();
+
             if (string.IsNullOrEmpty(currentUsername))
             {
                 MessageBox.Show("Error: Username not found!", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
                 return;
             }
 
@@ -179,27 +171,21 @@ namespace PharmacyManagement
             }
 
             this.Hide();
-            using (SignIn signInForm = new SignIn())
+            if (!HandleInitialSignIn())
             {
-                if (signInForm.ShowDialog() == DialogResult.OK)
-                {
-                    currentRole = signInForm.currentRoleUser;
-                    currentUsername = signInForm.currentUsername;
-                    currentEmployeeID = signInForm.currentEmployeeID;
-                    ConfigureBasedOnRole();
-                    OpenProfile();
-                    this.Show();
-                }
-                else
-                {
-                    Application.Exit();
-                }
+                Application.Exit();
+                return;
             }
+
+            ConfigureBasedOnRole();
+            OpenProfile();
+            this.Show();
         }
 
         private void btnNewInvoice_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             CloseAllMdiForms();
+
             if (string.IsNullOrEmpty(currentEmployeeID))
             {
                 MessageBox.Show("Error: EmployeeID not found!", "Error",
