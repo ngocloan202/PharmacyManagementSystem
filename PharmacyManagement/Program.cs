@@ -15,5 +15,11 @@ namespace PharmacyManagement
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Main());
         }
+
+        public static void ForceApplicationExit()
+        {
+            Application.Exit();
+            Environment.Exit(0); 
+        }
     }
 }

@@ -28,12 +28,11 @@ namespace PharmacyManagement
 
             if (!HandleInitialSignIn())
             {
-                Application.Exit();
+                this.Close();
                 return;
             }
 
             ConfigureForm();
-            this.Show();
         }
 
         private bool HandleInitialSignIn()
@@ -52,6 +51,7 @@ namespace PharmacyManagement
                     return true;
                 }
 
+                Program.ForceApplicationExit();
                 return false;
             }
         }
@@ -70,7 +70,7 @@ namespace PharmacyManagement
             {
                 MessageBox.Show("User role not found", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit();
+                Program.ForceApplicationExit();
                 return;
             }
 
@@ -87,7 +87,7 @@ namespace PharmacyManagement
                 default:
                     MessageBox.Show("Invalid user role", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Application.Exit();
+                    Program.ForceApplicationExit();
                     break;
             }
         }
@@ -100,7 +100,7 @@ namespace PharmacyManagement
             {
                 MessageBox.Show("Error: Username not found!", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit();
+                Program.ForceApplicationExit();
                 return;
             }
 
@@ -173,7 +173,7 @@ namespace PharmacyManagement
             this.Hide();
             if (!HandleInitialSignIn())
             {
-                Application.Exit();
+                this.Close();
                 return;
             }
 
