@@ -90,12 +90,22 @@ namespace PharmacyManagement.View
             btnCancel.Enabled = value;
 
             btnEdit.Enabled = !value;
+
+            if (value)
+            {
+                txtFullName.SelectionStart = txtFullName.Text.Length;
+                txtUsername.SelectionStart = txtUsername.Text.Length;
+                txtContact.SelectionStart = txtContact.Text.Length;
+                txtAddress.SelectionStart = txtAddress.Text.Length;
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             oldUsername = txtUsername.Text;
             ToggleControls(true);
+            txtUsername.SelectionStart = txtUsername.Text.Length;
+            txtUsername.Focus();
         }
 
         private void UpdateUsername()
