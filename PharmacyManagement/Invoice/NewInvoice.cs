@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using PharmacyManagement.DB_query;
@@ -26,6 +27,11 @@ namespace PharmacyManagement
 
         private void NewInvoice_Load(object sender, EventArgs e)
         {
+            DataGridViewTextBoxColumn commodityIDColumn = new DataGridViewTextBoxColumn();
+            commodityIDColumn.Name = "CommodityID";
+            commodityIDColumn.Visible = false; 
+            dgvCart.Columns.Add(commodityIDColumn);
+
             if (!string.IsNullOrEmpty(EmployeeID))
             {
                 FetchData(EmployeeID);
@@ -205,7 +211,8 @@ namespace PharmacyManagement
                     txtQuantities.Text,
                     txtBaseUnit.Text,
                     price.ToString("N0") + " VND",
-                    amount.ToString("N0") + " VND"
+                    amount.ToString("N0") + " VND",
+                    cboCommodityName.SelectedValue.ToString()
                 );
 
                 MessageBox.Show("Commodity added to cart successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -250,5 +257,130 @@ namespace PharmacyManagement
             isUpdating = false;
         }
         #endregion
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (dgvCart.SelectedRows.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to remove the selected item from the cart?",
+                                                      "Confirm Removal",
+                                                      MessageBoxButtons.YesNo,
+                                                      MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    dgvCart.Rows.RemoveAt(dgvCart.SelectedRows[0].Index);
+                    lblTotal_TextChanged(sender, e);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to remove.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (ValidateInput())
+            {
+                try
+                {
+                    // Insert into INVOICE
+                    string insertInvoiceSql = @"INSERT INTO INVOICE (InvoiceID, CreatedDate, Note, EmployeeID, CustomerID)
+                                    VALUES (@InvoiceID, @CreatedDate, @Note, @EmployeeID, @CustomerID)";
+                    SqlCommand insertInvoiceCmd = new SqlCommand(insertInvoiceSql);
+                    insertInvoiceCmd.Parameters.Add("@InvoiceID", SqlDbType.VarChar, 5).Value = txtInvoiceID.Text;
+                    insertInvoiceCmd.Parameters.Add("@CreatedDate", SqlDbType.DateTime).Value = dtpDateCreated.Value;
+                    insertInvoiceCmd.Parameters.Add("@Note", SqlDbType.NVarChar, 200).Value = txtNote.Text;
+                    insertInvoiceCmd.Parameters.Add("@EmployeeID", SqlDbType.VarChar, 5).Value = employeeID;
+                    insertInvoiceCmd.Parameters.Add("@CustomerID", SqlDbType.VarChar, 5).Value = cboCustomerName.SelectedValue.ToString();
+
+                    dataTable.Update(insertInvoiceCmd);
+
+                    // Insert into INVOICEDETAILS
+                    foreach (DataGridViewRow row in dgvCart.Rows)
+                    {
+                        if (row.Cells[0].Value != null)
+                        {
+                            string commodityID = row.Cells[5].Value.ToString();
+                            int quantity = int.Parse(row.Cells[1].Value.ToString());
+                            decimal unitPrice = decimal.Parse(row.Cells[3].Value.ToString().Replace(" VND", "").Replace(",", ""));
+                            decimal amount = decimal.Parse(row.Cells[4].Value.ToString().Replace(" VND", "").Replace(",", ""));
+
+                            string insertInvoiceDetailsSql = @"INSERT INTO INVOICEDETAILS (InvoiceID, CommodityID, Quantity, UnitPrice, Amount)
+                                                   VALUES (@InvoiceID, @CommodityID, @Quantity, @UnitPrice, @Amount)";
+                            SqlCommand insertInvoiceDetailsCmd = new SqlCommand(insertInvoiceDetailsSql);
+                            insertInvoiceDetailsCmd.Parameters.Add("@InvoiceID", SqlDbType.VarChar, 5).Value = txtInvoiceID.Text;
+                            insertInvoiceDetailsCmd.Parameters.Add("@CommodityID", SqlDbType.VarChar, 5).Value = commodityID;
+                            insertInvoiceDetailsCmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = quantity;
+                            insertInvoiceDetailsCmd.Parameters.Add("@UnitPrice", SqlDbType.Money).Value = unitPrice;
+                            insertInvoiceDetailsCmd.Parameters.Add("@Amount", SqlDbType.Money).Value = amount;
+
+                            dataTable.Update(insertInvoiceDetailsCmd);
+                        }
+                    }
+                    MessageBox.Show("Invoice and details added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearFields();
+                    dgvCart.Rows.Clear();
+                    NewInvoice_Load(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error adding invoice: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            
+        }
+
+        #region validating input
+        private bool ValidateInput()
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.IsBalloon = true;
+
+            toolTip.Hide(txtInvoiceID);
+            toolTip.Hide(txtQuantities);
+
+            // Validate Invoice ID
+            if (string.IsNullOrWhiteSpace(txtInvoiceID.Text))
+            {
+                toolTip.Show("Please enter the Invoice ID!", txtInvoiceID,
+                    txtInvoiceID.Width - 15, txtInvoiceID.Height - 80, 2000);
+                txtInvoiceID.Focus();
+                return false;
+            }
+
+            // Validate Quantities
+            if (string.IsNullOrWhiteSpace(txtQuantities.Text))
+            {
+                toolTip.Show("Please enter the Quantity!", txtQuantities,
+                    txtQuantities.Width - 15, txtQuantities.Height - 80, 2000);
+                txtQuantities.Focus();
+                return false;
+            }
+
+
+            // Validate Quantity
+            if (!int.TryParse(txtQuantities.Text, out _))
+            {
+                toolTip.Show("Please enter a valid number for Quantity!", txtQuantities,
+                    txtQuantities.Width - 15, txtQuantities.Height - 80, 2000);
+                txtQuantities.Focus();
+                return false;
+            }
+
+            return true;
+        }
+        #endregion
+
+        private void ClearFields()
+        {
+            txtInvoiceID.Text = "";
+            cboCustomerName.SelectedIndex = 0;
+            txtQuantities.Text = "1";
+            dtpDateCreated.Value = DateTime.Now;
+            txtNote.Text = "";
+            txtInvoiceID.Select();
+        }
     }
 }
