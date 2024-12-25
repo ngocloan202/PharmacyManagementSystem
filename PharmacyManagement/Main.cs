@@ -192,5 +192,25 @@ namespace PharmacyManagement
             }
         }
         #endregion
+
+        private void btnAllInvoices_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            CloseAllMdiForms();
+            if (newInvoice == null || newInvoice.IsDisposed)
+            {
+                if (!string.IsNullOrEmpty(currentEmployeeID))
+                {
+                    newInvoice = new NewInvoice();
+                    newInvoice.EmployeeID = currentEmployeeID;
+                    newInvoice.MdiParent = this;
+                    newInvoice.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Error: EmployeeID not found!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

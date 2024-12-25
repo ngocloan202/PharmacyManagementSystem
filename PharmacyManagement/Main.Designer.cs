@@ -137,6 +137,7 @@
             this.btnAllInvoices.ImageOptions.Image = global::PharmacyManagement.Properties.Resources.all_invoices;
             this.btnAllInvoices.Name = "btnAllInvoices";
             this.btnAllInvoices.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnAllInvoices.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAllInvoices_ItemClick);
             // 
             // btnAbout
             // 
