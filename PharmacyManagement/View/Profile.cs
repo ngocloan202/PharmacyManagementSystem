@@ -155,7 +155,6 @@ namespace PharmacyManagement.View
         private void ToggleControlsOfGuest()
         {
             txtUsername.Enabled = true;
-            txtUsername.Enabled = true;
             txtUsername.ReadOnly = true;
             txtUsername.TabStop = false;
 
