@@ -200,7 +200,7 @@ namespace PharmacyManagement
         #endregion
 
         #region Handle Event Add To Cart
-        private void btnAddToCard_Click(object sender, EventArgs e)
+        private void btnAddToCart_Click(object sender, EventArgs e)
         {
             if (double.TryParse(txtSellingPrice.Text.Replace(" VND", "").Replace(",", ""), out double price) &&
                 double.TryParse(txtQuantities.Text, out double quantity))

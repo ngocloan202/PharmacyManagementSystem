@@ -62,7 +62,7 @@
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAddToCard = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddToCart = new Guna.UI2.WinForms.Guna2Button();
             this.txtSellingPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.txtBaseUnit = new Guna.UI2.WinForms.Guna2TextBox();
@@ -515,7 +515,7 @@
             this.guna2Panel6.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel6.BorderThickness = 1;
             this.guna2Panel6.Controls.Add(this.btnCancel);
-            this.guna2Panel6.Controls.Add(this.btnAddToCard);
+            this.guna2Panel6.Controls.Add(this.btnAddToCart);
             this.guna2Panel6.Controls.Add(this.txtSellingPrice);
             this.guna2Panel6.Controls.Add(this.labelControl13);
             this.guna2Panel6.Controls.Add(this.txtBaseUnit);
@@ -549,26 +549,26 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnAddToCard
+            // btnAddToCart
             // 
-            this.btnAddToCard.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAddToCard.BorderRadius = 10;
-            this.btnAddToCard.DefaultAutoSize = true;
-            this.btnAddToCard.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddToCard.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddToCard.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAddToCard.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAddToCard.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
-            this.btnAddToCard.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddToCard.ForeColor = System.Drawing.Color.White;
-            this.btnAddToCard.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnAddToCard.Location = new System.Drawing.Point(10, 205);
-            this.btnAddToCard.Name = "btnAddToCard";
-            this.btnAddToCard.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
-            this.btnAddToCard.Size = new System.Drawing.Size(95, 27);
-            this.btnAddToCard.TabIndex = 5;
-            this.btnAddToCard.Text = "Add to cart";
-            this.btnAddToCard.Click += new System.EventHandler(this.btnAddToCard_Click);
+            this.btnAddToCart.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAddToCart.BorderRadius = 10;
+            this.btnAddToCart.DefaultAutoSize = true;
+            this.btnAddToCart.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddToCart.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddToCart.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddToCart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddToCart.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
+            this.btnAddToCart.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddToCart.ForeColor = System.Drawing.Color.White;
+            this.btnAddToCart.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnAddToCart.Location = new System.Drawing.Point(10, 205);
+            this.btnAddToCart.Name = "btnAddToCart";
+            this.btnAddToCart.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
+            this.btnAddToCart.Size = new System.Drawing.Size(95, 27);
+            this.btnAddToCart.TabIndex = 5;
+            this.btnAddToCart.Text = "Add to cart";
+            this.btnAddToCart.Click += new System.EventHandler(this.btnAddToCart_Click);
             // 
             // txtSellingPrice
             // 
@@ -757,7 +757,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Button btnCancel;
-        private Guna.UI2.WinForms.Guna2Button btnAddToCard;
+        private Guna.UI2.WinForms.Guna2Button btnAddToCart;
         private DevExpress.XtraEditors.LabelControl labeltotal;
         private System.Windows.Forms.Label lblTotal;
         private Guna.UI2.WinForms.Guna2ComboBox cboCustomerName;
