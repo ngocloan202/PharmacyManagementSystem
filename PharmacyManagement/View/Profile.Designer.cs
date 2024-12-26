@@ -214,6 +214,7 @@
             this.txtAddress.SelectedText = "";
             this.txtAddress.Size = new System.Drawing.Size(523, 28);
             this.txtAddress.TabIndex = 8;
+            this.txtAddress.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Guna2TextBox_MouseClick);
             // 
             // txtContact
             // 
@@ -236,6 +237,7 @@
             this.txtContact.SelectedText = "";
             this.txtContact.Size = new System.Drawing.Size(178, 28);
             this.txtContact.TabIndex = 6;
+            this.txtContact.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Guna2TextBox_MouseClick);
             // 
             // txtFullName
             // 
@@ -258,6 +260,7 @@
             this.txtFullName.SelectedText = "";
             this.txtFullName.Size = new System.Drawing.Size(178, 28);
             this.txtFullName.TabIndex = 3;
+            this.txtFullName.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Guna2TextBox_MouseClick);
             // 
             // txtUsername
             // 
@@ -280,6 +283,7 @@
             this.txtUsername.SelectedText = "";
             this.txtUsername.Size = new System.Drawing.Size(212, 28);
             this.txtUsername.TabIndex = 2;
+            this.txtUsername.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Guna2TextBox_MouseClick);
             // 
             // txtIdProfile
             // 

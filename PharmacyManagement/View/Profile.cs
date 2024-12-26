@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using PharmacyManagement.DB_query;
@@ -23,6 +24,10 @@ namespace PharmacyManagement.View
         {
             InitializeComponent();
             dataTable.OpenConnection();
+            txtUsername.MouseClick += Guna2TextBox_MouseClick;
+            txtFullName.MouseClick += Guna2TextBox_MouseClick;
+            txtContact.MouseClick += Guna2TextBox_MouseClick;
+            txtAddress.MouseClick += Guna2TextBox_MouseClick;
         }
 
         private void Profile_Load(object sender, EventArgs e)
@@ -75,6 +80,33 @@ namespace PharmacyManagement.View
                 }
             }
         }
+
+        private void Guna2TextBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (sender is Guna.UI2.WinForms.Guna2TextBox guna2TextBox && guna2TextBox.Enabled)
+            {
+                Point clickPoint = e.Location;
+
+                int index = GetCharIndexFromPosition(guna2TextBox, clickPoint);
+
+                guna2TextBox.SelectionStart = index;
+                guna2TextBox.Focus();
+            }
+        }
+
+        private int GetCharIndexFromPosition(Guna.UI2.WinForms.Guna2TextBox textBox, Point point)
+        {
+            Graphics g = textBox.CreateGraphics();
+                for (int i = 0; i < textBox.Text.Length; i++)
+                {
+                    SizeF size = g.MeasureString(textBox.Text.Substring(0, i), textBox.Font);
+                    if (size.Width > point.X)
+                    {
+                        return i; 
+                    }
+                }
+            return textBox.Text.Length;
+        }
         private void ToggleControls(bool value)
         {
             txtIdProfile.Enabled = false;
@@ -96,6 +128,7 @@ namespace PharmacyManagement.View
         {
             oldUsername = txtUsername.Text;
             ToggleControls(true);
+            txtUsername.Focus();
         }
 
         private void UpdateUsername()
