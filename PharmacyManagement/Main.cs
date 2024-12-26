@@ -92,6 +92,10 @@ namespace PharmacyManagement
                     ConfigureUserRole();
                     break;
 
+                case "guest":
+                    ConfigureGuestRole();
+                    break;
+
                 default:
                     MessageBox.Show("Invalid user role", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -115,6 +119,7 @@ namespace PharmacyManagement
             profile = new Profile
             {
                 Username = currentUsername,
+                Role = currentRole, 
                 MdiParent = this
             };
             profile.Show();
@@ -168,6 +173,22 @@ namespace PharmacyManagement
             btnNewInvoice.Enabled = true;
             btnCustomer.Enabled = true;
 
+            btnNewUser.Enabled = false;
+            btnAllUsers.Enabled = false;
+            btnNewAccount.Enabled = false;
+            btnAllAccounts.Enabled = false;
+        }
+
+        private void ConfigureGuestRole()
+        {
+            btnProfile.Enabled = true;
+
+            btnAllCommodities.Enabled = false;
+            btnAllInvoices.Enabled = false;
+            btnDashboard.Enabled = false;
+            btnNewCommodity.Enabled = false;
+            btnNewInvoice.Enabled = false;
+            btnCustomer.Enabled = false;
             btnNewUser.Enabled = false;
             btnAllUsers.Enabled = false;
             btnNewAccount.Enabled = false;

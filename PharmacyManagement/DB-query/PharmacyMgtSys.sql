@@ -49,7 +49,7 @@ Create table ACCOUNT
 	AccountID tinyint identity(1,1),
 	Username varchar(50) not null unique,
 	UserPassword varchar(50) not null,
-	UserRole varchar(5) default 'user' check(UserRole in('user','admin')),
+	UserRole varchar(5) default 'user' check(UserRole in('user','admin', 'guest')),
 	EmployeeID varchar(5),
 	primary key (AccountID),
 	foreign key (EmployeeID) references EMPLOYEE(EmployeeID)

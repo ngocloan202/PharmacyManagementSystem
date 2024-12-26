@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Web.Security;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using PharmacyManagement.DB_query;
@@ -11,6 +12,7 @@ namespace PharmacyManagement.View
     public partial class Profile : XtraForm
     {
         private string username;
+        private string currentRole;
         string oldUsername = "";
         PharmacyMgtDatabase dataTable = new PharmacyMgtDatabase();
 
@@ -18,6 +20,11 @@ namespace PharmacyManagement.View
         {
             get => username;
             set => username = value;
+        }
+        public string Role 
+        { 
+            get => currentRole; 
+            set => currentRole = value; 
         }
 
         public Profile()
@@ -34,9 +41,31 @@ namespace PharmacyManagement.View
         {
             if (!string.IsNullOrEmpty(Username))
             {
-                FetchData(Username);
+                if (Role?.ToLower() == "guest")
+                {
+                    HandleGuestProfile();
+                    ToggleControlsOfGuest();
+                }
+                else
+                {
+                    FetchData(Username);
+                    ToggleControls(false);
+                }
             }
-            ToggleControls(false);
+        }
+
+        private void HandleGuestProfile()
+        {
+            txtIdProfile.Text = string.Empty;
+            txtUsername.Text = Username;
+            txtFullName.Text = string.Empty;
+            txtContact.Text = string.Empty;
+            txtAddress.Text = string.Empty;
+            dtpBirthday.Value = DateTime.Today;
+            radMale.Checked = false;
+            radFemale.Checked = false;
+
+            btnEdit.Enabled = false;
         }
 
         private void FetchData(string username)
@@ -122,6 +151,24 @@ namespace PharmacyManagement.View
             btnCancel.Enabled = value;
 
             btnEdit.Enabled = !value;
+        }
+        private void ToggleControlsOfGuest()
+        {
+            txtUsername.Enabled = true;
+            txtUsername.Enabled = true;
+            txtUsername.ReadOnly = true;
+            txtUsername.TabStop = false;
+
+            txtIdProfile.Enabled = false;
+            txtFullName.Enabled = false;
+            txtContact.Enabled = false;
+            txtAddress.Enabled = false;
+            radFemale.Enabled = false;
+            radMale.Enabled = false;
+            dtpBirthday.Enabled = false;
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
+            btnEdit.Enabled = false;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
