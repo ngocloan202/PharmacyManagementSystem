@@ -59,7 +59,7 @@ namespace PharmacyManagement
                 SqlCommand insertCmd = new SqlCommand(insertAccountSQL);
                 insertCmd.Parameters.Add("@Username", SqlDbType.NVarChar, 50).Value = txtUsername.Text;
                 insertCmd.Parameters.Add("@UserPassword", SqlDbType.NVarChar, 50).Value = txtPassword.Text;
-                insertCmd.Parameters.Add("@UserRole", SqlDbType.NVarChar, 5).Value = "user";
+                insertCmd.Parameters.Add("@UserRole", SqlDbType.NVarChar, 5).Value = "guest";
 
                 dataTable.Update(insertCmd);
                 return true;
