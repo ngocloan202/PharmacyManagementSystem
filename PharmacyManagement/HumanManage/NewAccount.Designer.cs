@@ -73,7 +73,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(19)))), ((int)(((byte)(10)))));
             this.btnCancel.Size = new System.Drawing.Size(85, 30);
-            this.btnCancel.TabIndex = 21;
+            this.btnCancel.TabIndex = 20;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -101,6 +101,7 @@
             this.txtUserPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUserPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtUserPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtUserPassword.ForeColor = System.Drawing.Color.Black;
             this.txtUserPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtUserPassword.Location = new System.Drawing.Point(510, 105);
             this.txtUserPassword.Name = "txtUserPassword";
@@ -108,7 +109,7 @@
             this.txtUserPassword.PlaceholderText = "";
             this.txtUserPassword.SelectedText = "";
             this.txtUserPassword.Size = new System.Drawing.Size(207, 31);
-            this.txtUserPassword.TabIndex = 3;
+            this.txtUserPassword.TabIndex = 4;
             // 
             // labelControl5
             // 
@@ -134,6 +135,7 @@
             this.txtUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtUsername.ForeColor = System.Drawing.Color.Black;
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtUsername.Location = new System.Drawing.Point(132, 105);
             this.txtUsername.Name = "txtUsername";
@@ -141,7 +143,7 @@
             this.txtUsername.PlaceholderText = "";
             this.txtUsername.SelectedText = "";
             this.txtUsername.Size = new System.Drawing.Size(207, 31);
-            this.txtUsername.TabIndex = 2;
+            this.txtUsername.TabIndex = 3;
             // 
             // btnAdd
             // 
@@ -158,7 +160,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnAdd.Size = new System.Drawing.Size(85, 30);
-            this.btnAdd.TabIndex = 20;
+            this.btnAdd.TabIndex = 19;
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -249,7 +251,7 @@
             this.txtAddress.PlaceholderText = "";
             this.txtAddress.SelectedText = "";
             this.txtAddress.Size = new System.Drawing.Size(585, 31);
-            this.txtAddress.TabIndex = 30;
+            this.txtAddress.TabIndex = 10;
             // 
             // txtContact
             // 
@@ -274,7 +276,7 @@
             this.txtContact.PlaceholderText = "";
             this.txtContact.SelectedText = "";
             this.txtContact.Size = new System.Drawing.Size(207, 31);
-            this.txtContact.TabIndex = 29;
+            this.txtContact.TabIndex = 9;
             // 
             // labelControl7
             // 
@@ -284,7 +286,7 @@
             this.labelControl7.Location = new System.Drawing.Point(433, 231);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(57, 21);
-            this.labelControl7.TabIndex = 28;
+            this.labelControl7.TabIndex = 0;
             this.labelControl7.Text = "Contact";
             // 
             // dtpBirthday
@@ -304,7 +306,7 @@
             this.dtpBirthday.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpBirthday.Name = "dtpBirthday";
             this.dtpBirthday.Size = new System.Drawing.Size(207, 35);
-            this.dtpBirthday.TabIndex = 27;
+            this.dtpBirthday.TabIndex = 8;
             this.dtpBirthday.Value = new System.DateTime(2024, 12, 19, 10, 4, 31, 434);
             // 
             // radMale
@@ -320,7 +322,7 @@
             this.radMale.Location = new System.Drawing.Point(620, 170);
             this.radMale.Name = "radMale";
             this.radMale.Size = new System.Drawing.Size(61, 24);
-            this.radMale.TabIndex = 25;
+            this.radMale.TabIndex = 7;
             this.radMale.Text = "Male";
             this.radMale.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.radMale.UncheckedState.BorderThickness = 2;
@@ -341,7 +343,7 @@
             this.radFemale.Location = new System.Drawing.Point(510, 170);
             this.radFemale.Name = "radFemale";
             this.radFemale.Size = new System.Drawing.Size(77, 24);
-            this.radFemale.TabIndex = 24;
+            this.radFemale.TabIndex = 6;
             this.radFemale.TabStop = true;
             this.radFemale.Text = "Female";
             this.radFemale.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -358,7 +360,7 @@
             this.cboUserRole.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cboUserRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cboUserRole.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboUserRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboUserRole.ForeColor = System.Drawing.Color.Black;
             this.cboUserRole.ItemHeight = 30;
             this.cboUserRole.Items.AddRange(new object[] {
             "user",
@@ -366,7 +368,7 @@
             this.cboUserRole.Location = new System.Drawing.Point(132, 164);
             this.cboUserRole.Name = "cboUserRole";
             this.cboUserRole.Size = new System.Drawing.Size(207, 36);
-            this.cboUserRole.TabIndex = 22;
+            this.cboUserRole.TabIndex = 5;
             // 
             // labelControl9
             // 
@@ -392,14 +394,15 @@
             this.txtEmployeeName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtEmployeeName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtEmployeeName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtEmployeeName.ForeColor = System.Drawing.Color.Black;
             this.txtEmployeeName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtEmployeeName.Location = new System.Drawing.Point(506, 42);
             this.txtEmployeeName.Name = "txtEmployeeName";
-            this.txtEmployeeName.PasswordChar = '•';
+            this.txtEmployeeName.PasswordChar = '\0';
             this.txtEmployeeName.PlaceholderText = "";
             this.txtEmployeeName.SelectedText = "";
             this.txtEmployeeName.Size = new System.Drawing.Size(207, 31);
-            this.txtEmployeeName.TabIndex = 3;
+            this.txtEmployeeName.TabIndex = 2;
             // 
             // labelControl3
             // 
@@ -425,6 +428,7 @@
             this.txtEmployeeID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtEmployeeID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtEmployeeID.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtEmployeeID.ForeColor = System.Drawing.Color.Black;
             this.txtEmployeeID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtEmployeeID.Location = new System.Drawing.Point(132, 42);
             this.txtEmployeeID.Name = "txtEmployeeID";
@@ -432,7 +436,7 @@
             this.txtEmployeeID.PlaceholderText = "";
             this.txtEmployeeID.SelectedText = "";
             this.txtEmployeeID.Size = new System.Drawing.Size(207, 31);
-            this.txtEmployeeID.TabIndex = 2;
+            this.txtEmployeeID.TabIndex = 1;
             // 
             // labelControl2
             // 
@@ -454,7 +458,7 @@
             this.guna2Panel6.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.Size = new System.Drawing.Size(820, 464);
-            this.guna2Panel6.TabIndex = 15;
+            this.guna2Panel6.TabIndex = 0;
             // 
             // labelControl11
             // 
@@ -464,7 +468,7 @@
             this.labelControl11.Location = new System.Drawing.Point(54, 231);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(62, 21);
-            this.labelControl11.TabIndex = 28;
+            this.labelControl11.TabIndex = 0;
             this.labelControl11.Text = "Birthday";
             // 
             // labelControl8
@@ -475,7 +479,7 @@
             this.labelControl8.Location = new System.Drawing.Point(56, 285);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(60, 21);
-            this.labelControl8.TabIndex = 28;
+            this.labelControl8.TabIndex = 0;
             this.labelControl8.Text = "Address";
             // 
             // NewAccount
