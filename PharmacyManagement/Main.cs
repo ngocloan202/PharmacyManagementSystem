@@ -14,7 +14,7 @@ namespace PharmacyManagement
         #region Global variable
         private Profile profile = null;
         private NewInvoice newInvoice = null;
-        private NewAccount newAccount = null;
+        private NewUser newAccount = null;
         private NewCommodity newCommodity = null;
         private NewCustomer customer = null;
         private AllInvoices allInvoice = null;
@@ -250,7 +250,7 @@ namespace PharmacyManagement
         private void btnNewAccount_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             CloseAllMdiForms();
-            newAccount = new NewAccount
+            newAccount = new NewUser
             {
                 MdiParent = this
             };

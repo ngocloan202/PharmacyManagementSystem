@@ -43,6 +43,7 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnNewAccount = new DevExpress.XtraBars.BarButtonItem();
             this.btnCustomer = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAllAccounts = new DevExpress.XtraBars.BarButtonItem();
             this.pgHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -53,7 +54,6 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pgInvoice = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnAllAccounts = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,7 +182,7 @@
             // 
             // btnNewAccount
             // 
-            this.btnNewAccount.Caption = "New Account";
+            this.btnNewAccount.Caption = "New User";
             this.btnNewAccount.Id = 13;
             this.btnNewAccount.ImageOptions.Image = global::PharmacyManagement.Properties.Resources.new_account;
             this.btnNewAccount.Name = "btnNewAccount";
@@ -197,6 +197,15 @@
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCustomer_ItemClick);
+            // 
+            // btnAllAccounts
+            // 
+            this.btnAllAccounts.Caption = "All Accounts";
+            this.btnAllAccounts.Id = 15;
+            this.btnAllAccounts.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAllAccounts.ImageOptions.LargeImage")));
+            this.btnAllAccounts.Name = "btnAllAccounts";
+            this.btnAllAccounts.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnAllAccounts.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAllAccounts_ItemClick);
             // 
             // pgHome
             // 
@@ -262,15 +271,6 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.btnNewInvoice, true);
             this.ribbonPageGroup4.ItemLinks.Add(this.btnAllInvoices, true);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            // 
-            // btnAllAccounts
-            // 
-            this.btnAllAccounts.Caption = "All Accounts";
-            this.btnAllAccounts.Id = 15;
-            this.btnAllAccounts.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAllAccounts.ImageOptions.LargeImage")));
-            this.btnAllAccounts.Name = "btnAllAccounts";
-            this.btnAllAccounts.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnAllAccounts.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAllAccounts_ItemClick);
             // 
             // Main
             // 

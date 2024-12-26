@@ -7,10 +7,10 @@ using PharmacyManagement.DB_query;
 
 namespace PharmacyManagement.HumanManage
 {
-    public partial class NewAccount : XtraForm
+    public partial class NewUser : XtraForm
     {
         PharmacyMgtDatabase dataTable = new PharmacyMgtDatabase();
-        public NewAccount()
+        public NewUser()
         {
             dataTable.OpenConnection();
             InitializeComponent();
@@ -26,7 +26,9 @@ namespace PharmacyManagement.HumanManage
         {
             if (ValidateInput())
             {
-                string employeeSql = @"INSERT INTO EMPLOYEE VALUES(@EmployeeID, @EmployeeName, @Sex, 
+                try
+                {
+                    string employeeSql = @"INSERT INTO EMPLOYEE VALUES(@EmployeeID, @EmployeeName, @Sex, 
                                                 @Contact, @Birthday, @EmployeeAddress)";
                 SqlCommand employeeCmd = new SqlCommand(employeeSql);
 
@@ -50,6 +52,11 @@ namespace PharmacyManagement.HumanManage
                 dataTable.Update(accountCmd);
                 MessageBox.Show("Account added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 NewAccount_Load(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -103,5 +110,6 @@ namespace PharmacyManagement.HumanManage
                 NewAccount_Load(sender, e);
             }
         }
+
     }
 }
