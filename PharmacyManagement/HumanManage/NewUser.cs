@@ -7,10 +7,10 @@ using PharmacyManagement.DB_query;
 
 namespace PharmacyManagement.HumanManage
 {
-    public partial class NewAccount : XtraForm
+    public partial class NewUser : XtraForm
     {
         PharmacyMgtDatabase dataTable = new PharmacyMgtDatabase();
-        public NewAccount()
+        public NewUser()
         {
             dataTable.OpenConnection();
             InitializeComponent();
@@ -26,17 +26,37 @@ namespace PharmacyManagement.HumanManage
         {
             if (ValidateInput())
             {
-                string sql = @"INSERT INTO ACCOUNT (Username, UserPassword, UserRole) 
-                       VALUES(@Username, @UserPassword, @UserRole)";
-                SqlCommand cmd = new SqlCommand(sql);
+                try
+                {
+                    string employeeSql = @"INSERT INTO EMPLOYEE VALUES(@EmployeeID, @EmployeeName, @Sex, 
+                                                @Contact, @Birthday, @EmployeeAddress)";
+                SqlCommand employeeCmd = new SqlCommand(employeeSql);
 
-                cmd.Parameters.Add("@Username", SqlDbType.VarChar, 50).Value = txtUsername.Text;
-                cmd.Parameters.Add("@UserPassword", SqlDbType.VarChar, 50).Value = txtUserPassword.Text;
-                cmd.Parameters.Add("@UserRole", SqlDbType.VarChar, 5).Value = cboUserRole.SelectedItem.ToString();
+                employeeCmd.Parameters.Add("@EmployeeID", SqlDbType.VarChar, 5).Value = txtEmployeeID.Text;
+                employeeCmd.Parameters.Add("@EmployeeName", SqlDbType.NVarChar, 200).Value = txtEmployeeName.Text;
+                employeeCmd.Parameters.Add("@Sex", SqlDbType.Char, 1).Value = radFemale.Checked ? "F" : "M";
+                employeeCmd.Parameters.Add("@Contact", SqlDbType.VarChar, 10).Value = txtContact.Text;
+                employeeCmd.Parameters.Add("@Birthday", SqlDbType.Date).Value = dtpBirthday.Value;
+                employeeCmd.Parameters.Add("@EmployeeAddress", SqlDbType.NVarChar, 200).Value = txtAddress.Text;
+                dataTable.Update(employeeCmd);
 
-                dataTable.Update(cmd);
+                string accountSql = @"INSERT INTO ACCOUNT (Username, UserPassword, UserRole, EmployeeID) 
+                       VALUES(@Username, @UserPassword, @UserRole, @EmployeeID)";
+                SqlCommand accountCmd = new SqlCommand(accountSql);
+
+                accountCmd.Parameters.Add("@Username", SqlDbType.VarChar, 50).Value = txtUsername.Text;
+                accountCmd.Parameters.Add("@UserPassword", SqlDbType.VarChar, 50).Value = txtUserPassword.Text;
+                accountCmd.Parameters.Add("@UserRole", SqlDbType.VarChar, 5).Value = cboUserRole.SelectedItem.ToString();
+                accountCmd.Parameters.Add("@EmployeeID", SqlDbType.VarChar, 5).Value = txtEmployeeID.Text;
+
+                dataTable.Update(accountCmd);
                 MessageBox.Show("Account added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 NewAccount_Load(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -69,10 +89,16 @@ namespace PharmacyManagement.HumanManage
         }
         private void ClearAllField()
         {
+            txtEmployeeID.Text = string.Empty;
+            txtEmployeeName.Text = string.Empty;
             txtUsername.Text = string.Empty;
             txtUserPassword.Text = string.Empty;
+            txtContact.Text = string.Empty;
+            txtAddress.Text = string.Empty;
+            radFemale.Checked = true;
+            dtpBirthday.Value = DateTime.Now;
             cboUserRole.Items.IndexOf(0);
-            txtUsername.Focus();
+            txtEmployeeID.Focus();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -84,5 +110,6 @@ namespace PharmacyManagement.HumanManage
                 NewAccount_Load(sender, e);
             }
         }
+
     }
 }
