@@ -257,22 +257,28 @@ namespace PharmacyManagement
             if (isUpdating) return;
 
             isUpdating = true;
-            decimal total = 0;
-
-            foreach (DataGridViewRow row in dgvCart.Rows)
+            try
             {
-                if (row.Cells[4].Value != null)
+                decimal total = 0;
+
+                foreach (DataGridViewRow row in dgvCart.Rows)
                 {
-                    string amountStr = row.Cells[4].Value.ToString().Replace(" VND", "").Replace(",", "");
-                    if (decimal.TryParse(amountStr, out decimal amount))
+                    if (row.Cells[4].Value != null)
                     {
-                        total += amount;
+                        string amountStr = row.Cells[4].Value.ToString().Replace(" VND", "").Replace(",", "");
+                        if (decimal.TryParse(amountStr, out decimal amount))
+                        {
+                            total += amount;
+                        }
                     }
                 }
-            }
 
-            lblTotal.Text = total.ToString("N0") + " VND";
-            isUpdating = false;
+                lblTotal.Text = total.ToString("N0") + " VND";
+            }
+            finally
+            {
+                isUpdating = false;
+            }
         }
         #endregion
 
@@ -338,8 +344,8 @@ namespace PharmacyManagement
                         }
                     }
                     MessageBox.Show("Invoice and details added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ClearFields();
-                    dgvCart.Rows.Clear();
+                    ClearFields(); 
+                    lblTotal_TextChanged(sender, e);
                     NewInvoice_Load(sender, e);
                 }
                 catch (Exception ex)
@@ -393,12 +399,15 @@ namespace PharmacyManagement
 
         private void ClearFields()
         {
+            isUpdating = false;
             txtInvoiceID.Text = "";
             cboCustomerName.SelectedIndex = 0;
             txtQuantities.Text = "1";
             dtpDateCreated.Value = DateTime.Now;
             txtNote.Text = "";
+            lblTotal.Text = "0 VND";
             txtInvoiceID.Select();
+            dgvCart.Rows.Clear();
         }
     }
 }
