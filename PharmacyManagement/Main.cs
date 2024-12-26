@@ -5,6 +5,7 @@ using PharmacyManagement.Invoice;
 using PharmacyManagement.HumanManage;
 using PharmacyManagement.View;
 using PharmacyManagement.Commodity;
+using DevExpress.Skins.XtraForm;
 
 namespace PharmacyManagement
 {
@@ -41,6 +42,11 @@ namespace PharmacyManagement
             }
 
             ConfigureForm();
+        }
+
+        protected override FormPainter CreateFormBorderPainter()
+        {
+            return new MyFormPainter(this, DevExpress.LookAndFeel.UserLookAndFeel.Default.ActiveLookAndFeel);
         }
 
         private bool HandleInitialSignIn()

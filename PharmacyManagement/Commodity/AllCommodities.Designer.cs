@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllCommodities));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -316,8 +316,8 @@
             // MfgDate
             // 
             this.MfgDate.DataPropertyName = "MfgDate";
-            dataGridViewCellStyle1.NullValue = null;
-            this.MfgDate.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.NullValue = null;
+            this.MfgDate.DefaultCellStyle = dataGridViewCellStyle3;
             this.MfgDate.HeaderText = "MFG. Date";
             this.MfgDate.MinimumWidth = 6;
             this.MfgDate.Name = "MfgDate";
@@ -326,8 +326,8 @@
             // ExpDate
             // 
             this.ExpDate.DataPropertyName = "ExpDate";
-            dataGridViewCellStyle2.NullValue = null;
-            this.ExpDate.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.NullValue = null;
+            this.ExpDate.DefaultCellStyle = dataGridViewCellStyle4;
             this.ExpDate.HeaderText = "EXP.  Date";
             this.ExpDate.MinimumWidth = 6;
             this.ExpDate.Name = "ExpDate";

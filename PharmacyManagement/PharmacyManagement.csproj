@@ -129,6 +129,7 @@
     <Compile Include="View\Flash.Designer.cs">
       <DependentUpon>Flash.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\MyFormPainter.cs" />
     <Compile Include="View\Profile.cs">
       <SubType>Form</SubType>
     </Compile>
