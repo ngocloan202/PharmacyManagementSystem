@@ -205,6 +205,24 @@ namespace PharmacyManagement
             if (double.TryParse(txtSellingPrice.Text.Replace(" VND", "").Replace(",", ""), out double price) &&
                 double.TryParse(txtQuantities.Text, out double quantity))
             {
+                foreach (DataGridViewRow row in dgvCart.Rows)
+                {
+                    if (row.Cells["CommodityName"].Value?.ToString() == cboCommodityName.Text)
+                    {
+                        double existingQty = double.Parse(row.Cells[1].Value.ToString());
+                        double newQty = existingQty + quantity;
+                        double newAmount = price * newQty;
+
+                        row.Cells[1].Value = newQty.ToString();
+                        row.Cells[4].Value = newAmount.ToString("N0") + " VND";
+
+                        MessageBox.Show("Commodity added to cart successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        lblTotal_TextChanged(sender, e);
+                        ClearAllFieldOfCommodities();
+                        return;
+                    }
+                }
+
                 double amount = price * quantity;
                 dgvCart.Rows.Add(
                     cboCommodityName.Text,
