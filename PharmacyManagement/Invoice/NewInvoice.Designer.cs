@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtEmployeeName = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtInvoiceID = new Guna.UI2.WinForms.Guna2TextBox();
@@ -366,8 +366,8 @@
             // Quantity
             // 
             this.Quantity.DataPropertyName = "Quantity";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Quantity.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Quantity.DefaultCellStyle = dataGridViewCellStyle1;
             this.Quantity.HeaderText = "Quantity";
             this.Quantity.Name = "Quantity";
             this.Quantity.ReadOnly = true;
@@ -565,9 +565,9 @@
             this.btnAddToCard.Location = new System.Drawing.Point(10, 205);
             this.btnAddToCard.Name = "btnAddToCard";
             this.btnAddToCard.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
-            this.btnAddToCard.Size = new System.Drawing.Size(98, 27);
+            this.btnAddToCard.Size = new System.Drawing.Size(95, 27);
             this.btnAddToCard.TabIndex = 5;
-            this.btnAddToCard.Text = "Add to card";
+            this.btnAddToCard.Text = "Add to cart";
             this.btnAddToCard.Click += new System.EventHandler(this.btnAddToCard_Click);
             // 
             // txtSellingPrice
