@@ -49,7 +49,7 @@ namespace PharmacyManagement.Invoice
             else
             {
                 selectAllInvoicesQuery = @"SELECT ivd.InvoiceID, cus.CustomerName, cus.Contact,
-                                                  FORMAT(iv.CreatedDate, 'MM/dd/yyyy'), iv.Note, em.EmployeeName, 
+                                                  iv.CreatedDate, iv.Note, em.EmployeeName, 
                                                   FORMAT(Sum(ivd.Amount), 'N0') + ' VND' AS Amount
                                            FROM INVOICE iv, INVOICEDETAILS ivd, EMPLOYEE em, CUSTOMER cus
                                            WHERE iv.InvoiceID = ivd.InvoiceID 
