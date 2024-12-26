@@ -568,7 +568,7 @@
             this.btnAddToCard.Size = new System.Drawing.Size(95, 27);
             this.btnAddToCard.TabIndex = 5;
             this.btnAddToCard.Text = "Add to cart";
-            this.btnAddToCard.Click += new System.EventHandler(this.btnAddToCard_Click);
+            this.btnAddToCard.Click += new System.EventHandler(this.btnAddToCart_Click);
             // 
             // txtSellingPrice
             // 
