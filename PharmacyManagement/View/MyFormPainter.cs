@@ -21,7 +21,7 @@ namespace PharmacyManagement.View
             string text = Text;
             if (text == null || text.Length == 0 || this.TextBounds.IsEmpty) return;
             AppearanceObject appearance = new AppearanceObject(GetDefaultAppearance());
-            appearance.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            appearance.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             appearance.ForeColor = Color.White;
             appearance.TextOptions.Trimming = Trimming.EllipsisCharacter;
             appearance.TextOptions.HAlignment = HorzAlignment.Center;
