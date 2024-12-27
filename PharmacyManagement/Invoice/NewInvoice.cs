@@ -265,6 +265,15 @@ namespace PharmacyManagement
                         row.Cells[1].Value = newQty.ToString();
                         row.Cells[4].Value = newAmount.ToString("N0") + " VND";
 
+                        string commodityIDInDgv = row.Cells[5].Value.ToString();
+                        string updateCommoditySql = @"UPDATE COMMODITY 
+                                          SET Quantity = Quantity - @Quantity 
+                                          WHERE CommodityID = @CommodityID";
+                        SqlCommand updateCommodityCmd = new SqlCommand(updateCommoditySql);
+                        updateCommodityCmd.Parameters.Add("@CommodityID", SqlDbType.VarChar, 5).Value = commodityIDInDgv;
+                        updateCommodityCmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = requestedQuantity;
+                        dataTable.Update(updateCommodityCmd);
+
                         txtInventory.Text = (currentInventory - requestedQuantity).ToString();
 
                         MessageBox.Show("Commodity added to cart successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -275,35 +284,25 @@ namespace PharmacyManagement
                 }
 
                 double amount = price * requestedQuantity;
+                string commodityID = cboCommodityName.SelectedValue.ToString();
+                string updateCommoditySecondSql = @"UPDATE COMMODITY 
+                                  SET Quantity = Quantity - @Quantity 
+                                  WHERE CommodityID = @CommodityID";
+                SqlCommand updateCommoditySecondCmd = new SqlCommand(updateCommoditySecondSql);
+                updateCommoditySecondCmd.Parameters.Add("@CommodityID", SqlDbType.VarChar, 5).Value = commodityID;
+                updateCommoditySecondCmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = requestedQuantity;
+                dataTable.Update(updateCommoditySecondCmd);
+
                 dgvCart.Rows.Add(
                     cboCommodityName.Text,
                     txtQuantities.Text,
                     txtBaseUnit.Text,
                     price.ToString("N0") + " VND",
                     amount.ToString("N0") + " VND",
-                    cboCommodityName.SelectedValue.ToString()
+                    commodityID
                 );
 
                 txtInventory.Text = (currentInventory - requestedQuantity).ToString();
-
-                foreach (DataGridViewRow row in dgvCart.Rows)
-                {
-                    if (row.Cells[0].Value != null)
-                    {
-                        string commodityID = row.Cells[5].Value.ToString();
-                        int quantity = int.Parse(row.Cells[1].Value.ToString());
-
-                        string updateCommoditySql = @"UPDATE COMMODITY 
-                                                      SET Quantity = Quantity - @Quantity 
-                                                      WHERE CommodityID = @CommodityID";
-                        SqlCommand updateCommodityCmd = new SqlCommand(updateCommoditySql);
-                        updateCommodityCmd.Parameters.Add("@CommodityID", SqlDbType.VarChar, 5).Value = commodityID;
-                        updateCommodityCmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = quantity;
-
-                        dataTable.Update(updateCommodityCmd);
-                    }
-                }
-
                 MessageBox.Show("Commodity added to cart successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 lblTotal_TextChanged(sender, e);
                 ClearAllFieldOfCommodities();
@@ -375,12 +374,10 @@ namespace PharmacyManagement
                         updateCommodityCmd.Parameters.Add("@CommodityID", SqlDbType.VarChar, 5).Value = commodityID;
                         updateCommodityCmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = quantity;
                         dataTable.Update(updateCommodityCmd);
+                        dgvCart.Rows.RemoveAt(selectedRow.Index);
+                        lblTotal_TextChanged(sender, e);
+                        FetchDataCommodities();
                     }
-
-                    dgvCart.Rows.RemoveAt(selectedRow.Index);
-                    lblTotal_TextChanged(sender, e);
-
-                    FetchDataCommodities();
                 }
             }
             else
