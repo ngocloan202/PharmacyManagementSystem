@@ -105,6 +105,7 @@
             this.txtCommodityID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtCommodityID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtCommodityID.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCommodityID.ForeColor = System.Drawing.Color.Black;
             this.txtCommodityID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtCommodityID.Location = new System.Drawing.Point(165, 48);
             this.txtCommodityID.Name = "txtCommodityID";
@@ -176,6 +177,7 @@
             this.txtCommodityName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtCommodityName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtCommodityName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCommodityName.ForeColor = System.Drawing.Color.Black;
             this.txtCommodityName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtCommodityName.Location = new System.Drawing.Point(165, 104);
             this.txtCommodityName.Name = "txtCommodityName";
@@ -220,6 +222,7 @@
             this.txtBaseUnit.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtBaseUnit.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtBaseUnit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtBaseUnit.ForeColor = System.Drawing.Color.Black;
             this.txtBaseUnit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtBaseUnit.Location = new System.Drawing.Point(165, 212);
             this.txtBaseUnit.Name = "txtBaseUnit";
@@ -253,6 +256,7 @@
             this.txtManufacturer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtManufacturer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtManufacturer.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtManufacturer.ForeColor = System.Drawing.Color.Black;
             this.txtManufacturer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtManufacturer.Location = new System.Drawing.Point(165, 158);
             this.txtManufacturer.Name = "txtManufacturer";
@@ -405,6 +409,7 @@
             this.txtSellingPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSellingPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
             this.txtSellingPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSellingPrice.ForeColor = System.Drawing.Color.Black;
             this.txtSellingPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
             this.txtSellingPrice.Location = new System.Drawing.Point(14, 173);
             this.txtSellingPrice.Name = "txtSellingPrice";
@@ -551,7 +556,9 @@
             // NewCommodity
             // 
             this.Appearance.BackColor = System.Drawing.SystemColors.Window;
+            this.Appearance.ForeColor = System.Drawing.Color.Black;
             this.Appearance.Options.UseBackColor = true;
+            this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(762, 452);

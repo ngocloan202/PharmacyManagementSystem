@@ -60,7 +60,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCancel.BorderRadius = 15;
             this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -69,7 +69,7 @@
             this.btnCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(448, 423);
+            this.btnCancel.Location = new System.Drawing.Point(451, 395);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(19)))), ((int)(((byte)(10)))));
             this.btnCancel.Size = new System.Drawing.Size(85, 30);
@@ -149,7 +149,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAdd.BorderRadius = 15;
             this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -158,7 +158,7 @@
             this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(288, 423);
+            this.btnAdd.Location = new System.Drawing.Point(285, 395);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnAdd.Size = new System.Drawing.Size(85, 30);
@@ -227,7 +227,7 @@
             this.guna2Panel1.CustomBorderThickness = new System.Windows.Forms.Padding(1);
             this.guna2Panel1.Location = new System.Drawing.Point(12, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(796, 417);
+            this.guna2Panel1.Size = new System.Drawing.Size(796, 382);
             this.guna2Panel1.TabIndex = 18;
             // 
             // txtAddress
@@ -245,14 +245,14 @@
             this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtAddress.ForeColor = System.Drawing.Color.Black;
             this.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.txtAddress.Location = new System.Drawing.Point(143, 317);
+            this.txtAddress.Location = new System.Drawing.Point(148, 318);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PasswordChar = '\0';
             this.txtAddress.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtAddress.PlaceholderText = "";
             this.txtAddress.SelectedText = "";
-            this.txtAddress.Size = new System.Drawing.Size(585, 31);
+            this.txtAddress.Size = new System.Drawing.Size(580, 31);
             this.txtAddress.TabIndex = 10;
             // 
             // txtContact
@@ -389,7 +389,7 @@
             this.cboUserRole.Items.AddRange(new object[] {
             "user",
             "admin"});
-            this.cboUserRole.Location = new System.Drawing.Point(160, 207);
+            this.cboUserRole.Location = new System.Drawing.Point(148, 201);
             this.cboUserRole.Name = "cboUserRole";
             this.cboUserRole.Size = new System.Drawing.Size(207, 36);
             this.cboUserRole.TabIndex = 5;
@@ -482,14 +482,14 @@
             this.guna2Panel6.Controls.Add(this.guna2Panel1);
             this.guna2Panel6.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.Size = new System.Drawing.Size(820, 417);
+            this.guna2Panel6.Size = new System.Drawing.Size(820, 384);
             this.guna2Panel6.TabIndex = 0;
             // 
             // NewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 464);
+            this.ClientSize = new System.Drawing.Size(820, 437);
             this.Controls.Add(this.guna2Panel6);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
