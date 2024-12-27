@@ -17,6 +17,7 @@ namespace PharmacyManagement.HumanManage
         {
             dataTable.OpenConnection();
             InitializeComponent();
+            dtpBirthday.Value = DateTime.Now;
         }
 
         private void NewCustomer_Load(object sender, EventArgs e)

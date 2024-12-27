@@ -15,6 +15,8 @@ namespace PharmacyManagement.Commodity
         {
             dataTable.OpenConnection();
             InitializeComponent();
+            dtpMfgDate.Value = DateTime.Now;
+            dtpExpDate.Value = DateTime.Now;
         }
 
         private void NewCommodity_Load(object sender, EventArgs e)
