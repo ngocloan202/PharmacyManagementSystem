@@ -21,6 +21,7 @@ namespace PharmacyManagement.Commodity
         {
             FetchData();
             txtCommodityID.Select();
+            btnCancel.Enabled = false;
         }
 
         public void FetchData()
@@ -93,6 +94,7 @@ namespace PharmacyManagement.Commodity
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            btnCancel.Enabled = true;
             if (ValidateInput())
             {
                 CreateNewCommodity(sender, e);
