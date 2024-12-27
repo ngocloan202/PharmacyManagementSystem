@@ -21,10 +21,12 @@ namespace PharmacyManagement.HumanManage
         private void NewAccount_Load(object sender, EventArgs e)
         {
             ClearAllField();
+            btnCancel.Enabled = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            btnCancel.Enabled = true;
             if (ValidateInput())
             {
                 try
