@@ -41,6 +41,7 @@ namespace PharmacyManagement
             }
             ToggleControls();
             dgvCart.Sort(dgvCart.Columns["CommodityName"], ListSortDirection.Ascending);
+            btnCancel.Enabled = false;
         }
 
         #region Fetch Data Customer
@@ -202,6 +203,7 @@ namespace PharmacyManagement
         #region Handle Event Add To Cart
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
+            btnCancel.Enabled = true;
             if (double.TryParse(txtSellingPrice.Text.Replace(" VND", "").Replace(",", ""), out double price) &&
                 double.TryParse(txtQuantities.Text, out double quantity))
             {
@@ -305,6 +307,7 @@ namespace PharmacyManagement
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            btnCancel.Enabled = true;
             if (ValidateInput())
             {
                 try
