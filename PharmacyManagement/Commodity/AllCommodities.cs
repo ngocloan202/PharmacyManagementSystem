@@ -121,7 +121,7 @@ namespace PharmacyManagement.Commodity
 
             SqlCommand updateCommodityCmd = new SqlCommand(updateCommodityQuery);
             updateCommodityCmd.Parameters.Add("@CommodityID", SqlDbType.VarChar, 5).Value = txtCommodityID.Text;
-            updateCommodityCmd.Parameters.Add("@CommodityName", SqlDbType.VarChar, 200).Value = txtCommodityName.Text.Trim();
+            updateCommodityCmd.Parameters.Add("@CommodityName", SqlDbType.NVarChar, 200).Value = txtCommodityName.Text.Trim();
             updateCommodityCmd.Parameters.Add("Manufacturer", SqlDbType.NVarChar, 200).Value = txtManufacturer.Text;
             updateCommodityCmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = txtQuantity.Text.ToString();
             updateCommodityCmd.Parameters.Add("BaseUnit", SqlDbType.NVarChar, 30).Value = txtBaseUnit.Text.Trim();
