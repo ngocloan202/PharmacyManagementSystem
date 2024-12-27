@@ -86,6 +86,21 @@ namespace PharmacyManagement.HumanManage
                 return false;
             }
 
+            if (string.IsNullOrWhiteSpace(txtEmployeeID.Text))
+            {
+                toolTip.Show("Please enter the Employee ID!", txtEmployeeID,
+                    txtEmployeeID.Width - 15, txtEmployeeID.Height - 80, 2000);
+                txtEmployeeID.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtEmployeeName.Text))
+            {
+                toolTip.Show("Please enter the Employee ID!", txtEmployeeName,
+                    txtEmployeeName.Width - 15, txtEmployeeName.Height - 80, 2000);
+                txtEmployeeName.Focus();
+                return false;
+            }
             return true;
         }
         private void ClearAllField()
