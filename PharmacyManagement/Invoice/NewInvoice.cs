@@ -109,11 +109,14 @@ namespace PharmacyManagement
                 SetSellingPrice();
             };
 
+            cboCommodityName.SelectedIndexChanged += (sender, e) => { SetInventory(); };
+
             if (cboCommodityName.Items.Count > 0)
             {
                 cboCommodityName.SelectedIndex = 0;
                 SetBaseUnit();
                 SetSellingPrice();
+                SetInventory();
             }
         }
 
@@ -150,6 +153,24 @@ namespace PharmacyManagement
                 else
                 {
                     txtSellingPrice.Text = string.Empty;
+                }
+            }
+        }
+
+        private void SetInventory()
+        {
+            string selectedCommodityName = cboCommodityName.Text.Trim();
+
+            if (commoditiesTable.Rows.Count > 0)
+            {
+                DataRow[] inventoryRows = commoditiesTable.Select($"CommodityName = '{selectedCommodityName}'");
+                if(inventoryRows.Length > 0)
+                {
+                    txtInventory.Text = inventoryRows[0]["Quantity"].ToString();
+                }
+                else
+                {
+                    txtInventory.Text = "Hết hàng";
                 }
             }
         }
@@ -197,6 +218,7 @@ namespace PharmacyManagement
             txtCustomerContact.Enabled = false;
             txtBaseUnit.Enabled = false;
             txtSellingPrice.Enabled = false;
+            txtInventory.Enabled = false;
         }
         #endregion
 
