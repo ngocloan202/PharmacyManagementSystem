@@ -11,7 +11,6 @@ namespace PharmacyManagement.Commodity
     public partial class AllCommodities : XtraForm
     {
         PharmacyMgtDatabase dataTable = new PharmacyMgtDatabase();
-        string commodityName = "";
         public AllCommodities()
         {
             dataTable.OpenConnection();
@@ -166,11 +165,11 @@ namespace PharmacyManagement.Commodity
                                     C.BaseUnit, FORMAT(C.PurchasePrice, 'N0') + ' VND' AS PurchasePrice, 
                                     FORMAT(C.SellingPrice, 'N0') + ' VND' AS SellingPrice, A.CategoryName,
                                     C.MfgDate, C.ExpDate, C.CategoryID
-                               FROM COMMODITY C, CATEGORIES A
-                               WHERE C.CategoryID = A.CategoryID 
-                               AND (C.CommodityID LIKE @Keyword 
-                                OR C.CommodityName LIKE @Keyword
-                                OR C.Manufacturer LIKE @Keyword)";
+                                   FROM COMMODITY C, CATEGORIES A
+                                   WHERE C.CategoryID = A.CategoryID 
+                                   AND (C.CommodityID LIKE @Keyword 
+                                    OR C.CommodityName LIKE @Keyword
+                                    OR C.Manufacturer LIKE @Keyword)";
             SqlCommand dgvCmd = new SqlCommand(commoditySql);
             dgvCmd.Parameters.Add("@Keyword", SqlDbType.NVarChar).Value = "%" + keyword + "%";
             dataTable.Fill(dgvCmd);
