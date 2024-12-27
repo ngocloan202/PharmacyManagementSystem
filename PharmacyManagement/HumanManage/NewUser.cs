@@ -15,6 +15,7 @@ namespace PharmacyManagement.HumanManage
             dataTable.OpenConnection();
             InitializeComponent();
             cboUserRole.SelectedIndex = 0;
+            dtpBirthday.Value = DateTime.Now;
         }
 
         private void NewAccount_Load(object sender, EventArgs e)
