@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using PharmacyManagement.DB_query;
@@ -22,6 +21,7 @@ namespace PharmacyManagement
         public NewInvoice()
         {
             InitializeComponent();
+            dtpDateCreated.Value = DateTime.Now;
             dataTable.OpenConnection();
         }
 
@@ -41,6 +41,7 @@ namespace PharmacyManagement
             }
             ToggleControls();
             dgvCart.Sort(dgvCart.Columns["CommodityName"], ListSortDirection.Ascending);
+            btnCancel.Enabled = false;
         }
 
         #region Fetch Data Customer
@@ -108,11 +109,14 @@ namespace PharmacyManagement
                 SetSellingPrice();
             };
 
+            cboCommodityName.SelectedIndexChanged += (sender, e) => { SetInventory(); };
+
             if (cboCommodityName.Items.Count > 0)
             {
                 cboCommodityName.SelectedIndex = 0;
                 SetBaseUnit();
                 SetSellingPrice();
+                SetInventory();
             }
         }
 
@@ -149,6 +153,24 @@ namespace PharmacyManagement
                 else
                 {
                     txtSellingPrice.Text = string.Empty;
+                }
+            }
+        }
+
+        private void SetInventory()
+        {
+            string selectedCommodityName = cboCommodityName.Text.Trim();
+
+            if (commoditiesTable.Rows.Count > 0)
+            {
+                DataRow[] inventoryRows = commoditiesTable.Select($"CommodityName = '{selectedCommodityName}'");
+                if(inventoryRows.Length > 0)
+                {
+                    txtInventory.Text = inventoryRows[0]["Quantity"].ToString();
+                }
+                else
+                {
+                    txtInventory.Text = "Out of stock";
                 }
             }
         }
@@ -196,25 +218,91 @@ namespace PharmacyManagement
             txtCustomerContact.Enabled = false;
             txtBaseUnit.Enabled = false;
             txtSellingPrice.Enabled = false;
+            txtInventory.Enabled = false;
         }
         #endregion
 
         #region Handle Event Add To Cart
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
-            if (double.TryParse(txtSellingPrice.Text.Replace(" VND", "").Replace(",", ""), out double price) &&
-                double.TryParse(txtQuantities.Text, out double quantity))
+            btnCancel.Enabled = true;
+
+            if (!int.TryParse(txtInventory.Text, out int currentInventory))
             {
-                double amount = price * quantity;
+                MessageBox.Show("Invalid inventory value!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!int.TryParse(txtQuantities.Text, out int requestedQuantity))
+            {
+                MessageBox.Show("Invalid quantity value!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (requestedQuantity > currentInventory)
+            {
+                MessageBox.Show("Not enough inventory!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (double.TryParse(txtSellingPrice.Text.Replace(" VND", "").Replace(",", ""), out double price))
+            {
+                foreach (DataGridViewRow row in dgvCart.Rows)
+                {
+                    if (row.Cells["CommodityName"].Value?.ToString() == cboCommodityName.Text)
+                    {
+                        double existingQty = double.Parse(row.Cells[1].Value.ToString());
+                        double newQty = existingQty + requestedQuantity;
+
+                        if (newQty > currentInventory)
+                        {
+                            MessageBox.Show("Total quantity exceeds available inventory!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        double newAmount = price * newQty;
+
+                        row.Cells[1].Value = newQty.ToString();
+                        row.Cells[4].Value = newAmount.ToString("N0") + " VND";
+
+                        string commodityIDInDgv = row.Cells[5].Value.ToString();
+                        string updateCommoditySql = @"UPDATE COMMODITY 
+                                          SET Quantity = Quantity - @Quantity 
+                                          WHERE CommodityID = @CommodityID";
+                        SqlCommand updateCommodityCmd = new SqlCommand(updateCommoditySql);
+                        updateCommodityCmd.Parameters.Add("@CommodityID", SqlDbType.VarChar, 5).Value = commodityIDInDgv;
+                        updateCommodityCmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = requestedQuantity;
+                        dataTable.Update(updateCommodityCmd);
+
+                        txtInventory.Text = (currentInventory - requestedQuantity).ToString();
+
+                        MessageBox.Show("Commodity added to cart successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        lblTotal_TextChanged(sender, e);
+                        ClearAllFieldOfCommodities();
+                        return;
+                    }
+                }
+
+                double amount = price * requestedQuantity;
+                string commodityID = cboCommodityName.SelectedValue.ToString();
+                string updateCommoditySecondSql = @"UPDATE COMMODITY 
+                                  SET Quantity = Quantity - @Quantity 
+                                  WHERE CommodityID = @CommodityID";
+                SqlCommand updateCommoditySecondCmd = new SqlCommand(updateCommoditySecondSql);
+                updateCommoditySecondCmd.Parameters.Add("@CommodityID", SqlDbType.VarChar, 5).Value = commodityID;
+                updateCommoditySecondCmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = requestedQuantity;
+                dataTable.Update(updateCommoditySecondCmd);
+
                 dgvCart.Rows.Add(
                     cboCommodityName.Text,
                     txtQuantities.Text,
                     txtBaseUnit.Text,
                     price.ToString("N0") + " VND",
                     amount.ToString("N0") + " VND",
-                    cboCommodityName.SelectedValue.ToString()
+                    commodityID
                 );
 
+                txtInventory.Text = (currentInventory - requestedQuantity).ToString();
                 MessageBox.Show("Commodity added to cart successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 lblTotal_TextChanged(sender, e);
                 ClearAllFieldOfCommodities();
@@ -239,22 +327,28 @@ namespace PharmacyManagement
             if (isUpdating) return;
 
             isUpdating = true;
-            decimal total = 0;
-
-            foreach (DataGridViewRow row in dgvCart.Rows)
+            try
             {
-                if (row.Cells[4].Value != null)
+                decimal total = 0;
+
+                foreach (DataGridViewRow row in dgvCart.Rows)
                 {
-                    string amountStr = row.Cells[4].Value.ToString().Replace(" VND", "").Replace(",", "");
-                    if (decimal.TryParse(amountStr, out decimal amount))
+                    if (row.Cells[4].Value != null)
                     {
-                        total += amount;
+                        string amountStr = row.Cells[4].Value.ToString().Replace(" VND", "").Replace(",", "");
+                        if (decimal.TryParse(amountStr, out decimal amount))
+                        {
+                            total += amount;
+                        }
                     }
                 }
-            }
 
-            lblTotal.Text = total.ToString("N0") + " VND";
-            isUpdating = false;
+                lblTotal.Text = total.ToString("N0") + " VND";
+            }
+            finally
+            {
+                isUpdating = false;
+            }
         }
         #endregion
 
@@ -263,14 +357,27 @@ namespace PharmacyManagement
             if (dgvCart.SelectedRows.Count > 0)
             {
                 DialogResult result = MessageBox.Show("Are you sure you want to remove the selected item from the cart?",
-                                                      "Confirm Removal",
-                                                      MessageBoxButtons.YesNo,
-                                                      MessageBoxIcon.Question);
-
+                                                  "Confirm Removal", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    dgvCart.Rows.RemoveAt(dgvCart.SelectedRows[0].Index);
-                    lblTotal_TextChanged(sender, e);
+                    DataGridViewRow selectedRow = dgvCart.SelectedRows[0];
+
+                    if (selectedRow.Cells[0].Value != null)
+                    {
+                        string commodityID = selectedRow.Cells[5].Value.ToString();
+                        int quantity = int.Parse(selectedRow.Cells[1].Value.ToString());
+
+                        string updateCommoditySql = @"UPDATE COMMODITY 
+                                                      SET Quantity = Quantity + @Quantity 
+                                                      WHERE CommodityID = @CommodityID";
+                        SqlCommand updateCommodityCmd = new SqlCommand(updateCommoditySql);
+                        updateCommodityCmd.Parameters.Add("@CommodityID", SqlDbType.VarChar, 5).Value = commodityID;
+                        updateCommodityCmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = quantity;
+                        dataTable.Update(updateCommodityCmd);
+                        dgvCart.Rows.RemoveAt(selectedRow.Index);
+                        lblTotal_TextChanged(sender, e);
+                        FetchDataCommodities();
+                    }
                 }
             }
             else
@@ -281,6 +388,7 @@ namespace PharmacyManagement
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            btnCancel.Enabled = true;
             if (ValidateInput())
             {
                 try
@@ -308,7 +416,7 @@ namespace PharmacyManagement
                             decimal amount = decimal.Parse(row.Cells[4].Value.ToString().Replace(" VND", "").Replace(",", ""));
 
                             string insertInvoiceDetailsSql = @"INSERT INTO INVOICEDETAILS (InvoiceID, CommodityID, Quantity, UnitPrice, Amount)
-                                                   VALUES (@InvoiceID, @CommodityID, @Quantity, @UnitPrice, @Amount)";
+                                                               VALUES (@InvoiceID, @CommodityID, @Quantity, @UnitPrice, @Amount)";
                             SqlCommand insertInvoiceDetailsCmd = new SqlCommand(insertInvoiceDetailsSql);
                             insertInvoiceDetailsCmd.Parameters.Add("@InvoiceID", SqlDbType.VarChar, 5).Value = txtInvoiceID.Text;
                             insertInvoiceDetailsCmd.Parameters.Add("@CommodityID", SqlDbType.VarChar, 5).Value = commodityID;
@@ -320,8 +428,8 @@ namespace PharmacyManagement
                         }
                     }
                     MessageBox.Show("Invoice and details added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ClearFields();
-                    dgvCart.Rows.Clear();
+                    ClearFields(); 
+                    lblTotal_TextChanged(sender, e);
                     NewInvoice_Load(sender, e);
                 }
                 catch (Exception ex)
@@ -375,12 +483,15 @@ namespace PharmacyManagement
 
         private void ClearFields()
         {
+            isUpdating = false;
             txtInvoiceID.Text = "";
             cboCustomerName.SelectedIndex = 0;
             txtQuantities.Text = "1";
             dtpDateCreated.Value = DateTime.Now;
             txtNote.Text = "";
+            lblTotal.Text = "0 VND";
             txtInvoiceID.Select();
+            dgvCart.Rows.Clear();
         }
     }
 }

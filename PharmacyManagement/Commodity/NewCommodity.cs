@@ -15,12 +15,15 @@ namespace PharmacyManagement.Commodity
         {
             dataTable.OpenConnection();
             InitializeComponent();
+            dtpMfgDate.Value = DateTime.Now;
+            dtpExpDate.Value = DateTime.Now;
         }
 
         private void NewCommodity_Load(object sender, EventArgs e)
         {
             FetchData();
             txtCommodityID.Select();
+            btnCancel.Enabled = false;
         }
 
         public void FetchData()
@@ -93,6 +96,7 @@ namespace PharmacyManagement.Commodity
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            btnCancel.Enabled = true;
             if (ValidateInput())
             {
                 CreateNewCommodity(sender, e);

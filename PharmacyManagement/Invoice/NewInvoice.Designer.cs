@@ -1,4 +1,6 @@
-﻿namespace PharmacyManagement
+﻿using DevExpress.XtraEditors.Filtering.Templates;
+
+namespace PharmacyManagement
 {
     partial class NewInvoice
     {
@@ -61,6 +63,8 @@
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
+            this.txtInventory = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddToCart = new Guna.UI2.WinForms.Guna2Button();
             this.txtSellingPrice = new Guna.UI2.WinForms.Guna2TextBox();
@@ -331,7 +335,7 @@
             this.guna2Panel3.Controls.Add(this.guna2Panel4);
             this.guna2Panel3.Location = new System.Drawing.Point(25, 147);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(787, 191);
+            this.guna2Panel3.Size = new System.Drawing.Size(738, 191);
             this.guna2Panel3.TabIndex = 1;
             // 
             // dgvCart
@@ -353,7 +357,7 @@
             this.dgvCart.Name = "dgvCart";
             this.dgvCart.ReadOnly = true;
             this.dgvCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCart.Size = new System.Drawing.Size(787, 166);
+            this.dgvCart.Size = new System.Drawing.Size(738, 166);
             this.dgvCart.TabIndex = 0;
             // 
             // CommodityName
@@ -402,7 +406,7 @@
             this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel4.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(787, 25);
+            this.guna2Panel4.Size = new System.Drawing.Size(738, 25);
             this.guna2Panel4.TabIndex = 1;
             // 
             // labelControl7
@@ -436,7 +440,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
-            this.lblTotal.Location = new System.Drawing.Point(572, 357);
+            this.lblTotal.Location = new System.Drawing.Point(524, 354);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(55, 21);
             this.lblTotal.TabIndex = 4;
@@ -449,7 +453,7 @@
             this.labeltotal.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
             this.labeltotal.Appearance.Options.UseFont = true;
             this.labeltotal.Appearance.Options.UseForeColor = true;
-            this.labeltotal.Location = new System.Drawing.Point(516, 355);
+            this.labeltotal.Location = new System.Drawing.Point(468, 352);
             this.labeltotal.Name = "labeltotal";
             this.labeltotal.Size = new System.Drawing.Size(50, 25);
             this.labeltotal.TabIndex = 3;
@@ -467,7 +471,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnAdd.Location = new System.Drawing.Point(725, 354);
+            this.btnAdd.Location = new System.Drawing.Point(684, 352);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnAdd.Size = new System.Drawing.Size(79, 27);
@@ -482,9 +486,9 @@
             this.guna2Panel7.BorderThickness = 1;
             this.guna2Panel7.Controls.Add(this.labelControl9);
             this.guna2Panel7.Controls.Add(this.labelControl8);
-            this.guna2Panel7.Location = new System.Drawing.Point(829, 147);
+            this.guna2Panel7.Location = new System.Drawing.Point(769, 147);
             this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.Size = new System.Drawing.Size(223, 25);
+            this.guna2Panel7.Size = new System.Drawing.Size(283, 25);
             this.guna2Panel7.TabIndex = 0;
             // 
             // labelControl9
@@ -492,7 +496,7 @@
             this.labelControl9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(62, 2);
+            this.labelControl9.Location = new System.Drawing.Point(92, 2);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(98, 21);
             this.labelControl9.TabIndex = 0;
@@ -503,7 +507,7 @@
             this.labelControl8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(-262, 0);
+            this.labelControl8.Location = new System.Drawing.Point(-232, 0);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(30, 21);
             this.labelControl8.TabIndex = 3;
@@ -514,6 +518,8 @@
             this.guna2Panel6.BackColor = System.Drawing.Color.White;
             this.guna2Panel6.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel6.BorderThickness = 1;
+            this.guna2Panel6.Controls.Add(this.labelControl15);
+            this.guna2Panel6.Controls.Add(this.txtInventory);
             this.guna2Panel6.Controls.Add(this.btnCancel);
             this.guna2Panel6.Controls.Add(this.btnAddToCart);
             this.guna2Panel6.Controls.Add(this.txtSellingPrice);
@@ -524,10 +530,42 @@
             this.guna2Panel6.Controls.Add(this.txtQuantities);
             this.guna2Panel6.Controls.Add(this.labelControl11);
             this.guna2Panel6.Controls.Add(this.labelControl10);
-            this.guna2Panel6.Location = new System.Drawing.Point(829, 147);
+            this.guna2Panel6.Location = new System.Drawing.Point(769, 147);
             this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.Size = new System.Drawing.Size(223, 237);
+            this.guna2Panel6.Size = new System.Drawing.Size(283, 237);
             this.guna2Panel6.TabIndex = 2;
+            // 
+            // labelControl15
+            // 
+            this.labelControl15.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl15.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl15.Appearance.Options.UseFont = true;
+            this.labelControl15.Location = new System.Drawing.Point(198, 40);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(59, 17);
+            this.labelControl15.TabIndex = 8;
+            this.labelControl15.Text = "Inventory";
+            // 
+            // txtInventory
+            // 
+            this.txtInventory.BorderColor = System.Drawing.Color.Black;
+            this.txtInventory.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtInventory.DefaultText = "";
+            this.txtInventory.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtInventory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtInventory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtInventory.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtInventory.FocusedState.BorderColor = System.Drawing.Color.Green;
+            this.txtInventory.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtInventory.ForeColor = System.Drawing.Color.Black;
+            this.txtInventory.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
+            this.txtInventory.Location = new System.Drawing.Point(188, 73);
+            this.txtInventory.Name = "txtInventory";
+            this.txtInventory.PasswordChar = '\0';
+            this.txtInventory.PlaceholderText = "";
+            this.txtInventory.SelectedText = "";
+            this.txtInventory.Size = new System.Drawing.Size(81, 36);
+            this.txtInventory.TabIndex = 7;
             // 
             // btnCancel
             // 
@@ -541,7 +579,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCancel.Location = new System.Drawing.Point(114, 205);
+            this.btnCancel.Location = new System.Drawing.Point(144, 205);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(19)))), ((int)(((byte)(10)))));
             this.btnCancel.Size = new System.Drawing.Size(98, 27);
@@ -562,7 +600,7 @@
             this.btnAddToCart.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddToCart.ForeColor = System.Drawing.Color.White;
             this.btnAddToCart.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnAddToCart.Location = new System.Drawing.Point(10, 205);
+            this.btnAddToCart.Location = new System.Drawing.Point(40, 205);
             this.btnAddToCart.Name = "btnAddToCart";
             this.btnAddToCart.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnAddToCart.Size = new System.Drawing.Size(95, 27);
@@ -583,7 +621,7 @@
             this.txtSellingPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSellingPrice.ForeColor = System.Drawing.Color.Black;
             this.txtSellingPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
-            this.txtSellingPrice.Location = new System.Drawing.Point(62, 160);
+            this.txtSellingPrice.Location = new System.Drawing.Point(54, 161);
             this.txtSellingPrice.Name = "txtSellingPrice";
             this.txtSellingPrice.PasswordChar = '\0';
             this.txtSellingPrice.PlaceholderText = "";
@@ -596,7 +634,7 @@
             this.labelControl13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl13.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Location = new System.Drawing.Point(14, 167);
+            this.labelControl13.Location = new System.Drawing.Point(12, 168);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(29, 17);
             this.labelControl13.TabIndex = 0;
@@ -615,7 +653,7 @@
             this.txtBaseUnit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtBaseUnit.ForeColor = System.Drawing.Color.Black;
             this.txtBaseUnit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
-            this.txtBaseUnit.Location = new System.Drawing.Point(62, 118);
+            this.txtBaseUnit.Location = new System.Drawing.Point(54, 118);
             this.txtBaseUnit.Name = "txtBaseUnit";
             this.txtBaseUnit.PasswordChar = '\0';
             this.txtBaseUnit.PlaceholderText = "";
@@ -628,7 +666,7 @@
             this.labelControl12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(14, 125);
+            this.labelControl12.Location = new System.Drawing.Point(12, 125);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(25, 17);
             this.labelControl12.TabIndex = 0;
@@ -650,9 +688,9 @@
             this.cboCommodityName.HoverState.BorderColor = System.Drawing.Color.Black;
             this.cboCommodityName.IntegralHeight = false;
             this.cboCommodityName.ItemHeight = 30;
-            this.cboCommodityName.Location = new System.Drawing.Point(14, 73);
+            this.cboCommodityName.Location = new System.Drawing.Point(12, 73);
             this.cboCommodityName.Name = "cboCommodityName";
-            this.cboCommodityName.Size = new System.Drawing.Size(109, 36);
+            this.cboCommodityName.Size = new System.Drawing.Size(162, 36);
             this.cboCommodityName.TabIndex = 1;
             // 
             // txtQuantities
@@ -668,7 +706,7 @@
             this.txtQuantities.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtQuantities.ForeColor = System.Drawing.Color.Black;
             this.txtQuantities.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
-            this.txtQuantities.Location = new System.Drawing.Point(148, 73);
+            this.txtQuantities.Location = new System.Drawing.Point(207, 155);
             this.txtQuantities.Name = "txtQuantities";
             this.txtQuantities.PasswordChar = '\0';
             this.txtQuantities.PlaceholderText = "";
@@ -681,7 +719,7 @@
             this.labelControl11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(139, 41);
+            this.labelControl11.Location = new System.Drawing.Point(207, 125);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(62, 17);
             this.labelControl11.TabIndex = 0;
@@ -692,7 +730,7 @@
             this.labelControl10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(24, 41);
+            this.labelControl10.Location = new System.Drawing.Point(55, 40);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(80, 17);
             this.labelControl10.TabIndex = 0;
@@ -772,5 +810,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn BaseUnit;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private DevExpress.XtraEditors.LabelControl labelControl15;
+        private Guna.UI2.WinForms.Guna2TextBox txtInventory;
     }
 }

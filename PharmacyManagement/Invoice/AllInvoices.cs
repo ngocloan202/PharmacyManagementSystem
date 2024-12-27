@@ -34,26 +34,30 @@ namespace PharmacyManagement.Invoice
         {
             string selectAllInvoicesQuery;
 
-            if (role == "admin") 
+            if (role == "admin")
             {
                 selectAllInvoicesQuery = @"SELECT ivd.InvoiceID, cus.CustomerName, cus.Contact,
-                                         iv.CreatedDate, iv.Note, em.EmployeeName, 
-                                         FORMAT(ivd.Amount, 'N0') + ' VND' AS Amount
-                                  FROM INVOICE iv, INVOICEDETAILS ivd, EMPLOYEE em, CUSTOMER cus
-                                  WHERE iv.InvoiceID = ivd.InvoiceID 
-                                        AND iv.EmployeeID = em.EmployeeID
-                                        AND iv.CustomerID = cus.CustomerID ";
+                                                  iv.CreatedDate, iv.Note, em.EmployeeName, 
+                                               FORMAT(Sum(ivd.Amount), 'N0') + ' VND' AS Amount
+                                           FROM INVOICE iv, INVOICEDETAILS ivd, EMPLOYEE em, CUSTOMER cus
+                                           WHERE iv.InvoiceID = ivd.InvoiceID 
+                                                 AND iv.EmployeeID = em.EmployeeID
+                                                 AND iv.CustomerID = cus.CustomerID
+                                           Group by ivd.InvoiceID, cus.CustomerName, cus.Contact,
+                                                    iv.CreatedDate, iv.Note, em.EmployeeName";
             }
             else
             {
                 selectAllInvoicesQuery = @"SELECT ivd.InvoiceID, cus.CustomerName, cus.Contact,
-                                         iv.CreatedDate, iv.Note, em.EmployeeName, 
-                                         FORMAT(ivd.Amount, 'N0') + ' VND' AS Amount
-                                  FROM INVOICE iv, INVOICEDETAILS ivd, EMPLOYEE em, CUSTOMER cus
-                                  WHERE iv.InvoiceID = ivd.InvoiceID 
-                                        AND iv.EmployeeID = em.EmployeeID
-                                        AND iv.CustomerID = cus.CustomerID
-                                        AND iv.EmployeeID = @EmployeeID";
+                                                  iv.CreatedDate, iv.Note, em.EmployeeName, 
+                                                  FORMAT(Sum(ivd.Amount), 'N0') + ' VND' AS Amount
+                                           FROM INVOICE iv, INVOICEDETAILS ivd, EMPLOYEE em, CUSTOMER cus
+                                           WHERE iv.InvoiceID = ivd.InvoiceID 
+                                                  AND iv.EmployeeID = em.EmployeeID
+                                                  AND iv.CustomerID = cus.CustomerID
+	                                              AND em.EmployeeID = 'E002'
+                                           Group by ivd.InvoiceID, cus.CustomerName, cus.Contact,
+		                                            iv.CreatedDate, iv.Note, em.EmployeeName";
             }
 
             SqlCommand userCmd = new SqlCommand(selectAllInvoicesQuery);
