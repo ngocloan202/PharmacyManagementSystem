@@ -39,13 +39,18 @@ Other roles, created by the Admin, are limited to:
 - Managing pharmacy commodities.
 - Updating their personal information.
 
-### Permission role
+## Permission role
 
 ![alt text](doc/PermissionRole.png)
 
-### Admin Login
-In the database, an admin account has been pre-configured with the following credentials:
+## Pre-configured Accounts
+
+### Admin Account:
 - **Username:** `hoangthilan`
+- **Password:** `12345`
+
+### User Account:
+- **Username:** `lethihong`
 - **Password:** `12345`
 
 ![Sign In](doc/SignIn.png)
@@ -57,8 +62,12 @@ View and update user profile information.
 
 ![Profile Setting](doc/Profile.png)
 
-#### 2. Manage All Commodities
-View and delete commodity
+#### 2. Commodity
+- Users can create New Commodity
+
+![New Commodity](doc/NewCommodity.png)
+
+- Admin, User can view and delete commodity
 
 ![All Commodity](doc/AllCommodities.png)
 
@@ -75,9 +84,20 @@ View and delete commodity
 
 ![All Users](doc/AllUsers.png)
 
+- Users can create and manage customer
+
+![Manage Customer](doc/Customer.png)
+
 #### 4. Manage Invoice
+- Users can create new invoice
+
+![New Invoice](doc/NewInvoice.png)
+
 - Admins can view all invoices of users
 
-![alt text](doc/AllInvoices.png)
+![All Invoice Admin](doc/AllInvoicesAdmin.png)
 
+- Users can view all invoices written by themselves
+
+![All Invoice User](doc/AllInvoicesUser.png)
 ---
