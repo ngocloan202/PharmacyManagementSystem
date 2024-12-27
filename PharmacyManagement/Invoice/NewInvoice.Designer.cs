@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtEmployeeName = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtInvoiceID = new Guna.UI2.WinForms.Guna2TextBox();
@@ -62,7 +62,7 @@
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtInventory = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddToCart = new Guna.UI2.WinForms.Guna2Button();
             this.txtSellingPrice = new Guna.UI2.WinForms.Guna2TextBox();
@@ -368,8 +368,8 @@
             // Quantity
             // 
             this.Quantity.DataPropertyName = "Quantity";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Quantity.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Quantity.DefaultCellStyle = dataGridViewCellStyle1;
             this.Quantity.HeaderText = "Quantity";
             this.Quantity.Name = "Quantity";
             this.Quantity.ReadOnly = true;
@@ -517,7 +517,7 @@
             this.guna2Panel6.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel6.BorderThickness = 1;
             this.guna2Panel6.Controls.Add(this.labelControl15);
-            this.guna2Panel6.Controls.Add(this.guna2TextBox1);
+            this.guna2Panel6.Controls.Add(this.txtInventory);
             this.guna2Panel6.Controls.Add(this.btnCancel);
             this.guna2Panel6.Controls.Add(this.btnAddToCart);
             this.guna2Panel6.Controls.Add(this.txtSellingPrice);
@@ -544,26 +544,26 @@
             this.labelControl15.TabIndex = 8;
             this.labelControl15.Text = "Inventory";
             // 
-            // guna2TextBox1
+            // txtInventory
             // 
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.Green;
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(188, 73);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(81, 36);
-            this.guna2TextBox1.TabIndex = 7;
+            this.txtInventory.BorderColor = System.Drawing.Color.Black;
+            this.txtInventory.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtInventory.DefaultText = "";
+            this.txtInventory.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtInventory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtInventory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtInventory.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtInventory.FocusedState.BorderColor = System.Drawing.Color.Green;
+            this.txtInventory.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtInventory.ForeColor = System.Drawing.Color.Black;
+            this.txtInventory.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(165)))), ((int)(((byte)(80)))));
+            this.txtInventory.Location = new System.Drawing.Point(188, 73);
+            this.txtInventory.Name = "txtInventory";
+            this.txtInventory.PasswordChar = '\0';
+            this.txtInventory.PlaceholderText = "";
+            this.txtInventory.SelectedText = "";
+            this.txtInventory.Size = new System.Drawing.Size(81, 36);
+            this.txtInventory.TabIndex = 7;
             // 
             // btnCancel
             // 
@@ -809,6 +809,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private DevExpress.XtraEditors.LabelControl labelControl15;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtInventory;
     }
 }
