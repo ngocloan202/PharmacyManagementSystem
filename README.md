@@ -44,28 +44,40 @@ In the database, an admin account has been pre-configured with the following cre
 - **Username:** `hoangthilan`
 - **Password:** `12345`
 
-![Sign In](imageReadme/image.png)
+![Sign In](doc/SignIn.png.png)
 
 ### Key Functionalities
+
+### Permission role
+
+![alt text](doc/PermissionRole.png)
 
 #### 1. Profile Management
 View and update user profile information.
 
-![Profile Setting](imageReadme/image-1.png)
+![Profile Setting](doc/Profile.png)
 
-#### 2. Add New Users
-Admins can create new user accounts.
+#### 2. Manage All Commodities
+View and delete commodity
 
-![New User](imageReadme/image-2.png)
+![All Commodity](doc/AllCommodities.png)
 
-#### 3. Manage All Accounts
-Admins can view and manage all user accounts.
+#### 3. Manage Human
+- Admins can create new user accounts.
 
-![All Accounts](imageReadme/image-3.png)
+![New User](doc/NewUser.png)
 
-#### 4. Manage All Users
-Admins can access and update user details.
+- Admins can view and manage all user accounts.
 
-![All Users](imageReadme/image-4.png)
+![All Accounts](doc/AllAccounts.png)
+
+- Admins can access and update user details.
+
+![All Users](doc/AllUsers.png)
+
+#### 4. Manage Invoice
+- Admins can view all invoices of users
+
+![alt text](doc/AllInvoices.png)
 
 ---

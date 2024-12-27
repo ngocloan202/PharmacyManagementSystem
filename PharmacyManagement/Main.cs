@@ -162,9 +162,9 @@ namespace PharmacyManagement
             btnAllInvoices.Enabled = true;
             btnDashboard.Enabled = true;
             btnNewAccount.Enabled = true;
-            btnCustomer.Enabled = true;
             btnAllAccounts.Enabled = true;
 
+            btnCustomer.Enabled = false;
             btnNewCommodity.Enabled = false;
             btnNewInvoice.Enabled = false;
         }
