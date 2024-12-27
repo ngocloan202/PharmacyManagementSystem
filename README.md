@@ -39,18 +39,18 @@ Other roles, created by the Admin, are limited to:
 - Managing pharmacy commodities.
 - Updating their personal information.
 
+### Permission role
+
+![alt text](doc/PermissionRole.png)
+
 ### Admin Login
 In the database, an admin account has been pre-configured with the following credentials:
 - **Username:** `hoangthilan`
 - **Password:** `12345`
 
-![Sign In](doc/SignIn.png.png)
+![Sign In](doc/SignIn.png)
 
 ### Key Functionalities
-
-### Permission role
-
-![alt text](doc/PermissionRole.png)
 
 #### 1. Profile Management
 View and update user profile information.
