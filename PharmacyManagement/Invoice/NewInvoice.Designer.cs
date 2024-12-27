@@ -1,4 +1,6 @@
-﻿namespace PharmacyManagement
+﻿using DevExpress.XtraEditors.Filtering.Templates;
+
+namespace PharmacyManagement
 {
     partial class NewInvoice
     {
