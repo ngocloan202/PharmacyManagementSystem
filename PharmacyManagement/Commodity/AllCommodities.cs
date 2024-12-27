@@ -104,24 +104,29 @@ namespace PharmacyManagement.Commodity
         private void UpdateCommodity()
         {
             string updateCommodityQuery = @"UPDATE COMMODITY
-                                   SET CommodityName = @newCommodityName,
-                                       Manufacturer = @Manufacturer,
-                                       Quantity = @Quantity,
-                                       BaseUnit = @BaseUnit,
-                                       PurchasePrice = @PurchasePrice,
-                                       SellingPrice = @SellingPrice,
-                                       MfgDate = @MfgDate,
-                                       ExpDate = @ExpDate,
-                                       CategoryID = @CategoryID
-                                   WHERE CommodityName = @oldCommodityName";
+                                           SET CommodityName = @CommodityName,
+                                               Manufacturer = @Manufacturer,
+                                               Quantity = @Quantity,
+                                               BaseUnit = @BaseUnit,
+                                               PurchasePrice = @PurchasePrice,
+                                               SellingPrice = @SellingPrice,
+                                               MfgDate = @MfgDate,
+                                               ExpDate = @ExpDate,
+                                               CategoryID = @CategoryID
+                                           WHERE CommodityID = @CommodityID";
+
+            // Handle price string - remove "VND" and comma
+            string purchasePrice = txtPurchasePrice.Text.Replace("VND", "").Replace(",", "").Replace(".", "").Trim();
+            string sellingPrice = txtSellingPrice.Text.Replace("VND", "").Replace(",", "").Replace(".", "").Trim();
+
             SqlCommand updateCommodityCmd = new SqlCommand(updateCommodityQuery);
-            updateCommodityCmd.Parameters.Add("@newCommodityName", SqlDbType.VarChar, 200).Value = txtCommodityName.Text.Trim();
-            updateCommodityCmd.Parameters.Add("@oldCommodityName", SqlDbType.VarChar, 200).Value = commodityName;
+            updateCommodityCmd.Parameters.Add("@CommodityID", SqlDbType.VarChar, 5).Value = txtCommodityID.Text;
+            updateCommodityCmd.Parameters.Add("@CommodityName", SqlDbType.VarChar, 200).Value = txtCommodityName.Text.Trim();
             updateCommodityCmd.Parameters.Add("Manufacturer", SqlDbType.NVarChar, 200).Value = txtManufacturer.Text;
             updateCommodityCmd.Parameters.Add("@Quantity", SqlDbType.Int).Value = txtQuantity.Text.ToString();
             updateCommodityCmd.Parameters.Add("BaseUnit", SqlDbType.NVarChar, 30).Value = txtBaseUnit.Text.Trim();
-            updateCommodityCmd.Parameters.Add("@PurchasePrice", SqlDbType.Money).Value = txtPurchasePrice.Text.Trim();
-            updateCommodityCmd.Parameters.Add("@SellingPrice", SqlDbType.Money).Value = txtSellingPrice.Text.Trim();
+            updateCommodityCmd.Parameters.Add("@PurchasePrice", SqlDbType.Money).Value = Convert.ToDecimal(purchasePrice);
+            updateCommodityCmd.Parameters.Add("@SellingPrice", SqlDbType.Money).Value = Convert.ToDecimal(sellingPrice);
             updateCommodityCmd.Parameters.Add("@MfgDate", SqlDbType.Date).Value = dtpMfgDate.Value.ToString();
             updateCommodityCmd.Parameters.Add("@ExpDate", SqlDbType.Date).Value = dtpExpDate.Value.ToString();
             updateCommodityCmd.Parameters.Add("@CategoryID", SqlDbType.TinyInt).Value = cboCommodityType.SelectedValue.ToString();
@@ -136,7 +141,6 @@ namespace PharmacyManagement.Commodity
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            commodityName = txtCommodityName.Text;
             ToggleControls(true);
         }
 

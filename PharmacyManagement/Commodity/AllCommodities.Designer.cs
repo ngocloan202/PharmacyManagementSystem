@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllCommodities));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -316,8 +316,8 @@
             // MfgDate
             // 
             this.MfgDate.DataPropertyName = "MfgDate";
-            dataGridViewCellStyle3.NullValue = null;
-            this.MfgDate.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.NullValue = null;
+            this.MfgDate.DefaultCellStyle = dataGridViewCellStyle1;
             this.MfgDate.HeaderText = "MFG. Date";
             this.MfgDate.MinimumWidth = 6;
             this.MfgDate.Name = "MfgDate";
@@ -326,8 +326,8 @@
             // ExpDate
             // 
             this.ExpDate.DataPropertyName = "ExpDate";
-            dataGridViewCellStyle4.NullValue = null;
-            this.ExpDate.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.NullValue = null;
+            this.ExpDate.DefaultCellStyle = dataGridViewCellStyle2;
             this.ExpDate.HeaderText = "EXP.  Date";
             this.ExpDate.MinimumWidth = 6;
             this.ExpDate.Name = "ExpDate";
@@ -537,6 +537,7 @@
             this.txtCommodityID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtCommodityID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtCommodityID.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCommodityID.ForeColor = System.Drawing.Color.Black;
             this.txtCommodityID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtCommodityID.Location = new System.Drawing.Point(23, 85);
             this.txtCommodityID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -599,9 +600,10 @@
             this.txtSellingPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtSellingPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSellingPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSellingPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.txtSellingPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtSellingPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSellingPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.txtSellingPrice.ForeColor = System.Drawing.Color.Black;
+            this.txtSellingPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtSellingPrice.Location = new System.Drawing.Point(744, 170);
             this.txtSellingPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSellingPrice.Name = "txtSellingPrice";
@@ -634,10 +636,10 @@
             this.txtPurchasePrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtPurchasePrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPurchasePrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPurchasePrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.txtPurchasePrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtPurchasePrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPurchasePrice.ForeColor = System.Drawing.Color.Black;
-            this.txtPurchasePrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.txtPurchasePrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtPurchasePrice.Location = new System.Drawing.Point(356, 170);
             this.txtPurchasePrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPurchasePrice.Name = "txtPurchasePrice";
@@ -711,6 +713,7 @@
             this.txtCommodityName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtCommodityName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtCommodityName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCommodityName.ForeColor = System.Drawing.Color.Black;
             this.txtCommodityName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtCommodityName.Location = new System.Drawing.Point(356, 43);
             this.txtCommodityName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -756,6 +759,7 @@
             this.txtBaseUnit.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtBaseUnit.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtBaseUnit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtBaseUnit.ForeColor = System.Drawing.Color.Black;
             this.txtBaseUnit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtBaseUnit.Location = new System.Drawing.Point(356, 128);
             this.txtBaseUnit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -790,6 +794,7 @@
             this.txtManufacturer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtManufacturer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtManufacturer.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtManufacturer.ForeColor = System.Drawing.Color.Black;
             this.txtManufacturer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtManufacturer.Location = new System.Drawing.Point(356, 85);
             this.txtManufacturer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
