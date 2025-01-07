@@ -55,7 +55,7 @@ namespace PharmacyManagement.Invoice
                                            WHERE iv.InvoiceID = ivd.InvoiceID 
                                                   AND iv.EmployeeID = em.EmployeeID
                                                   AND iv.CustomerID = cus.CustomerID
-	                                              AND em.EmployeeID = 'E002'
+	                                              AND em.EmployeeID = @EmployeeID
                                            Group by ivd.InvoiceID, cus.CustomerName, cus.Contact,
 		                                            iv.CreatedDate, iv.Note, em.EmployeeName";
             }
