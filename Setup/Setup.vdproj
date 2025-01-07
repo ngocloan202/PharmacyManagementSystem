@@ -1392,7 +1392,7 @@
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F4FCDFEB4C684453B4AA8C19860451E1"
             {
-            "SourcePath" = "8:..\\Resources\\Pharmacy-logo-200.ico"
+            "SourcePath" = "8:..\\PharmacyManagement\\Resources\\Pharmacy-logo-200.ico"
             "TargetName" = "8:Pharmacy-logo-200.ico"
             "Tag" = "8:"
             "Folder" = "8:_F0693CB572E34BD5BBB7DBC14D42484E"
