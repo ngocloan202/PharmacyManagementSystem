@@ -573,12 +573,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_D6162FC4052B4ED0AB4C32CB8BB26CDC"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_DD7B078B03DE2AEFB57F8A8B45B32DFE"
         "OwnerKey" = "8:_D3FB6546F1A3CAA9659ED1B402D657E0"
         "MsmSig" = "8:_UNDEFINED"
@@ -593,6 +587,12 @@
         {
         "MsmKey" = "8:_DD7B078B03DE2AEFB57F8A8B45B32DFE"
         "OwnerKey" = "8:_0356C4D31CF04DC8B9C47A7A4350CBA0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F4FCDFEB4C684453B4AA8C19860451E1"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -617,12 +617,6 @@
         {
         "MsmKey" = "8:_F9321C37DDE82ADA683726224927C691"
         "OwnerKey" = "8:_8322EA3F7A689F74142F32F56A9CEF4B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_63927F77C99184BCE4DFE9A5D697446B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -745,6 +739,12 @@
         "OwnerKey" = "8:_F9321C37DDE82ADA683726224927C691"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_63927F77C99184BCE4DFE9A5D697446B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -763,6 +763,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -779,6 +795,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -1335,26 +1359,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D6162FC4052B4ED0AB4C32CB8BB26CDC"
-            {
-            "SourcePath" = "8:C:\\Users\\THIS PC\\OneDrive\\Hình ảnh\\avatarforpage\\Pharmacy-logo-200.ico"
-            "TargetName" = "8:Pharmacy-logo-200.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_F0693CB572E34BD5BBB7DBC14D42484E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DD7B078B03DE2AEFB57F8A8B45B32DFE"
             {
             "AssemblyRegister" = "3:1"
@@ -1384,6 +1388,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F4FCDFEB4C684453B4AA8C19860451E1"
+            {
+            "SourcePath" = "8:..\\Resources\\Pharmacy-logo-200.ico"
+            "TargetName" = "8:Pharmacy-logo-200.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_F0693CB572E34BD5BBB7DBC14D42484E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F6273D926B900D176206BE066307AC1A"
@@ -1505,7 +1529,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Setup"
         "ProductCode" = "8:{3FBEBB0B-D4A7-4362-A813-F4FFC056EB5B}"
-        "PackageCode" = "8:{85FB8C0A-B0BA-4189-9D3B-E0D2B41411A4}"
+        "PackageCode" = "8:{0EF06BAA-7265-486D-A9A1-C5BB931BD0BC}"
         "UpgradeCode" = "8:{604F46E7-565B-4645-901A-ADDB614703DD}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -1636,7 +1660,7 @@
             "Target" = "8:_0356C4D31CF04DC8B9C47A7A4350CBA0"
             "Folder" = "8:_3A46B9ABE42149AEA0ADCD226E2FA6C2"
             "WorkingFolder" = "8:_F0693CB572E34BD5BBB7DBC14D42484E"
-            "Icon" = "8:_D6162FC4052B4ED0AB4C32CB8BB26CDC"
+            "Icon" = "8:"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8BF7B19E305F401D9100A8D60D478F6C"
@@ -1650,7 +1674,7 @@
             "Target" = "8:_0356C4D31CF04DC8B9C47A7A4350CBA0"
             "Folder" = "8:_7665D17CF64342638B04F48CDBA05CC1"
             "WorkingFolder" = "8:_F0693CB572E34BD5BBB7DBC14D42484E"
-            "Icon" = "8:_D6162FC4052B4ED0AB4C32CB8BB26CDC"
+            "Icon" = "8:"
             "Feature" = "8:"
             }
         }
